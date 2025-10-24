@@ -1,0 +1,36 @@
+expression dCidades =
+		let
+		    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & "\Dimensões.xlsx"), null, true),
+		    Cidades_Table = Fonte{[Item="Cidades",Kind="Table"]}[Data],
+		    #"Tipo Alterado" = Table.TransformColumnTypes(Cidades_Table,{{"Id Cidade", Int64.Type}, {"Cidade", type text}, {"UF", type text}, {"Estado", type text}}),
+		    #"Texto Aparado" = Table.TransformColumns(#"Tipo Alterado",{{"Estado", Text.Trim, type text}})
+		in
+		    #"Texto Aparado"
+	lineageTag: d3f37f5a-9cba-4a50-9c62-32db5582c5e3
+	queryGroup: Auxiliares
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
+expression Caminho_Extracao = "D:\Curso\Jefferson Curso Completo\Base Dados\Extrações" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 2747c0ba-a302-4812-bdbe-bd561a0d13e0
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Text
+
+expression Caminho_Dimensoes = "D:\Curso\Jefferson Curso Completo\Base Dados\Dimensões" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: d6a58aa4-ecb7-4ce6-90e3-30f15eb7ec48
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Text
+
+expression Caminho_Meta = "D:\Curso\Jefferson Curso Completo\Base Dados\Metas" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 45a9cb35-ec05-4519-bf97-bc1012799606
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,35 @@
+table dUnidades
+	lineageTag: 527df0f4-5aae-4c5a-aae3-e5fcd8735c48
+
+	column 'Id Unidade'
+		dataType: int64
+		formatString: 0
+		lineageTag: d166ccd0-4949-43e6-930e-7d8fff008fcb
+		summarizeBy: none
+		sourceColumn: Id Unidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unidade
+		dataType: string
+		lineageTag: 62d98bd6-9d75-439c-9734-600523cc3cbf
+		summarizeBy: none
+		sourceColumn: Unidade
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dUnidades-06e92872-ce0d-4437-82a6-23df86366426 = m
+		mode: import
+		queryGroup: Dimensões
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & "\Dimensões.xlsx"), null, true),
+				    Unidades_Table = Fonte{[Item="Unidades",Kind="Table"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Unidades_Table,{{"Id Unidade", Int64.Type}, {"Unidade", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

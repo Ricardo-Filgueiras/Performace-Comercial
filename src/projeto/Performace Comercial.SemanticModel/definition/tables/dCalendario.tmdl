@@ -1,0 +1,151 @@
+table dCalendario
+	lineageTag: 9205a3a9-0c85-4cbc-8b36-d833f354a3b7
+	dataCategory: Time
+
+	column 'Id Data'
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 755a9d64-4ceb-48ca-8251-33da746b916d
+		summarizeBy: none
+		sourceColumn: Id Data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Ano
+		dataType: int64
+		formatString: 0
+		lineageTag: e685d16a-2d74-45ca-8f91-6b8e085d7827
+		summarizeBy: none
+		sourceColumn: Ano
+
+		annotation SummarizationSetBy = User
+
+	column 'Nome do Mês'
+		dataType: string
+		lineageTag: b0683ab6-bd25-4140-ac0d-562fbfbaa49c
+		summarizeBy: none
+		sourceColumn: Nome do Mês
+		sortByColumn: Mês
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mês
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b08e45e-32d0-4bf6-a88d-6ef3fe812644
+		summarizeBy: none
+		sourceColumn: Mês
+
+		annotation SummarizationSetBy = User
+
+	column Dia
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d4e56cc-a822-49d4-96bb-cf63fc32004a
+		summarizeBy: none
+		sourceColumn: Dia
+
+		annotation SummarizationSetBy = User
+
+	column Semestre
+		dataType: string
+		lineageTag: 9fcb30e5-2297-458f-a629-ae32ea5aa0aa
+		summarizeBy: none
+		sourceColumn: Semestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: string
+		lineageTag: d1889e7e-45ab-4773-8ad8-74eb51ad8a01
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes Abreviado'
+		dataType: string
+		lineageTag: a11d7992-ada8-4f21-a470-50e0ea173b5e
+		summarizeBy: none
+		sourceColumn: Mes Abreviado
+		sortByColumn: Mês
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes-Ano
+		dataType: string
+		lineageTag: 3e1ebe06-bd3a-4e26-a647-f89f593f6c83
+		summarizeBy: none
+		sourceColumn: Mes-Ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes Ano Classificação'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6bbb9b64-c988-4299-b0bc-769d46933278
+		summarizeBy: none
+		sourceColumn: Mes Ano Classificação
+
+		annotation SummarizationSetBy = User
+
+	column 'Datas com Venda' = ```
+			
+			   dCalendario[Id Data] <= MAX(fVendas[Data Pedido])
+			```
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d63afdaa-3d86-4471-a6ea-3dec8accb14b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy Data
+		lineageTag: 438339a9-4afa-4472-8426-f68cd1439e07
+
+		level Ano
+			lineageTag: de187990-0cce-4293-89d6-36caed74ff37
+			column: Ano
+
+		level 'Mes Abreviado'
+			lineageTag: 4f2f0ffe-8e03-4d57-bb75-e2e0be2710fe
+			column: 'Mes Abreviado'
+
+		level Dia
+			lineageTag: e2c8a711-3907-491b-a6b2-0b741b61e75a
+			column: Dia
+
+	partition dCalendario-0195bc19-d31b-4cad-ae3d-1c98e2e5f713 = m
+		mode: import
+		queryGroup: Dimensões
+		source = ```
+				let
+				        
+				    Fonte = List.Dates(#date(2018, 1, 1), 1461 , #duration(1, 0, 0, 0)),
+				    #"Convertido para Tabela" = Table.FromList(Fonte, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Convertido para Tabela",{{"Column1", "Data"}}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Colunas Renomeadas",{{"Data", type date}}),
+				    #"Ano Inserido" = Table.AddColumn(#"Tipo Alterado", "Ano", each Date.Year([Data]), Int64.Type),
+				    #"Nome do Mês Inserido" = Table.AddColumn(#"Ano Inserido", "Nome do Mês", each Date.MonthName([Data]), type text),
+				    #"Mês Inserido" = Table.AddColumn(#"Nome do Mês Inserido", "Mês", each Date.Month([Data]), Int64.Type),
+				    #"Dia Inserido" = Table.AddColumn(#"Mês Inserido", "Dia", each Date.Day([Data]), Int64.Type),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Dia Inserido", "Semestre", each if [Mês] <= 6 then "Sem1" else "Sem2"),
+				    #"Coluna Condicional Adicionada1" = Table.AddColumn(#"Coluna Condicional Adicionada", "Trimestre", each if [Mês] <= 3 then "Tri1" else if [Mês] <= 6 then "Tri2" else if [Mês] <= 9 then "Tri3" else "Tri4"),
+				    #"Colocar Cada Palavra Em Maiúscula" = Table.TransformColumns(#"Coluna Condicional Adicionada1",{{"Nome do Mês", Text.Proper, type text}}),
+				    #"Primeiros Caracteres Inseridos" = Table.AddColumn(#"Colocar Cada Palavra Em Maiúscula", "Mes Abreviado", each Text.Start([Nome do Mês], 3), type text),
+				    #"Coluna Mesclada Inserida" = Table.AddColumn(#"Primeiros Caracteres Inseridos", "Mes-Ano", each Text.Combine({[Mes Abreviado], "-", Text.From([Ano], "pt-BR")}), type text),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Coluna Mesclada Inserida", "Mes Ano Classificação", each [Ano] * 100 + [Mês]),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"Mes Ano Classificação", Int64.Type}, {"Trimestre", type text}, {"Semestre", type text}}),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Tipo Alterado1",{{"Data", "Id Data"}})
+				in
+				    #"Colunas Renomeadas1"
+				```
+
+	annotation PBI_ResultType = Table
+

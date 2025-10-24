@@ -1,0 +1,472 @@
+table _Medidas
+	lineageTag: 5d2fdeda-57d0-4fb6-a1b9-209cd3522441
+
+	measure 'Qtde Vendas' = DISTINCTCOUNT(fVendas[Num Venda])
+		formatString: #,0
+		displayFolder: 01.Principais
+		lineageTag: c6e2dfed-b1f9-4897-983b-d5594124b063
+
+		changedProperty = FormatString
+
+	measure 'Positivação Clientes' = ```
+			
+			// Refere-se a Qtde de clientes que efetuaram compras 
+			        DISTINCTCOUNT(fVendas[Id Cliente])
+			
+			
+			
+			
+			```
+		formatString: 0
+		displayFolder: 01.Principais
+		lineageTag: a8cec11c-cf82-487e-b973-012198c81a2d
+
+	measure 'Positivação Produtos' = DISTINCTCOUNT(fVendas[Id Produto])
+		formatString: 0
+		displayFolder: 01.Principais
+		lineageTag: c2012781-389d-45e0-893e-ae783dfc4007
+
+	measure Faturamento = ```
+			
+			    CALCULATE(
+			        SUMX(
+			            fVendas,
+			            fVendas[Qtde] * fVendas[Valor Unit]
+			        ),
+			        dStatus[Id Status] = 1
+			    )
+			```
+		displayFolder: 01.Principais
+		lineageTag: e65bb807-44fc-4cbc-983f-0ebaf546d84f
+
+		formatStringDefinition = ```
+				VAR _valor = SELECTEDMEASURE()
+				
+				RETURN
+				    """" &
+				            SWITCH( TRUE(),
+				            ABS( _valor ) >=  1E9, FORMAT( _valor , "##,,,.00 B; -#,,,.0  B; -"),
+				            ABS( _valor ) >=  1E6, FORMAT( _valor , "##,,.00 M; -#,,.0  M; -"),
+				            ABS( _valor ) >=  1E3, FORMAT( _valor , "##,.00 K; -#,.0  K; -"),
+				            FORMAT( _valor , "#;-#;-")
+				            )
+				    & """"
+				
+				```
+
+		changedProperty = FormatString
+
+	measure Custo = ```
+			
+			    CALCULATE(
+			        SUMX(
+			            fVendas,
+			            fVendas[Qtde] * fVendas[Custo Unit]
+			        ),
+			        dStatus[Id Status] = 1 
+			    )
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: 01.Principais
+		lineageTag: 84d6ec66-1349-4b83-be22-0e27dc277249
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Despesa = ```
+			
+			    CALCULATE(
+			        SUMX(
+			            fVendas,
+			            fVendas[Qtde] * fVendas[Despesa Unit]
+			        ),
+			        dStatus[Id Status] = 1 
+			    )
+			```
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 01.Principais
+		lineageTag: c53f0e5b-284f-461b-a91d-e160c2cf2d72
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Impostos = ```
+			
+			    CALCULATE(
+			        SUMX(
+			            fVendas,
+			            fVendas[Qtde] * fVendas[Impostos Unit]
+			        ),
+			        dStatus[Id Status] = 1 
+			    )
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: 01.Principais
+		lineageTag: ac65b685-7f01-4b6e-af8b-5a1abfac4c7f
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Comissao = ```
+			
+			    CALCULATE(
+			           SUMX(
+			            fVendas,
+			            fVendas[Qtde] * fVendas[Comissão Unit]
+			        ),
+			        dStatus[Id Status] = 1 
+			    )
+			```
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 01.Principais
+		lineageTag: e2a5d29f-47dc-4b3f-8806-6aed1cffa86a
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Abatimento = ```
+			
+			    [Custo] + [Despesa] + [Impostos] + [Comissao]
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: 01.Principais
+		lineageTag: ffded7eb-d67b-4fda-b5ef-fcc413ba4754
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Resultado = ```
+			
+			    [Faturamento] - [Abatimento]
+			```
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 01.Principais
+		lineageTag: 1578b7a7-9512-464d-9cf7-eba4bfc015c7
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Margem = ```
+			
+			
+			    DIVIDE([Resultado],[Faturamento])
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 01.Principais
+		lineageTag: f7c93f03-2660-47dc-a1ba-3ab292788714
+
+		changedProperty = FormatString
+
+	measure 'Faturamento Acumulado' = ```
+			
+			    CALCULATE(
+			        [Faturamento],
+			        CALCULATETABLE(
+			            DATESYTD(dCalendario[Id Data]),
+			            dCalendario[Datas com Venda] = TRUE()
+			        )
+			    )
+			```
+		displayFolder: 02. Temporais
+		lineageTag: 3e353a4d-89d7-48d9-89c2-2390d17f76ab
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Faturamento MoM %' = ```
+			
+			
+			VAR vFaturamento_MoM = 
+			    CALCULATE(
+			        [Faturamento],
+			        CALCULATETABLE(
+			            DATEADD( dCalendario[Id Data], -1, MONTH ),
+			            dCalendario[Datas com Venda] = TRUE()
+			        )
+			    )
+			
+			RETURN 
+			    DIVIDE( 
+			         [Faturamento] - vFaturamento_MoM,
+			         vFaturamento_MoM
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 3cba2e15-5bca-4aea-b336-09241794e734
+
+	measure 'Faturamento LY' =
+			
+			CALCULATE(
+			    [Faturamento],
+			    CALCULATETABLE(
+			        SAMEPERIODLASTYEAR( dCalendario[Id Data] ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 02. Temporais
+		lineageTag: adc6447c-2e95-48a3-abe7-4a797e257a94
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Faturamento YoY %' = ```
+			
+			
+			VAR Valor_last_year = [Faturamento LY]
+			
+			RETURN 
+			    DIVIDE(
+			        [Faturamento] - Valor_last_year,
+			        Valor_last_year
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 3f4b893d-adee-4640-8752-e155e6e8519a
+
+		changedProperty = FormatString
+
+	measure 'Margem LM' =
+			
+			CALCULATE(
+			    [Margem],
+			    CALCULATETABLE(
+			        DATEADD( dCalendario[Id Data], -1, MONTH ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 52b1afaa-343d-45fa-bb15-17b057cd71af
+
+	measure 'Margem LY' =
+			
+			CALCULATE(
+			    [Margem],
+			    CALCULATETABLE(
+			        SAMEPERIODLASTYEAR( dCalendario[Id Data] ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 52bcce5b-b2f7-4f68-8f1a-ec461ddf5c1e
+
+		changedProperty = FormatString
+
+	measure 'Margem YoY %' = ```
+			
+			   VAR Valor_last_year = [Margem LY]
+			
+			RETURN 
+			    DIVIDE(
+			        [Margem] - Valor_last_year,
+			        Valor_last_year
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 25be8cc5-3e67-4582-bf97-5a733a622ae2
+
+		changedProperty = FormatString
+
+	measure 'Resultado  LM' =
+			
+			CALCULATE(
+			    [Resultado],
+			    CALCULATETABLE(
+			        DATEADD( dCalendario[Id Data], -1, MONTH ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 02. Temporais
+		lineageTag: 69c0eeee-3353-4349-983c-8859319ef8ae
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Resultado LY' =
+			
+			CALCULATE(
+			    [Resultado],
+			    CALCULATETABLE(
+			        SAMEPERIODLASTYEAR( dCalendario[Id Data] ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 02. Temporais
+		lineageTag: 44f36d9f-2ffd-48ca-9f8e-27d81909ce70
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Resultado YoY %' = ```
+			
+			
+			VAR Valor_last_year = [Resultado LY]
+			
+			RETURN 
+			    DIVIDE(
+			        [Resultado] - Valor_last_year,
+			        Valor_last_year
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 6499ef05-8be9-453e-82ad-c3afdb8ceac6
+
+		changedProperty = FormatString
+
+	measure 'Resultado MoM %' = ```
+			
+			
+			VAR vResultado_MoM = 
+			    CALCULATE(
+			        [Resultado],
+			        CALCULATETABLE(
+			            DATEADD( dCalendario[Id Data], -1, MONTH ),
+			            dCalendario[Datas com Venda] = TRUE()
+			        )
+			    )
+			
+			RETURN 
+			    DIVIDE( 
+			         [Resultado] - vResultado_MoM,
+			         vResultado_MoM
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: b7ea6579-84f7-48e1-8b89-5fa41237167f
+
+	measure 'Margem MoM %' = ```
+			
+			
+			VAR vMargem_MoM = 
+			    CALCULATE(
+			        [Margem],
+			        CALCULATETABLE(
+			            DATEADD( dCalendario[Id Data], -1, MONTH ),
+			            dCalendario[Datas com Venda] = TRUE()
+			        )
+			    )
+			
+			RETURN 
+			    DIVIDE( 
+			         [Margem] - vMargem_MoM,
+			         vMargem_MoM
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 376ebc05-ced8-4b00-9404-f99c56c284ed
+
+	measure 'Comissao LY' =
+			
+			CALCULATE(
+			    [Comissao],
+			    CALCULATETABLE(
+			        SAMEPERIODLASTYEAR( dCalendario[Id Data] ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 02. Temporais
+		lineageTag: 08f594f4-8f33-44c3-8537-a9f3c534a1e5
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Comissao YoY %' = ```
+			
+			
+			VAR Valor_last_year = [Comissao LY]
+			
+			RETURN 
+			    DIVIDE(
+			        [Comissao] - Valor_last_year,
+			        Valor_last_year
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 8a7d462f-7815-45de-b010-183cb6868b82
+
+	measure 'Comissao MoM %' = ```
+			
+			
+			VAR vComissao_MoM = 
+			    CALCULATE(
+			        [Comissao],
+			        CALCULATETABLE(
+			            DATEADD( dCalendario[Id Data], -1, MONTH ),
+			            dCalendario[Datas com Venda] = TRUE()
+			        )
+			    )
+			
+			RETURN 
+			    DIVIDE( 
+			         [Comissao] - vComissao_MoM,
+			         vComissao_MoM
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: f0bcc0fc-efbc-4ff4-b5c3-ddbacb0d08f2
+
+	measure Meta = SUM(fMetas[Valor Meta])
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 01.Principais
+		lineageTag: c10e334b-c7fe-482c-907a-c68997d7a764
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Porcentagem Meta' = DIVIDE([Faturamento],[Meta])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 01.Principais
+		lineageTag: ed8f85d6-91fa-4f1c-8ca0-8fd0a705870d
+
+	measure 'Eixo Y max Grafico Comercial' = ```
+			
+			VAR _tab = 
+			    ALLSELECTED( dCalendario[Mes Abreviado] , dCalendario[Mês] )
+			
+			VAR _MaiorValor = 
+			    MAXX( _tab , [Faturamento] )
+			
+			RETURN 
+			    _MaiorValor * 1.50
+			```
+		displayFolder: 03. Formatações
+		lineageTag: 10833f77-256f-4c59-a376-c3aa76d18253
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Faturamento  formatação de texto' =
+			
+			"1"
+		displayFolder: 03. Formatações
+		lineageTag: 1d58d071-b2bd-47e7-9409-7e67ccfb0933
+
+	partition _Medidas-332540c9-11b5-4161-9242-ae9d094a8fc8 = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Coluna 1"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,304 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1172.9160154200688,
+            "y": 407.64122507957046
+          },
+          "nodeIndex": "fVendas",
+          "size": {
+            "height": 495.8973074662066,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 550.089905214151,
+            "y": 281.00085816749549
+          },
+          "nodeIndex": "dPagamento",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 551.06300386383646,
+            "y": 475.81473174400656
+          },
+          "nodeIndex": "dClientes",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 550.85183363445321,
+            "y": 29.436394786006744
+          },
+          "nodeIndex": "dProdutos",
+          "size": {
+            "height": 184.19898851447891,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 554.22020814065183,
+            "y": 686.82430983858319
+          },
+          "nodeIndex": "dStatus",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 550.49722853021046,
+            "y": 884.71049116329209
+          },
+          "nodeIndex": "dUnidades",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1635.2483522152929,
+            "y": 47.74327526582676
+          },
+          "nodeIndex": "dVendedores",
+          "size": {
+            "height": 258.16525972470964,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1176.8185697286362,
+            "y": 140.938084905168
+          },
+          "nodeIndex": "fMetas",
+          "size": {
+            "height": 124,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1675.3743437868202,
+            "y": 440.45752966981973
+          },
+          "nodeIndex": "dCalendario",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "_Medidas",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 1
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 70.955543900968763,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 807.79767494235386,
+            "y": 622.48155914743472
+          },
+          "nodeIndex": "fVendas",
+          "size": {
+            "height": 305.02808297234981,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1055.0151356220808,
+            "y": 20.811112379042669
+          },
+          "nodeIndex": "dClientes",
+          "size": {
+            "height": 201.25702074308745,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 532.01342602530474,
+            "y": 25.3540916359552
+          },
+          "nodeIndex": "dUnidades",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1592.2773991185622,
+            "y": 27.30708913600494
+          },
+          "nodeIndex": "dStatus",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 23.645794400977966
+          },
+          "nodeIndex": "dProdutos",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 781.044928191206,
+            "y": 25.140414861748862
+          },
+          "nodeIndex": "dVendedores",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 269.00243902071287,
+            "y": 31.810382955105581
+          },
+          "nodeIndex": "dPagamento",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1336.6384545160713,
+            "y": 21.106963761554027
+          },
+          "nodeIndex": "dCalendario",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "fVendas",
+      "zoomValue": 79.55318203769977,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 827.20023933751747,
+            "y": 461.58595851382506
+          },
+          "nodeIndex": "fMetas",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1246.6695919700039,
+            "y": 107.22113062217993
+          },
+          "nodeIndex": "dVendedores",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 414.81684521885614,
+            "y": 128.21611579491918
+          },
+          "nodeIndex": "dCalendario",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "fMetas",
+      "zoomValue": 79.553182037699784,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}
