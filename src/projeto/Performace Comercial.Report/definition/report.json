@@ -94,6 +94,21 @@
           "name": "Innovate03985249418499026.json",
           "path": "Innovate03985249418499026.json",
           "type": "CustomTheme"
+        },
+        {
+          "name": "cartao_faturamento4266669285478487.png",
+          "path": "cartao_faturamento4266669285478487.png",
+          "type": "Image"
+        },
+        {
+          "name": "cartao_resultado23627134027752383.png",
+          "path": "cartao_resultado23627134027752383.png",
+          "type": "Image"
+        },
+        {
+          "name": "cartao_margem49676263317008695.png",
+          "path": "cartao_margem49676263317008695.png",
+          "type": "Image"
         }
       ]
     }
