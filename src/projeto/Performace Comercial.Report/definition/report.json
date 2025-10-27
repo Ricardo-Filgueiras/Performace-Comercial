@@ -56,7 +56,8 @@
     ]
   },
   "publicCustomVisuals": [
-    "htmlContent443BE3AD55E043BF878BED274D3A6865"
+    "htmlContent443BE3AD55E043BF878BED274D3A6865",
+    "pureVizInfographicC9801BF222134D2D83FA9C41861F3482"
   ],
   "resourcePackages": [
     {
@@ -118,6 +119,11 @@
         {
           "name": "cartao_margem49676263317008695.png",
           "path": "cartao_margem49676263317008695.png",
+          "type": "Image"
+        },
+        {
+          "name": "6._Tooltip_vendedores4778008445961426.png",
+          "path": "6._Tooltip_vendedores4778008445961426.png",
           "type": "Image"
         }
       ]

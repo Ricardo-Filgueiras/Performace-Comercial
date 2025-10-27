@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "7c5a19998f0ed38d0045",
   "position": {
-    "x": 968,
-    "y": 99,
+    "x": 975.55555555555554,
+    "y": 98.888888888888886,
     "z": 10000,
-    "height": 517,
-    "width": 275,
+    "height": 516.66666666666663,
+    "width": 267.77777777777777,
     "tabOrder": 7000
   },
   "visual": {
@@ -104,6 +104,26 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "visualTooltip": [
+        {
+          "properties": {
+            "themedBackground": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
@@ -158,6 +178,5 @@
         "howCreated": "User"
       }
     ]
-  },
-  "isHidden": true
+  }
 }

@@ -3652,16 +3652,6 @@ cultureInfo pt-BR
 			          "rank cidade": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Top": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    }
