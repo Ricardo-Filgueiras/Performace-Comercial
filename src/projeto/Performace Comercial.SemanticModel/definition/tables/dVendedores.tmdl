@@ -34,14 +34,6 @@ table dVendedores
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'URL Foto Inteira'
-		dataType: string
-		lineageTag: d9103678-0b27-470e-af91-6325450a36fc
-		summarizeBy: none
-		sourceColumn: URL Foto Inteira
-
-		annotation SummarizationSetBy = Automatic
-
 	partition dVendedores-ad9209f5-dc6e-4612-baa4-5f8a02abd9e9 = m
 		mode: import
 		queryGroup: Dimensões
@@ -49,7 +41,7 @@ table dVendedores
 				let
 				    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & "\Dimensões.xlsx"), null, true),
 				    Vendedores_Table = Fonte{[Item="Vendedores",Kind="Table"]}[Data],
-				    #"Tipo Alterado" = Table.TransformColumnTypes(Vendedores_Table,{{"Id Vendedor", Int64.Type}, {"Vendedor", type text}, {"URL Foto", type text}, {"Gerente", type text}, {"URL Foto Inteira", type text}})
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Vendedores_Table,{{"Id Vendedor", Int64.Type}, {"Vendedor", type text}, {"URL Foto", type text}, {"Gerente", type text}})
 				in
 				    #"Tipo Alterado"
 
