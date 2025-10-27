@@ -39,22 +39,9 @@ table _Medidas
 		displayFolder: 01.Principais
 		lineageTag: e65bb807-44fc-4cbc-983f-0ebaf546d84f
 
-		formatStringDefinition = ```
-				VAR _valor = SELECTEDMEASURE()
-				
-				RETURN
-				    """" &
-				            SWITCH( TRUE(),
-				            ABS( _valor ) >=  1E9, FORMAT( _valor , "##,,,.00 B; -#,,,.0  B; -"),
-				            ABS( _valor ) >=  1E6, FORMAT( _valor , "##,,.00 M; -#,,.0  M; -"),
-				            ABS( _valor ) >=  1E3, FORMAT( _valor , "##,.00 K; -#,.0  K; -"),
-				            FORMAT( _valor , "#;-#;-")
-				            )
-				    & """"
-				
-				```
-
 		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure Custo = ```
 			
@@ -452,9 +439,20 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Faturamento  formatação de texto' =
+	measure 'Faturamento  formatação de texto' = ```
 			
-			"1"
+			VAR _valor =[Faturamento]
+			
+			RETURN
+			        SWITCH( TRUE(),
+			            ABS( _valor ) >=  1E9, FORMAT( _valor , "##,,,.00 B; -#,,,.0  B; -"),
+			            ABS( _valor ) >=  1E6, FORMAT( _valor , "##,,.00 M; -#,,.0  M; -"),
+			            ABS( _valor ) >=  1E3, FORMAT( _valor , "##,.00 K; -#,.0  K; -"),
+			            FORMAT( _valor , "#;-#;-")
+			            )
+			
+			
+			```
 		displayFolder: 03. Formatações
 		lineageTag: 1d58d071-b2bd-47e7-9409-7e67ccfb0933
 
@@ -497,6 +495,7 @@ table _Medidas
 			RETURN 
 			    _text
 			```
+		displayFolder: .Visuais SVG
 		lineageTag: fb8f0797-cf4d-4db4-9d1e-9d1d12b87290
 		dataCategory: ImageUrl
 
@@ -539,6 +538,7 @@ table _Medidas
 			RETURN 
 			    _text
 			```
+		displayFolder: .Visuais SVG
 		lineageTag: 9955de9e-c009-404d-ba34-660f9cf53aa7
 
 	measure 'cartao  resultado svg v1' = ```
@@ -580,7 +580,60 @@ table _Medidas
 			RETURN 
 			    _text
 			```
+		displayFolder: .Visuais SVG
 		lineageTag: 45c9005f-7071-4239-836c-682b4f92335d
+
+	measure 'tabela hml contente lite v1' = ```
+			
+			
+			VAR _cidade = SELECTEDVALUE( dClientes[Cidade] )
+			
+			VAR _valor = [Faturamento  formatação de texto]
+			
+			VAR _margem = FORMAT(  [Margem YoY %], "#.0 %")
+			-----------------------------------
+			--- Formatação                 ----
+			-----------------------------------
+			var __cor_fonte =  "#CEBCD7"
+			
+			VAR _cores = 
+			SWITCH(
+			    TRUE(),
+			    [Margem YoY %] > 0 , "green",
+			    [Margem YoY %] < 0 , "red",
+			    "#ffffff"
+			)
+			
+			RETURN
+			    "
+			    <svg width='255' height='79' viewBox='0 0 255 65' fill='none' xmlns='http://www.w3.org/2000/svg'>
+			        <g id='tabela_cidades'>
+			            <line id='divisor' x1='127.5' y1='14' x2='127.5' y2='50' stroke='white' stroke-opacity='0.1'/>
+			            <text id='txt_cidade' fill='"& __cor_fonte &"' font-family='Segoe UI' font-size='11' font-weight='600'>
+			                <tspan x='28' y='34.0547'> " & _cidade & " </tspan>
+			            </text>
+			            <text id='txt_faturamento' fill='"& __cor_fonte &"' font-family='Segoe UI' font-size='15' font-weight='600'>
+			                <tspan x='155' y='26.2109'> R$ "& _valor &" </tspan>
+			            </text>
+			            <text id='txt_margem' fill='"& _cores &"' font-family='Segoe UI' font-size='15' font-weight='600'>
+			                <tspan x='155' y='53.2109'> "& _margem &" </tspan>
+			            </text>
+			        </g>
+			    </svg>
+			    "
+			```
+		displayFolder: .Visuais SVG
+		lineageTag: ab622601-89c7-4a5f-acab-f0a557b0f5d5
+		dataCategory: ImageUrl
+
+	measure 'rank cidade' = ```
+			
+			RANKX(
+			    ALL( dClientes[Cidade] ) , [Faturamento] 
+			)
+			```
+		formatString: 0
+		lineageTag: 4fc7e5c3-129b-421a-aa82-2f2ddcb14e26
 
 	partition _Medidas-332540c9-11b5-4161-9242-ae9d094a8fc8 = m
 		mode: import

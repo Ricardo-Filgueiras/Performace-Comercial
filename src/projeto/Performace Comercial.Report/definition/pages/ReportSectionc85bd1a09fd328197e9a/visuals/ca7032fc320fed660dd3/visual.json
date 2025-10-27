@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "ca7032fc320fed660dd3",
   "position": {
     "x": 12.2222222222222,
@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 83.333333333333329,
     "width": 181.11111111111111,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -94,7 +94,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "2020L"
+                                "Value": "2019L"
                               }
                             }
                           ]
