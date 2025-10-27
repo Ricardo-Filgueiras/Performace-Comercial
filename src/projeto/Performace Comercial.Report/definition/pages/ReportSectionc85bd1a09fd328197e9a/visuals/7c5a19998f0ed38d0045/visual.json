@@ -4,10 +4,10 @@
   "position": {
     "x": 968,
     "y": 99,
-    "z": 9000,
+    "z": 10000,
     "height": 517,
     "width": 275,
-    "tabOrder": 8000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6865",
@@ -109,48 +109,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "1923dc392d61c0dc0df7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "tabela hml contente lite v1"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "30a98b234bb9be1d0833",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dClientes"
-              }
-            },
-            "Property": "Cidade"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "def02c0fcf2c2a12828d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Faturamento"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "d932cef405142b32e4fd",
         "field": {
           "Measure": {
@@ -200,5 +158,6 @@
         "howCreated": "User"
       }
     ]
-  }
+  },
+  "isHidden": true
 }

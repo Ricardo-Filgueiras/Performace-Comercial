@@ -36,12 +36,13 @@ table _Medidas
 			        dStatus[Id Status] = 1
 			    )
 			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: 01.Principais
 		lineageTag: e65bb807-44fc-4cbc-983f-0ebaf546d84f
 
 		changedProperty = FormatString
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure Custo = ```
 			
@@ -607,6 +608,27 @@ table _Medidas
 			RETURN
 			    "
 			    <svg width='255' height='79' viewBox='0 0 255 65' fill='none' xmlns='http://www.w3.org/2000/svg'>
+			
+			        <defs>
+			            <style>
+			                #txt_margem, #txt_cidade, #txt_faturamento  {
+			                    transition: .7s
+			                }
+			                
+			
+			                svg:hover #txt_faturamento  {
+			                    transform: translateX( -126px)
+			                }
+			                svg:hover #txt_cidade {
+			                    transform: translateX(126px)
+			                }
+			                svg:hover  #txt_margem {
+			                    transform: translateX( -126px)
+			                }
+			
+			            </style>
+			        </defs>
+			
 			        <g id='tabela_cidades'>
 			            <line id='divisor' x1='127.5' y1='14' x2='127.5' y2='50' stroke='white' stroke-opacity='0.1'/>
 			            <text id='txt_cidade' fill='"& __cor_fonte &"' font-family='Segoe UI' font-size='11' font-weight='600'>
