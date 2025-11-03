@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
   "name": "9b097549a60ba5037c9f",
-  "displayName": "1TooltipRosca",
+  "displayName": "TooltipRosca",
   "displayOption": "ActualSize",
   "height": 240,
   "width": 320,
@@ -55,7 +55,7 @@
               "scaling": {
                 "expr": {
                   "Literal": {
-                    "Value": "'Normal'"
+                    "Value": "'Fit'"
                   }
                 }
               }

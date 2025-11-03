@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "5af1ac236a50778d539f",
+  "name": "63c6b6b7581eb9649551",
   "position": {
-    "x": 939.090909090909,
-    "y": 70.9090909090909,
-    "z": 1000,
+    "x": 229,
+    "y": 15,
+    "z": 5,
     "height": 40,
-    "width": 260.90909090909088,
-    "tabOrder": 9000
+    "width": 471,
+    "tabOrder": 5
   },
   "visual": {
     "visualType": "actionButton",
@@ -69,7 +69,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Desempenho por Cidade'"
+                  "Value": "'Acompanhamento Analítico'"
                 }
               }
             },
@@ -83,14 +83,14 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'''Segoe UI Bold'', wf_segoe-ui_bold, helvetica, arial, sans-serif'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "22D"
                 }
               }
             },

@@ -1,13 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "5af1ac236a50778d539f",
+  "name": "e7f68ab5f3f700d397ff",
   "position": {
-    "x": 939.090909090909,
-    "y": 70.9090909090909,
-    "z": 1000,
+    "x": 76,
+    "y": 16,
+    "z": 0,
     "height": 40,
-    "width": 260.90909090909088,
-    "tabOrder": 9000
+    "width": 261
   },
   "visual": {
     "visualType": "actionButton",
@@ -76,7 +75,7 @@
             "horizontalAlignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'left'"
+                  "Value": "'center'"
                 }
               }
             },
@@ -98,6 +97,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "verticalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'middle'"
                 }
               }
             }

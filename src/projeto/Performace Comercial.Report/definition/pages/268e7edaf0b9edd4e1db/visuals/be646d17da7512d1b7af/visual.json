@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "2c7a6bfd7725cb1974bc",
+  "name": "be646d17da7512d1b7af",
   "position": {
-    "x": 926.36363636363626,
-    "y": 110.90909090909091,
-    "z": 11000,
-    "height": 530.90909090909088,
-    "width": 330,
-    "tabOrder": 7000
+    "x": 18,
+    "y": 56,
+    "z": 1000,
+    "height": 376,
+    "width": 398,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "tableEx",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dClientes"
+                      "Entity": "dVendedores"
                     }
                   },
-                  "Property": "Cidade"
+                  "Property": "Vendedor"
                 }
               },
-              "queryRef": "dClientes.Cidade",
-              "nativeQueryRef": "Cidade"
+              "queryRef": "dVendedores.Vendedor",
+              "nativeQueryRef": "Vendedor"
             },
             {
               "field": {
@@ -70,30 +70,16 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Margem"
+                "Property": "Faturamento"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
     },
     "objects": {
       "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "112.37857856291316D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "dClientes.Cidade"
-          }
-        },
         {
           "properties": {
             "value": {
@@ -113,13 +99,27 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "68.27272991888051D"
+                  "Value": "112.10152369319958D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "_Medidas.Margem"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dVendedores.Vendedor"
           }
         }
       ],
@@ -209,20 +209,6 @@
         }
       ],
       "columnFormatting": [
-        {
-          "properties": {
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "dClientes.Cidade"
-          }
-        },
         {
           "properties": {
             "styleHeader": {
@@ -405,6 +391,19 @@
             "metadata": "_Medidas.Margem"
           }
         }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -427,7 +426,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -454,6 +453,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "isHidden": true
+  }
 }

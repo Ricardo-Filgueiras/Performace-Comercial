@@ -1,13 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "221e49c23695349eb313",
+  "name": "956d3692f299035da679",
   "position": {
     "x": 12.2222222222222,
-    "y": 514.44444444444457,
-    "z": 8000,
+    "y": 312.22222222222229,
+    "z": 1,
     "height": 83.333333333333329,
-    "width": 181.11111111111111,
-    "tabOrder": 2000
+    "width": 181.11111111111111
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dPagamento"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "Forma de Pagamento"
+                  "Property": "Mes Abreviado"
                 }
               },
-              "queryRef": "dPagamento.Forma de Pagamento",
-              "nativeQueryRef": "Forma de Pagamento",
+              "queryRef": "dCalendario.Mes Abreviado",
+              "nativeQueryRef": "Mes Abreviado",
               "active": true
             }
           ]
@@ -67,8 +66,43 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "syncGroup": {
-      "groupName": "Forma de Pagamento",
+      "groupName": "Mes Abreviado",
       "fieldChanges": true,
       "filterChanges": true
     },
@@ -77,7 +111,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "ba1c7de0d44f5987dc0a",
+        "name": "40fc3f54b6e5c97d43c0",
         "field": {
           "Measure": {
             "Expression": {

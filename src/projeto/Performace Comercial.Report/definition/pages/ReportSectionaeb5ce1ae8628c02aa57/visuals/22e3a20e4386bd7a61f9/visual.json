@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "221e49c23695349eb313",
+  "name": "22e3a20e4386bd7a61f9",
   "position": {
     "x": 12.2222222222222,
-    "y": 514.44444444444457,
-    "z": 8000,
+    "y": 413.33333333333343,
+    "z": 4,
     "height": 83.333333333333329,
     "width": 181.11111111111111,
-    "tabOrder": 2000
+    "tabOrder": 3
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dPagamento"
+                      "Entity": "dVendedores"
                     }
                   },
-                  "Property": "Forma de Pagamento"
+                  "Property": "Vendedor"
                 }
               },
-              "queryRef": "dPagamento.Forma de Pagamento",
-              "nativeQueryRef": "Forma de Pagamento",
+              "queryRef": "dVendedores.Vendedor",
+              "nativeQueryRef": "Vendedor",
               "active": true
             }
           ]
@@ -68,7 +68,7 @@
       ]
     },
     "syncGroup": {
-      "groupName": "Forma de Pagamento",
+      "groupName": "Vendedor",
       "fieldChanges": true,
       "filterChanges": true
     },
@@ -77,7 +77,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "ba1c7de0d44f5987dc0a",
+        "name": "c305661198a8cb24aaf8",
         "field": {
           "Measure": {
             "Expression": {

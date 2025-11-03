@@ -7,7 +7,7 @@
     "z": 7000,
     "height": 83.333333333333329,
     "width": 181.11111111111111,
-    "tabOrder": 2000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -66,6 +66,11 @@
           "properties": {}
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "Unidade",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   },

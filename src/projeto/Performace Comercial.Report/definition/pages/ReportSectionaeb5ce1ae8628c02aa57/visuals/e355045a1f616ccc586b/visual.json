@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "221e49c23695349eb313",
+  "name": "e355045a1f616ccc586b",
   "position": {
     "x": 12.2222222222222,
-    "y": 514.44444444444457,
-    "z": 8000,
+    "y": 211.11111111111111,
+    "z": 0,
     "height": 83.333333333333329,
     "width": 181.11111111111111,
-    "tabOrder": 2000
+    "tabOrder": 4
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dPagamento"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "Forma de Pagamento"
+                  "Property": "Ano"
                 }
               },
-              "queryRef": "dPagamento.Forma de Pagamento",
-              "nativeQueryRef": "Forma de Pagamento",
+              "queryRef": "dCalendario.Ano",
+              "nativeQueryRef": "Ano",
               "active": true
             }
           ]
@@ -63,12 +63,54 @@
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "dCalendario",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "Ano"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "2019L"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ]
     },
     "syncGroup": {
-      "groupName": "Forma de Pagamento",
+      "groupName": "Ano",
       "fieldChanges": true,
       "filterChanges": true
     },
@@ -77,7 +119,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "ba1c7de0d44f5987dc0a",
+        "name": "1ee522bae1e51c539c2c",
         "field": {
           "Measure": {
             "Expression": {
