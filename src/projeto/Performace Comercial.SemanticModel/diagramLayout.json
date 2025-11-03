@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 487.28258887319339,
         "y": 0
       },
       "nodes": [
@@ -127,6 +127,19 @@
             "width": 234
           },
           "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1959.3743437868202,
+            "y": 442.35524558164605
+          },
+          "nodeIndex": "zMetricas",
+          "nodeLineageTag": "cec9ca05-4ec4-4837-89ce-0575cab4e99e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas as tabelas",

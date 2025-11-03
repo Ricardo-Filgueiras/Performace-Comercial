@@ -18,7 +18,7 @@ queryGroup Auxiliares
 
 	annotation PBI_QueryGroupOrder = 2
 
-annotation PBI_QueryOrder = ["fVendas","dPagamento","dCidades","dClientes","dProdutos","dStatus","dUnidades","dVendedores","fMetas","dCalendario","Caminho_Extracao","Caminho_Dimensoes","Caminho_Meta","_Medidas"]
+annotation PBI_QueryOrder = ["fVendas","dPagamento","dCidades","dClientes","dProdutos","dStatus","dUnidades","dVendedores","fMetas","dCalendario","Caminho_Extracao","Caminho_Dimensoes","Caminho_Meta","_Medidas","zMetricas"]
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
@@ -36,6 +36,7 @@ ref table dVendedores
 ref table fMetas
 ref table dCalendario
 ref table _Medidas
+ref table zMetricas
 
 ref cultureInfo pt-BR
 

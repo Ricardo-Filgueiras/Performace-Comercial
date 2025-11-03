@@ -7,7 +7,7 @@
     "z": 0,
     "height": 131.32947976878611,
     "width": 671.44508670520224,
-    "tabOrder": 6000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -504,51 +504,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a2cdfc48580928ddc750",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Faturamento"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "213be73da69fc9e12e8d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Resultado"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "6fe9f48582a42c398f58",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Margem"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

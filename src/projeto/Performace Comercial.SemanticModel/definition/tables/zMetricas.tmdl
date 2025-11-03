@@ -1,0 +1,121 @@
+table zMetricas
+	lineageTag: cec9ca05-4ec4-4837-89ce-0575cab4e99e
+
+	measure 'Context Medida z' = ```
+			
+			
+			VAR _contexto = SELECTEDVALUE( zMetricas[Metrica] )
+			
+			VAR _selecao = 
+			SWITCH(
+			    TRUE(),
+			    _contexto = "Atual", [Faturamento] ,
+			    _contexto = "Anterior", [Faturamento LY],
+			    BLANK()
+			
+			)
+			
+			RETURN
+			    _selecao
+			```
+		lineageTag: 6ddeb8b1-ebe8-49cb-abf5-df7800c34437
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Linha Anterior' =
+			
+			
+			[Faturamento LY]
+		lineageTag: 890aa2b0-332c-41d5-8e64-75eb435db791
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Linha Atual' =
+			
+			VAR _selecao = SELECTEDVALUE( zMetricas[Metrica] )
+			
+			RETURN
+			    IF(  _selecao in {"Atual", ""} , [Faturamento] )
+		lineageTag: 4aeb6b31-a2ff-4327-859e-4494edc24804
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Seta para Cima' = ```
+			
+			VAR _context = SELECTEDVALUE( zMetricas[Metrica] )
+			VAR _atual = [Faturamento]
+			VAR _anterio = [Faturamento LY] 
+			
+			RETURN
+			    IF(
+			        _context = ""
+			        && _atual >= _anterio,
+			        _atual 
+			    )
+			```
+		lineageTag: 68376de0-7938-4f5f-948f-8cd017739b5c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Seta para baixo  ( limit sup )' = ```
+			
+			VAR _context = SELECTEDVALUE( zMetricas[Metrica] )
+			VAR _atual = [Faturamento]
+			VAR _anterio = [Faturamento LY] 
+			
+			RETURN
+			    IF(
+			        _context = ""
+			        && _atual < _anterio,
+			        _anterio 
+			    )
+			```
+		formatString: 0
+		lineageTag: f730d612-e8d7-4a11-aca5-ec01757e23ce
+
+	measure 'Seta para baixo  ( limit Inferior )' = ```
+			
+			VAR _context = SELECTEDVALUE( zMetricas[Metrica] )
+			VAR _atual = [Faturamento]
+			VAR _anterio = [Faturamento LY] 
+			
+			RETURN
+			    IF(
+			        _context = ""
+			        && _atual < _anterio,
+			        _atual 
+			    )
+			```
+		lineageTag: 4fb11e9e-8b45-4673-a51a-abd3e673e51c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Metrica
+		dataType: string
+		lineageTag: 2fe6b1d4-214d-49c8-a0f8-8b0c9890db3e
+		summarizeBy: none
+		sourceColumn: Metrica
+		sortByColumn: Ordem
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordem
+		dataType: string
+		lineageTag: ca7c53cc-1d89-4d1a-b831-645cff9b1ddb
+		summarizeBy: none
+		sourceColumn: Ordem
+
+		annotation SummarizationSetBy = Automatic
+
+	partition zMetricas = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcswrSS3KzC9S0lEyVIrVAQqUlCbmAHlGYB6QYawUGwsA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Metrica = _t, Ordem = _t])
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Table
+
