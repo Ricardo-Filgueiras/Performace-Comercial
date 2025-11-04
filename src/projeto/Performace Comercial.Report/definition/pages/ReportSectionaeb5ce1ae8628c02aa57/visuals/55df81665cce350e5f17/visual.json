@@ -1,33 +1,84 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "be646d17da7512d1b7af",
+  "name": "55df81665cce350e5f17",
   "position": {
-    "x": 18,
-    "y": 56,
-    "z": 1000,
-    "height": 376,
-    "width": 398
+    "x": 235.21197007481297,
+    "y": 69.127182044887775,
+    "z": 6000,
+    "height": 623.04239401496261,
+    "width": 1016.2593516209475,
+    "tabOrder": 5000
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Values": {
+        "Rows": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dVendedores"
+                      "Entity": "dClientes"
                     }
                   },
-                  "Property": "Vendedor"
+                  "Property": "Estado"
                 }
               },
-              "queryRef": "dVendedores.Vendedor",
-              "nativeQueryRef": "Vendedor"
+              "queryRef": "dClientes.Estado",
+              "nativeQueryRef": "Estado",
+              "active": true
             },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dClientes"
+                    }
+                  },
+                  "Property": "Cidade"
+                }
+              },
+              "queryRef": "dClientes.Cidade",
+              "nativeQueryRef": "Cidade",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dUnidades"
+                    }
+                  },
+                  "Property": "Unidade"
+                }
+              },
+              "queryRef": "dUnidades.Unidade",
+              "nativeQueryRef": "Unidade",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dProdutos"
+                    }
+                  },
+                  "Property": "Subcategoria"
+                }
+              },
+              "queryRef": "dProdutos.Subcategoria",
+              "nativeQueryRef": "Subcategoria",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -41,6 +92,34 @@
               },
               "queryRef": "_Medidas.Faturamento",
               "nativeQueryRef": "Faturamento"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Abatimento"
+                }
+              },
+              "queryRef": "_Medidas.Abatimento",
+              "nativeQueryRef": "Abatimento"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Resultado"
+                }
+              },
+              "queryRef": "_Medidas.Resultado",
+              "nativeQueryRef": "Resultado"
             },
             {
               "field": {
@@ -64,12 +143,39 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Porcentagem Meta"
+                  "Property": "Qtde Vendas"
                 }
               },
-              "queryRef": "_Medidas.Porcentagem Meta",
-              "nativeQueryRef": "Meta %",
-              "displayName": "Meta %"
+              "queryRef": "_Medidas.Qtde Vendas",
+              "nativeQueryRef": "Qtde Vendas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Positivação Produtos"
+                }
+              },
+              "queryRef": "_Medidas.Positivação Produtos",
+              "nativeQueryRef": "Positivação Produtos"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Positivação Clientes"
+                }
+              },
+              "queryRef": "_Medidas.Positivação Clientes",
+              "nativeQueryRef": "Positivação Clientes"
             }
           ]
         }
@@ -84,7 +190,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Faturamento"
+                "Property": "Margem"
               }
             },
             "direction": "Descending"
@@ -92,6 +198,91 @@
         ]
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "dClientes.Estado"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dClientes"
+                    }
+                  },
+                  "Property": "Estado"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "dClientes.Cidade"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dClientes"
+                    }
+                  },
+                  "Property": "Cidade"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "dUnidades.Unidade"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "dProdutos.Subcategoria"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Rio de Janeiro'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Petrópolis'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
     "objects": {
       "columnWidth": [
         {
@@ -99,7 +290,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "102.88960366876762D"
+                  "Value": "136.3057595979958D"
                 }
               }
             }
@@ -113,7 +304,35 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "85.1241052376657D"
+                  "Value": "139.08175928167975D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Abatimento"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103.33474853302852D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Resultado"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "72.72655953846542D"
                 }
               }
             }
@@ -127,13 +346,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "78D"
+                  "Value": "101.3347349228827D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "dVendedores.Vendedor"
+            "metadata": "_Medidas.Qtde Vendas"
           }
         },
         {
@@ -141,13 +360,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "107D"
+                  "Value": "142.9224789771603D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_Medidas.Porcentagem Meta"
+            "metadata": "_Medidas.Positivação Produtos"
           }
         }
       ],
@@ -202,7 +421,7 @@
               "layout": {
                 "expr": {
                   "Literal": {
-                    "Value": "'After'"
+                    "Value": "'Before'"
                   }
                 }
               },
@@ -228,7 +447,7 @@
                                     "Entity": "_Medidas"
                                   }
                                 },
-                                "Property": "Porcentagem Meta"
+                                "Property": "Margem"
                               }
                             },
                             "Right": {
@@ -246,7 +465,7 @@
                                                     "Entity": "_Medidas"
                                                   }
                                                 },
-                                                "Property": "Porcentagem Meta"
+                                                "Property": "Margem"
                                               }
                                             },
                                             "Scope": [
@@ -275,7 +494,7 @@
                                                     "Entity": "_Medidas"
                                                   }
                                                 },
-                                                "Property": "Porcentagem Meta"
+                                                "Property": "Margem"
                                               }
                                             },
                                             "Scope": [
@@ -298,7 +517,7 @@
                         },
                         "Value": {
                           "Literal": {
-                            "Value": "'TriangleHigh'"
+                            "Value": "'CircleHigh'"
                           }
                         }
                       },
@@ -315,7 +534,7 @@
                                         "Entity": "_Medidas"
                                       }
                                     },
-                                    "Property": "Porcentagem Meta"
+                                    "Property": "Margem"
                                   }
                                 },
                                 "Right": {
@@ -333,7 +552,7 @@
                                                         "Entity": "_Medidas"
                                                       }
                                                     },
-                                                    "Property": "Porcentagem Meta"
+                                                    "Property": "Margem"
                                                   }
                                                 },
                                                 "Scope": [
@@ -362,7 +581,7 @@
                                                         "Entity": "_Medidas"
                                                       }
                                                     },
-                                                    "Property": "Porcentagem Meta"
+                                                    "Property": "Margem"
                                                   }
                                                 },
                                                 "Scope": [
@@ -393,7 +612,7 @@
                                         "Entity": "_Medidas"
                                       }
                                     },
-                                    "Property": "Porcentagem Meta"
+                                    "Property": "Margem"
                                   }
                                 },
                                 "Right": {
@@ -411,7 +630,7 @@
                                                         "Entity": "_Medidas"
                                                       }
                                                     },
-                                                    "Property": "Porcentagem Meta"
+                                                    "Property": "Margem"
                                                   }
                                                 },
                                                 "Scope": [
@@ -440,7 +659,7 @@
                                                         "Entity": "_Medidas"
                                                       }
                                                     },
-                                                    "Property": "Porcentagem Meta"
+                                                    "Property": "Margem"
                                                   }
                                                 },
                                                 "Scope": [
@@ -465,7 +684,7 @@
                         },
                         "Value": {
                           "Literal": {
-                            "Value": "'TriangleMedium'"
+                            "Value": "'SignMedium'"
                           }
                         }
                       },
@@ -480,7 +699,7 @@
                                     "Entity": "_Medidas"
                                   }
                                 },
-                                "Property": "Porcentagem Meta"
+                                "Property": "Margem"
                               }
                             },
                             "Right": {
@@ -498,7 +717,7 @@
                                                     "Entity": "_Medidas"
                                                   }
                                                 },
-                                                "Property": "Porcentagem Meta"
+                                                "Property": "Margem"
                                               }
                                             },
                                             "Scope": [
@@ -527,7 +746,7 @@
                                                     "Entity": "_Medidas"
                                                   }
                                                 },
-                                                "Property": "Porcentagem Meta"
+                                                "Property": "Margem"
                                               }
                                             },
                                             "Scope": [
@@ -550,7 +769,7 @@
                         },
                         "Value": {
                           "Literal": {
-                            "Value": "'TriangleLow'"
+                            "Value": "'SignLow'"
                           }
                         }
                       }
@@ -568,7 +787,7 @@
                 }
               }
             ],
-            "metadata": "_Medidas.Porcentagem Meta"
+            "metadata": "_Medidas.Margem"
           }
         }
       ],
@@ -713,34 +932,13 @@
         },
         {
           "properties": {
-            "styleTotal": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            },
             "dataBars": {
               "positiveColor": {
                 "solid": {
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'#b16c0c'"
+                        "Value": "'#EC9010'"
                       }
                     }
                   }
@@ -751,7 +949,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'#E87979'"
+                        "Value": "'minColor'"
                       }
                     }
                   }
@@ -762,7 +960,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'#101B28'"
+                        "Value": "'#EC9010'"
                       }
                     }
                   }
@@ -792,21 +990,76 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Margem"
+            "metadata": "_Medidas.Abatimento"
+          }
+        },
+        {
+          "properties": {
+            "dataBars": {
+              "positiveColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'maxColor'"
+                      }
+                    }
+                  }
+                }
+              },
+              "negativeColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'minColor'"
+                      }
+                    }
+                  }
+                }
+              },
+              "axisColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'foreground'"
+                      }
+                    }
+                  }
+                }
+              },
+              "reverseDirection": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "hideText": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "totalMatchingOption": {
+                "expr": {
+                  "Literal": {
+                    "Value": "1L"
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Resultado"
           }
         }
       ],
       "total": [
         {
-          "properties": {
-            "totals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
+          "properties": {}
         }
       ]
     },

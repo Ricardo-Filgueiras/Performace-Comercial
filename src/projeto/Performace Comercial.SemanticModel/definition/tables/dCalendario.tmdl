@@ -106,6 +106,33 @@ table dCalendario
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Semana dia Num' = WEEKDAY( dCalendario[Id Data])
+		formatString: 0
+		lineageTag: dc95cf25-8f45-4137-a0e7-b76b24d6724c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Semana dia Nome' =
+			
+			SWITCH(
+			    dCalendario[Semana dia Num],
+			    1 , "Dom",
+			    2 , "Seg",
+			    3 , "Ter",
+			    4 , "Qua",
+			    5 , "Qui",
+			    6 , "Sex",
+			    7 , "Sab"
+			)
+		lineageTag: 9e1d1eb4-4ca3-4f77-aba7-365bc81b39fd
+		summarizeBy: none
+		sortByColumn: 'Semana dia Num'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
 	hierarchy Data
 		lineageTag: 438339a9-4afa-4472-8426-f68cd1439e07
 

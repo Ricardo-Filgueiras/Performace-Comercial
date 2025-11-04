@@ -2818,6 +2818,16 @@ cultureInfo pt-BR
 			            "State": "Generated",
 			            "Weight": 0.78
 			          }
+			        },
+			        {
+			          "­": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -2956,6 +2966,16 @@ cultureInfo pt-BR
 			          "faturamento": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Atual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -3083,6 +3103,16 @@ cultureInfo pt-BR
 			        {
 			          "faturamento LY": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Anterior": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -3239,6 +3269,16 @@ cultureInfo pt-BR
 			        {
 			          "faturamento acumulado": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Atual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -3506,6 +3546,16 @@ cultureInfo pt-BR
 			          "porcentagem meta": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Meta %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -3654,9 +3704,1517 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
+			    },
+			    "z_metrica": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "zMetricas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "z metrica": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "zMetricas": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "z_metrica.metrica": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "zMetricas",
+			          "ConceptualProperty": "Metrica"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "metrica": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "z_metrica.ordem": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "zMetricas",
+			          "ConceptualProperty": "Ordem"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ordem": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "z_metrica.context_medida_z": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "zMetricas",
+			          "ConceptualProperty": "Context Medida z"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "context medida z": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "z_metrica.linha_anterior": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "zMetricas",
+			          "ConceptualProperty": "Linha Anterior"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "linha anterior": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "z_metrica.linha_atual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "zMetricas",
+			          "ConceptualProperty": "Linha Atual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "linha atual": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "z_metrica.seta_para_cima": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "zMetricas",
+			          "ConceptualProperty": "Seta para Cima"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "seta para cima": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "z_metrica.seta_para_baixo___limit_sup_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "zMetricas",
+			          "ConceptualProperty": "Seta para baixo  ( limit sup )"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "seta para baixo  ( limit sup )": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "seta para baixo": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "seta para baixo ( limit sup )": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "z_metrica.seta_para_baixo___limit_inferior_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "zMetricas",
+			          "ConceptualProperty": "Seta para baixo  ( limit Inferior )"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "seta para baixo  ( limit inferior )": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "seta para baixo": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "seta para baixo ( limit inferior )": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.faturamento_acumulado_LY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Faturamento Acumulado LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "faturamento acumulado LY": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Anterior": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.semana_dia_num": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dCalendario",
+			          "ConceptualProperty": "Semana dia Num"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "semana dia num": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "semana dia number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.semana_dia_nome": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dCalendario",
+			          "ConceptualProperty": "Semana dia Nome"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "semana dia nome": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "d_calendario_data_has_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "dCalendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario.data": {
+			          "Target": {
+			            "Entity": "d_calendario.data"
+			          }
+			        },
+			        "d_calendario.data.ano": {
+			          "Target": {
+			            "Entity": "d_calendario.data.ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario.data"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.data.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_have_anos"
+			        }
+			      ]
+			    },
+			    "f_meta_has_d_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "fMetas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_meta": {
+			          "Target": {
+			            "Entity": "f_meta"
+			          }
+			        },
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          },
+			          "Nouns": [
+			            {
+			              "data": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_meta"
+			            },
+			            "Object": {
+			              "Role": "d_calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_meta_have_d_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "f_meta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_f_meta"
+			        }
+			      ]
+			    },
+			    "f_meta_has_d_vendedore": {
+			      "Binding": {
+			        "ConceptualEntity": "fMetas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_meta": {
+			          "Target": {
+			            "Entity": "f_meta"
+			          }
+			        },
+			        "d_vendedore": {
+			          "Target": {
+			            "Entity": "d_vendedore"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_meta"
+			            },
+			            "Object": {
+			              "Role": "d_vendedore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_meta_have_d_vendedores"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_vendedore"
+			            },
+			            "Object": {
+			              "Role": "f_meta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_vendedores_have_f_meta"
+			        }
+			      ]
+			    },
+			    "f_venda_has_d_pagamento": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "d_pagamento": {
+			          "Target": {
+			            "Entity": "d_pagamento"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "d_pagamento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_d_pagamentos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_pagamento"
+			            },
+			            "Object": {
+			              "Role": "f_venda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_pagamentos_have_f_venda"
+			        }
+			      ]
+			    },
+			    "f_venda_has_d_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "d_calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_d_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "f_venda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_f_venda"
+			        }
+			      ]
+			    },
+			    "f_venda_has_d_vendedore": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "d_vendedore": {
+			          "Target": {
+			            "Entity": "d_vendedore"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "d_vendedore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_d_vendedores"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_vendedore"
+			            },
+			            "Object": {
+			              "Role": "f_venda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_vendedores_have_f_venda"
+			        }
+			      ]
+			    },
+			    "f_venda_has_d_produto": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "d_produto": {
+			          "Target": {
+			            "Entity": "d_produto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "d_produto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_d_produtos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_produto"
+			            },
+			            "Object": {
+			              "Role": "f_venda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_produtos_have_f_venda"
+			        }
+			      ]
+			    },
+			    "f_venda_has_d_status": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "d_status": {
+			          "Target": {
+			            "Entity": "d_status"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "d_status"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_d_statuses"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_status"
+			            },
+			            "Object": {
+			              "Role": "f_venda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_statuses_have_f_venda"
+			        }
+			      ]
+			    },
+			    "f_venda_has_d_unidade": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "d_unidade": {
+			          "Target": {
+			            "Entity": "d_unidade"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "d_unidade"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_d_unidades"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_unidade"
+			            },
+			            "Object": {
+			              "Role": "f_venda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_unidades_have_f_venda"
+			        }
+			      ]
+			    },
+			    "f_venda_has_d_cliente": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "d_cliente": {
+			          "Target": {
+			            "Entity": "d_cliente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "d_cliente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_d_clientes"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_cliente"
+			            },
+			            "Object": {
+			              "Role": "f_venda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_clientes_have_f_venda"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_semana_dia_nome": {
+			      "Binding": {
+			        "ConceptualEntity": "dCalendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.semana_dia_nome": {
+			          "Target": {
+			            "Entity": "d_calendario.semana_dia_nome"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.semana_dia_nome"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_semana_dia_nome"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_semana_dia_num": {
+			      "Binding": {
+			        "ConceptualEntity": "dCalendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.semana_dia_num": {
+			          "Target": {
+			            "Entity": "d_calendario.semana_dia_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.semana_dia_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_semana_dia_nums"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_faturamento_acumulado_LY": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.faturamento_acumulado_LY": {
+			          "Target": {
+			            "Entity": "entity__medida.faturamento_acumulado_LY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.faturamento_acumulado_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_faturamento_acumulado_LY"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Adjectives": [
+			              {
+			                "Anterior": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "entity__medida.faturamento_acumulado_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "faturamento_acumulado_LY_indicates_how_Anterior_f_venda_are"
+			        }
+			      ]
+			    },
+			    "z_metrica_has_seta_para_baixo___limit_inferior_": {
+			      "Binding": {
+			        "ConceptualEntity": "zMetricas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "z_metrica": {
+			          "Target": {
+			            "Entity": "z_metrica"
+			          }
+			        },
+			        "z_metrica.seta_para_baixo___limit_inferior_": {
+			          "Target": {
+			            "Entity": "z_metrica.seta_para_baixo___limit_inferior_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "z_metrica"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.seta_para_baixo___limit_inferior_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "z_metricas_have_seta_para_baixo___limit_inferior_"
+			        }
+			      ]
+			    },
+			    "f_venda_has_z_metrica_seta_para_baixo___limit_inferior_": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "z_metrica.seta_para_baixo___limit_inferior_": {
+			          "Target": {
+			            "Entity": "z_metrica.seta_para_baixo___limit_inferior_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.seta_para_baixo___limit_inferior_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_seta_para_baixo___limit_inferior_"
+			        }
+			      ]
+			    },
+			    "z_metrica_has_seta_para_baixo___limit_sup_": {
+			      "Binding": {
+			        "ConceptualEntity": "zMetricas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "z_metrica": {
+			          "Target": {
+			            "Entity": "z_metrica"
+			          }
+			        },
+			        "z_metrica.seta_para_baixo___limit_sup_": {
+			          "Target": {
+			            "Entity": "z_metrica.seta_para_baixo___limit_sup_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "z_metrica"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.seta_para_baixo___limit_sup_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "z_metricas_have_seta_para_baixo___limit_sup_"
+			        }
+			      ]
+			    },
+			    "f_venda_has_z_metrica_seta_para_baixo___limit_sup_": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "z_metrica.seta_para_baixo___limit_sup_": {
+			          "Target": {
+			            "Entity": "z_metrica.seta_para_baixo___limit_sup_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.seta_para_baixo___limit_sup_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_seta_para_baixo___limit_sup_"
+			        }
+			      ]
+			    },
+			    "z_metrica_has_seta_para_cima": {
+			      "Binding": {
+			        "ConceptualEntity": "zMetricas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "z_metrica": {
+			          "Target": {
+			            "Entity": "z_metrica"
+			          }
+			        },
+			        "z_metrica.seta_para_cima": {
+			          "Target": {
+			            "Entity": "z_metrica.seta_para_cima"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "z_metrica"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.seta_para_cima"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "z_metricas_have_seta_para_cima"
+			        }
+			      ]
+			    },
+			    "f_venda_has_z_metrica_seta_para_cima": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "z_metrica.seta_para_cima": {
+			          "Target": {
+			            "Entity": "z_metrica.seta_para_cima"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.seta_para_cima"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_seta_para_cima"
+			        }
+			      ]
+			    },
+			    "z_metrica_has_linha_atual": {
+			      "Binding": {
+			        "ConceptualEntity": "zMetricas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "z_metrica": {
+			          "Target": {
+			            "Entity": "z_metrica"
+			          }
+			        },
+			        "z_metrica.linha_atual": {
+			          "Target": {
+			            "Entity": "z_metrica.linha_atual"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "z_metrica"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.linha_atual"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "z_metricas_have_linha_atual"
+			        }
+			      ]
+			    },
+			    "f_venda_has_z_metrica_linha_anterior": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "z_metrica.linha_anterior": {
+			          "Target": {
+			            "Entity": "z_metrica.linha_anterior"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.linha_anterior"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_linha_anterior"
+			        }
+			      ]
+			    },
+			    "z_metrica_has_context_medida_z": {
+			      "Binding": {
+			        "ConceptualEntity": "zMetricas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "z_metrica": {
+			          "Target": {
+			            "Entity": "z_metrica"
+			          }
+			        },
+			        "z_metrica.context_medida_z": {
+			          "Target": {
+			            "Entity": "z_metrica.context_medida_z"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "z_metrica"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.context_medida_z"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "z_metricas_have_context_medida_z"
+			        }
+			      ]
+			    },
+			    "f_venda_has_z_metrica_context_medida_z": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "z_metrica.context_medida_z": {
+			          "Target": {
+			            "Entity": "z_metrica.context_medida_z"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.context_medida_z"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_context_medida_z"
+			        }
+			      ]
+			    },
+			    "z_metrica_has_ordem": {
+			      "Binding": {
+			        "ConceptualEntity": "zMetricas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "z_metrica": {
+			          "Target": {
+			            "Entity": "z_metrica"
+			          }
+			        },
+			        "z_metrica.ordem": {
+			          "Target": {
+			            "Entity": "z_metrica.ordem"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "z_metrica"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.ordem"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "z_metricas_have_ordems"
+			        }
+			      ]
+			    },
+			    "z_metrica_has_metrica": {
+			      "Binding": {
+			        "ConceptualEntity": "zMetricas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "z_metrica": {
+			          "Target": {
+			            "Entity": "z_metrica"
+			          }
+			        },
+			        "z_metrica.metrica": {
+			          "Target": {
+			            "Entity": "z_metrica.metrica"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "z_metrica"
+			            },
+			            "Object": {
+			              "Role": "z_metrica.metrica"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "z_metricas_have_metricas"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_rank_cidade": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.rank_cidade": {
+			          "Target": {
+			            "Entity": "entity__medida.rank_cidade"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.rank_cidade"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_rank_cidade"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_tabela_hml_contente_lite_v1": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.tabela_hml_contente_lite_v1": {
+			          "Target": {
+			            "Entity": "entity__medida.tabela_hml_contente_lite_v1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.tabela_hml_contente_lite_v1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_tabela_hml_contente_lite_v1"
+			        }
+			      ]
+			    },
+			    "d_cliente_has_entity__medida_tabela_hml_contente_lite_v1": {
+			      "Binding": {
+			        "ConceptualEntity": "dClientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_cliente": {
+			          "Target": {
+			            "Entity": "d_cliente"
+			          }
+			        },
+			        "entity__medida.tabela_hml_contente_lite_v1": {
+			          "Target": {
+			            "Entity": "entity__medida.tabela_hml_contente_lite_v1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_cliente"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.tabela_hml_contente_lite_v1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_clientes_have_tabela_hml_contente_lite_v1"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_cartao__resultado_svg_v1": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.cartao__resultado_svg_v1": {
+			          "Target": {
+			            "Entity": "entity__medida.cartao__resultado_svg_v1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.cartao__resultado_svg_v1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_cartao__resultado_svg_v1"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_cartao__margem_svg_v1": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.cartao__margem_svg_v1": {
+			          "Target": {
+			            "Entity": "entity__medida.cartao__margem_svg_v1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.cartao__margem_svg_v1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_cartao__margem_svg_v1"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_cartao__faturamento_svg_v1": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.cartao__faturamento_svg_v1": {
+			          "Target": {
+			            "Entity": "entity__medida.cartao__faturamento_svg_v1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.cartao__faturamento_svg_v1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_cartao__faturamento_svg_v1"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_faturamento__formatação_de_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.faturamento__formatação_de_texto": {
+			          "Target": {
+			            "Entity": "entity__medida.faturamento__formatação_de_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.faturamento__formatação_de_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_faturamento__formatação_de_texto"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_eixo_y_max_grafico_comercial": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.eixo_y_max_grafico_comercial": {
+			          "Target": {
+			            "Entity": "entity__medida.eixo_y_max_grafico_comercial"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.eixo_y_max_grafico_comercial"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_eixo_y_max_grafico_comercial"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_entity__medida_eixo_y_max_grafico_comercial": {
+			      "Binding": {
+			        "ConceptualEntity": "dCalendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "entity__medida.eixo_y_max_grafico_comercial": {
+			          "Target": {
+			            "Entity": "entity__medida.eixo_y_max_grafico_comercial"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.eixo_y_max_grafico_comercial"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_eixo_y_max_grafico_comercial"
+			        }
+			      ]
+			    },
 			    "f_venda_has_entity__medida_porcentagem_meta": {
 			      "Binding": {
 			        "ConceptualEntity": "fVendas"
@@ -4248,6 +5806,26 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "f_venda_have_faturamento_LY"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Adjectives": [
+			              {
+			                "Anterior": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "entity__medida.faturamento_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "faturamento_LY_indicates_how_Anterior_f_venda_are"
 			        }
 			      ]
 			    },
@@ -6030,757 +7608,6 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "f_venda_have_data_pedidos"
-			        }
-			      ]
-			    },
-			    "d_calendario_has_entity__medida_eixo_y_max_grafico_comercial": {
-			      "Binding": {
-			        "ConceptualEntity": "dCalendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "d_calendario": {
-			          "Target": {
-			            "Entity": "d_calendario"
-			          }
-			        },
-			        "entity__medida.eixo_y_max_grafico_comercial": {
-			          "Target": {
-			            "Entity": "entity__medida.eixo_y_max_grafico_comercial"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendario"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.eixo_y_max_grafico_comercial"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_calendarios_have_eixo_y_max_grafico_comercial"
-			        }
-			      ]
-			    },
-			    "f_venda_has_entity__medida_eixo_y_max_grafico_comercial": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "entity__medida.eixo_y_max_grafico_comercial": {
-			          "Target": {
-			            "Entity": "entity__medida.eixo_y_max_grafico_comercial"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.eixo_y_max_grafico_comercial"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_eixo_y_max_grafico_comercial"
-			        }
-			      ]
-			    },
-			    "f_venda_has_entity__medida_faturamento__formatação_de_texto": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "entity__medida.faturamento__formatação_de_texto": {
-			          "Target": {
-			            "Entity": "entity__medida.faturamento__formatação_de_texto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.faturamento__formatação_de_texto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_faturamento__formatação_de_texto"
-			        }
-			      ]
-			    },
-			    "f_venda_has_entity__medida_cartao__faturamento_svg_v1": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "entity__medida.cartao__faturamento_svg_v1": {
-			          "Target": {
-			            "Entity": "entity__medida.cartao__faturamento_svg_v1"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.cartao__faturamento_svg_v1"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_cartao__faturamento_svg_v1"
-			        }
-			      ]
-			    },
-			    "f_venda_has_entity__medida_cartao__margem_svg_v1": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "entity__medida.cartao__margem_svg_v1": {
-			          "Target": {
-			            "Entity": "entity__medida.cartao__margem_svg_v1"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.cartao__margem_svg_v1"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_cartao__margem_svg_v1"
-			        }
-			      ]
-			    },
-			    "f_venda_has_entity__medida_cartao__resultado_svg_v1": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "entity__medida.cartao__resultado_svg_v1": {
-			          "Target": {
-			            "Entity": "entity__medida.cartao__resultado_svg_v1"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.cartao__resultado_svg_v1"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_cartao__resultado_svg_v1"
-			        }
-			      ]
-			    },
-			    "d_cliente_has_entity__medida_tabela_hml_contente_lite_v1": {
-			      "Binding": {
-			        "ConceptualEntity": "dClientes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "d_cliente": {
-			          "Target": {
-			            "Entity": "d_cliente"
-			          }
-			        },
-			        "entity__medida.tabela_hml_contente_lite_v1": {
-			          "Target": {
-			            "Entity": "entity__medida.tabela_hml_contente_lite_v1"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_cliente"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.tabela_hml_contente_lite_v1"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_clientes_have_tabela_hml_contente_lite_v1"
-			        }
-			      ]
-			    },
-			    "f_venda_has_entity__medida_tabela_hml_contente_lite_v1": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "entity__medida.tabela_hml_contente_lite_v1": {
-			          "Target": {
-			            "Entity": "entity__medida.tabela_hml_contente_lite_v1"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.tabela_hml_contente_lite_v1"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_tabela_hml_contente_lite_v1"
-			        }
-			      ]
-			    },
-			    "f_venda_has_entity__medida_rank_cidade": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "entity__medida.rank_cidade": {
-			          "Target": {
-			            "Entity": "entity__medida.rank_cidade"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.rank_cidade"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_rank_cidade"
-			        }
-			      ]
-			    },
-			    "f_venda_has_d_cliente": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "d_cliente": {
-			          "Target": {
-			            "Entity": "d_cliente"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "d_cliente"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_d_clientes"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_cliente"
-			            },
-			            "Object": {
-			              "Role": "f_venda"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_clientes_have_f_venda"
-			        }
-			      ]
-			    },
-			    "f_venda_has_d_unidade": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "d_unidade": {
-			          "Target": {
-			            "Entity": "d_unidade"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "d_unidade"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_d_unidades"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_unidade"
-			            },
-			            "Object": {
-			              "Role": "f_venda"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_unidades_have_f_venda"
-			        }
-			      ]
-			    },
-			    "f_venda_has_d_status": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "d_status": {
-			          "Target": {
-			            "Entity": "d_status"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "d_status"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_d_statuses"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_status"
-			            },
-			            "Object": {
-			              "Role": "f_venda"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_statuses_have_f_venda"
-			        }
-			      ]
-			    },
-			    "f_venda_has_d_produto": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "d_produto": {
-			          "Target": {
-			            "Entity": "d_produto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "d_produto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_d_produtos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_produto"
-			            },
-			            "Object": {
-			              "Role": "f_venda"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_produtos_have_f_venda"
-			        }
-			      ]
-			    },
-			    "f_venda_has_d_vendedore": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "d_vendedore": {
-			          "Target": {
-			            "Entity": "d_vendedore"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "d_vendedore"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_d_vendedores"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_vendedore"
-			            },
-			            "Object": {
-			              "Role": "f_venda"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_vendedores_have_f_venda"
-			        }
-			      ]
-			    },
-			    "f_venda_has_d_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "d_calendario": {
-			          "Target": {
-			            "Entity": "d_calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "d_calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_d_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendario"
-			            },
-			            "Object": {
-			              "Role": "f_venda"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_calendarios_have_f_venda"
-			        }
-			      ]
-			    },
-			    "f_venda_has_d_pagamento": {
-			      "Binding": {
-			        "ConceptualEntity": "fVendas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_venda": {
-			          "Target": {
-			            "Entity": "f_venda"
-			          }
-			        },
-			        "d_pagamento": {
-			          "Target": {
-			            "Entity": "d_pagamento"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_venda"
-			            },
-			            "Object": {
-			              "Role": "d_pagamento"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_venda_have_d_pagamentos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_pagamento"
-			            },
-			            "Object": {
-			              "Role": "f_venda"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_pagamentos_have_f_venda"
-			        }
-			      ]
-			    },
-			    "f_meta_has_d_vendedore": {
-			      "Binding": {
-			        "ConceptualEntity": "fMetas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_meta": {
-			          "Target": {
-			            "Entity": "f_meta"
-			          }
-			        },
-			        "d_vendedore": {
-			          "Target": {
-			            "Entity": "d_vendedore"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_meta"
-			            },
-			            "Object": {
-			              "Role": "d_vendedore"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_meta_have_d_vendedores"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_vendedore"
-			            },
-			            "Object": {
-			              "Role": "f_meta"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_vendedores_have_f_meta"
-			        }
-			      ]
-			    },
-			    "f_meta_has_d_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "fMetas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_meta": {
-			          "Target": {
-			            "Entity": "f_meta"
-			          }
-			        },
-			        "d_calendario": {
-			          "Target": {
-			            "Entity": "d_calendario"
-			          },
-			          "Nouns": [
-			            {
-			              "data": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_meta"
-			            },
-			            "Object": {
-			              "Role": "d_calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_meta_have_d_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendario"
-			            },
-			            "Object": {
-			              "Role": "f_meta"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_calendarios_have_f_meta"
-			        }
-			      ]
-			    },
-			    "d_calendario_data_has_ano": {
-			      "Binding": {
-			        "ConceptualEntity": "dCalendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "d_calendario.data": {
-			          "Target": {
-			            "Entity": "d_calendario.data"
-			          }
-			        },
-			        "d_calendario.data.ano": {
-			          "Target": {
-			            "Entity": "d_calendario.data.ano"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendario.data"
-			            },
-			            "Object": {
-			              "Role": "d_calendario.data.ano"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "data_have_anos"
 			        }
 			      ]
 			    },

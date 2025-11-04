@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "956d3692f299035da679",
+  "name": "b9b6bcac0ae60197d42a",
   "position": {
     "x": 12.2222222222222,
-    "y": 312.22222222222229,
-    "z": 1000,
+    "y": 615.55555555555566,
+    "z": 3000,
     "height": 83.333333333333329,
     "width": 181.11111111111111,
-    "tabOrder": 6000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dCalendario"
+                      "Entity": "dUnidades"
                     }
                   },
-                  "Property": "Mes Abreviado"
+                  "Property": "Unidade"
                 }
               },
-              "queryRef": "dCalendario.Mes Abreviado",
-              "nativeQueryRef": "Mes Abreviado",
+              "queryRef": "dUnidades.Unidade",
+              "nativeQueryRef": "Unidade",
               "active": true
             }
           ]
@@ -67,43 +67,8 @@
         }
       ]
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "syncGroup": {
-      "groupName": "Mes Abreviado",
+      "groupName": "Unidade",
       "fieldChanges": true,
       "filterChanges": true
     },
@@ -112,7 +77,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "40fc3f54b6e5c97d43c0",
+        "name": "f14a0a9499d0800823aa",
         "field": {
           "Measure": {
             "Expression": {

@@ -120,7 +120,7 @@ table _Medidas
 			
 			    [Custo] + [Despesa] + [Impostos] + [Comissao]
 			```
-		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
 		displayFolder: 01.Principais
 		lineageTag: ffded7eb-d67b-4fda-b5ef-fcc413ba4754
 
@@ -656,6 +656,21 @@ table _Medidas
 			```
 		formatString: 0
 		lineageTag: 4fc7e5c3-129b-421a-aa82-2f2ddcb14e26
+
+	measure 'Faturamento Acumulado LY' = ```
+			
+			    CALCULATE(
+			        [Faturamento],
+			        CALCULATETABLE(
+			            DATESYTD( SAMEPERIODLASTYEAR( dCalendario[Id Data]) ),
+			            dCalendario[Datas com Venda] = TRUE()
+			        )
+			    )
+			```
+		displayFolder: 02. Temporais
+		lineageTag: aecb7ca7-a111-4fb5-8e10-23c64bd53e8f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition _Medidas-332540c9-11b5-4161-9242-ae9d094a8fc8 = m
 		mode: import
