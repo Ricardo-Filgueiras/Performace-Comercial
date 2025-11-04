@@ -2828,6 +2828,16 @@ cultureInfo pt-BR
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -3949,6 +3959,72 @@ cultureInfo pt-BR
 			    }
 			  },
 			  "Relationships": {
+			    "d_calendario_data_has_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "dCalendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario.data": {
+			          "Target": {
+			            "Entity": "d_calendario.data"
+			          }
+			        },
+			        "d_calendario.data.dia": {
+			          "Target": {
+			            "Entity": "d_calendario.data.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario.data"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.data.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_have_dias"
+			        }
+			      ]
+			    },
+			    "d_calendario_data_has_mes_abreviado": {
+			      "Binding": {
+			        "ConceptualEntity": "dCalendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario.data": {
+			          "Target": {
+			            "Entity": "d_calendario.data"
+			          }
+			        },
+			        "d_calendario.data.mes_abreviado": {
+			          "Target": {
+			            "Entity": "d_calendario.data.mes_abreviado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario.data"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.data.mes_abreviado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_have_mes_abreviados"
+			        }
+			      ]
+			    },
 			    "d_calendario_data_has_ano": {
 			      "Binding": {
 			        "ConceptualEntity": "dCalendario"
@@ -7608,72 +7684,6 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "f_venda_have_data_pedidos"
-			        }
-			      ]
-			    },
-			    "d_calendario_data_has_mes_abreviado": {
-			      "Binding": {
-			        "ConceptualEntity": "dCalendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "d_calendario.data": {
-			          "Target": {
-			            "Entity": "d_calendario.data"
-			          }
-			        },
-			        "d_calendario.data.mes_abreviado": {
-			          "Target": {
-			            "Entity": "d_calendario.data.mes_abreviado"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendario.data"
-			            },
-			            "Object": {
-			              "Role": "d_calendario.data.mes_abreviado"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "data_have_mes_abreviados"
-			        }
-			      ]
-			    },
-			    "d_calendario_data_has_dia": {
-			      "Binding": {
-			        "ConceptualEntity": "dCalendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "d_calendario.data": {
-			          "Target": {
-			            "Entity": "d_calendario.data"
-			          }
-			        },
-			        "d_calendario.data.dia": {
-			          "Target": {
-			            "Entity": "d_calendario.data.dia"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendario.data"
-			            },
-			            "Object": {
-			              "Role": "d_calendario.data.dia"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "data_have_dias"
 			        }
 			      ]
 			    },

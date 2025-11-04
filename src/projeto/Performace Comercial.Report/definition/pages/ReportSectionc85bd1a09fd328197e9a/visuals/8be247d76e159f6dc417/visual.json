@@ -23,11 +23,11 @@
                       "Entity": "dCalendario"
                     }
                   },
-                  "Property": "Mes Abreviado"
+                  "Property": "Nome do Mês"
                 }
               },
-              "queryRef": "dCalendario.Mes Abreviado",
-              "nativeQueryRef": "Mes Abreviado",
+              "queryRef": "dCalendario.Nome do Mês",
+              "nativeQueryRef": "Nome do Mês",
               "active": true
             }
           ]
@@ -42,6 +42,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
+                }
+              }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -64,6 +71,19 @@
       "general": [
         {
           "properties": {}
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
         }
       ]
     },

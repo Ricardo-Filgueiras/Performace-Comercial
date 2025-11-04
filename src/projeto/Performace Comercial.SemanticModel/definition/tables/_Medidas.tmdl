@@ -36,11 +36,13 @@ table _Medidas
 			        dStatus[Id Status] = 1
 			    )
 			```
-		formatString: 0.00
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: 01.Principais
 		lineageTag: e65bb807-44fc-4cbc-983f-0ebaf546d84f
 
 		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure Custo = ```
 			
@@ -106,7 +108,7 @@ table _Medidas
 			        dStatus[Id Status] = 1 
 			    )
 			```
-		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: 01.Principais
 		lineageTag: e2a5d29f-47dc-4b3f-8806-6aed1cffa86a
 
@@ -667,6 +669,61 @@ table _Medidas
 			```
 		displayFolder: 02. Temporais
 		lineageTag: aecb7ca7-a111-4fb5-8e10-23c64bd53e8f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'cartao comissao svg v1' = ```
+			
+			VAR _percent = [Comissao YoY %]
+			VAR _format = FORMAT( _percent + 0 , " +0.00 %; -0.00 %; -")
+			VAR _seta = 
+			SWITCH(
+			    TRUE(),
+			    _percent > 0 , "▲",
+			    _percent < 0 , "▼",
+			    " - "
+			)
+			VAR _cor_seta = 
+			SWITCH(
+			    TRUE(),
+			    _percent > 0 , "Green",
+			    _percent < 0 , "red",
+			    "#ffffff"
+			)
+			
+			VAR _text =
+			    "data:image/svg+xml,
+			    <svg  viewBox='0 0 190 50' fill='none' xmlns='http://www.w3.org/2000/svg'>
+			        <g id='varia&#195;&#167;&#195;&#163;o'>
+			            <text id='rot_cat' fill='white' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='12' font-weight='400' letter-spacing='0em'>
+			                <tspan x='88' y='40.9688'>Vs. Ano Anterior</tspan>
+			            </text>
+			            <text id='rot_dados' fill='"& _cor_seta &"' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='14' font-weight='600' letter-spacing='0em'>
+			                <tspan x='88' y='21.2969'>"& _format &"</tspan>
+			            </text>
+			            <text id='seta' fill='"& _cor_seta &"' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='14' font-weight='600' letter-spacing='0em'>
+			                <tspan x='68' y='31.2969'>"& _seta &"</tspan>
+			            </text>
+			        </g>
+			    </svg>
+			    "
+			
+			RETURN 
+			    _text
+			```
+		displayFolder: .Visuais SVG
+		lineageTag: 373636ec-a919-4a7c-9e67-434ebfa46e1a
+		dataCategory: ImageUrl
+
+	measure 'max Y visual 01 pg Vendedores' =
+			
+			MAXX(
+			    ALLSELECTED(
+			        dCalendario[Dia]
+			    ), [Faturamento] * 1.5
+			
+			)
+		lineageTag: 39c3ea4a-9f40-47d6-bb26-b642b786bc06
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
