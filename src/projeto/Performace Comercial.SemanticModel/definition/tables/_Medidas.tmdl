@@ -36,13 +36,11 @@ table _Medidas
 			        dStatus[Id Status] = 1
 			    )
 			```
-		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		formatString: 0.00
 		displayFolder: 01.Principais
 		lineageTag: e65bb807-44fc-4cbc-983f-0ebaf546d84f
 
 		changedProperty = FormatString
-
-		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure Custo = ```
 			
@@ -595,7 +593,7 @@ table _Medidas
 			-----------------------------------
 			--- Formatação                 ----
 			-----------------------------------
-			var __cor_fonte =  "#CEBCD7"
+			var __cor_fonte =  "#D6D7E3"
 			
 			VAR _cores = 
 			SWITCH(

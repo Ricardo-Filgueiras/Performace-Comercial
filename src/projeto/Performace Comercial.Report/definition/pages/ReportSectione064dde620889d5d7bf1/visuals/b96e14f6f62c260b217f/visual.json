@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "caf7fa819f6a4a1f2c93",
+  "name": "b96e14f6f62c260b217f",
   "position": {
-    "x": 809.090909090909,
-    "y": 395.45454545454544,
-    "z": 6000,
-    "height": 305.45454545454544,
-    "width": 453.63636363636363,
-    "tabOrder": 5000
+    "x": 250,
+    "y": 544.44444444444446,
+    "z": 10000,
+    "height": 142.22222222222223,
+    "width": 402.22222222222223,
+    "tabOrder": 10000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -23,11 +23,11 @@
                       "Entity": "dCalendario"
                     }
                   },
-                  "Property": "Mes Abreviado"
+                  "Property": "Semana dia Nome"
                 }
               },
-              "queryRef": "dCalendario.Mes Abreviado",
-              "nativeQueryRef": "Mes Abreviado",
+              "queryRef": "dCalendario.Semana dia Nome",
+              "nativeQueryRef": "Semana dia Nome",
               "active": true
             }
           ]
@@ -42,109 +42,20 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Faturamento Acumulado"
+                  "Property": "Faturamento"
                 }
               },
-              "queryRef": "_Medidas.Faturamento Acumulado",
-              "nativeQueryRef": "  Atual  ",
-              "displayName": "  Atual  "
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Faturamento Acumulado LY"
-                }
-              },
-              "queryRef": "_Medidas.Faturamento Acumulado LY",
-              "nativeQueryRef": "Anterior",
-              "displayName": "Anterior"
+              "queryRef": "_Medidas.Faturamento",
+              "nativeQueryRef": "Faturamento"
             }
           ]
         }
       }
     },
     "objects": {
-      "valueAxis": [
-        {
-          "properties": {
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "y2Axis": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "legend": [
-        {
-          "properties": {
-            "showTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "matchLineColor": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "categoryAxis": [
         {
           "properties": {
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "seriesLabels": [
-        {
-          "properties": {
             "show": {
               "expr": {
                 "Literal": {
@@ -152,29 +63,88 @@
                 }
               }
             },
-            "enableBackground": {
+            "concatenateLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "switchAxisPosition": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
             },
-            "backgroundColor": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "invertAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#14A5D8'"
                     }
                   }
                 }
               }
-            },
-            "backgroundTransparency": {
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "42L"
+                  "Value": "true"
                 }
               }
             }
@@ -186,17 +156,10 @@
       "title": [
         {
           "properties": {
-            "text": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'Comparação Acomulado com Ano atual vs Anterior'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
+                  "Value": "false"
                 }
               }
             }
