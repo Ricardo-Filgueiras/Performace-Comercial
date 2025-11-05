@@ -91,5 +91,6 @@
       }
     ]
   },
+  "visibility": "HiddenInViewMode",
   "type": "Tooltip"
 }

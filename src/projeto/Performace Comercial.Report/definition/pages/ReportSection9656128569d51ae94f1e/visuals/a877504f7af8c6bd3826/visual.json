@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "3c4819b2893a6cab68af",
+  "name": "a877504f7af8c6bd3826",
   "position": {
-    "x": 229,
-    "y": 9,
-    "z": 16000,
-    "height": 46,
-    "width": 471,
-    "tabOrder": 15000
+    "x": 233.75,
+    "y": 22.5,
+    "z": 7005,
+    "height": 46.25,
+    "width": 471.25,
+    "tabOrder": 7004
   },
   "visual": {
     "visualType": "actionButton",
@@ -69,7 +69,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Performance Comercial '"
+                  "Value": "'Performacne por Vendedor'"
                 }
               }
             },

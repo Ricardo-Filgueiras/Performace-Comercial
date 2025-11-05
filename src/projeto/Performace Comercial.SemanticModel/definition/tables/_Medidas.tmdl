@@ -727,6 +727,29 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Percentual meta ( velocimetro )' = 1
+		formatString: 0
+		displayFolder: .Visuais SVG
+		lineageTag: 79465624-5fe0-4c96-8464-3a4d3fef330b
+
+	measure 'Diferença Meta' = ABS( [Meta] - [Faturamento] )
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 01.Principais
+		lineageTag: 19aa696a-0601-427b-935e-2318fd269fc3
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Meta Cor' =
+			
+			SWITCH(
+			    TRUE(),
+			    [Porcentagem Meta] >= 0.6, "green",
+			    [Porcentagem Meta] < 0.10 , "red",
+			    "grey"
+			)
+		displayFolder: .Visuais SVG
+		lineageTag: 925fa1f9-930e-4970-9534-81fa14c2acd4
+
 	partition _Medidas-332540c9-11b5-4161-9242-ae9d094a8fc8 = m
 		mode: import
 		source =

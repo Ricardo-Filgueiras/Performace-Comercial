@@ -21,6 +21,7 @@ table dVendedores
 	column 'URL Foto'
 		dataType: string
 		lineageTag: 7a559965-76ee-423c-a495-1e896444158a
+		dataCategory: ImageUrl
 		summarizeBy: none
 		sourceColumn: URL Foto
 
