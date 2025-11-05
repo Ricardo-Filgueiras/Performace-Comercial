@@ -6,7 +6,8 @@
     "y": 70,
     "z": 0,
     "height": 305.45454545454544,
-    "width": 453.63636363636363
+    "width": 453.63636363636363,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "lineChart",
@@ -215,6 +216,32 @@
               "expr": {
                 "Literal": {
                   "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
