@@ -1,6 +1,6 @@
 # Dashboard de Performance Comercial (Power BI)
 
-![Capa do Projeto](capa.jpg) 
+![Capa do Projeto](src/data/imagens/capa.png) 
 ## 📖 Descrição do Projeto
 
 Este é um projeto de Business Intelligence focado na análise de performance comercial. O dashboard foi desenvolvido em **Power BI** com o objetivo de criar uma ferramenta de análise de dados que não fosse apenas funcional, mas que também oferecesse uma experiência de usuário (UX) e um design (UI) de alta qualidade.
@@ -42,11 +42,11 @@ Aqui estão algumas telas do dashboard em ação:
 
 **Visão Comercial (Principal)**
 
-![Visão Comercial](src\data\imagens\comcercial.png) 
+![Visão Comercial](src/data/imagens/comcercial.png) 
 
 **Visão por Vendedor**
 
-![Visão por Vendedor](src\data\imagens\vendedor.png) 
+![Visão por Vendedor](src/data/imagens/vendedor.png) 
 ---
 
 ## 🚀 Como Utilizar
@@ -69,7 +69,8 @@ Aqui estão algumas telas do dashboard em ação:
 
 * **Ricardo Filgueiras**
 * **LinkedIn:** [https://www.linkedin.com/in/ricardo-filgueiras-b4607b232/](https://www.linkedin.com/in/ricardo-filgueiras-b4607b232/)
-* **Portfólio (se tiver):** [em breve]()
+* **Portfólio:** [em breve]()
+* **Dashboard Power BI:** [Power BI](https://app.powerbi.com/view?r=eyJrIjoiNjRlNmRhYzktODY2Yy00MTI2LWIyYTYtMDczNTFjNTkyZDMzIiwidCI6ImVhNmIyNzRlLTE4MmYtNDc0Yy04YWMwLTQzOWM5ZTE1Yjg3ZSJ9)
 
 ---
 
