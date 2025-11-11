@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "f227832ffd8d27aab9bd",
   "position": {
-    "x": 10.5,
-    "y": 35,
+    "x": 20.952380952380953,
+    "y": 35.238095238095234,
     "z": 1000,
-    "height": 195,
-    "width": 297.5
+    "height": 194.76190476190476,
+    "width": 281.42857142857144,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -123,6 +124,13 @@
             "showAxisTitle": {
               "expr": {
                 "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
                   "Value": "false"
                 }
               }
@@ -136,7 +144,7 @@
             "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -752,7 +760,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -799,6 +807,31 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "nome vendedor"
                 }
               }
             }

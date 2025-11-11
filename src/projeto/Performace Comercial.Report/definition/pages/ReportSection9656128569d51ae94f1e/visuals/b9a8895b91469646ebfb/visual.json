@@ -1,13 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "b9a8895b91469646ebfb",
   "position": {
     "x": 12.833333333333329,
     "y": 349,
     "z": 2000,
     "height": 73,
-    "width": 181,
-    "tabOrder": 1000
+    "width": 181
   },
   "visual": {
     "visualType": "slicer",
@@ -108,7 +107,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "2021L"
+                                "Value": "2019L"
                               }
                             }
                           ]

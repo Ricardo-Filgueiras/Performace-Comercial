@@ -2968,6 +2968,16 @@ cultureInfo pt-BR
 			          }
 			        },
 			        {
+			          "_": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Atual": {
 			            "State": "Suggested",
 			            "Source": {
@@ -3946,6 +3956,92 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
+			    },
+			    "entity__medida.cartao_comissao_svg_v1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "cartao comissao svg v1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cartao comissao svg v1": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.max_y_visual_01_pg_vendedores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "max Y visual 01 pg Vendedores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "max y visual 01 pg vendedores": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.percentual_meta__velocimetro_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Percentual meta ( velocimetro )"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "percentual meta ( velocimetro )": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentual meta": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.diferença_meta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Diferença Meta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "diferença meta": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.meta_cor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Meta Cor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "meta cor": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -4466,6 +4562,270 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_clientes_have_f_venda"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_meta_cor": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.meta_cor": {
+			          "Target": {
+			            "Entity": "entity__medida.meta_cor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.meta_cor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_meta_cor"
+			        }
+			      ]
+			    },
+			    "f_meta_has_entity__medida_meta_cor": {
+			      "Binding": {
+			        "ConceptualEntity": "fMetas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_meta": {
+			          "Target": {
+			            "Entity": "f_meta"
+			          }
+			        },
+			        "entity__medida.meta_cor": {
+			          "Target": {
+			            "Entity": "entity__medida.meta_cor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_meta"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.meta_cor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_meta_have_meta_cor"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_diferença_meta": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.diferença_meta": {
+			          "Target": {
+			            "Entity": "entity__medida.diferença_meta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.diferença_meta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_diferença_meta"
+			        }
+			      ]
+			    },
+			    "f_meta_has_entity__medida_diferença_meta": {
+			      "Binding": {
+			        "ConceptualEntity": "fMetas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_meta": {
+			          "Target": {
+			            "Entity": "f_meta"
+			          }
+			        },
+			        "entity__medida.diferença_meta": {
+			          "Target": {
+			            "Entity": "entity__medida.diferença_meta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_meta"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.diferença_meta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_meta_have_diferença_meta"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_percentual_meta__velocimetro_": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.percentual_meta__velocimetro_": {
+			          "Target": {
+			            "Entity": "entity__medida.percentual_meta__velocimetro_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.percentual_meta__velocimetro_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_percentual_meta__velocimetro_"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_max_y_visual_01_pg_vendedores": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.max_y_visual_01_pg_vendedores": {
+			          "Target": {
+			            "Entity": "entity__medida.max_y_visual_01_pg_vendedores"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.max_y_visual_01_pg_vendedores"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_max_y_visual_01_pg_vendedores"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_entity__medida_max_y_visual_01_pg_vendedores": {
+			      "Binding": {
+			        "ConceptualEntity": "dCalendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "entity__medida.max_y_visual_01_pg_vendedores": {
+			          "Target": {
+			            "Entity": "entity__medida.max_y_visual_01_pg_vendedores"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.max_y_visual_01_pg_vendedores"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_max_y_visual_01_pg_vendedores"
+			        }
+			      ]
+			    },
+			    "f_venda_has_entity__medida_cartao_comissao_svg_v1": {
+			      "Binding": {
+			        "ConceptualEntity": "fVendas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_venda": {
+			          "Target": {
+			            "Entity": "f_venda"
+			          }
+			        },
+			        "entity__medida.cartao_comissao_svg_v1": {
+			          "Target": {
+			            "Entity": "entity__medida.cartao_comissao_svg_v1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_venda"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.cartao_comissao_svg_v1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_venda_have_cartao_comissao_svg_v1"
 			        }
 			      ]
 			    },

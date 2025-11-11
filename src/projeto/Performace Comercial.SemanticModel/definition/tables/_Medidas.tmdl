@@ -750,6 +750,9 @@ table _Medidas
 		displayFolder: .Visuais SVG
 		lineageTag: 925fa1f9-930e-4970-9534-81fa14c2acd4
 
+	measure 'nome vendedor' = SELECTEDVALUE( dVendedores[Vendedor] )
+		lineageTag: ca2c3a36-16ce-4f61-ad24-914ce6167eae
+
 	partition _Medidas-332540c9-11b5-4161-9242-ae9d094a8fc8 = m
 		mode: import
 		source =

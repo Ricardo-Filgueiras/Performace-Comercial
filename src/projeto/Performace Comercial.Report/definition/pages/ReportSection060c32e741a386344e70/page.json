@@ -14,7 +14,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'0. Capa.png'"
+                    "Value": "'Capa_versao_clean_3.png'"
                   }
                 }
               },
@@ -23,14 +23,14 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "0._Capa9607179069317178.png"
+                    "ItemName": "Capa_versao_clean_35201352024529919.png"
                   }
                 }
               },
               "scaling": {
                 "expr": {
                   "Literal": {
-                    "Value": "'Normal'"
+                    "Value": "'Fill'"
                   }
                 }
               }
@@ -40,6 +40,18 @@
             "expr": {
               "Literal": {
                 "Value": "0D"
+              }
+            }
+          },
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": 0
+                  }
+                }
               }
             }
           }
@@ -53,6 +65,24 @@
             "expr": {
               "Literal": {
                 "Value": "'Middle'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": 0
+                  }
+                }
               }
             }
           }

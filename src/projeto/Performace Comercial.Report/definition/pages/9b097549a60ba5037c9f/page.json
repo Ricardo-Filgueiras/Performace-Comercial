@@ -39,7 +39,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'6. Tooltip_vendedores.png'"
+                    "Value": "'tooltips (1).png'"
                   }
                 }
               },
@@ -48,7 +48,7 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "6._Tooltip_vendedores1502763702846287.png"
+                    "ItemName": "tooltips_(1)5591401555970413.png"
                   }
                 }
               },

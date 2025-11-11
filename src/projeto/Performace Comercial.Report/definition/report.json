@@ -87,18 +87,8 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "0._Capa9607179069317178.png",
-          "path": "0._Capa9607179069317178.png",
-          "type": "Image"
-        },
-        {
           "name": "1._Performance_Comercial9366055371710332.png",
           "path": "1._Performance_Comercial9366055371710332.png",
-          "type": "Image"
-        },
-        {
-          "name": "Bg-pagina-comercial_(1)32677492131777486.png",
-          "path": "Bg-pagina-comercial_(1)32677492131777486.png",
           "type": "Image"
         },
         {
@@ -119,16 +109,6 @@
         {
           "name": "cartao_margem49676263317008695.png",
           "path": "cartao_margem49676263317008695.png",
-          "type": "Image"
-        },
-        {
-          "name": "6._Tooltip_vendedores4778008445961426.png",
-          "path": "6._Tooltip_vendedores4778008445961426.png",
-          "type": "Image"
-        },
-        {
-          "name": "6._Tooltip_vendedores1502763702846287.png",
-          "path": "6._Tooltip_vendedores1502763702846287.png",
           "type": "Image"
         },
         {
@@ -179,6 +159,71 @@
         {
           "name": "6._icone_vendedores2855783107359391.svg",
           "path": "6._icone_vendedores2855783107359391.svg",
+          "type": "Image"
+        },
+        {
+          "name": "tooltips_(1)6132974703290911.png",
+          "path": "tooltips_(1)6132974703290911.png",
+          "type": "Image"
+        },
+        {
+          "name": "tooltips_(1)564447071073526.png",
+          "path": "tooltips_(1)564447071073526.png",
+          "type": "Image"
+        },
+        {
+          "name": "tooltips_(1)5591401555970413.png",
+          "path": "tooltips_(1)5591401555970413.png",
+          "type": "Image"
+        },
+        {
+          "name": "BD_comercial_(2)13651616011503231.png",
+          "path": "BD_comercial_(2)13651616011503231.png",
+          "type": "Image"
+        },
+        {
+          "name": "tooltips_(1)6766398308713828.png",
+          "path": "tooltips_(1)6766398308713828.png",
+          "type": "Image"
+        },
+        {
+          "name": "Capa_versao_clean_35201352024529919.png",
+          "path": "Capa_versao_clean_35201352024529919.png",
+          "type": "Image"
+        },
+        {
+          "name": "BD_Anal_tico663057676993774.png",
+          "path": "BD_Anal_tico663057676993774.png",
+          "type": "Image"
+        },
+        {
+          "name": "BD_mapa44171557726963484.png",
+          "path": "BD_mapa44171557726963484.png",
+          "type": "Image"
+        },
+        {
+          "name": "BD_vendedor13199770227949104.png",
+          "path": "BD_vendedor13199770227949104.png",
+          "type": "Image"
+        },
+        {
+          "name": "Frame_97521545530004753.svg",
+          "path": "Frame_97521545530004753.svg",
+          "type": "Image"
+        },
+        {
+          "name": "linkedin8768296728248632.png",
+          "path": "linkedin8768296728248632.png",
+          "type": "Image"
+        },
+        {
+          "name": "social28642221610829455.png",
+          "path": "social28642221610829455.png",
+          "type": "Image"
+        },
+        {
+          "name": "youtube8102113547460996.png",
+          "path": "youtube8102113547460996.png",
           "type": "Image"
         }
       ]

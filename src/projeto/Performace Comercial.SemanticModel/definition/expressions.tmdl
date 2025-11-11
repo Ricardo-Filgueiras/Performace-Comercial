@@ -13,24 +13,24 @@ expression dCidades =
 
 	annotation PBI_ResultType = Table
 
-expression Caminho_Extracao = "C:\Users\Campeao Lub\Github\Performace-Comercial\src\data\Extrações" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression Caminho_Extracao = "C:\Users\Ricar\OneDrive\Documentos\GitHub\Performace-Comercial\src\data\Extrações" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 2747c0ba-a302-4812-bdbe-bd561a0d13e0
 
 	annotation PBI_NavigationStepName = Navegação
 
 	annotation PBI_ResultType = Text
 
-expression Caminho_Dimensoes = "C:\Users\Campeao Lub\Github\Performace-Comercial\src\data\Dimensões" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression Caminho_Dimensoes = "C:\Users\Ricar\OneDrive\Documentos\GitHub\Performace-Comercial\src\data\Dimensões" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: d6a58aa4-ecb7-4ce6-90e3-30f15eb7ec48
 
 	annotation PBI_NavigationStepName = Navegação
 
 	annotation PBI_ResultType = Text
 
-expression Caminho_Meta = "C:\Users\Campeao Lub\Github\Performace-Comercial\src\data\Metas" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression Caminho_Meta = "C:\Users\Ricar\OneDrive\Documentos\GitHub\Performace-Comercial\src\data\Metas" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 45a9cb35-ec05-4519-bf97-bc1012799606
 
 	annotation PBI_NavigationStepName = Navegação
 
-	annotation PBI_ResultType = Text
+	annotation PBI_ResultType = Exception
 

@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "63e9cbba0eae4018dcf4",
+  "displayName": "Mapa Calor",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'BD_mapa.png'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "BD_mapa44171557726963484.png"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Fit'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "displayArea": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Middle'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "7a4165318e646168d620",
+      "target": "3110564fde181be0b4ea",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7a4165318e646168d620",
+      "target": "09ab4e360cbd2d3417e4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7a4165318e646168d620",
+      "target": "1abae9ce45aa84b37df9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fdade0f862c5d90d1d95",
+      "target": "1abae9ce45aa84b37df9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fdade0f862c5d90d1d95",
+      "target": "09ab4e360cbd2d3417e4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fdade0f862c5d90d1d95",
+      "target": "3110564fde181be0b4ea",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fdade0f862c5d90d1d95",
+      "target": "68517d6bbf67125b6941",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3110564fde181be0b4ea",
+      "target": "68517d6bbf67125b6941",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3110564fde181be0b4ea",
+      "target": "09ab4e360cbd2d3417e4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "09ab4e360cbd2d3417e4",
+      "target": "1abae9ce45aa84b37df9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "09ab4e360cbd2d3417e4",
+      "target": "68517d6bbf67125b6941",
+      "type": "DataFilter"
+    },
+    {
+      "source": "09ab4e360cbd2d3417e4",
+      "target": "3110564fde181be0b4ea",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1abae9ce45aa84b37df9",
+      "target": "7a4165318e646168d620",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1abae9ce45aa84b37df9",
+      "target": "fdade0f862c5d90d1d95",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1abae9ce45aa84b37df9",
+      "target": "09ab4e360cbd2d3417e4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1abae9ce45aa84b37df9",
+      "target": "3110564fde181be0b4ea",
+      "type": "NoFilter"
+    },
+    {
+      "source": "09ab4e360cbd2d3417e4",
+      "target": "7a4165318e646168d620",
+      "type": "NoFilter"
+    },
+    {
+      "source": "09ab4e360cbd2d3417e4",
+      "target": "fdade0f862c5d90d1d95",
+      "type": "NoFilter"
+    }
+  ]
+}

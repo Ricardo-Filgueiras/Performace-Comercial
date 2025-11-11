@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "2c7a6bfd7725cb1974bc",
   "position": {
     "x": 926.36363636363626,
@@ -7,7 +7,7 @@
     "z": 11000,
     "height": 530.90909090909088,
     "width": 330,
-    "tabOrder": 5000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "tableEx",
@@ -70,7 +70,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Margem"
+                "Property": "Faturamento"
               }
             },
             "direction": "Descending"

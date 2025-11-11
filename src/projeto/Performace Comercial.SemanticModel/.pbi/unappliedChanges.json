@@ -1,0 +1,317 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/semanticModel/unappliedChanges/1.0.0/schema.json",
+  "conceptualSchemaSettings": {},
+  "queries": [
+    {
+      "name": "fVendas",
+      "lineageTag": "ce3764bc-f894-4270-a9e3-ac66e5acc86d",
+      "queryGroupId": "3686d82a-4419-4663-967a-59144afc9190",
+      "navigationStepName": "Navegação",
+      "text": [
+        "let",
+        "    Fonte = Excel.Workbook(File.Contents(Caminho_Extracao & \"\\Vendas.xlsx\"), null, true),",
+        "    fVendas_Sheet = Fonte{[Item=\"fVendas\",Kind=\"Sheet\"]}[Data],",
+        "    #\"Cabeçalhos Promovidos\" = Table.PromoteHeaders(fVendas_Sheet, [PromoteAllScalars=true]),",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(#\"Cabeçalhos Promovidos\",{{\"Microsiga Protheus\", type any}, {\"Column2\", type any}, {\"Column3\", type text}, {\"Column4\", type any}, {\"Column5\", type any}, {\"Column6\", type text}, {\"Column7\", type any}, {\"Column8\", type text}, {\"Column9\", type any}, {\"Column10\", type text}, {\"Column11\", type any}, {\"Column12\", type any}, {\"Column13\", type any}, {\"Column14\", type any}, {\"Column15\", type any}, {\"Column16\", type any}, {\"Column17\", type any}, {\"Column18\", type any}, {\"Column19\", type any}, {\"Column20\", type any}}),",
+        "    #\"Linhas Filtradas\" = Table.SelectRows(#\"Tipo Alterado\", each ([Column3] <> null)),",
+        "    #\"Cabeçalhos Promovidos1\" = Table.PromoteHeaders(#\"Linhas Filtradas\", [PromoteAllScalars=true]),",
+        "    #\"Tipo Alterado1\" = Table.TransformColumnTypes(#\"Cabeçalhos Promovidos1\",{{\"Data\", type date}, {\"Data Envio\", type date}, {\"Num Venda\", type text}, {\"Id Produto\", Int64.Type}, {\"Id Vendedor\", Int64.Type}, {\"Nome Vendedor\", type text}, {\"Id Cliente\", Int64.Type}, {\"Nome Cliente\", type text}, {\"Id Unidade\", Int64.Type}, {\"Nome Unidade\", type text}, {\"Id Status\", Int64.Type}, {\"Id Pgto\", Int64.Type}, {\"Qtde\", Int64.Type}, {\"Valor Unit\", type number}, {\"Custo Unit\", type number}, {\"Despesa Unit\", Int64.Type}, {\"Impostos Unit\", type number}, {\"Comissão Unit\", type number}, {\"Faturamento Total\", type number}, {\"Custo Total\", type number}}),",
+        "    #\"Colunas Renomeadas\" = Table.RenameColumns(#\"Tipo Alterado1\",{{\"Data\", \"Data Pedido\"}}),",
+        "    #\"Outras Colunas Removidas\" = Table.SelectColumns(#\"Colunas Renomeadas\",{\"Data Pedido\", \"Data Envio\", \"Num Venda\", \"Id Produto\", \"Id Vendedor\", \"Id Cliente\", \"Id Unidade\", \"Id Status\", \"Id Pgto\", \"Qtde\", \"Valor Unit\", \"Custo Unit\", \"Despesa Unit\", \"Impostos Unit\", \"Comissão Unit\"})",
+        "in",
+        "    #\"Outras Colunas Removidas\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Fonte = Excel.Workbook(File.Contents(Caminho_Extracao & \\\"\\\\Vendas.xlsx\\\"), null, true),\\n    fVendas_Sheet = Fonte{[Item=\\\"fVendas\\\",Kind=\\\"Sheet\\\"]}[Data],\\n    #\\\"Cabeçalhos Promovidos\\\" = Table.PromoteHeaders(fVendas_Sheet, [PromoteAllScalars=true]),\\n    #\\\"Tipo Alterado\\\" = Table.TransformColumnTypes(#\\\"Cabeçalhos Promovidos\\\",{{\\\"Microsiga Protheus\\\", type any}, {\\\"Column2\\\", type any}, {\\\"Column3\\\", type text}, {\\\"Column4\\\", type any}, {\\\"Column5\\\", type any}, {\\\"Column6\\\", type text}, {\\\"Column7\\\", type any}, {\\\"Column8\\\", type text}, {\\\"Column9\\\", type any}, {\\\"Column10\\\", type text}, {\\\"Column11\\\", type any}, {\\\"Column12\\\", type any}, {\\\"Column13\\\", type any}, {\\\"Column14\\\", type any}, {\\\"Column15\\\", type any}, {\\\"Column16\\\", type any}, {\\\"Column17\\\", type any}, {\\\"Column18\\\", type any}, {\\\"Column19\\\", type any}, {\\\"Column20\\\", type any}}),\\n    #\\\"Linhas Filtradas\\\" = Table.SelectRows(#\\\"Tipo Alterado\\\", each ([Column3] <> null)),\\n    #\\\"Cabeçalhos Promovidos1\\\" = Table.PromoteHeaders(#\\\"Linhas Filtradas\\\", [PromoteAllScalars=true]),\\n    #\\\"Tipo Alterado1\\\" = Table.TransformColumnTypes(#\\\"Cabeçalhos Promovidos1\\\",{{\\\"Data\\\", type date}, {\\\"Data Envio\\\", type date}, {\\\"Num Venda\\\", type text}, {\\\"Id Produto\\\", Int64.Type}, {\\\"Id Vendedor\\\", Int64.Type}, {\\\"Nome Vendedor\\\", type text}, {\\\"Id Cliente\\\", Int64.Type}, {\\\"Nome Cliente\\\", type text}, {\\\"Id Unidade\\\", Int64.Type}, {\\\"Nome Unidade\\\", type text}, {\\\"Id Status\\\", Int64.Type}, {\\\"Id Pgto\\\", Int64.Type}, {\\\"Qtde\\\", Int64.Type}, {\\\"Valor Unit\\\", type number}, {\\\"Custo Unit\\\", type number}, {\\\"Despesa Unit\\\", Int64.Type}, {\\\"Impostos Unit\\\", type number}, {\\\"Comissão Unit\\\", type number}, {\\\"Faturamento Total\\\", type number}, {\\\"Custo Total\\\", type number}}),\\n    #\\\"Colunas Renomeadas\\\" = Table.RenameColumns(#\\\"Tipo Alterado1\\\",{{\\\"Data\\\", \\\"Data Pedido\\\"}}),\\n    #\\\"Outras Colunas Removidas\\\" = Table.SelectColumns(#\\\"Colunas Renomeadas\\\",{\\\"Data Pedido\\\", \\\"Data Envio\\\", \\\"Num Venda\\\", \\\"Id Produto\\\", \\\"Id Vendedor\\\", \\\"Id Cliente\\\", \\\"Id Unidade\\\", \\\"Id Status\\\", \\\"Id Pgto\\\", \\\"Qtde\\\", \\\"Valor Unit\\\", \\\"Custo Unit\\\", \\\"Despesa Unit\\\", \\\"Impostos Unit\\\", \\\"Comissão Unit\\\"})\\nin\\n    #\\\"Outras Colunas Removidas\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "dPagamento",
+      "lineageTag": "d09cb269-5b16-4541-89ca-be6bbe02d3fe",
+      "queryGroupId": "7410ad81-05e4-490a-bad8-0d005beb603c",
+      "navigationStepName": "Navegação",
+      "text": [
+        "let",
+        "    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \"\\Dimensões.xlsx\"), null, true),",
+        "    Pagamento_Table = Fonte{[Item=\"Pagamento\",Kind=\"Table\"]}[Data],",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Pagamento_Table,{{\"Id Pagamento\", Int64.Type}, {\"Forma de Pagamento\", type text}})",
+        "in",
+        "    #\"Tipo Alterado\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \\\"\\\\Dimensões.xlsx\\\"), null, true),\\n    Pagamento_Table = Fonte{[Item=\\\"Pagamento\\\",Kind=\\\"Table\\\"]}[Data],\\n    #\\\"Tipo Alterado\\\" = Table.TransformColumnTypes(Pagamento_Table,{{\\\"Id Pagamento\\\", Int64.Type}, {\\\"Forma de Pagamento\\\", type text}})\\nin\\n    #\\\"Tipo Alterado\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "dCidades",
+      "lineageTag": "d3f37f5a-9cba-4a50-9c62-32db5582c5e3",
+      "queryGroupId": "f13381ea-8cc6-4228-a701-db8fb5cd80c7",
+      "navigationStepName": "Navegação",
+      "text": [
+        "let",
+        "    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \"\\Dimensões.xlsx\"), null, true),",
+        "    Cidades_Table = Fonte{[Item=\"Cidades\",Kind=\"Table\"]}[Data],",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Cidades_Table,{{\"Id Cidade\", Int64.Type}, {\"Cidade\", type text}, {\"UF\", type text}, {\"Estado\", type text}}),",
+        "    #\"Texto Aparado\" = Table.TransformColumns(#\"Tipo Alterado\",{{\"Estado\", Text.Trim, type text}})",
+        "in",
+        "    #\"Texto Aparado\""
+      ],
+      "loadAsTableDisabled": true,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "dClientes",
+      "lineageTag": "3077b4c9-4f2e-4a50-a247-f4260eede252",
+      "queryGroupId": "7410ad81-05e4-490a-bad8-0d005beb603c",
+      "navigationStepName": "Navegação",
+      "text": [
+        "let",
+        "    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \"\\Dimensões.xlsx\"), null, true),",
+        "    Clientes_Table = Fonte{[Item=\"Clientes\",Kind=\"Table\"]}[Data],",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Clientes_Table,{{\"Id Cliente\", Int64.Type}, {\"Cliente\", type text}, {\"Id Cidade\", Int64.Type}}),",
+        "    #\"Consultas Mescladas\" = Table.NestedJoin(#\"Tipo Alterado\", {\"Id Cidade\"}, dCidades, {\"Id Cidade\"}, \"dCidades\", JoinKind.LeftOuter),",
+        "    #\"dCidades Expandido\" = Table.ExpandTableColumn(#\"Consultas Mescladas\", \"dCidades\", {\"Cidade\", \"UF\", \"Estado\"}, {\"Cidade\", \"UF\", \"Estado\"}),",
+        "    #\"Outras Colunas Removidas\" = Table.SelectColumns(#\"dCidades Expandido\",{\"Id Cliente\", \"Cliente\", \"Cidade\", \"UF\", \"Estado\"})",
+        "in",
+        "    #\"Outras Colunas Removidas\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \\\"\\\\Dimensões.xlsx\\\"), null, true),\\n    Clientes_Table = Fonte{[Item=\\\"Clientes\\\",Kind=\\\"Table\\\"]}[Data],\\n    #\\\"Tipo Alterado\\\" = Table.TransformColumnTypes(Clientes_Table,{{\\\"Id Cliente\\\", Int64.Type}, {\\\"Cliente\\\", type text}, {\\\"Id Cidade\\\", Int64.Type}}),\\n    #\\\"Consultas Mescladas\\\" = Table.NestedJoin(#\\\"Tipo Alterado\\\", {\\\"Id Cidade\\\"}, dCidades, {\\\"Id Cidade\\\"}, \\\"dCidades\\\", JoinKind.LeftOuter),\\n    #\\\"dCidades Expandido\\\" = Table.ExpandTableColumn(#\\\"Consultas Mescladas\\\", \\\"dCidades\\\", {\\\"Cidade\\\", \\\"UF\\\", \\\"Estado\\\"}, {\\\"Cidade\\\", \\\"UF\\\", \\\"Estado\\\"}),\\n    #\\\"Outras Colunas Removidas\\\" = Table.SelectColumns(#\\\"dCidades Expandido\\\",{\\\"Id Cliente\\\", \\\"Cliente\\\", \\\"Cidade\\\", \\\"UF\\\", \\\"Estado\\\"})\\nin\\n    #\\\"Outras Colunas Removidas\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "dProdutos",
+      "lineageTag": "ac541bd4-bdb6-4cc2-9200-a85f58226c53",
+      "queryGroupId": "7410ad81-05e4-490a-bad8-0d005beb603c",
+      "navigationStepName": "Navegação",
+      "text": [
+        "let",
+        "    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \"\\Dimensões.xlsx\"), null, true),",
+        "    Produtos_Table = Fonte{[Item=\"Produtos\",Kind=\"Table\"]}[Data],",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Produtos_Table,{{\"Id Produto\", Int64.Type}, {\"Produto\", type text}, {\"Categoria\", type text}, {\"Subcategoria\", type text}, {\"Marca\", type text}})",
+        "in",
+        "    #\"Tipo Alterado\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \\\"\\\\Dimensões.xlsx\\\"), null, true),\\n    Produtos_Table = Fonte{[Item=\\\"Produtos\\\",Kind=\\\"Table\\\"]}[Data],\\n    #\\\"Tipo Alterado\\\" = Table.TransformColumnTypes(Produtos_Table,{{\\\"Id Produto\\\", Int64.Type}, {\\\"Produto\\\", type text}, {\\\"Categoria\\\", type text}, {\\\"Subcategoria\\\", type text}, {\\\"Marca\\\", type text}})\\nin\\n    #\\\"Tipo Alterado\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "dStatus",
+      "lineageTag": "5d9b2548-8d53-4085-8a7e-7ccc0ee32b2d",
+      "queryGroupId": "7410ad81-05e4-490a-bad8-0d005beb603c",
+      "navigationStepName": "Navegação",
+      "text": [
+        "let",
+        "    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \"\\Dimensões.xlsx\"), null, true),",
+        "    Status_Table = Fonte{[Item=\"Status\",Kind=\"Table\"]}[Data],",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Status_Table,{{\"Id Status\", Int64.Type}, {\"Status\", type text}})",
+        "in",
+        "    #\"Tipo Alterado\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \\\"\\\\Dimensões.xlsx\\\"), null, true),\\n    Status_Table = Fonte{[Item=\\\"Status\\\",Kind=\\\"Table\\\"]}[Data],\\n    #\\\"Tipo Alterado\\\" = Table.TransformColumnTypes(Status_Table,{{\\\"Id Status\\\", Int64.Type}, {\\\"Status\\\", type text}})\\nin\\n    #\\\"Tipo Alterado\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "dUnidades",
+      "lineageTag": "527df0f4-5aae-4c5a-aae3-e5fcd8735c48",
+      "queryGroupId": "7410ad81-05e4-490a-bad8-0d005beb603c",
+      "navigationStepName": "Navegação",
+      "text": [
+        "let",
+        "    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \"\\Dimensões.xlsx\"), null, true),",
+        "    Unidades_Table = Fonte{[Item=\"Unidades\",Kind=\"Table\"]}[Data],",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Unidades_Table,{{\"Id Unidade\", Int64.Type}, {\"Unidade\", type text}})",
+        "in",
+        "    #\"Tipo Alterado\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \\\"\\\\Dimensões.xlsx\\\"), null, true),\\n    Unidades_Table = Fonte{[Item=\\\"Unidades\\\",Kind=\\\"Table\\\"]}[Data],\\n    #\\\"Tipo Alterado\\\" = Table.TransformColumnTypes(Unidades_Table,{{\\\"Id Unidade\\\", Int64.Type}, {\\\"Unidade\\\", type text}})\\nin\\n    #\\\"Tipo Alterado\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "dVendedores",
+      "lineageTag": "396dc5cb-0e59-4a23-b70a-58520328763f",
+      "queryGroupId": "7410ad81-05e4-490a-bad8-0d005beb603c",
+      "navigationStepName": "Navegação",
+      "text": [
+        "let",
+        "    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \"\\Dimensões.xlsx\"), null, true),",
+        "    Vendedores_Table = Fonte{[Item=\"Vendedores\",Kind=\"Table\"]}[Data],",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Vendedores_Table,{{\"Id Vendedor\", Int64.Type}, {\"Vendedor\", type text}, {\"URL Foto\", type text}, {\"Gerente\", type text}})",
+        "in",
+        "    #\"Tipo Alterado\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & \\\"\\\\Dimensões.xlsx\\\"), null, true),\\n    Vendedores_Table = Fonte{[Item=\\\"Vendedores\\\",Kind=\\\"Table\\\"]}[Data],\\n    #\\\"Tipo Alterado\\\" = Table.TransformColumnTypes(Vendedores_Table,{{\\\"Id Vendedor\\\", Int64.Type}, {\\\"Vendedor\\\", type text}, {\\\"URL Foto\\\", type text}, {\\\"Gerente\\\", type text}})\\nin\\n    #\\\"Tipo Alterado\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "fMetas",
+      "lineageTag": "c9b52119-f323-474f-8167-8d638ae40b05",
+      "queryGroupId": "3686d82a-4419-4663-967a-59144afc9190",
+      "navigationStepName": "Navegação",
+      "text": [
+        "let",
+        "    Fonte = Folder.Files(Caminho_Meta),",
+        "    #\"Linhas Filtradas\" = Table.SelectRows(Fonte, each ([Extension] = \".xlsx\")),",
+        "    #\"Linhas Filtradas1\" = Table.SelectRows(#\"Linhas Filtradas\", each not Text.StartsWith([Name], \"~\")),",
+        "    #\"Outras Colunas Removidas\" = Table.SelectColumns(#\"Linhas Filtradas1\",{\"Content\", \"Name\"}),",
+        "    #\"Personalização Adicionada\" = Table.AddColumn(#\"Outras Colunas Removidas\", \"Extração\", each Excel.Workbook([Content])),",
+        "    #\"Colunas Removidas\" = Table.RemoveColumns(#\"Personalização Adicionada\",{\"Content\"}),",
+        "    #\"Extração Expandido\" = Table.ExpandTableColumn(#\"Colunas Removidas\", \"Extração\", {\"Data\"}, {\"Data\"}),",
+        "    #\"Data Expandido\" = Table.ExpandTableColumn(#\"Extração Expandido\", \"Data\", {\"Column1\", \"Column2\", \"Column3\", \"Column4\", \"Column5\", \"Column6\", \"Column7\", \"Column8\", \"Column9\", \"Column10\", \"Column11\", \"Column12\", \"Column13\", \"Column14\", \"Column15\"}, {\"Column1\", \"Column2\", \"Column3\", \"Column4\", \"Column5\", \"Column6\", \"Column7\", \"Column8\", \"Column9\", \"Column10\", \"Column11\", \"Column12\", \"Column13\", \"Column14\", \"Column15\"}),",
+        "    #\"Cabeçalhos Promovidos\" = Table.PromoteHeaders(#\"Data Expandido\", [PromoteAllScalars=true]),",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(#\"Cabeçalhos Promovidos\",{{\"Meta 2018.xlsx\", type text}, {\"Id Vendedor\", type any}, {\"Vendedor\", type text}, {\"janeiro\", type any}, {\"fevereiro\", type any}, {\"março\", type any}, {\"abril\", type any}, {\"maio\", type any}, {\"junho\", type any}, {\"julho\", type any}, {\"agosto\", type any}, {\"setembro\", type any}, {\"outubro\", type any}, {\"novembro\", type any}, {\"dezembro\", type any}, {\"Column16\", type any}}),",
+        "    #\"Linhas Filtradas2\" = Table.SelectRows(#\"Tipo Alterado\", each ([Id Vendedor] <> null and [Id Vendedor] <> \"Id Vendedor\")),",
+        "    #\"Colunas Removidas1\" = Table.RemoveColumns(#\"Linhas Filtradas2\",{\"Vendedor\", \"Column16\"}),",
+        "    #\"Outras Colunas Não Dinâmicas\" = Table.UnpivotOtherColumns(#\"Colunas Removidas1\", {\"Meta 2018.xlsx\", \"Id Vendedor\"}, \"Mes\", \"Valor Meta\"),",
+        "    #\"Texto Extraído Entre os Delimitadores\" = Table.TransformColumns(#\"Outras Colunas Não Dinâmicas\", {{\"Meta 2018.xlsx\", each Text.BetweenDelimiters(_, \" \", \".x\"), type text}}),",
+        "    #\"Colunas Mescladas\" = Table.CombineColumns(#\"Texto Extraído Entre os Delimitadores\",{\"Mes\", \"Meta 2018.xlsx\"},Combiner.CombineTextByDelimiter(\"-\", QuoteStyle.None),\"Data\"),",
+        "    #\"Tipo Alterado1\" = Table.TransformColumnTypes(#\"Colunas Mescladas\",{{\"Data\", type date}, {\"Id Vendedor\", Int64.Type}, {\"Valor Meta\", type number}}),",
+        "    #\"Colunas Renomeadas\" = Table.RenameColumns(#\"Tipo Alterado1\",{{\"Data\", \"data\"}})",
+        "in",
+        "    #\"Colunas Renomeadas\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Fonte = Folder.Files(Caminho_Meta),\\n    #\\\"Linhas Filtradas\\\" = Table.SelectRows(Fonte, each ([Extension] = \\\".xlsx\\\")),\\n    #\\\"Linhas Filtradas1\\\" = Table.SelectRows(#\\\"Linhas Filtradas\\\", each not Text.StartsWith([Name], \\\"~\\\")),\\n    #\\\"Outras Colunas Removidas\\\" = Table.SelectColumns(#\\\"Linhas Filtradas1\\\",{\\\"Content\\\", \\\"Name\\\"}),\\n    #\\\"Personalização Adicionada\\\" = Table.AddColumn(#\\\"Outras Colunas Removidas\\\", \\\"Extração\\\", each Excel.Workbook([Content])),\\n    #\\\"Colunas Removidas\\\" = Table.RemoveColumns(#\\\"Personalização Adicionada\\\",{\\\"Content\\\"}),\\n    #\\\"Extração Expandido\\\" = Table.ExpandTableColumn(#\\\"Colunas Removidas\\\", \\\"Extração\\\", {\\\"Data\\\"}, {\\\"Data\\\"}),\\n    #\\\"Data Expandido\\\" = Table.ExpandTableColumn(#\\\"Extração Expandido\\\", \\\"Data\\\", {\\\"Column1\\\", \\\"Column2\\\", \\\"Column3\\\", \\\"Column4\\\", \\\"Column5\\\", \\\"Column6\\\", \\\"Column7\\\", \\\"Column8\\\", \\\"Column9\\\", \\\"Column10\\\", \\\"Column11\\\", \\\"Column12\\\", \\\"Column13\\\", \\\"Column14\\\", \\\"Column15\\\"}, {\\\"Column1\\\", \\\"Column2\\\", \\\"Column3\\\", \\\"Column4\\\", \\\"Column5\\\", \\\"Column6\\\", \\\"Column7\\\", \\\"Column8\\\", \\\"Column9\\\", \\\"Column10\\\", \\\"Column11\\\", \\\"Column12\\\", \\\"Column13\\\", \\\"Column14\\\", \\\"Column15\\\"}),\\n    #\\\"Cabeçalhos Promovidos\\\" = Table.PromoteHeaders(#\\\"Data Expandido\\\", [PromoteAllScalars=true]),\\n    #\\\"Tipo Alterado\\\" = Table.TransformColumnTypes(#\\\"Cabeçalhos Promovidos\\\",{{\\\"Meta 2018.xlsx\\\", type text}, {\\\"Id Vendedor\\\", type any}, {\\\"Vendedor\\\", type text}, {\\\"janeiro\\\", type any}, {\\\"fevereiro\\\", type any}, {\\\"março\\\", type any}, {\\\"abril\\\", type any}, {\\\"maio\\\", type any}, {\\\"junho\\\", type any}, {\\\"julho\\\", type any}, {\\\"agosto\\\", type any}, {\\\"setembro\\\", type any}, {\\\"outubro\\\", type any}, {\\\"novembro\\\", type any}, {\\\"dezembro\\\", type any}, {\\\"Column16\\\", type any}}),\\n    #\\\"Linhas Filtradas2\\\" = Table.SelectRows(#\\\"Tipo Alterado\\\", each ([Id Vendedor] <> null and [Id Vendedor] <> \\\"Id Vendedor\\\")),\\n    #\\\"Colunas Removidas1\\\" = Table.RemoveColumns(#\\\"Linhas Filtradas2\\\",{\\\"Vendedor\\\", \\\"Column16\\\"}),\\n    #\\\"Outras Colunas Não Dinâmicas\\\" = Table.UnpivotOtherColumns(#\\\"Colunas Removidas1\\\", {\\\"Meta 2018.xlsx\\\", \\\"Id Vendedor\\\"}, \\\"Mes\\\", \\\"Valor Meta\\\"),\\n    #\\\"Texto Extraído Entre os Delimitadores\\\" = Table.TransformColumns(#\\\"Outras Colunas Não Dinâmicas\\\", {{\\\"Meta 2018.xlsx\\\", each Text.BetweenDelimiters(_, \\\" \\\", \\\".x\\\"), type text}}),\\n    #\\\"Colunas Mescladas\\\" = Table.CombineColumns(#\\\"Texto Extraído Entre os Delimitadores\\\",{\\\"Mes\\\", \\\"Meta 2018.xlsx\\\"},Combiner.CombineTextByDelimiter(\\\"-\\\", QuoteStyle.None),\\\"Data\\\"),\\n    #\\\"Tipo Alterado1\\\" = Table.TransformColumnTypes(#\\\"Colunas Mescladas\\\",{{\\\"Data\\\", type date}, {\\\"Id Vendedor\\\", Int64.Type}, {\\\"Valor Meta\\\", type number}}),\\n    #\\\"Colunas Renomeadas\\\" = Table.RenameColumns(#\\\"Tipo Alterado1\\\",{{\\\"Data\\\", \\\"data\\\"}})\\nin\\n    #\\\"Colunas Renomeadas\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "dCalendario",
+      "lineageTag": "9205a3a9-0c85-4cbc-8b36-d833f354a3b7",
+      "queryGroupId": "7410ad81-05e4-490a-bad8-0d005beb603c",
+      "text": [
+        "let",
+        "        ",
+        "    Fonte = List.Dates(#date(2018, 1, 1), 1461 , #duration(1, 0, 0, 0)),",
+        "    #\"Convertido para Tabela\" = Table.FromList(Fonte, Splitter.SplitByNothing(), null, null, ExtraValues.Error),",
+        "    #\"Colunas Renomeadas\" = Table.RenameColumns(#\"Convertido para Tabela\",{{\"Column1\", \"Data\"}}),",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(#\"Colunas Renomeadas\",{{\"Data\", type date}}),",
+        "    #\"Ano Inserido\" = Table.AddColumn(#\"Tipo Alterado\", \"Ano\", each Date.Year([Data]), Int64.Type),",
+        "    #\"Nome do Mês Inserido\" = Table.AddColumn(#\"Ano Inserido\", \"Nome do Mês\", each Date.MonthName([Data]), type text),",
+        "    #\"Mês Inserido\" = Table.AddColumn(#\"Nome do Mês Inserido\", \"Mês\", each Date.Month([Data]), Int64.Type),",
+        "    #\"Dia Inserido\" = Table.AddColumn(#\"Mês Inserido\", \"Dia\", each Date.Day([Data]), Int64.Type),",
+        "    #\"Coluna Condicional Adicionada\" = Table.AddColumn(#\"Dia Inserido\", \"Semestre\", each if [Mês] <= 6 then \"Sem1\" else \"Sem2\"),",
+        "    #\"Coluna Condicional Adicionada1\" = Table.AddColumn(#\"Coluna Condicional Adicionada\", \"Trimestre\", each if [Mês] <= 3 then \"Tri1\" else if [Mês] <= 6 then \"Tri2\" else if [Mês] <= 9 then \"Tri3\" else \"Tri4\"),",
+        "    #\"Colocar Cada Palavra Em Maiúscula\" = Table.TransformColumns(#\"Coluna Condicional Adicionada1\",{{\"Nome do Mês\", Text.Proper, type text}}),",
+        "    #\"Primeiros Caracteres Inseridos\" = Table.AddColumn(#\"Colocar Cada Palavra Em Maiúscula\", \"Mes Abreviado\", each Text.Start([Nome do Mês], 3), type text),",
+        "    #\"Coluna Mesclada Inserida\" = Table.AddColumn(#\"Primeiros Caracteres Inseridos\", \"Mes-Ano\", each Text.Combine({[Mes Abreviado], \"-\", Text.From([Ano], \"pt-BR\")}), type text),",
+        "    #\"Personalização Adicionada\" = Table.AddColumn(#\"Coluna Mesclada Inserida\", \"Mes Ano Classificação\", each [Ano] * 100 + [Mês]),",
+        "    #\"Tipo Alterado1\" = Table.TransformColumnTypes(#\"Personalização Adicionada\",{{\"Mes Ano Classificação\", Int64.Type}, {\"Trimestre\", type text}, {\"Semestre\", type text}}),",
+        "    #\"Colunas Renomeadas1\" = Table.RenameColumns(#\"Tipo Alterado1\",{{\"Data\", \"Id Data\"}})",
+        "in",
+        "    #\"Colunas Renomeadas1\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n        \\n    Fonte = List.Dates(#date(2018, 1, 1), 1461 , #duration(1, 0, 0, 0)),\\n    #\\\"Convertido para Tabela\\\" = Table.FromList(Fonte, Splitter.SplitByNothing(), null, null, ExtraValues.Error),\\n    #\\\"Colunas Renomeadas\\\" = Table.RenameColumns(#\\\"Convertido para Tabela\\\",{{\\\"Column1\\\", \\\"Data\\\"}}),\\n    #\\\"Tipo Alterado\\\" = Table.TransformColumnTypes(#\\\"Colunas Renomeadas\\\",{{\\\"Data\\\", type date}}),\\n    #\\\"Ano Inserido\\\" = Table.AddColumn(#\\\"Tipo Alterado\\\", \\\"Ano\\\", each Date.Year([Data]), Int64.Type),\\n    #\\\"Nome do Mês Inserido\\\" = Table.AddColumn(#\\\"Ano Inserido\\\", \\\"Nome do Mês\\\", each Date.MonthName([Data]), type text),\\n    #\\\"Mês Inserido\\\" = Table.AddColumn(#\\\"Nome do Mês Inserido\\\", \\\"Mês\\\", each Date.Month([Data]), Int64.Type),\\n    #\\\"Dia Inserido\\\" = Table.AddColumn(#\\\"Mês Inserido\\\", \\\"Dia\\\", each Date.Day([Data]), Int64.Type),\\n    #\\\"Coluna Condicional Adicionada\\\" = Table.AddColumn(#\\\"Dia Inserido\\\", \\\"Semestre\\\", each if [Mês] <= 6 then \\\"Sem1\\\" else \\\"Sem2\\\"),\\n    #\\\"Coluna Condicional Adicionada1\\\" = Table.AddColumn(#\\\"Coluna Condicional Adicionada\\\", \\\"Trimestre\\\", each if [Mês] <= 3 then \\\"Tri1\\\" else if [Mês] <= 6 then \\\"Tri2\\\" else if [Mês] <= 9 then \\\"Tri3\\\" else \\\"Tri4\\\"),\\n    #\\\"Colocar Cada Palavra Em Maiúscula\\\" = Table.TransformColumns(#\\\"Coluna Condicional Adicionada1\\\",{{\\\"Nome do Mês\\\", Text.Proper, type text}}),\\n    #\\\"Primeiros Caracteres Inseridos\\\" = Table.AddColumn(#\\\"Colocar Cada Palavra Em Maiúscula\\\", \\\"Mes Abreviado\\\", each Text.Start([Nome do Mês], 3), type text),\\n    #\\\"Coluna Mesclada Inserida\\\" = Table.AddColumn(#\\\"Primeiros Caracteres Inseridos\\\", \\\"Mes-Ano\\\", each Text.Combine({[Mes Abreviado], \\\"-\\\", Text.From([Ano], \\\"pt-BR\\\")}), type text),\\n    #\\\"Personalização Adicionada\\\" = Table.AddColumn(#\\\"Coluna Mesclada Inserida\\\", \\\"Mes Ano Classificação\\\", each [Ano] * 100 + [Mês]),\\n    #\\\"Tipo Alterado1\\\" = Table.TransformColumnTypes(#\\\"Personalização Adicionada\\\",{{\\\"Mes Ano Classificação\\\", Int64.Type}, {\\\"Trimestre\\\", type text}, {\\\"Semestre\\\", type text}}),\\n    #\\\"Colunas Renomeadas1\\\" = Table.RenameColumns(#\\\"Tipo Alterado1\\\",{{\\\"Data\\\", \\\"Id Data\\\"}})\\nin\\n    #\\\"Colunas Renomeadas1\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "Caminho_Extracao",
+      "lineageTag": "2747c0ba-a302-4812-bdbe-bd561a0d13e0",
+      "navigationStepName": "Navegação",
+      "text": [
+        "\"C:\\Users\\Documentos\\GitHub\\Performace-Comercial\\src\\data\\Extrações\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      ],
+      "loadAsTableDisabled": true,
+      "resultType": "Text",
+      "isHidden": false
+    },
+    {
+      "name": "Caminho_Dimensoes",
+      "lineageTag": "d6a58aa4-ecb7-4ce6-90e3-30f15eb7ec48",
+      "navigationStepName": "Navegação",
+      "text": [
+        "\"C:\\Users\\Documentos\\GitHub\\Performace-Comercial\\src\\data\\Dimensões\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      ],
+      "loadAsTableDisabled": true,
+      "resultType": "Text",
+      "isHidden": false
+    },
+    {
+      "name": "Caminho_Meta",
+      "lineageTag": "45a9cb35-ec05-4519-bf97-bc1012799606",
+      "navigationStepName": "Navegação",
+      "text": [
+        "\"C:\\Users\\Documentos\\GitHub\\Performace-Comercial\\src\\data\\Metas\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      ],
+      "loadAsTableDisabled": true,
+      "resultType": "Exception",
+      "isHidden": false
+    },
+    {
+      "name": "_Medidas",
+      "lineageTag": "5d2fdeda-57d0-4fb6-a1b9-209cd3522441",
+      "text": [
+        "let",
+        "    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Coluna 1\" = _t]),",
+        "    #\"Tipo Alterado\" = Table.TransformColumnTypes(Fonte,{{\"Coluna 1\", type text}}),",
+        "    #\"Colunas Removidas\" = Table.RemoveColumns(#\"Tipo Alterado\",{\"Coluna 1\"})",
+        "in",
+        "    #\"Colunas Removidas\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\\\"i44FAA==\\\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\\\"Coluna 1\\\" = _t]),\\n    #\\\"Tipo Alterado\\\" = Table.TransformColumnTypes(Fonte,{{\\\"Coluna 1\\\", type text}}),\\n    #\\\"Colunas Removidas\\\" = Table.RemoveColumns(#\\\"Tipo Alterado\\\",{\\\"Coluna 1\\\"})\\nin\\n    #\\\"Colunas Removidas\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "zMetricas",
+      "lineageTag": "cec9ca05-4ec4-4837-89ce-0575cab4e99e",
+      "text": [
+        "let",
+        "    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WcswrSS3KzC9S0lEyVIrVAQqUlCbmAHlGYB6QYawUGwsA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Metrica = _t, Ordem = _t])",
+        "in",
+        "    Fonte"
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\\\"i45WcswrSS3KzC9S0lEyVIrVAQqUlCbmAHlGYB6QYawUGwsA\\\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Metrica = _t, Ordem = _t])\\nin\\n    Fonte\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    }
+  ],
+  "queryGroups": [
+    {
+      "name": "Fatos",
+      "id": "3686d82a-4419-4663-967a-59144afc9190",
+      "description": ""
+    },
+    {
+      "name": "Dimensões",
+      "id": "7410ad81-05e4-490a-bad8-0d005beb603c",
+      "order": 1,
+      "description": ""
+    },
+    {
+      "name": "Auxiliares",
+      "id": "f13381ea-8cc6-4228-a701-db8fb5cd80c7",
+      "order": 2,
+      "description": ""
+    }
+  ],
+  "culture": "pt-BR",
+  "firewallEnabled": true
+}

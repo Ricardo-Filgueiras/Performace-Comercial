@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "7237c268096321f2896c",
   "position": {
     "x": 983.94014962593508,
@@ -7,7 +7,7 @@
     "z": 9000,
     "height": 193.01745635910223,
     "width": 274.713216957606,
-    "tabOrder": 8000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "pureVizInfographicC9801BF222134D2D83FA9C41861F3482",
