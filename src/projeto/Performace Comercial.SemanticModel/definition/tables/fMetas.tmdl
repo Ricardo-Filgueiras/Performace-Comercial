@@ -1,0 +1,62 @@
+table fMetas
+	lineageTag: c9b52119-f323-474f-8167-8d638ae40b05
+
+	column data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2ca1ce36-471a-4ea5-ad7b-5ed6ef1395f7
+		summarizeBy: none
+		sourceColumn: data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Id Vendedor'
+		dataType: int64
+		formatString: 0
+		lineageTag: 049a2ede-a2b9-4ecd-9acc-4d401f3bf3be
+		summarizeBy: none
+		sourceColumn: Id Vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor Meta'
+		dataType: double
+		lineageTag: 6a697f6e-26e3-4e7e-a9f7-ff0a67cb6fee
+		summarizeBy: sum
+		sourceColumn: Valor Meta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fMetas-fd5e8097-ba6d-4513-950c-25f26199ee4e = m
+		mode: import
+		queryGroup: Fatos
+		source =
+				let
+				    Fonte = Folder.Files(Caminho_Meta),
+				    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".xlsx")),
+				    #"Linhas Filtradas1" = Table.SelectRows(#"Linhas Filtradas", each not Text.StartsWith([Name], "~")),
+				    #"Outras Colunas Removidas" = Table.SelectColumns(#"Linhas Filtradas1",{"Content", "Name"}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Outras Colunas Removidas", "Extração", each Excel.Workbook([Content])),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Personalização Adicionada",{"Content"}),
+				    #"Extração Expandido" = Table.ExpandTableColumn(#"Colunas Removidas", "Extração", {"Data"}, {"Data"}),
+				    #"Data Expandido" = Table.ExpandTableColumn(#"Extração Expandido", "Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15"}, {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15"}),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Data Expandido", [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Meta 2018.xlsx", type text}, {"Id Vendedor", type any}, {"Vendedor", type text}, {"janeiro", type any}, {"fevereiro", type any}, {"março", type any}, {"abril", type any}, {"maio", type any}, {"junho", type any}, {"julho", type any}, {"agosto", type any}, {"setembro", type any}, {"outubro", type any}, {"novembro", type any}, {"dezembro", type any}, {"Column16", type any}}),
+				    #"Linhas Filtradas2" = Table.SelectRows(#"Tipo Alterado", each ([Id Vendedor] <> null and [Id Vendedor] <> "Id Vendedor")),
+				    #"Colunas Removidas1" = Table.RemoveColumns(#"Linhas Filtradas2",{"Vendedor", "Column16"}),
+				    #"Outras Colunas Não Dinâmicas" = Table.UnpivotOtherColumns(#"Colunas Removidas1", {"Meta 2018.xlsx", "Id Vendedor"}, "Mes", "Valor Meta"),
+				    #"Texto Extraído Entre os Delimitadores" = Table.TransformColumns(#"Outras Colunas Não Dinâmicas", {{"Meta 2018.xlsx", each Text.BetweenDelimiters(_, " ", ".x"), type text}}),
+				    #"Colunas Mescladas" = Table.CombineColumns(#"Texto Extraído Entre os Delimitadores",{"Mes", "Meta 2018.xlsx"},Combiner.CombineTextByDelimiter("-", QuoteStyle.None),"Data"),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Colunas Mescladas",{{"Data", type date}, {"Id Vendedor", Int64.Type}, {"Valor Meta", type number}}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Tipo Alterado1",{{"Data", "data"}})
+				in
+				    #"Colunas Renomeadas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

@@ -1,0 +1,59 @@
+table dProdutos
+	lineageTag: ac541bd4-bdb6-4cc2-9200-a85f58226c53
+
+	column 'Id Produto'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e9c0315-b38c-4736-b7d0-b56bc2eb5cca
+		summarizeBy: none
+		sourceColumn: Id Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Produto
+		dataType: string
+		lineageTag: f53ca8fd-0276-4ffa-9428-05f8f966c439
+		summarizeBy: none
+		sourceColumn: Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoria
+		dataType: string
+		lineageTag: 1e00f31c-b6cf-4477-ac53-1e345ba4b3c3
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subcategoria
+		dataType: string
+		lineageTag: ce80e633-63f3-485c-8355-dc4d78023bb0
+		summarizeBy: none
+		sourceColumn: Subcategoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column Marca
+		dataType: string
+		lineageTag: ecd229b6-f1cd-4aab-a07d-25c134cda97c
+		summarizeBy: none
+		sourceColumn: Marca
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dProdutos-52791452-0570-427e-9770-8f9f216eeb78 = m
+		mode: import
+		queryGroup: Dimensões
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & "\Dimensões.xlsx"), null, true),
+				    Produtos_Table = Fonte{[Item="Produtos",Kind="Table"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Produtos_Table,{{"Id Produto", Int64.Type}, {"Produto", type text}, {"Categoria", type text}, {"Subcategoria", type text}, {"Marca", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

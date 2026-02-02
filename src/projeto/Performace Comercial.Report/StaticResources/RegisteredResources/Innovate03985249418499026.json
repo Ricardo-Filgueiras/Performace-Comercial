@@ -1,0 +1,213 @@
+{
+  "name": "Innovate",
+  "dataColors": [
+    "#0F1359",
+    "#1848D9",
+    "#0F1359",
+    "#0DF205",
+    "#04BF68",
+    "#6387F2",
+    "#A6567B",
+    "#EC9010"
+  ],
+  "foreground": "#FFFFFF",
+  "foregroundNeutralSecondary": "#D2D0CE",
+  "foregroundNeutralTertiary": "#979593",
+  "background": "#3a3a3a",
+  "backgroundLight": "#3B3A39",
+  "backgroundNeutral": "#605E5C",
+  "tableAccent": "#2878BD",
+  "maximum": "#0F82E5",
+  "center": "#FCB714",
+  "minimum": "#D0E4F5",
+  "hyperlink": "#2878BD",
+  "visitedHyperlink": "#D0E4F5",
+  "textClasses": {
+    "callout": {
+      "fontFace": "'Segoe UI Light', wf_segoe-ui_light, helvetica, arial, sans-serif",
+      "color": "#FFFFFF",
+      "fontSize": 36
+    },
+    "title": {
+      "fontFace": "'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+      "color": "#FFFFFF"
+    },
+    "header": {
+      "fontFace": "'Segoe UI Bold', wf_segoe-ui_bold, helvetica, arial, sans-serif",
+      "color": "#FFFFFF"
+    },
+    "label": {
+      "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+      "color": "#FFFFFF"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#9D9D9D"
+              }
+            },
+            "transparency": 100
+          }
+        ],
+        "visualHeader": [
+          {
+            "foreground": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "border": {
+              "solid": {
+                "color": "#3a3a3a"
+              }
+            },
+            "background": {
+              "solid": {
+                "color": "#3a3a3a"
+              }
+            }
+          }
+        ],
+        "outspacePane": [
+          {
+            "backgroundColor": {
+              "solid": {
+                "color": "#3a3a3a"
+              }
+            },
+            "foregroundColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0,
+            "border": true,
+            "borderColor": {
+              "solid": {
+                "color": "#979593"
+              }
+            }
+          }
+        ],
+        "filterCard": [
+          {
+            "$id": "Applied",
+            "transparency": 0,
+            "foregroundColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "backgroundColor": {
+              "solid": {
+                "color": "#605E5C"
+              }
+            },
+            "inputBoxColor": {
+              "solid": {
+                "color": "#605E5C"
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": "#979593"
+              }
+            },
+            "border": true
+          },
+          {
+            "$id": "Available",
+            "transparency": 0,
+            "foregroundColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "backgroundColor": {
+              "solid": {
+                "color": "#3a3a3a"
+              }
+            },
+            "inputBoxColor": {
+              "solid": {
+                "color": "#3a3a3a"
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": "#979593"
+              }
+            },
+            "border": true
+          }
+        ]
+      }
+    },
+    "slicer": {
+      "*": {
+        "items": [
+          {
+            "background": {
+              "solid": {
+                "color": "#3a3a3a"
+              }
+            }
+          }
+        ],
+        "numericInputStyle": [
+          {
+            "background": {
+              "solid": {
+                "color": "#3a3a3a"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "keyDriversVisual": {
+      "*": {
+        "keyInfluencersVisual": [
+          {
+            "canvasColor": {
+              "solid": {
+                "color": "#3B3A39"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#BDBDBD"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "transparency": 0,
+            "color": {
+              "solid": {
+                "color": "#C1C1C1"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "bad": "#DE6B77",
+  "neutral": "#B9A02C",
+  "good": "#34AA53"
+}

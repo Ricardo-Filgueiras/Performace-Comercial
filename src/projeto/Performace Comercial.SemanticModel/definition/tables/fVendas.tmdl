@@ -1,0 +1,166 @@
+table fVendas
+	lineageTag: ce3764bc-f894-4270-a9e3-ac66e5acc86d
+
+	column 'Data Pedido'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8fb393f9-6a31-4014-ac4f-898b724ea913
+		summarizeBy: none
+		sourceColumn: Data Pedido
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Data Envio'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7dfcf63c-37ee-4d8c-a6cf-1fe414e98ca5
+		summarizeBy: none
+		sourceColumn: Data Envio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Num Venda'
+		dataType: string
+		lineageTag: 1b8cb0f0-65e9-4459-83a2-319c3b2e3125
+		summarizeBy: none
+		sourceColumn: Num Venda
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Id Produto'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f83790a-e186-48e0-aec6-1063c58fc207
+		summarizeBy: none
+		sourceColumn: Id Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Id Vendedor'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b73bc77-f58c-43cd-9918-138bb19c78be
+		summarizeBy: none
+		sourceColumn: Id Vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Id Cliente'
+		dataType: int64
+		formatString: 0
+		lineageTag: c09576b8-a843-41a2-83bf-10f4588c9244
+		summarizeBy: none
+		sourceColumn: Id Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Id Unidade'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7305a7da-9904-4511-a904-3196f5299911
+		summarizeBy: none
+		sourceColumn: Id Unidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Id Status'
+		dataType: int64
+		formatString: 0
+		lineageTag: c031e2bd-544a-42a7-b7d9-4002fa00a935
+		summarizeBy: none
+		sourceColumn: Id Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Id Pgto'
+		dataType: int64
+		formatString: 0
+		lineageTag: e48f32d7-cea0-4978-8dc0-ac51148c78ba
+		summarizeBy: none
+		sourceColumn: Id Pgto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Qtde
+		dataType: int64
+		formatString: 0
+		lineageTag: a4e92aac-1b5c-421e-9fce-64d7b8f75cc2
+		summarizeBy: sum
+		sourceColumn: Qtde
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor Unit'
+		dataType: double
+		lineageTag: 14493381-5d7d-4be5-b2d5-96a700ba9c31
+		summarizeBy: sum
+		sourceColumn: Valor Unit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Custo Unit'
+		dataType: double
+		lineageTag: cf72aa42-a71a-4387-9510-a3cc2fa90192
+		summarizeBy: sum
+		sourceColumn: Custo Unit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Despesa Unit'
+		dataType: int64
+		formatString: 0
+		lineageTag: 48c3c771-f9e9-48a9-880c-04fb104f5682
+		summarizeBy: sum
+		sourceColumn: Despesa Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Impostos Unit'
+		dataType: double
+		lineageTag: 82a85709-3e5e-48d7-8648-6a25902a4895
+		summarizeBy: sum
+		sourceColumn: Impostos Unit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Comissão Unit'
+		dataType: double
+		lineageTag: ae0235f6-34f7-4402-8767-c7710c576d6c
+		summarizeBy: sum
+		sourceColumn: Comissão Unit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fVendas-7f501c7e-a537-49ee-a211-96121f01c700 = m
+		mode: import
+		queryGroup: Fatos
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents(Caminho_Extracao & "\Vendas.xlsx"), null, true),
+				    fVendas_Sheet = Fonte{[Item="fVendas",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(fVendas_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Microsiga Protheus", type any}, {"Column2", type any}, {"Column3", type text}, {"Column4", type any}, {"Column5", type any}, {"Column6", type text}, {"Column7", type any}, {"Column8", type text}, {"Column9", type any}, {"Column10", type text}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}, {"Column19", type any}, {"Column20", type any}}),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Tipo Alterado", each ([Column3] <> null)),
+				    #"Cabeçalhos Promovidos1" = Table.PromoteHeaders(#"Linhas Filtradas", [PromoteAllScalars=true]),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos1",{{"Data", type date}, {"Data Envio", type date}, {"Num Venda", type text}, {"Id Produto", Int64.Type}, {"Id Vendedor", Int64.Type}, {"Nome Vendedor", type text}, {"Id Cliente", Int64.Type}, {"Nome Cliente", type text}, {"Id Unidade", Int64.Type}, {"Nome Unidade", type text}, {"Id Status", Int64.Type}, {"Id Pgto", Int64.Type}, {"Qtde", Int64.Type}, {"Valor Unit", type number}, {"Custo Unit", type number}, {"Despesa Unit", Int64.Type}, {"Impostos Unit", type number}, {"Comissão Unit", type number}, {"Faturamento Total", type number}, {"Custo Total", type number}}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Tipo Alterado1",{{"Data", "Data Pedido"}}),
+				    #"Outras Colunas Removidas" = Table.SelectColumns(#"Colunas Renomeadas",{"Data Pedido", "Data Envio", "Num Venda", "Id Produto", "Id Vendedor", "Id Cliente", "Id Unidade", "Id Status", "Id Pgto", "Qtde", "Valor Unit", "Custo Unit", "Despesa Unit", "Impostos Unit", "Comissão Unit"})
+				in
+				    #"Outras Colunas Removidas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

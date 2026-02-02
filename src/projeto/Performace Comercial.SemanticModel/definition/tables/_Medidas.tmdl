@@ -1,0 +1,811 @@
+table _Medidas
+	lineageTag: 5d2fdeda-57d0-4fb6-a1b9-209cd3522441
+
+	measure '11 Qtde Vendas' = DISTINCTCOUNT(fVendas[Num Venda])
+		formatString: #,0
+		displayFolder: 01.Principais
+		lineageTag: c6e2dfed-b1f9-4897-983b-d5594124b063
+
+		changedProperty = FormatString
+
+	/// Quantidade de clientes únicos com vendas efetivadas (Status = 1)
+	measure '12 Positivação Clientes' =
+			
+			// Refere-se a Qtde de clientes que efetuaram compras efetivadas
+			CALCULATE(
+			    DISTINCTCOUNT(fVendas[Id Cliente]),
+			    dStatus[Id Status] = 1
+			)
+		formatString: 0
+		displayFolder: 01.Principais
+		lineageTag: a8cec11c-cf82-487e-b973-012198c81a2d
+
+	/// Quantidade de produtos únicos vendidos (Status = 1)
+	measure '13 Positivação Produtos' =
+			
+			// Refere-se a Qtde de produtos vendidos efetivamente
+			CALCULATE(
+			    DISTINCTCOUNT(fVendas[Id Produto]),
+			    dStatus[Id Status] = 1
+			)
+		formatString: 0
+		displayFolder: 01.Principais
+		lineageTag: c2012781-389d-45e0-893e-ae783dfc4007
+
+	measure '01 Faturamento' = ```
+			
+			    CALCULATE(
+			        SUMX(
+			            fVendas,
+			            fVendas[Qtde] * fVendas[Valor Unit]
+			        ),
+			        dStatus[Id Status] = 1
+			    )
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: 01.Principais
+		lineageTag: e65bb807-44fc-4cbc-983f-0ebaf546d84f
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure '02 Custo' = ```
+			
+			    CALCULATE(
+			        SUMX(
+			            fVendas,
+			            fVendas[Qtde] * fVendas[Custo Unit]
+			        ),
+			        dStatus[Id Status] = 1 
+			    )
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: 01.Principais
+		lineageTag: 84d6ec66-1349-4b83-be22-0e27dc277249
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure '05 Despesa' = ```
+			
+			    CALCULATE(
+			        SUMX(
+			            fVendas,
+			            fVendas[Qtde] * fVendas[Despesa Unit]
+			        ),
+			        dStatus[Id Status] = 1 
+			    )
+			```
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 01.Principais
+		lineageTag: c53f0e5b-284f-461b-a91d-e160c2cf2d72
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure '06 Impostos' = ```
+			
+			    CALCULATE(
+			        SUMX(
+			            fVendas,
+			            fVendas[Qtde] * fVendas[Impostos Unit]
+			        ),
+			        dStatus[Id Status] = 1 
+			    )
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: 01.Principais
+		lineageTag: ac65b685-7f01-4b6e-af8b-5a1abfac4c7f
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure '07 Comissao' = ```
+			
+			    CALCULATE(
+			           SUMX(
+			            fVendas,
+			            fVendas[Qtde] * fVendas[Comissão Unit]
+			        ),
+			        dStatus[Id Status] = 1 
+			    )
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: 01.Principais
+		lineageTag: e2a5d29f-47dc-4b3f-8806-6aed1cffa86a
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure '08 Abatimento' = ```
+			
+			    [02 Custo] + [05 Despesa] + [06 Impostos] + [07 Comissao]
+			```
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 01.Principais
+		lineageTag: ffded7eb-d67b-4fda-b5ef-fcc413ba4754
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure '09 Resultado' = ```
+			
+			    [01 Faturamento] - [08 Abatimento]
+			```
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 01.Principais
+		lineageTag: 1578b7a7-9512-464d-9cf7-eba4bfc015c7
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	/// Margem Líquida (%) = (Resultado / Faturamento) com tratamento de divisão por zero
+	measure '10 Margem' =
+			
+			// Margem Líquida = Resultado / Faturamento
+			DIVIDE(
+			    [09 Resultado],
+			    [01 Faturamento],
+			    BLANK()
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 01.Principais
+		lineageTag: f7c93f03-2660-47dc-a1ba-3ab292788714
+
+		changedProperty = FormatString
+
+	measure '20 Faturamento Acumulado' = ```
+			
+			    CALCULATE(
+			        [01 Faturamento],
+			        CALCULATETABLE(
+			            DATESYTD(dCalendario[Id Data]),
+			            dCalendario[Datas com Venda] = TRUE()
+			        )
+			    )
+			```
+		displayFolder: 02. Temporais
+		lineageTag: 3e353a4d-89d7-48d9-89c2-2390d17f76ab
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Variação percentual Month-over-Month do Faturamento
+	measure '24 Faturamento MoM %' = ```
+			
+			// Variação Month over Month do Faturamento
+			VAR FaturamentoAtual = [01 Faturamento]
+			VAR FaturamentoLM = 
+			    CALCULATE(
+			        [01 Faturamento],
+			        CALCULATETABLE(
+			            DATEADD(dCalendario[Id Data], -1, MONTH),
+			            dCalendario[Datas com Venda] = TRUE()
+			        )
+			    )
+			
+			RETURN 
+			    DIVIDE(
+			        FaturamentoAtual - FaturamentoLM,
+			        FaturamentoLM,
+			        BLANK()
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 3cba2e15-5bca-4aea-b336-09241794e734
+
+	measure '22 Faturamento LY' =
+			
+			CALCULATE(
+			    [01 Faturamento],
+			    CALCULATETABLE(
+			        SAMEPERIODLASTYEAR( dCalendario[Id Data] ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 02. Temporais
+		lineageTag: adc6447c-2e95-48a3-abe7-4a797e257a94
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	/// Variação percentual Year-over-Year do Faturamento
+	measure '23 Faturamento YoY %' = ```
+			
+			// Variação Year over Year do Faturamento
+			VAR FaturamentoAtual = [01 Faturamento]
+			VAR FaturamentoLY = [22 Faturamento LY]
+			
+			RETURN 
+			    DIVIDE(
+			        FaturamentoAtual - FaturamentoLY,
+			        FaturamentoLY,
+			        BLANK()
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 3f4b893d-adee-4640-8752-e155e6e8519a
+
+		changedProperty = FormatString
+
+	measure '25 Margem LM' =
+			
+			CALCULATE(
+			    [10 Margem],
+			    CALCULATETABLE(
+			        DATEADD( dCalendario[Id Data], -1, MONTH ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 52b1afaa-343d-45fa-bb15-17b057cd71af
+
+	measure '26 Margem LY' =
+			
+			CALCULATE(
+			    [10 Margem],
+			    CALCULATETABLE(
+			        SAMEPERIODLASTYEAR( dCalendario[Id Data] ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 52bcce5b-b2f7-4f68-8f1a-ec461ddf5c1e
+
+		changedProperty = FormatString
+
+	measure '27 Margem YoY %' = ```
+			
+			VAR MargemAtual = [10 Margem]
+			VAR MargemLY = [26 Margem LY]
+			
+			RETURN 
+			    DIVIDE(
+			        MargemAtual - MargemLY,
+			        MargemLY,
+			        BLANK()
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 25be8cc5-3e67-4582-bf97-5a733a622ae2
+
+		changedProperty = FormatString
+
+	measure '29 Resultado LM' =
+			
+			CALCULATE(
+			    [09 Resultado],
+			    CALCULATETABLE(
+			        DATEADD( dCalendario[Id Data], -1, MONTH ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 02. Temporais
+		lineageTag: 69c0eeee-3353-4349-983c-8859319ef8ae
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure '30 Resultado LY' =
+			
+			CALCULATE(
+			    [09 Resultado],
+			    CALCULATETABLE(
+			        SAMEPERIODLASTYEAR( dCalendario[Id Data] ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 02. Temporais
+		lineageTag: 44f36d9f-2ffd-48ca-9f8e-27d81909ce70
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure '31 Resultado YoY %' = ```
+			
+			VAR ResultadoAtual = [09 Resultado]
+			VAR ResultadoLY = [30 Resultado LY]
+			
+			RETURN 
+			    DIVIDE(
+			        ResultadoAtual - ResultadoLY,
+			        ResultadoLY,
+			        BLANK()
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 6499ef05-8be9-453e-82ad-c3afdb8ceac6
+
+		changedProperty = FormatString
+
+	measure '32 Resultado MoM %' = ```
+			
+			VAR ResultadoAtual = [09 Resultado]
+			VAR ResultadoLM = [29 Resultado LM]
+			
+			RETURN 
+			    DIVIDE(
+			        ResultadoAtual - ResultadoLM,
+			        ResultadoLM,
+			        BLANK()
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: b7ea6579-84f7-48e1-8b89-5fa41237167f
+
+	measure '28 Margem MoM %' = ```
+			
+			VAR MargemAtual = [10 Margem]
+			VAR MargemLM = [25 Margem LM]
+			
+			RETURN 
+			    DIVIDE(
+			        MargemAtual - MargemLM,
+			        MargemLM,
+			        BLANK()
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 376ebc05-ced8-4b00-9404-f99c56c284ed
+
+	measure '33 Comissao LY' =
+			
+			CALCULATE(
+			    [07 Comissao],
+			    CALCULATETABLE(
+			        SAMEPERIODLASTYEAR( dCalendario[Id Data] ),
+			        dCalendario[Datas com Venda] = TRUE()
+			    )
+			)
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 02. Temporais
+		lineageTag: 08f594f4-8f33-44c3-8537-a9f3c534a1e5
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure '34 Comissao YoY %' = ```
+			
+			VAR ComissaoAtual = [07 Comissao]
+			VAR ComissaoLY = [33 Comissao LY]
+			
+			RETURN 
+			    DIVIDE(
+			        ComissaoAtual - ComissaoLY,
+			        ComissaoLY,
+			        BLANK()
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: 8a7d462f-7815-45de-b010-183cb6868b82
+
+	measure '35 Comissao MoM %' = ```
+			
+			VAR ComissaoAtual = [07 Comissao]
+			VAR ComissaoLM = 
+			    CALCULATE(
+			        [07 Comissao],
+			        DATEADD(dCalendario[Id Data], -1, MONTH)
+			    )
+			
+			RETURN 
+			    DIVIDE(
+			        ComissaoAtual - ComissaoLM,
+			        ComissaoLM,
+			        BLANK()
+			    )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02. Temporais
+		lineageTag: f0bcc0fc-efbc-4ff4-b5c3-ddbacb0d08f2
+
+	measure '40 Meta' = SUM(fMetas[Valor Meta])
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 01.Principais
+		lineageTag: c10e334b-c7fe-482c-907a-c68997d7a764
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	/// Percentual de atingimento: Faturamento / Meta
+	measure '41 Porcentagem Meta' =
+			
+			// Percentual de atingimento da meta
+			VAR _Faturamento = [01 Faturamento]
+			VAR _Meta = [40 Meta]
+			
+			RETURN
+			    DIVIDE(
+			        _Faturamento,
+			        _Meta,
+			        BLANK()
+			    )
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 01.Principais
+		lineageTag: ed8f85d6-91fa-4f1c-8ca0-8fd0a705870d
+
+	measure '50 Eixo Y max Grafico Comercial' = ```
+			
+			VAR _tab = 
+			    ALLSELECTED( dCalendario[Mes Abreviado] , dCalendario[Mês] )
+			
+			VAR _MaiorValor = 
+			    MAXX( _tab , [01 Faturamento] )
+			
+			RETURN 
+			    _MaiorValor * 1.50
+			```
+		displayFolder: 03. Formatações
+		lineageTag: 10833f77-256f-4c59-a376-c3aa76d18253
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '51 Faturamento formatação de texto' = ```
+			
+			VAR _valor =[01 Faturamento]
+			
+			RETURN
+			        SWITCH( TRUE(),
+			            ABS( _valor ) >=  1E9, FORMAT( _valor , "##,,,.00 B; -#,,,.0  B; -"),
+			            ABS( _valor ) >=  1E6, FORMAT( _valor , "##,,.00 M; -#,,.0  M; -"),
+			            ABS( _valor ) >=  1E3, FORMAT( _valor , "##,.00 K; -#,.0  K; -"),
+			            FORMAT( _valor , "#;-#;-")
+			            )
+			
+			
+			```
+		displayFolder: 03. Formatações
+		lineageTag: 1d58d071-b2bd-47e7-9409-7e67ccfb0933
+
+	measure '60 SVG Cartao Faturamento v1' = ```
+			
+			VAR _percent = [23 Faturamento YoY %]
+			VAR _format = FORMAT( _percent + 0 , " +0.00 %; -0.00 %; -")
+			VAR _seta = 
+			SWITCH(
+			    TRUE(),
+			    _percent > 0 , "▲",
+			    _percent < 0 , "▼",
+			    " - "
+			)
+			VAR _cor_seta = 
+			SWITCH(
+			    TRUE(),
+			    _percent > 0 , "Green",
+			    _percent < 0 , "red",
+			    "#ffffff"
+			)
+			
+			VAR _text =
+			    "data:image/svg+xml,
+			    <svg  viewBox='0 0 190 50' fill='none' xmlns='http://www.w3.org/2000/svg'>
+			        <g id='varia&#195;&#167;&#195;&#163;o'>
+			            <text id='rot_cat' fill='white' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='12' font-weight='400' letter-spacing='0em'>
+			                <tspan x='88' y='40.9688'>Vs. Ano Anterior</tspan>
+			            </text>
+			            <text id='rot_dados' fill='"& _cor_seta &"' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='14' font-weight='600' letter-spacing='0em'>
+			                <tspan x='88' y='21.2969'>"& _format &"</tspan>
+			            </text>
+			            <text id='seta' fill='"& _cor_seta &"' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='14' font-weight='600' letter-spacing='0em'>
+			                <tspan x='68' y='31.2969'>"& _seta &"</tspan>
+			            </text>
+			        </g>
+			    </svg>
+			    "
+			
+			RETURN 
+			    _text
+			```
+		displayFolder: .Visuais SVG
+		lineageTag: fb8f0797-cf4d-4db4-9d1e-9d1d12b87290
+		dataCategory: ImageUrl
+
+	measure '61 SVG Cartao Margem v1' = ```
+			
+			VAR _percent = [27 Margem YoY %]
+			VAR _format = FORMAT( _percent + 0 , "+0.00 %;-0.00 %;-")
+			VAR _seta = 
+			SWITCH(
+			    TRUE(),
+			    _percent > 0 , "▲",
+			    _percent < 0 , "▼",
+			    " - "
+			)
+			VAR _cor_seta = 
+			SWITCH(
+			    TRUE(),
+			    _percent > 0 , "Green",
+			    _percent < 0 , "red",
+			    "#ffffff"
+			)
+			
+			VAR _text =
+			    "data:image/svg+xml,
+			    <svg  viewBox='0 0 190 50' fill='none' xmlns='http://www.w3.org/2000/svg'>
+			        <g id='varia&#195;&#167;&#195;&#163;o'>
+			            <text id='rot_cat' fill='white' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='12' font-weight='400' letter-spacing='0em'>
+			                <tspan x='88' y='40.9688'>Vs. Ano Anterior</tspan>
+			            </text>
+			            <text id='rot_dados' fill='"& _cor_seta &"' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='14' font-weight='600' letter-spacing='0em'>
+			                <tspan x='88' y='21.2969'>"& _format &"</tspan>
+			            </text>
+			            <text id='seta' fill='"& _cor_seta &"' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='14' font-weight='600' letter-spacing='0em'>
+			                <tspan x='68' y='31.2969'>"& _seta &"</tspan>
+			            </text>
+			        </g>
+			    </svg>
+			    "
+			
+			RETURN 
+			    _text
+			```
+		displayFolder: .Visuais SVG
+		lineageTag: 9955de9e-c009-404d-ba34-660f9cf53aa7
+
+	measure '62 SVG Cartao Resultado v1' = ```
+			
+			VAR _percent = [31 Resultado YoY %]
+			VAR _format = FORMAT( _percent + 0 , "+0.00 %;-0.00 %;-")
+			VAR _seta = 
+			SWITCH(
+			    TRUE(),
+			    _percent > 0 , "▲",
+			    _percent < 0 , "▼",
+			    " - "
+			)
+			VAR _cor_seta = 
+			SWITCH(
+			    TRUE(),
+			    _percent > 0 , "Green",
+			    _percent < 0 , "red",
+			    "#ffffff"
+			)
+			
+			VAR _text =
+			    "data:image/svg+xml,
+			    <svg  viewBox='0 0 190 50' fill='none' xmlns='http://www.w3.org/2000/svg'>
+			        <g id='varia&#195;&#167;&#195;&#163;o'>
+			            <text id='rot_cat' fill='white' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='12' font-weight='400' letter-spacing='0em'>
+			                <tspan x='88' y='40.9688'>Vs. Ano Anterior</tspan>
+			            </text>
+			            <text id='rot_dados' fill='"& _cor_seta &"' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='14' font-weight='600' letter-spacing='0em'>
+			                <tspan x='88' y='21.2969'>"& _format &"</tspan>
+			            </text>
+			            <text id='seta' fill='"& _cor_seta &"' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='14' font-weight='600' letter-spacing='0em'>
+			                <tspan x='68' y='31.2969'>"& _seta &"</tspan>
+			            </text>
+			        </g>
+			    </svg>
+			    "
+			
+			RETURN 
+			    _text
+			```
+		displayFolder: .Visuais SVG
+		lineageTag: 45c9005f-7071-4239-836c-682b4f92335d
+
+	measure '64 SVG Tabela HTML Content Lite v1' = ```
+			
+			
+			VAR _cidade = SELECTEDVALUE( dClientes[Cidade] )
+			
+			VAR _valor = [51 Faturamento formatação de texto]
+			
+			VAR _margem = FORMAT(  [27 Margem YoY %], "#.0 %")
+			-----------------------------------
+			--- Formatação                 ----
+			-----------------------------------
+			var __cor_fonte =  "#D6D7E3"
+			
+			VAR _cores = 
+			SWITCH(
+			    TRUE(),
+			    [27 Margem YoY %] > 0 , "green",
+			    [27 Margem YoY %] < 0 , "red",
+			    "#ffffff"
+			)
+			
+			RETURN
+			    "
+			    <svg width='255' height='79' viewBox='0 0 255 65' fill='none' xmlns='http://www.w3.org/2000/svg'>
+			
+			        <defs>
+			            <style>
+			                #txt_margem, #txt_cidade, #txt_faturamento  {
+			                    transition: .7s
+			                }
+			                
+			
+			                svg:hover #txt_faturamento  {
+			                    transform: translateX( -126px)
+			                }
+			                svg:hover #txt_cidade {
+			                    transform: translateX(126px)
+			                }
+			                svg:hover  #txt_margem {
+			                    transform: translateX( -126px)
+			                }
+			
+			            </style>
+			        </defs>
+			
+			        <g id='tabela_cidades'>
+			            <line id='divisor' x1='127.5' y1='14' x2='127.5' y2='50' stroke='white' stroke-opacity='0.1'/>
+			            <text id='txt_cidade' fill='"& __cor_fonte &"' font-family='Segoe UI' font-size='11' font-weight='600'>
+			                <tspan x='28' y='34.0547'> " & _cidade & " </tspan>
+			            </text>
+			            <text id='txt_faturamento' fill='"& __cor_fonte &"' font-family='Segoe UI' font-size='15' font-weight='600'>
+			                <tspan x='155' y='26.2109'> R$ "& _valor &" </tspan>
+			            </text>
+			            <text id='txt_margem' fill='"& _cores &"' font-family='Segoe UI' font-size='15' font-weight='600'>
+			                <tspan x='155' y='53.2109'> "& _margem &" </tspan>
+			            </text>
+			        </g>
+			    </svg>
+			    "
+			```
+		displayFolder: .Visuais SVG
+		lineageTag: ab622601-89c7-4a5f-acab-f0a557b0f5d5
+		dataCategory: ImageUrl
+
+	measure '52 Rank Cidade' = ```
+			
+			RANKX(
+			    ALL( dClientes[Cidade] ) , [01 Faturamento] 
+			)
+			```
+		formatString: 0
+		lineageTag: 4fc7e5c3-129b-421a-aa82-2f2ddcb14e26
+
+	measure '21 Faturamento Acumulado LY' = ```
+			
+			    CALCULATE(
+			        [01 Faturamento],
+			        CALCULATETABLE(
+			            DATESYTD( SAMEPERIODLASTYEAR( dCalendario[Id Data]) ),
+			            dCalendario[Datas com Venda] = TRUE()
+			        )
+			    )
+			```
+		displayFolder: 02. Temporais
+		lineageTag: aecb7ca7-a111-4fb5-8e10-23c64bd53e8f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '63 SVG Cartao Comissao v1' = ```
+			
+			VAR _percent = [34 Comissao YoY %]
+			VAR _format = FORMAT( _percent + 0 , " +0.00 %; -0.00 %; -")
+			VAR _seta = 
+			SWITCH(
+			    TRUE(),
+			    _percent > 0 , "▲",
+			    _percent < 0 , "▼",
+			    " - "
+			)
+			VAR _cor_seta = 
+			SWITCH(
+			    TRUE(),
+			    _percent > 0 , "Green",
+			    _percent < 0 , "red",
+			    "#ffffff"
+			)
+			
+			VAR _text =
+			    "data:image/svg+xml,
+			    <svg  viewBox='0 0 190 50' fill='none' xmlns='http://www.w3.org/2000/svg'>
+			        <g id='varia&#195;&#167;&#195;&#163;o'>
+			            <text id='rot_cat' fill='white' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='12' font-weight='400' letter-spacing='0em'>
+			                <tspan x='88' y='40.9688'>Vs. Ano Anterior</tspan>
+			            </text>
+			            <text id='rot_dados' fill='"& _cor_seta &"' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='14' font-weight='600' letter-spacing='0em'>
+			                <tspan x='88' y='21.2969'>"& _format &"</tspan>
+			            </text>
+			            <text id='seta' fill='"& _cor_seta &"' xml:space='preserve' style='white-space: pre' font-family='Segoe UI' font-size='14' font-weight='600' letter-spacing='0em'>
+			                <tspan x='68' y='31.2969'>"& _seta &"</tspan>
+			            </text>
+			        </g>
+			    </svg>
+			    "
+			
+			RETURN 
+			    _text
+			```
+		displayFolder: .Visuais SVG
+		lineageTag: 373636ec-a919-4a7c-9e67-434ebfa46e1a
+		dataCategory: ImageUrl
+
+	measure '53 Max Y Visual 01 pg Vendedores' =
+			
+			MAXX(
+			    ALLSELECTED(
+			        dCalendario[Dia]
+			    ), [01 Faturamento] * 1.5
+			
+			)
+		lineageTag: 39c3ea4a-9f40-47d6-bb26-b642b786bc06
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '65 SVG Percentual Meta Velocimetro' = 1
+		formatString: 0
+		displayFolder: .Visuais SVG
+		lineageTag: 79465624-5fe0-4c96-8464-3a4d3fef330b
+
+	measure '42 Diferença Meta' = ABS( [40 Meta] - [01 Faturamento] )
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		displayFolder: 01.Principais
+		lineageTag: 19aa696a-0601-427b-935e-2318fd269fc3
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure '66 Meta Cor' =
+			
+			SWITCH(
+			    TRUE(),
+			    [41 Porcentagem Meta] >= 0.6, "green",
+			    [41 Porcentagem Meta] < 0.10 , "red",
+			    "grey"
+			)
+		displayFolder: .Visuais SVG
+		lineageTag: 925fa1f9-930e-4970-9534-81fa14c2acd4
+
+	measure '54 Nome Vendedor' = SELECTEDVALUE( dVendedores[Vendedor] )
+		lineageTag: ca2c3a36-16ce-4f61-ad24-914ce6167eae
+
+	/// Margem Bruta (%) = (Faturamento - Custo) / Faturamento
+	measure '04 Margem Bruta' =
+			
+			// Margem Bruta = (Faturamento - Custo) / Faturamento
+			VAR _Faturamento = [01 Faturamento]
+			VAR _Custo = [02 Custo]
+			VAR _MargemBruta = _Faturamento - _Custo
+			
+			RETURN
+			    DIVIDE(
+			        _MargemBruta,
+			        _Faturamento,
+			        BLANK()
+			    )
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 01.Principais
+		lineageTag: 30b91ae6-c3b0-44f0-9294-73a4725abaf9
+
+	/// Lucro Bruto em R$ = Faturamento - Custo
+	measure '03 Lucro Bruto' =
+			
+			// Lucro Bruto = Faturamento - Custo
+			[01 Faturamento] - [02 Custo]
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: 01.Principais
+		lineageTag: 1933b186-d787-4d57-adde-23cef88b907e
+
+	partition _Medidas-332540c9-11b5-4161-9242-ae9d094a8fc8 = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Coluna 1"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_ResultType = Table
+

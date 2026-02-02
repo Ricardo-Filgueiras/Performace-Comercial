@@ -1,0 +1,35 @@
+table dStatus
+	lineageTag: 5d9b2548-8d53-4085-8a7e-7ccc0ee32b2d
+
+	column 'Id Status'
+		dataType: int64
+		formatString: 0
+		lineageTag: a291336f-6ace-452c-8058-669c798540b9
+		summarizeBy: none
+		sourceColumn: Id Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 9b9b4d20-d115-478f-85ca-89bc2e0a0f99
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dStatus-700e1395-c7fb-425e-aa98-61d87aafecb4 = m
+		mode: import
+		queryGroup: Dimensões
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & "\Dimensões.xlsx"), null, true),
+				    Status_Table = Fonte{[Item="Status",Kind="Table"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Status_Table,{{"Id Status", Int64.Type}, {"Status", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

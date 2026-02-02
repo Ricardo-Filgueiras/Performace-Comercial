@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "6ab9cb76fa0c6aeddead",
+  "position": {
+    "x": 878.18181818181813,
+    "y": 121.81818181818181,
+    "z": 10000,
+    "height": 476.64335664335658,
+    "width": 336.4335664335664,
+    "tabOrder": 13000
+  },
+  "visualGroup": {
+    "displayName": "Rank por cidade",
+    "groupMode": "ScaleMode"
+  }
+}

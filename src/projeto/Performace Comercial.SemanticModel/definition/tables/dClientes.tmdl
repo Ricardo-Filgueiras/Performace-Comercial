@@ -1,0 +1,62 @@
+table dClientes
+	lineageTag: 3077b4c9-4f2e-4a50-a247-f4260eede252
+
+	column 'Id Cliente'
+		dataType: int64
+		formatString: 0
+		lineageTag: ec3e1d8a-9f2b-4583-858f-0bcce3aacb4f
+		summarizeBy: none
+		sourceColumn: Id Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cliente
+		dataType: string
+		lineageTag: 87372cb9-b83b-4713-9274-2d913da87b76
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cidade
+		dataType: string
+		lineageTag: 01924770-f939-4c18-8398-2e5e836069e5
+		summarizeBy: none
+		sourceColumn: Cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column UF
+		dataType: string
+		lineageTag: eac22a93-85e1-4edd-970b-b9c598b3bbe6
+		summarizeBy: none
+		sourceColumn: UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		lineageTag: 5c005a03-9c7b-4767-9cb9-035e7d3bfb9d
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dClientes-45ef84c7-1d35-4ccf-a71d-0f3ba0560307 = m
+		mode: import
+		queryGroup: Dimensões
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents(Caminho_Dimensoes & "\Dimensões.xlsx"), null, true),
+				    Clientes_Table = Fonte{[Item="Clientes",Kind="Table"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Clientes_Table,{{"Id Cliente", Int64.Type}, {"Cliente", type text}, {"Id Cidade", Int64.Type}}),
+				    #"Consultas Mescladas" = Table.NestedJoin(#"Tipo Alterado", {"Id Cidade"}, dCidades, {"Id Cidade"}, "dCidades", JoinKind.LeftOuter),
+				    #"dCidades Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "dCidades", {"Cidade", "UF", "Estado"}, {"Cidade", "UF", "Estado"}),
+				    #"Outras Colunas Removidas" = Table.SelectColumns(#"dCidades Expandido",{"Id Cliente", "Cliente", "Cidade", "UF", "Estado"})
+				in
+				    #"Outras Colunas Removidas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+
