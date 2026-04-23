@@ -1,0 +1,60 @@
+site_name: Performance Comercial
+site_description: Documentação técnica do modelo semântico Power BI — Performance Comercial
+site_author: Equipe de BI
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: pt
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Modo escuro
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+
+plugins:
+  - search:
+      lang: pt
+
+nav:
+  - Início: index.md
+  - Modelo Semântico:
+    - Visão Geral: 01 visao geral.md
+    - Relacionamentos: 04 relacionamentos.md
+    - Medidas DAX: 03 guia medidas dax.md
+  - Dicionário de Dados: 02 dicionario dados.md
+  - Boas Práticas: 06 boas praticas.md
+  - Changelog: 05 changelog.md
+  - Referências:
+    - Estrutura do Modelo: estrutura_definition_legivel.md
+    - Requisitos: requisitos.md

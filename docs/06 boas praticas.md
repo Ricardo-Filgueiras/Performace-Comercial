@@ -7,14 +7,14 @@
 
 ## 📋 Índice
 
-1. [Princípios Gerais](#princípios-gerais)
+1. [Princípios Gerais](#principios-gerais)
 2. [Modelagem de Dados](#modelagem-de-dados)
 3. [Medidas DAX](#medidas-dax)
 4. [Performance](#performance)
 5. [Nomenclatura](#nomenclatura)
-6. [Documentação](#documentação)
+6. [Documentação](#documentacao)
 7. [Testes](#testes)
-8. [Manutenção](#manutenção)
+8. [Manutenção](#manutencao)
 
 ---
 

@@ -7,11 +7,11 @@
 
 ## 📋 Índice
 
-1. [Visão Geral](#visão-geral)
+1. [Visão Geral](#visao-geral)
 2. [Diagrama de Relacionamentos](#diagrama-de-relacionamentos)
 3. [Relacionamentos Detalhados](#relacionamentos-detalhados)
 4. [Role-Playing Dimensions](#role-playing-dimensions)
-5. [Boas Práticas](#boas-práticas)
+5. [Boas Práticas](#boas-praticas)
 6. [Troubleshooting](#troubleshooting)
 
 ---

@@ -11,7 +11,7 @@
 2. [Medidas Temporais (20-35)](#medidas-temporais-20-35)
 3. [Medidas de Meta (40-42)](#medidas-de-meta-40-42)
 4. [Medidas Auxiliares (50-66)](#medidas-auxiliares-50-66)
-5. [Padrões e Boas Práticas](#padrões-e-boas-práticas)
+5. [Padrões e Boas Práticas](#padroes-e-boas-praticas)
 6. [Troubleshooting Comum](#troubleshooting-comum)
 
 ---

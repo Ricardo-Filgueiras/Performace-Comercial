@@ -5,3 +5,8 @@
 /scripts/_stg
 
 .env
+.venv
+__pycache__
+*.pyc
+*.pyo
+    

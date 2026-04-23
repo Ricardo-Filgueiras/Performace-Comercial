@@ -1,0 +1,13 @@
+# Normaliza todos os arquivos de texto para LF no repositório e no checkout
+* text=auto eol=lf
+
+# Arquivos Power BI — nunca converter line endings (binários)
+*.pbix binary
+*.pbip binary
+
+# Imagens — binário
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary

@@ -8,10 +8,10 @@
 ## 📋 Índice
 
 1. [Tabelas Fato](#tabelas-fato)
-2. [Tabelas Dimensão](#tabelas-dimensão)
+2. [Tabelas Dimensão](#tabelas-dimensao)
 3. [Tabelas de Medidas](#tabelas-de-medidas)
 4. [Relacionamentos](#relacionamentos)
-5. [Glossário de Termos](#glossário-de-termos)
+5. [Glossário de Termos](#glossario-de-termos)
 
 ---
 

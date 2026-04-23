@@ -1,79 +1,103 @@
-# Dashboard de Performance Comercial (Power BI)
+# Performance Comercial
 
-![Capa do Projeto](src/data/imagens/capa.png) 
-## 📖 Descrição do Projeto
-
-Este é um projeto de Business Intelligence focado na análise de performance comercial. O dashboard foi desenvolvido em **Power BI** com o objetivo de criar uma ferramenta de análise de dados que não fosse apenas funcional, mas que também oferecesse uma experiência de usuário (UX) e um design (UI) de alta qualidade.
-
-Este repositório contém os arquivos do projeto, incluindo o versionamento do arquivo `.pbix` e os assets de design.
+Projeto de análise de performance comercial desenvolvido em Power BI (formato `.pbip`), versionado com Git e documentado com MkDocs.
 
 ---
 
-## ✨ Funcionalidades Principais
+## Descrição
 
-O dashboard permite uma análise completa dos principais KPIs de vendas, incluindo:
+Dashboard de Business Intelligence para acompanhamento de KPIs comerciais: faturamento, resultado, margem, metas, positivação de clientes e produtos, análises temporais (YoY, MoM, YTD) e performance por vendedor, produto e região.
 
-* **Visão Geral:** Faturamento, Resultado, Margem e Metas.
-* **Análise por Vendedor:** Performance individual de cada vendedor, comissões e metas.
-* **Desempenho Geográfico:** Análise de vendas por cidade e região.
-* **Evolução Temporal:** Gráficos de faturamento e resultado ao longo dos meses.
-* **Análise por Categoria:** Visão de quais categorias de produtos (Computadores, Vídeos, Áudios) têm melhor performance.
-
-### Destaques Técnicos
-
-* 🎨 **Design UI/UX no Figma:** Todo o design foi prototipado no Figma antes da implementação, garantindo um visual coeso, moderno e focado na usabilidade.
-* 🖱️ **Menu Suspenso (Flyout):** Implementação de um menu lateral navegável utilizando **Indicadores (Bookmarks)** do Power BI para otimizar o espaço em tela.
-* 📊 **Visuais SVG Personalizados:** Utilização de gráficos e ícones em formato SVG para uma renderização mais nítida e customizada, indo além dos visuais padrão.
-* 🗂️ **Versionamento com GitHub:** O projeto foi inteiramente versionado com Git, demonstrando boas práticas de desenvolvimento e controle de mudanças.
+O modelo semântico segue arquitetura **Star Schema** com medidas DAX organizadas por categoria e documentação técnica completa publicada via MkDocs Material.
 
 ---
 
-## 🛠️ Ferramentas Utilizadas
+## Stack
 
-* **Análise de Dados e Visualização:** Microsoft Power BI
-* **Design e Prototipação (UI/UX):** Figma
-* **Controle de Versão:** Git & GitHub
-
----
-
-## 📸 Screenshots
-
-Aqui estão algumas telas do dashboard em ação:
-
-**Visão Comercial (Principal)**
-
-![Visão Comercial](src/data/imagens/comcercial.png) 
-
-**Visão por Vendedor**
-
-![Visão por Vendedor](src/data/imagens/vendedor.png) 
----
-
-## 🚀 Como Utilizar
-
-1.  **Clone o repositório:**
-    ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-    ```
-2.  **Abra o arquivo `.pbix`:**
-    * Você precisará ter o [Power BI Desktop](https://powerbi.microsoft.com/pt-br/desktop/) instalado.
-    * Abra o arquivo `NomeDoSeuProjeto.pbix` (substitua pelo nome real).
-
-3.  **Fonte de Dados:**
-    *  As fontes de dados (ex: planilhas Excel, CSV) podem estar localizadas na pasta `/data` .
-    Pode ser necessário remapear o caminho da fonte de dados nas configurações do Power BI.
+| Camada | Tecnologia |
+|---|---|
+| Relatório e modelo semântico | Power BI (formato PBIP) |
+| Documentação | MkDocs Material |
+| Gerenciador de pacotes Python | uv |
+| Versionamento | Git / GitHub |
+| CI/CD docs | GitHub Actions |
 
 ---
 
-## 👨‍💻 Autor
+## Estrutura de pastas
 
-* **Ricardo Filgueiras**
-* **LinkedIn:** [https://www.linkedin.com/in/ricardo-filgueiras-b4607b232/](https://www.linkedin.com/in/ricardo-filgueiras-b4607b232/)
-* **Portfólio:** [em breve]()
-* **Dashboard Power BI:** [Power BI](https://app.powerbi.com/view?r=eyJrIjoiNjRlNmRhYzktODY2Yy00MTI2LWIyYTYtMDczNTFjNTkyZDMzIiwidCI6ImVhNmIyNzRlLTE4MmYtNDc0Yy04YWMwLTQzOWM5ZTE1Yjg3ZSJ9)
+```
+Performace-Comercial/
+├── docs/                          # Fonte da documentação MkDocs
+│   ├── index.md
+│   ├── 01 visao geral.md
+│   ├── 02 dicionario dados.md
+│   ├── 03 guia medidas dax.md
+│   ├── 04 relacionamentos.md
+│   ├── 05 changelog.md
+│   ├── 06 boas praticas.md
+│   ├── estrutura_definition_legivel.md
+│   └── requisitos.md
+├── src/
+│   ├── data/                      # Fontes de dados (Excel/CSV)
+│   │   ├── Dimensões/
+│   │   ├── Extrações/
+│   │   ├── Metas/
+│   │   └── imagens/
+│   └── projeto/                   # Arquivos Power BI (PBIP)
+│       ├── Performace Comercial.pbip
+│       ├── Performace Comercial.Report/
+│       └── Performace Comercial.SemanticModel/
+├── .github/workflows/docs.yml     # CI/CD publicação da documentação
+├── mkdocs.yml                     # Configuração do MkDocs
+├── pyproject.toml                 # Dependências Python (uv)
+├── uv.lock
+└── README.md
+```
 
 ---
 
-## 📄 Licença
+## Documentação
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+### Rodar localmente
+
+Requer [uv](https://docs.astral.sh/uv/) instalado.
+
+```bash
+uv run mkdocs serve
+```
+
+Acesse em `http://127.0.0.1:8000`.
+
+### Publicar no GitHub Pages
+
+```bash
+uv run mkdocs gh-deploy
+```
+
+O comando faz o build e faz push do conteúdo estático para a branch `gh-pages` automaticamente.
+
+---
+
+## Como usar o projeto Power BI
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/RicardoFilgueiras/Performace-Comercial.git
+   ```
+2. Abra o arquivo `src/projeto/Performace Comercial.pbip` no **Power BI Desktop** (versão 2.146+).
+3. Se necessário, remapeie o caminho das fontes de dados em `src/data/`.
+
+---
+
+## Autor
+
+**Ricardo Filgueiras**
+- LinkedIn: [ricardo-filgueiras-b4607b232](https://www.linkedin.com/in/ricardo-filgueiras-b4607b232/)
+- Dashboard publicado: [Power BI Service](https://app.powerbi.com/view?r=eyJrIjoiNjRlNmRhYzktODY2Yy00MTI2LWIyYTYtMDczNTFjNTkyZDMzIiwidCI6ImVhNmIyNzRlLTE4MmYtNDc0Yy04YWMwLTQzOWM5ZTE1Yjg3ZSJ9)
+
+---
+
+## Licença
+
+MIT — veja o arquivo [LICENSE](LICENSE) para detalhes.

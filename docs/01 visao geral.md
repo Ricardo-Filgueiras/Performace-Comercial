@@ -11,9 +11,9 @@
 1. [Objetivo do Dashboard](#objetivo-do-dashboard)
 2. [Arquitetura do Modelo](#arquitetura-do-modelo)
 3. [Estrutura de Tabelas](#estrutura-de-tabelas)
-4. [Métricas Principais](#métricas-principais)
-5. [Atualizações Recentes](#atualizações-recentes)
-6. [Convenções e Padrões](#convenções-e-padrões)
+4. [Métricas Principais](#metricas-principais)
+5. [Atualizações Recentes](#atualizacoes-recentes)
+6. [Convenções e Padrões](#convencoes-e-padroes)
 
 ---
 
