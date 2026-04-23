@@ -1,0 +1,2591 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação técnica do modelo semântico Power BI — Performance Comercial">
+      
+      
+        <meta name="author" content="Equipe de BI">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../04%20relacionamentos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Visão Geral - Performance Comercial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dashboard-performance-comercial-visao-geral" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Performance Comercial" class="md-header__button md-logo" aria-label="Performance Comercial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Performance Comercial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visão Geral
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Modelo Semântico
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../02%20dicionario%20dados/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Dicionário de Dados
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../06%20boas%20praticas/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Boas Práticas
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../05%20changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../estrutura_definition_legivel/" class="md-tabs__link">
+          
+  
+  
+  Referências
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Performance Comercial" class="md-nav__button md-logo" aria-label="Performance Comercial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Performance Comercial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo Semântico
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modelo Semântico
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo-do-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Objetivo do Dashboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Objetivo do Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analises-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análises Principais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publicos-alvo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Públicos-Alvo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura-do-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Arquitetura do Modelo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ Arquitetura do Modelo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipo-de-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipo de Modelo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-tecnicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características Técnicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-simplificado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama Simplificado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-tabelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Estrutura de Tabelas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Estrutura de Tabelas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabelas-fato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabelas Fato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabelas Fato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fvendas-tabela-central" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fVendas (Tabela Central)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fmetas-metas-comerciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fMetas (Metas Comerciais)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabelas-dimensao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabelas Dimensão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabelas Dimensão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dcalendario-dimensao-temporal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dCalendario (Dimensão Temporal)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dclientes-dimensao-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dClientes (Dimensão Cliente)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dprodutos-dimensao-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dProdutos (Dimensão Produto)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvendedores-dimensao-vendedor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dVendedores (Dimensão Vendedor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dunidades-dimensao-unidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dUnidades (Dimensão Unidade)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstatus-dimensao-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dStatus (Dimensão Status)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dpagamento-dimensao-forma-de-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dPagamento (Dimensão Forma de Pagamento)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabelas-de-medidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabelas de Medidas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabelas de Medidas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_medidas-medidas-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _Medidas (Medidas Principais)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zmetricas-metricas-auxiliares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        zMetricas (Métricas Auxiliares)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Métricas Principais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Métricas Principais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#categoria-principais-01-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categoria: Principais (01-13)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categoria-temporais-20-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categoria: Temporais (20-35)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categoria-metas-40-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categoria: Metas (40-42)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atualizacoes-recentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Atualizações Recentes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Atualizações Recentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versao-20-janeiro-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versão 2.0 - Janeiro 2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Versão 2.0 - Janeiro 2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#correcoes-implementadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Correções Implementadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#melhorias-de-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Melhorias de Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacao-criada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Documentação Criada
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convencoes-e-padroes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 Convenções e Padrões
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📐 Convenções e Padrões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nomenclatura-de-medidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nomenclatura de Medidas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nomenclatura de Medidas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefixos-numericos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefixos Numéricos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sufixos-temporais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sufixos Temporais
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomenclatura-de-tabelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nomenclatura de Tabelas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nomenclatura de Tabelas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefixos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefixos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padroes-dax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padrões DAX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Padrões DAX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#divisoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Divisões
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variáveis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filtros
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suporte-e-manutencao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Suporte e Manutenção
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📞 Suporte e Manutenção">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contatos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-de-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de Arquivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximas-melhorias-planejadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Próximas Melhorias Planejadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Próximas Melhorias Planejadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fase-2-metricas-essenciais-planejado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 2 - Métricas Essenciais (Planejado)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-3-analises-avancadas-futuro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 3 - Análises Avançadas (Futuro)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04%20relacionamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relacionamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03%20guia%20medidas%20dax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medidas DAX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02%20dicionario%20dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dicionário de Dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06%20boas%20praticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boas Práticas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05%20changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Referências
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estrutura_definition_legivel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estrutura do Modelo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo-do-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Objetivo do Dashboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Objetivo do Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analises-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análises Principais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publicos-alvo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Públicos-Alvo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura-do-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Arquitetura do Modelo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ Arquitetura do Modelo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipo-de-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipo de Modelo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-tecnicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características Técnicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-simplificado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama Simplificado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-tabelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Estrutura de Tabelas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Estrutura de Tabelas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabelas-fato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabelas Fato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabelas Fato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fvendas-tabela-central" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fVendas (Tabela Central)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fmetas-metas-comerciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fMetas (Metas Comerciais)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabelas-dimensao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabelas Dimensão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabelas Dimensão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dcalendario-dimensao-temporal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dCalendario (Dimensão Temporal)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dclientes-dimensao-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dClientes (Dimensão Cliente)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dprodutos-dimensao-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dProdutos (Dimensão Produto)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvendedores-dimensao-vendedor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dVendedores (Dimensão Vendedor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dunidades-dimensao-unidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dUnidades (Dimensão Unidade)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstatus-dimensao-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dStatus (Dimensão Status)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dpagamento-dimensao-forma-de-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dPagamento (Dimensão Forma de Pagamento)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabelas-de-medidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabelas de Medidas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabelas de Medidas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_medidas-medidas-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _Medidas (Medidas Principais)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zmetricas-metricas-auxiliares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        zMetricas (Métricas Auxiliares)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Métricas Principais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Métricas Principais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#categoria-principais-01-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categoria: Principais (01-13)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categoria-temporais-20-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categoria: Temporais (20-35)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categoria-metas-40-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categoria: Metas (40-42)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atualizacoes-recentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Atualizações Recentes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Atualizações Recentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versao-20-janeiro-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versão 2.0 - Janeiro 2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Versão 2.0 - Janeiro 2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#correcoes-implementadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Correções Implementadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#melhorias-de-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Melhorias de Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacao-criada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Documentação Criada
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convencoes-e-padroes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 Convenções e Padrões
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📐 Convenções e Padrões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nomenclatura-de-medidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nomenclatura de Medidas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nomenclatura de Medidas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefixos-numericos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefixos Numéricos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sufixos-temporais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sufixos Temporais
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomenclatura-de-tabelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nomenclatura de Tabelas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nomenclatura de Tabelas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefixos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefixos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padroes-dax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padrões DAX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Padrões DAX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#divisoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Divisões
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variáveis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filtros
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suporte-e-manutencao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Suporte e Manutenção
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📞 Suporte e Manutenção">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contatos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-de-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de Arquivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximas-melhorias-planejadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Próximas Melhorias Planejadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Próximas Melhorias Planejadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fase-2-metricas-essenciais-planejado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 2 - Métricas Essenciais (Planejado)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-3-analises-avancadas-futuro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 3 - Análises Avançadas (Futuro)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dashboard-performance-comercial-visao-geral">📊 Dashboard Performance Comercial - Visão Geral</h1>
+<p><strong>Última Atualização:</strong> 30 de Janeiro de 2026<br />
+<strong>Versão:</strong> 2.0<br />
+<strong>Status:</strong> ✅ Modelo Otimizado e Documentado</p>
+<hr />
+<h2 id="indice">📋 Índice</h2>
+<ol>
+<li><a href="#objetivo-do-dashboard">Objetivo do Dashboard</a></li>
+<li><a href="#arquitetura-do-modelo">Arquitetura do Modelo</a></li>
+<li><a href="#estrutura-de-tabelas">Estrutura de Tabelas</a></li>
+<li><a href="#metricas-principais">Métricas Principais</a></li>
+<li><a href="#atualizacoes-recentes">Atualizações Recentes</a></li>
+<li><a href="#convencoes-e-padroes">Convenções e Padrões</a></li>
+</ol>
+<hr />
+<h2 id="objetivo-do-dashboard">🎯 Objetivo do Dashboard</h2>
+<p>O Dashboard <strong>Performance Comercial</strong> foi desenvolvido para fornecer análises completas sobre o desempenho de vendas da empresa, permitindo:</p>
+<h3 id="analises-principais">Análises Principais</h3>
+<ul>
+<li><strong>Faturamento e Rentabilidade</strong>: Acompanhamento de receitas, custos, margens e resultados</li>
+<li><strong>Gestão de Metas</strong>: Monitoramento do atingimento de metas comerciais</li>
+<li><strong>Análises Temporais</strong>: Comparações Year-over-Year (YoY) e Month-over-Month (MoM)</li>
+<li><strong>Performance por Dimensões</strong>: Análise por produtos, clientes, vendedores e unidades</li>
+<li><strong>Positivação</strong>: Cobertura de clientes e produtos</li>
+</ul>
+<h3 id="publicos-alvo">Públicos-Alvo</h3>
+<ul>
+<li><strong>Diretoria Comercial</strong>: Visão estratégica de resultados</li>
+<li><strong>Gerência de Vendas</strong>: Acompanhamento de metas e performance</li>
+<li><strong>Equipe Comercial</strong>: Monitoramento individual e por território</li>
+<li><strong>Controladoria</strong>: Análise de rentabilidade e custos</li>
+</ul>
+<hr />
+<h2 id="arquitetura-do-modelo">🏗️ Arquitetura do Modelo</h2>
+<h3 id="tipo-de-modelo">Tipo de Modelo</h3>
+<p><strong>Star Schema</strong> (Esquema Estrela) com:
+- <strong>2 Tabelas Fato</strong>: fVendas, fMetas
+- <strong>6 Tabelas Dimensão</strong>: dCalendario, dClientes, dProdutos, dVendedores, dUnidades, dStatus, dPagamento
+- <strong>2 Tabelas de Medidas</strong>: _Medidas (44 medidas), zMetricas (6 medidas)</p>
+<h3 id="caracteristicas-tecnicas">Características Técnicas</h3>
+<ul>
+<li><strong>Compatibilidade</strong>: Power BI Desktop (versão 2.146.1254.0)</li>
+<li><strong>Modo</strong>: Import</li>
+<li><strong>Cultura</strong>: pt-BR</li>
+<li><strong>Total de Medidas</strong>: 50</li>
+<li><strong>Total de Relacionamentos</strong>: 10</li>
+</ul>
+<h3 id="diagrama-simplificado">Diagrama Simplificado</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>            ┌─────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>            │ dCalendario │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>            └──────┬──────┘
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                   │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        ┌──────────┼──────────┐
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        │          │          │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   ┌────▼───┐ ┌───▼────┐     │
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   │ fVendas│ │ fMetas │     │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>   └───┬─┬─┬┘ └────┬───┘     │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>       │ │ │       │         │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>   ┌───▼ │ │   ┌───▼─────────▼──┐
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>   │dProd│ │   │  dVendedores   │
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>   └─────┘ │   └────────────────┘
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>       ┌───▼──────┐
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>       │dClientes │
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>       └──────────┘
+</code></pre></div>
+<hr />
+<h2 id="estrutura-de-tabelas">📊 Estrutura de Tabelas</h2>
+<h3 id="tabelas-fato">Tabelas Fato</h3>
+<h4 id="fvendas-tabela-central"><strong>fVendas</strong> (Tabela Central)</h4>
+<ul>
+<li><strong>Descrição</strong>: Registra todas as transações de vendas</li>
+<li><strong>Granularidade</strong>: Uma linha por item vendido</li>
+<li><strong>Colunas Principais</strong>: 15 colunas</li>
+<li>Datas: Data Pedido, Data Envio</li>
+<li>IDs: Id Produto, Id Vendedor, Id Cliente, Id Unidade, Id Status, Id Pgto</li>
+<li>Valores: Qtde, Valor Unit, Custo Unit, Despesa Unit, Impostos Unit, Comissão Unit</li>
+<li><strong>Relacionamentos</strong>: 9 relacionamentos ativos + 1 inativo</li>
+</ul>
+<h4 id="fmetas-metas-comerciais"><strong>fMetas</strong> (Metas Comerciais)</h4>
+<ul>
+<li><strong>Descrição</strong>: Armazena as metas de vendas por vendedor e período</li>
+<li><strong>Granularidade</strong>: Uma linha por vendedor por data</li>
+<li><strong>Colunas Principais</strong>: 3 colunas</li>
+<li>Data, Id Vendedor, Valor Meta</li>
+<li><strong>Relacionamentos</strong>: 2 relacionamentos</li>
+</ul>
+<h3 id="tabelas-dimensao">Tabelas Dimensão</h3>
+<h4 id="dcalendario-dimensao-temporal"><strong>dCalendario</strong> (Dimensão Temporal)</h4>
+<ul>
+<li><strong>Descrição</strong>: Dimensão de datas para análises temporais</li>
+<li><strong>Colunas</strong>: 13 colunas + 1 hierarquia</li>
+<li><strong>Atributos</strong>: Ano, Mês, Dia, Semestre, Trimestre, Semana</li>
+<li><strong>Colunas Calculadas</strong>: Datas com Venda, Semana dia Num, Semana dia Nome</li>
+</ul>
+<h4 id="dclientes-dimensao-cliente"><strong>dClientes</strong> (Dimensão Cliente)</h4>
+<ul>
+<li><strong>Descrição</strong>: Cadastro de clientes</li>
+<li><strong>Colunas</strong>: 5 colunas</li>
+<li><strong>Atributos</strong>: Id Cliente, Nome, Cidade, Estado, Região</li>
+</ul>
+<h4 id="dprodutos-dimensao-produto"><strong>dProdutos</strong> (Dimensão Produto)</h4>
+<ul>
+<li><strong>Descrição</strong>: Catálogo de produtos</li>
+<li><strong>Colunas</strong>: 5 colunas</li>
+<li><strong>Atributos</strong>: Id Produto, Nome, Categoria, Subcategoria, Marca</li>
+</ul>
+<h4 id="dvendedores-dimensao-vendedor"><strong>dVendedores</strong> (Dimensão Vendedor)</h4>
+<ul>
+<li><strong>Descrição</strong>: Cadastro de vendedores</li>
+<li><strong>Colunas</strong>: 4 colunas</li>
+<li><strong>Atributos</strong>: Id Vendedor, Nome, Região, Gerente</li>
+</ul>
+<h4 id="dunidades-dimensao-unidade"><strong>dUnidades</strong> (Dimensão Unidade)</h4>
+<ul>
+<li><strong>Descrição</strong>: Unidades de negócio/filiais</li>
+<li><strong>Colunas</strong>: 2 colunas</li>
+<li><strong>Atributos</strong>: Id Unidade, Nome Unidade</li>
+</ul>
+<h4 id="dstatus-dimensao-status"><strong>dStatus</strong> (Dimensão Status)</h4>
+<ul>
+<li><strong>Descrição</strong>: Status das vendas</li>
+<li><strong>Colunas</strong>: 2 colunas</li>
+<li><strong>Valores</strong>: 1=Efetivado, 2=Cancelado, etc.</li>
+</ul>
+<h4 id="dpagamento-dimensao-forma-de-pagamento"><strong>dPagamento</strong> (Dimensão Forma de Pagamento)</h4>
+<ul>
+<li><strong>Descrição</strong>: Formas de pagamento</li>
+<li><strong>Colunas</strong>: 2 colunas</li>
+<li><strong>Atributos</strong>: Id Pagamento, Descrição</li>
+</ul>
+<h3 id="tabelas-de-medidas">Tabelas de Medidas</h3>
+<h4 id="_medidas-medidas-principais"><strong>_Medidas</strong> (Medidas Principais)</h4>
+<ul>
+<li><strong>Total</strong>: 44 medidas DAX</li>
+<li><strong>Organização</strong>: Por pastas de display</li>
+<li><strong>Categorias</strong>: Principais, Temporais, Formatações, Visuais SVG</li>
+</ul>
+<h4 id="zmetricas-metricas-auxiliares"><strong>zMetricas</strong> (Métricas Auxiliares)</h4>
+<ul>
+<li><strong>Total</strong>: 6 medidas</li>
+<li><strong>Uso</strong>: Métricas de suporte e cálculos intermediários</li>
+</ul>
+<hr />
+<h2 id="metricas-principais">📈 Métricas Principais</h2>
+<h3 id="categoria-principais-01-13">Categoria: Principais (01-13)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Medida</th>
+<th>Descrição</th>
+<th>Formato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Faturamento</td>
+<td>Receita bruta de vendas efetivadas</td>
+<td>R$</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Custo</td>
+<td>Custo total dos produtos vendidos</td>
+<td>R$</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Lucro Bruto</td>
+<td>Faturamento - Custo</td>
+<td>R$</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Margem Bruta</td>
+<td>(Lucro Bruto / Faturamento) × 100</td>
+<td>%</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Despesa</td>
+<td>Despesas operacionais</td>
+<td>R$</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Impostos</td>
+<td>Impostos sobre vendas</td>
+<td>R$</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Comissao</td>
+<td>Comissões pagas</td>
+<td>R$</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Abatimento</td>
+<td>Soma de Custo + Despesa + Impostos + Comissão</td>
+<td>R$</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Resultado</td>
+<td>Lucro líquido (Faturamento - Abatimento)</td>
+<td>R$</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Margem</td>
+<td>Margem líquida (Resultado / Faturamento)</td>
+<td>%</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Qtde Vendas</td>
+<td>Quantidade total de transações</td>
+<td>#</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Positivação Clientes</td>
+<td>Clientes únicos com compras</td>
+<td>#</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Positivação Produtos</td>
+<td>Produtos únicos vendidos</td>
+<td>#</td>
+</tr>
+</tbody>
+</table>
+<h3 id="categoria-temporais-20-35">Categoria: Temporais (20-35)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Medida</th>
+<th>Descrição</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>Faturamento Acumulado</td>
+<td>Acumulado no ano</td>
+<td>YTD</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Faturamento Acumulado LY</td>
+<td>Acumulado no ano anterior</td>
+<td>YTD</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Faturamento LY</td>
+<td>Faturamento ano anterior</td>
+<td>LY</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Faturamento YoY %</td>
+<td>Variação ano a ano</td>
+<td>YoY</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Faturamento MoM %</td>
+<td>Variação mês a mês</td>
+<td>MoM</td>
+</tr>
+<tr>
+<td>25-28</td>
+<td>Margem LM/LY/YoY/MoM</td>
+<td>Comparações de margem</td>
+<td>Temporal</td>
+</tr>
+<tr>
+<td>29-32</td>
+<td>Resultado LM/LY/YoY/MoM</td>
+<td>Comparações de resultado</td>
+<td>Temporal</td>
+</tr>
+<tr>
+<td>33-35</td>
+<td>Comissão LY/YoY/MoM</td>
+<td>Comparações de comissão</td>
+<td>Temporal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="categoria-metas-40-42">Categoria: Metas (40-42)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Medida</th>
+<th>Descrição</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>40</td>
+<td>Meta</td>
+<td>Meta de vendas do período</td>
+<td>Baseline</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Porcentagem Meta</td>
+<td>% de atingimento da meta</td>
+<td>KPI</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Diferença Meta</td>
+<td>Gap: Faturamento - Meta</td>
+<td>Gap Analysis</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="atualizacoes-recentes">🔄 Atualizações Recentes</h2>
+<h3 id="versao-20-janeiro-2026">Versão 2.0 - Janeiro 2026</h3>
+<h4 id="correcoes-implementadas">✅ Correções Implementadas</h4>
+<ol>
+<li><strong>Positivação Corrigida</strong>: Adicionado filtro <code>Status = 1</code> nas medidas de positivação</li>
+<li><strong>Margem Bruta Criada</strong>: Nova medida conceitual correta (Faturamento - Custo) / Faturamento</li>
+<li><strong>Lucro Bruto Criado</strong>: Valor absoluto da margem bruta</li>
+<li><strong>Tratamento de Erros</strong>: Todas as divisões agora retornam <code>BLANK()</code> em caso de erro</li>
+<li><strong>Otimização com Variáveis</strong>: Uso de VAR para melhor performance e legibilidade</li>
+<li><strong>Numeração de Medidas</strong>: Sistema de numeração para melhor organização</li>
+</ol>
+<h4 id="melhorias-de-performance">🎯 Melhorias de Performance</h4>
+<ul>
+<li>Redução de recálculos através de variáveis DAX</li>
+<li>Otimização de medidas temporais</li>
+<li>Documentação inline em todas as medidas</li>
+</ul>
+<h4 id="documentacao-criada">📚 Documentação Criada</h4>
+<ul>
+<li>Visão Geral do Modelo</li>
+<li>Dicionário de Dados completo</li>
+<li>Guia de Medidas DAX</li>
+<li>Convenções e Padrões</li>
+</ul>
+<hr />
+<h2 id="convencoes-e-padroes">📐 Convenções e Padrões</h2>
+<h3 id="nomenclatura-de-medidas">Nomenclatura de Medidas</h3>
+<h4 id="prefixos-numericos">Prefixos Numéricos</h4>
+<ul>
+<li><strong>01-19</strong>: Medidas principais de negócio</li>
+<li><strong>20-39</strong>: Comparações temporais (LY, LM, YoY, MoM)</li>
+<li><strong>40-49</strong>: Medidas relacionadas a metas</li>
+<li><strong>50-59</strong>: Medidas auxiliares/formatação</li>
+<li><strong>60-79</strong>: Medidas para visuais (SVG, HTML)</li>
+<li><strong>80-89</strong>: Medidas de ranking/ordenação</li>
+<li><strong>90-99</strong>: Medidas de teste/desenvolvimento</li>
+</ul>
+<h4 id="sufixos-temporais">Sufixos Temporais</h4>
+<ul>
+<li><strong>LY</strong>: Last Year (Ano Anterior)</li>
+<li><strong>LM</strong>: Last Month (Mês Anterior)</li>
+<li><strong>YoY</strong>: Year over Year (Variação Anual)</li>
+<li><strong>MoM</strong>: Month over Month (Variação Mensal)</li>
+<li><strong>YTD</strong>: Year to Date (Acumulado no Ano)</li>
+</ul>
+<h3 id="nomenclatura-de-tabelas">Nomenclatura de Tabelas</h3>
+<h4 id="prefixos">Prefixos</h4>
+<ul>
+<li><strong>f</strong>: Tabelas Fato (fact) - Ex: fVendas, fMetas</li>
+<li><strong>d</strong>: Tabelas Dimensão (dimension) - Ex: dClientes, dProdutos</li>
+<li><strong>_</strong>: Tabelas de Medidas - Ex: _Medidas</li>
+<li><strong>z</strong>: Tabelas Auxiliares - Ex: zMetricas</li>
+</ul>
+<h3 id="padroes-dax">Padrões DAX</h3>
+<h4 id="divisoes">Divisões</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// ✅ CORRETO - Com tratamento de erro</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">DIVIDE</span><span class="p">(</span><span class="na">[Numerador]</span><span class="p">,</span><span class="w"> </span><span class="na">[Denominador]</span><span class="p">,</span><span class="w"> </span><span class="nf">BLANK</span><span class="p">())</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// ❌ INCORRETO - Sem tratamento</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">[Numerador]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="na">[Denominador]</span>
+</code></pre></div>
+<h4 id="variaveis">Variáveis</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// ✅ CORRETO - Uso de variáveis</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">VAR</span><span class="w"> </span>ValorAtual = [Medida]
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">VAR</span><span class="w"> </span>ValorAnterior = [Medida LY]
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">RETURN</span><span class="w"> </span><span class="nf">DIVIDE</span><span class="p">(</span>ValorAtual - ValorAnterior, ValorAnterior, BLANK())
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">// ❌ MENOS EFICIENTE - Sem variáveis</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nf">DIVIDE</span><span class="p">(</span><span class="na">[Medida]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="na">[Medida LY]</span><span class="p">,</span><span class="w"> </span><span class="na">[Medida LY]</span><span class="p">,</span><span class="w"> </span><span class="nf">BLANK</span><span class="p">())</span>
+</code></pre></div>
+<h4 id="filtros">Filtros</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// ✅ CORRETO - Filtro explícito</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">CALCULATE</span><span class="p">(</span><span class="na">[Medida]</span><span class="p">,</span><span class="w"> </span><span class="na">dStatus[Id Status]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">// ❌ PERIGOSO - Sem filtro de status</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="na">[Medida]</span>
+</code></pre></div>
+<hr />
+<h2 id="suporte-e-manutencao">📞 Suporte e Manutenção</h2>
+<h3 id="contatos">Contatos</h3>
+<ul>
+<li><strong>Desenvolvedor</strong>: Campeão Distribuição e Logística Ltda</li>
+<li><strong>Localização</strong>: GitHub/Performace-Comercial</li>
+</ul>
+<h3 id="estrutura-de-arquivos">Estrutura de Arquivos</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/documents/
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>├── 01-VISAO-GERAL.md (este arquivo)
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>├── 02-DICIONARIO-DADOS.md
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>├── 03-GUIA-MEDIDAS-DAX.md
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>├── 04-RELACIONAMENTOS.md
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>├── 05-CHANGELOG.md
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>└── 06-BOAS-PRATICAS.md
+</code></pre></div>
+<h3 id="versionamento">Versionamento</h3>
+<ul>
+<li><strong>Major</strong>: Mudanças estruturais significativas (ex: 1.0 → 2.0)</li>
+<li><strong>Minor</strong>: Novas funcionalidades/medidas (ex: 2.0 → 2.1)</li>
+<li><strong>Patch</strong>: Correções e ajustes (ex: 2.1 → 2.1.1)</li>
+</ul>
+<hr />
+<h2 id="proximas-melhorias-planejadas">🚀 Próximas Melhorias Planejadas</h2>
+<h3 id="fase-2-metricas-essenciais-planejado">Fase 2 - Métricas Essenciais (Planejado)</h3>
+<ul>
+<li>[ ] Ticket Médio e variações</li>
+<li>[ ] Produtividade por vendedor</li>
+<li>[ ] Mix de produtos (ABC)</li>
+<li>[ ] Métricas avançadas de meta (Projeção, Run Rate)</li>
+</ul>
+<h3 id="fase-3-analises-avancadas-futuro">Fase 3 - Análises Avançadas (Futuro)</h3>
+<ul>
+<li>[ ] Análise RFM de clientes</li>
+<li>[ ] Segmentação ABC automática</li>
+<li>[ ] Projeções e forecasting</li>
+<li>[ ] Análise de churn de clientes</li>
+</ul>
+<hr />
+<p><strong>Documento criado em:</strong> 30/01/2026<br />
+<strong>Autor:</strong> Assistente de Modelagem Power BI<br />
+<strong>Versão do Documento:</strong> 1.0</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
