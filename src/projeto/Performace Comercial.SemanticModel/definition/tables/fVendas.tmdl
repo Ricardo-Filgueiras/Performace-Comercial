@@ -160,7 +160,7 @@ table fVendas
 				in
 				    #"Outras Colunas Removidas"
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navegação
 

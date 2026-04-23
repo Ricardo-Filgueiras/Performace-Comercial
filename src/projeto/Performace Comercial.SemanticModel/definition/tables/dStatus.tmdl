@@ -29,7 +29,7 @@ table dStatus
 				in
 				    #"Tipo Alterado"
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navegação
 
