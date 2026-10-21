@@ -1,0 +1,67 @@
+site_name: Documentação de BI
+site_description: Portal de documentação dos projetos de BI
+docs_dir: docs
+
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Modo claro
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      lang: pt
+  # Menu por pasta: cada pasta pode ter um .nav.yml. Não use `nav:` neste arquivo.
+  - awesome-nav
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      locale: pt
+      fallback_to_build_date: true
+  - panzoom:
+      mermaid: true
+      full_screen: true
+      always_show_hint: true
+
+# Com `mkdocs build --strict`, estes avisos quebram o build:
+# página fora do menu e link para página que não existe.
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+  links:
+    not_found: warn
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

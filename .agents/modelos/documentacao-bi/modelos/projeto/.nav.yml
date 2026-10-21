@@ -1,0 +1,18 @@
+# Menu do projeto. Toda página nova precisa entrar aqui,
+# senão `mkdocs build --strict` falha (página fora do menu).
+nav:
+  - Sobre este projeto: readme.md
+  - Para quem usa:
+      - escopo.md
+      - como-usar.md
+      - regras-de-negocio.md
+      - Guias do relatório: guias-do-relatorio
+  - Para quem mantém:
+      - modelo-de-dados.md
+      - Medidas DAX: medidas-dax
+      - fontes-de-dados.md
+      - decisoes-tecnicas.md
+      - guia-do-desenvolvedor.md
+      - pendencias.md
+      - changelog.md
+  - Arquivo: arquivo

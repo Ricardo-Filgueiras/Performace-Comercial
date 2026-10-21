@@ -1,0 +1,13 @@
+# Copiar como .gitignore na raiz do portal.
+
+# Power BI: configurações e cache locais
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Binários soltos que não pertencem ao histórico
+*.pbix
+
+# Site (MkDocs) e ambiente Python
+.venv/
+site/
+__pycache__/

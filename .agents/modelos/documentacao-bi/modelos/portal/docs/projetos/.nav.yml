@@ -1,0 +1,3 @@
+# Acrescente uma linha por projeto: "- Nome do projeto: <slug>"
+nav:
+  - index.md
