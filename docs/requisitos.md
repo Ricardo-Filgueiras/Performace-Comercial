@@ -1,5 +1,8 @@
 # Requisitos
 
+!!! info "Conteúdo migrado"
+    O conteúdo desta página foi adaptado para o [escopo do projeto](projetos/performance-comercial/escopo.md), no padrão do portal. Esta página fica só como referência durante a migração e sai do portal no fim dela.
+
 Este documento descreve para que serve o painel **Performance Comercial**, quem o usa e o que ele precisa entregar. Foi reescrito a partir do que existe hoje no projeto (modelo semântico, relatório e documentação anterior). O texto anterior era um modelo genérico de requisitos, com itens que o projeto nunca implementou.
 
 ## Contexto do projeto

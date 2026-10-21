@@ -64,7 +64,7 @@
     
     
   <meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -729,6 +729,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Dentro do escopo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planejado-ainda-nao-implementado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planejado, ainda não implementado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2260,6 +2277,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Dentro do escopo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planejado-ainda-nao-implementado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planejado, ainda não implementado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2291,22 +2325,54 @@
 
 
 <h1 id="escopo">Escopo<a class="headerlink" href="#escopo" title="Permanent link">&para;</a></h1>
-<p>O conteúdo desta página foi deduzido dos nomes das guias e medidas e do código DAX e M. O que não dá para deduzir está marcado como pendência.</p>
-<h2 id="o-que-o-painel-resolve">O que o painel resolve<a class="headerlink" href="#o-que-o-painel-resolve" title="Permanent link">&para;</a></h2>
-<div class="admonition pendente">
-<p class="admonition-title">A confirmar</p>
-<p>Qual problema de negócio o painel resolve, em uma frase, nas palavras da área?</p>
+<p>O conteúdo desta página vem dos requisitos levantados com o desenvolvedor, conferidos contra os nomes das guias e medidas e o código DAX e M. O que não dá para confirmar está marcado como pendência.</p>
+<div class="admonition info">
+<p class="admonition-title">Projeto de portfólio</p>
+<p>O Performance Comercial é um projeto de <strong>portfólio</strong>, com dados fictícios e sem usuários reais. O escopo abaixo descreve o cenário para o qual o painel foi desenhado e serve para demonstrar o trabalho de modelagem, DAX e visualização.</p>
 </div>
+<h2 id="o-que-o-painel-resolve">O que o painel resolve<a class="headerlink" href="#o-que-o-painel-resolve" title="Permanent link">&para;</a></h2>
+<p>Permite acompanhar o desempenho comercial de uma empresa de vendas (faturamento, margem, resultado, comissão e metas) em um único relatório interativo, por período, produto, cliente, cidade, unidade e vendedor, no lugar de consultas manuais a planilhas.</p>
 <h2 id="objetivo">Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">&para;</a></h2>
+<p>Responder à pergunta "como estamos indo?" em poucos cliques: o gerente vê o resultado do período, compara com o ano anterior e confere o atingimento das metas.</p>
+<p>Não há objetivo mensurável definido. Os indicadores de sucesso do texto anterior (tempo de resposta, engajamento dos usuários e opinião dos gestores) não se aplicam a um projeto sem usuários reais.</p>
 <div class="admonition pendente">
 <p class="admonition-title">A confirmar</p>
-<p>Qual é o objetivo mensurável do painel?</p>
+<p>Definir uma meta de tempo de resposta do relatório. O texto anterior falava em menos de 5 segundos, mas isso nunca foi medido.</p>
 </div>
 <h2 id="publico">Público<a class="headerlink" href="#publico" title="Permanent link">&para;</a></h2>
-<div class="admonition pendente">
-<p class="admonition-title">A confirmar</p>
-<p>Quem usa o painel, para tomar qual decisão e com que frequência?</p>
-</div>
+<p>O usuário de referência é o <strong>gerente de equipe</strong>, que acompanha a equipe e as metas. Como o projeto é de portfólio, não há como simular o uso por vários usuários, e a frequência de uso não se aplica.</p>
+<p>Outros perfis são cenários possíveis, vindos da documentação anterior e <strong>não validados com usuários</strong>. A coluna "Guias que atendem" é deduzida dos visuais.</p>
+<table>
+<thead>
+<tr>
+<th>Perfil</th>
+<th>O que precisa ver</th>
+<th>Guias que atendem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diretoria comercial</td>
+<td>Visão geral do resultado: faturamento, margem, resultado e evolução contra o ano anterior</td>
+<td><a href="../guias-do-relatorio/comercial/">Comercial</a></td>
+</tr>
+<tr>
+<td>Gerência de vendas</td>
+<td>Atingimento das metas e desempenho de cada vendedor e equipe</td>
+<td><a href="../guias-do-relatorio/vendedores/">Vendedores</a>, <a href="../guias-do-relatorio/comercial/">Comercial</a></td>
+</tr>
+<tr>
+<td>Equipe comercial</td>
+<td>Seu próprio desempenho: vendas, comissão e meta</td>
+<td><a href="../guias-do-relatorio/vendedores/">Vendedores</a></td>
+</tr>
+<tr>
+<td>Controladoria</td>
+<td>Rentabilidade: custo, despesa, impostos, comissão e margem</td>
+<td><a href="../guias-do-relatorio/analitico/">Analítico</a>, <a href="../guias-do-relatorio/comercial/">Comercial</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="processos-cobertos">Processos cobertos<a class="headerlink" href="#processos-cobertos" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2317,17 +2383,64 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td>Acompanhamento de faturamento e resultado</td>
+<td><a href="../guias-do-relatorio/comercial/">Comercial</a>: cartões e evolução no tempo</td>
+</tr>
+<tr>
+<td>Análise de margem e rentabilidade</td>
+<td><a href="../guias-do-relatorio/comercial/">Comercial</a> e <a href="../guias-do-relatorio/analitico/">Analítico</a></td>
+</tr>
+<tr>
+<td>Acompanhamento de metas</td>
+<td><a href="../guias-do-relatorio/vendedores/">Vendedores</a> e dica de ferramenta da <a href="../guias-do-relatorio/dica-evolucao-faturamento/">evolução do faturamento</a></td>
+</tr>
+<tr>
+<td>Desempenho por vendedor e comissão</td>
+<td><a href="../guias-do-relatorio/vendedores/">Vendedores</a></td>
+</tr>
+<tr>
+<td>Análise por produto, gerente e cidade</td>
+<td><a href="../guias-do-relatorio/comercial/">Comercial</a></td>
+</tr>
+<tr>
+<td>Detalhamento por cidade, estado, subcategoria e unidade</td>
+<td><a href="../guias-do-relatorio/analitico/">Analítico</a></td>
+</tr>
+<tr>
+<td>Sazonalidade (mês por dia da semana) e comparação com o ano anterior</td>
+<td><a href="../guias-do-relatorio/mapa-calor/">Mapa Calor</a></td>
+</tr>
+<tr>
+<td>Positivação de clientes e de produtos</td>
+<td><a href="../guias-do-relatorio/analitico/">Analítico</a> e <a href="../guias-do-relatorio/vendedores/">Vendedores</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="dentro-do-escopo">Dentro do escopo<a class="headerlink" href="#dentro-do-escopo" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Indicadores</strong> (ver <a href="../regras-de-negocio/">regras de negócio</a> e <a href="../medidas-dax/">medidas DAX</a>): faturamento, custo, despesa, impostos, comissão, lucro bruto, margem bruta, resultado, margem, quantidade de vendas, positivação de clientes e de produtos, meta, porcentagem da meta e diferença para a meta.</li>
+<li><strong>Comparações no tempo:</strong> ano anterior (YoY), mês anterior (MoM) e acumulado no ano, aplicadas a faturamento, margem, resultado e comissão. O acumulado existe só para o faturamento.</li>
+<li><strong>Dimensões de análise:</strong> tempo (ano, semestre, trimestre, mês e dia), produto (categoria, subcategoria e produto), cliente (cliente e cidade), vendedor (vendedor e gerente), unidade e forma de pagamento.</li>
+<li><strong>Relatório</strong> (ver <a href="../guias-do-relatorio/">guias do relatório</a>): Capa, Comercial, Analítico, Mapa Calor, Vendedores e três dicas de ferramenta.</li>
+<li><strong>Interatividade:</strong> filtros por unidade, ano, mês, vendedor e forma de pagamento, botões de navegação em menu recolhível, dicas de ferramenta e visuais personalizados (cartões e tabelas em SVG e HTML).</li>
+<li><strong>Dados</strong> (ver <a href="../fontes-de-dados/">fontes de dados</a>): planilhas Excel guardadas junto com o projeto, em <code>data/</code>, no período de 2018 a 2021, em modo Import, com os caminhos em três parâmetros do Power Query.</li>
+<li><strong>Modelo</strong> (ver <a href="../modelo-de-dados/">modelo de dados</a>): esquema estrela com duas tabelas fato (<code>fVendas</code> e <code>fMetas</code>) e sete dimensões.</li>
+</ul>
+<h3 id="planejado-ainda-nao-implementado">Planejado, ainda não implementado<a class="headerlink" href="#planejado-ainda-nao-implementado" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ticket médio (faturamento por venda).</li>
+<li>Mix de produtos (curva ABC), produtividade por vendedor e projeção de meta.</li>
+</ul>
+<p>Não há data prevista para essas análises.</p>
 <h2 id="fora-do-escopo">Fora do escopo<a class="headerlink" href="#fora-do-escopo" title="Permanent link">&para;</a></h2>
-<div class="admonition pendente">
-<p class="admonition-title">A confirmar</p>
-<p>O que o painel não pretende cobrir?</p>
-</div>
+<ul>
+<li><strong>Controle de acesso por usuário (RLS).</strong> O modelo não tem papéis.</li>
+<li><strong>Análise geográfica em mapa.</strong> O relatório não tem visual de mapa. A guia Mapa Calor é uma matriz de mês por dia da semana.</li>
+<li><strong>Previsão de vendas, análise RFM e análise de perda de clientes (churn).</strong></li>
+<li><strong>Atualização automática dos dados.</strong> Os dados são fixos e não haverá valores depois de 31/12/2021.</li>
+<li><strong>Validação por uma área de negócio.</strong> Não existe área de negócio por trás do projeto.</li>
+<li><strong>Sistema de origem ou pipeline de dados.</strong> O modelo lê as planilhas direto.</li>
+</ul>
 
 
 
