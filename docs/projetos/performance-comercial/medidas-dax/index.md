@@ -76,31 +76,31 @@ O modelo renomeou as medidas com prefixo numérico (por exemplo, `Faturamento` v
 
 | Nome no relatório | Medida atual (inferida) | Guias |
 |---|---|---|
-| `Abatimento` | `08 Abatimento` | Analítico, Analítico antes |
-| `cartao  faturamento svg v1` | `60 SVG Cartao Faturamento v1` | Vendedores, Comercial antes, Vendedores antes |
-| `cartao  margem svg v1` | `61 SVG Cartao Margem v1` | Comercial, Vendedores, Comercial antes, Vendedores antes |
-| `cartao  resultado svg v1` | `62 SVG Cartao Resultado v1` | Comercial, Vendedores, Comercial antes, Vendedores antes |
-| `cartao comissao svg v1` | `63 SVG Cartao Comissao v1` | Vendedores, Vendedores antes |
-| `Comissao` | `07 Comissao` | Vendedores, Vendedores antes |
-| `Diferença Meta` | `42 Diferença Meta` | Vendedores, Vendedores antes |
-| `Eixo Y max Grafico Comercial` | `50 Eixo Y max Grafico Comercial` | Comercial, Comercial antes |
-| `Faturamento` | `01 Faturamento` | Comercial, Analítico, Mapa Calor, Vendedores, Comercial antes, Analítico antes, Mapa Calor antes, Vendedores antes, TooltiposGrafico01, TooltiposTabela |
-| `Faturamento Acumulado` | `20 Faturamento Acumulado` | Mapa Calor, Mapa Calor antes |
-| `Faturamento Acumulado LY` | `21 Faturamento Acumulado LY` | Mapa Calor, Mapa Calor antes |
-| `Faturamento LY` | `22 Faturamento LY` | Mapa Calor, Mapa Calor antes |
-| `Faturamento MoM %` | `24 Faturamento MoM %` | Comercial, Comercial antes |
-| `Margem` | `10 Margem` | Comercial, Analítico, Vendedores, Comercial antes, Analítico antes, Vendedores antes |
-| `max Y visual 01 pg Vendedores` | `53 Max Y Visual 01 pg Vendedores` | Vendedores, Vendedores antes |
-| `Meta` | `40 Meta` | Vendedores, Vendedores antes, TooltiposGrafico01 |
-| `Meta Cor` | `66 Meta Cor` | Vendedores, Vendedores antes |
-| `nome vendedor` | `54 Nome Vendedor` | TooltipRosca |
-| `Porcentagem Meta` | `41 Porcentagem Meta` | Vendedores, Vendedores antes, TooltiposGrafico01, TooltiposTabela |
-| `Positivação Clientes` | `12 Positivação Clientes` | Analítico, Vendedores, Analítico antes, Vendedores antes |
-| `Positivação Produtos` | `13 Positivação Produtos` | Analítico, Analítico antes |
-| `Qtde Vendas` | `11 Qtde Vendas` | Analítico, Analítico antes |
-| `rank cidade` | `52 Rank Cidade` | Comercial, Comercial antes |
-| `Resultado` | `09 Resultado` | Analítico, Vendedores, Comercial antes, Analítico antes, Vendedores antes |
-| `tabela hml contente lite v1` | `64 SVG Tabela HTML Content Lite v1` | Comercial antes |
+| `Abatimento` | `08 Abatimento` | [Analítico](../guias-do-relatorio/analitico.md), [Analítico antes](../arquivo/guias-anteriores.md) |
+| `cartao  faturamento svg v1` | `60 SVG Cartao Faturamento v1` | [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md) |
+| `cartao  margem svg v1` | `61 SVG Cartao Margem v1` | [Comercial](../guias-do-relatorio/comercial.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md) |
+| `cartao  resultado svg v1` | `62 SVG Cartao Resultado v1` | [Comercial](../guias-do-relatorio/comercial.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md) |
+| `cartao comissao svg v1` | `63 SVG Cartao Comissao v1` | [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md) |
+| `Comissao` | `07 Comissao` | [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md) |
+| `Diferença Meta` | `42 Diferença Meta` | [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md) |
+| `Eixo Y max Grafico Comercial` | `50 Eixo Y max Grafico Comercial` | [Comercial](../guias-do-relatorio/comercial.md), [Comercial antes](../arquivo/guias-anteriores.md) |
+| `Faturamento` | `01 Faturamento` | [Comercial](../guias-do-relatorio/comercial.md), [Analítico](../guias-do-relatorio/analitico.md), [Mapa Calor](../guias-do-relatorio/mapa-calor.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Analítico antes](../arquivo/guias-anteriores.md), [Mapa Calor antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md), [TooltiposGrafico01](../guias-do-relatorio/dica-evolucao-faturamento.md), [TooltiposTabela](../guias-do-relatorio/dica-tabela-vendedores.md) |
+| `Faturamento Acumulado` | `20 Faturamento Acumulado` | [Mapa Calor](../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../arquivo/guias-anteriores.md) |
+| `Faturamento Acumulado LY` | `21 Faturamento Acumulado LY` | [Mapa Calor](../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../arquivo/guias-anteriores.md) |
+| `Faturamento LY` | `22 Faturamento LY` | [Mapa Calor](../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../arquivo/guias-anteriores.md) |
+| `Faturamento MoM %` | `24 Faturamento MoM %` | [Comercial](../guias-do-relatorio/comercial.md), [Comercial antes](../arquivo/guias-anteriores.md) |
+| `Margem` | `10 Margem` | [Comercial](../guias-do-relatorio/comercial.md), [Analítico](../guias-do-relatorio/analitico.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Analítico antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md) |
+| `max Y visual 01 pg Vendedores` | `53 Max Y Visual 01 pg Vendedores` | [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md) |
+| `Meta` | `40 Meta` | [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md), [TooltiposGrafico01](../guias-do-relatorio/dica-evolucao-faturamento.md) |
+| `Meta Cor` | `66 Meta Cor` | [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md) |
+| `nome vendedor` | `54 Nome Vendedor` | [TooltipRosca](../guias-do-relatorio/dica-gerente-vendedores.md) |
+| `Porcentagem Meta` | `41 Porcentagem Meta` | [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md), [TooltiposGrafico01](../guias-do-relatorio/dica-evolucao-faturamento.md), [TooltiposTabela](../guias-do-relatorio/dica-tabela-vendedores.md) |
+| `Positivação Clientes` | `12 Positivação Clientes` | [Analítico](../guias-do-relatorio/analitico.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Analítico antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md) |
+| `Positivação Produtos` | `13 Positivação Produtos` | [Analítico](../guias-do-relatorio/analitico.md), [Analítico antes](../arquivo/guias-anteriores.md) |
+| `Qtde Vendas` | `11 Qtde Vendas` | [Analítico](../guias-do-relatorio/analitico.md), [Analítico antes](../arquivo/guias-anteriores.md) |
+| `rank cidade` | `52 Rank Cidade` | [Comercial](../guias-do-relatorio/comercial.md), [Comercial antes](../arquivo/guias-anteriores.md) |
+| `Resultado` | `09 Resultado` | [Analítico](../guias-do-relatorio/analitico.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Analítico antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md) |
+| `tabela hml contente lite v1` | `64 SVG Tabela HTML Content Lite v1` | [Comercial antes](../arquivo/guias-anteriores.md) |
 
 !!! pendente "Relatório com nomes antigos de medidas"
     25 nomes de medida usados em visuais do relatório não existem no modelo atual. Isso aparece no Power BI como campo não encontrado. As páginas desta documentação ligam cada nome antigo à medida atual pelo nome, mas essa ligação é uma dedução. Confirme abrindo o relatório no Power BI Desktop e, se for o caso, reaponte os visuais para as medidas atuais.

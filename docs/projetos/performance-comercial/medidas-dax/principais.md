@@ -20,7 +20,7 @@ CALCULATE(
 
 - **Tabela:** `_Medidas`
 - **Formato:** `"R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00`
-- **Usada nas guias:** Comercial, TooltiposTabela; pelo nome antigo `Faturamento` em Comercial, Analítico, Mapa Calor, Vendedores, Comercial antes, Analítico antes, Mapa Calor antes, Vendedores antes, TooltiposGrafico01, TooltiposTabela
+- **Usada nas guias:** [Comercial](../guias-do-relatorio/comercial.md), [TooltiposTabela](../guias-do-relatorio/dica-tabela-vendedores.md); pelo nome antigo `Faturamento` em [Comercial](../guias-do-relatorio/comercial.md), [Analítico](../guias-do-relatorio/analitico.md), [Mapa Calor](../guias-do-relatorio/mapa-calor.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Analítico antes](../arquivo/guias-anteriores.md), [Mapa Calor antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md), [TooltiposGrafico01](../guias-do-relatorio/dica-evolucao-faturamento.md), [TooltiposTabela](../guias-do-relatorio/dica-tabela-vendedores.md)
 - **Depende de:** nenhuma medida
 - **É usada por:** `03 Lucro Bruto`, `04 Margem Bruta`, `09 Resultado`, `10 Margem`, `20 Faturamento Acumulado`, `21 Faturamento Acumulado LY`, `22 Faturamento LY`, `23 Faturamento YoY %`, `24 Faturamento MoM %`, `41 Porcentagem Meta`, `42 Diferença Meta`, `50 Eixo Y max Grafico Comercial`, `51 Faturamento formatação de texto`, `52 Rank Cidade`, `53 Max Y Visual 01 pg Vendedores`, `Context Medida z`, `Linha Atual`, `Seta para Cima`, `Seta para baixo  ( limit Inferior )`, `Seta para baixo  ( limit sup )`
 - **Regra de negócio:** [Faturamento, custo, despesa, impostos e comissão](../regras-de-negocio.md#faturamento-custo-despesa-impostos-e-comissao)
@@ -146,7 +146,7 @@ CALCULATE(
 
 - **Tabela:** `_Medidas`
 - **Formato:** `"R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00`
-- **Usada nas guias:** pelo nome antigo `Comissao` em Vendedores, Vendedores antes
+- **Usada nas guias:** pelo nome antigo `Comissao` em [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
 - **Depende de:** nenhuma medida
 - **É usada por:** `08 Abatimento`, `33 Comissao LY`, `34 Comissao YoY %`, `35 Comissao MoM %`
 - **Regra de negócio:** [Faturamento, custo, despesa, impostos e comissão](../regras-de-negocio.md#faturamento-custo-despesa-impostos-e-comissao)
@@ -161,7 +161,7 @@ Soma de custo, despesa, impostos e comissão. *(descrição deduzida do código)
 
 - **Tabela:** `_Medidas`
 - **Formato:** `"R$"\ #,0;-"R$"\ #,0;"R$"\ #,0`
-- **Usada nas guias:** pelo nome antigo `Abatimento` em Analítico, Analítico antes
+- **Usada nas guias:** pelo nome antigo `Abatimento` em [Analítico](../guias-do-relatorio/analitico.md), [Analítico antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `02 Custo`, `05 Despesa`, `06 Impostos`, `07 Comissao`
 - **É usada por:** `09 Resultado`
 - **Regra de negócio:** [Resultado e margens](../regras-de-negocio.md#resultado-e-margens)
@@ -176,7 +176,7 @@ Faturamento menos o abatimento (custo, despesa, impostos e comissão). *(descri�
 
 - **Tabela:** `_Medidas`
 - **Formato:** `"R$"\ #,0;-"R$"\ #,0;"R$"\ #,0`
-- **Usada nas guias:** Comercial; pelo nome antigo `Resultado` em Analítico, Vendedores, Comercial antes, Analítico antes, Vendedores antes
+- **Usada nas guias:** [Comercial](../guias-do-relatorio/comercial.md); pelo nome antigo `Resultado` em [Analítico](../guias-do-relatorio/analitico.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Analítico antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`, `08 Abatimento`
 - **É usada por:** `10 Margem`, `29 Resultado LM`, `30 Resultado LY`, `31 Resultado YoY %`, `32 Resultado MoM %`
 - **Regra de negócio:** [Resultado e margens](../regras-de-negocio.md#resultado-e-margens)
@@ -196,7 +196,7 @@ DIVIDE(
 
 - **Tabela:** `_Medidas`
 - **Formato:** `0.00%;-0.00%;0.00%`
-- **Usada nas guias:** Comercial, TooltiposTabela; pelo nome antigo `Margem` em Comercial, Analítico, Vendedores, Comercial antes, Analítico antes, Vendedores antes
+- **Usada nas guias:** [Comercial](../guias-do-relatorio/comercial.md), [TooltiposTabela](../guias-do-relatorio/dica-tabela-vendedores.md); pelo nome antigo `Margem` em [Comercial](../guias-do-relatorio/comercial.md), [Analítico](../guias-do-relatorio/analitico.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Analítico antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`, `09 Resultado`
 - **É usada por:** `25 Margem LM`, `26 Margem LY`, `27 Margem YoY %`, `28 Margem MoM %`
 - **Regra de negócio:** [Resultado e margens](../regras-de-negocio.md#resultado-e-margens)
@@ -211,11 +211,11 @@ DISTINCTCOUNT(fVendas[Num Venda])
 
 - **Tabela:** `_Medidas`
 - **Formato:** `#,0`
-- **Usada nas guias:** pelo nome antigo `Qtde Vendas` em Analítico, Analítico antes
+- **Usada nas guias:** pelo nome antigo `Qtde Vendas` em [Analítico](../guias-do-relatorio/analitico.md), [Analítico antes](../arquivo/guias-anteriores.md)
 - **Depende de:** nenhuma medida
 - **É usada por:** nenhuma medida
 - **Regra de negócio:** [Quantidade de vendas e positivação](../regras-de-negocio.md#quantidade-de-vendas-e-positivacao)
-- **Observação:** **Não filtra o status:** conta as vendas válidas e as inválidas. As medidas de valor consideram só as válidas.
+- **Observação:** **Não filtra o status:** conta as vendas válidas e as inválidas. As medidas de valor consideram só as válidas. Intencional, confirmado pelo desenvolvedor.
 
 ## `12 Positivação Clientes`
 
@@ -231,7 +231,7 @@ CALCULATE(
 
 - **Tabela:** `_Medidas`
 - **Formato:** `0`
-- **Usada nas guias:** pelo nome antigo `Positivação Clientes` em Analítico, Vendedores, Analítico antes, Vendedores antes
+- **Usada nas guias:** pelo nome antigo `Positivação Clientes` em [Analítico](../guias-do-relatorio/analitico.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Analítico antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
 - **Depende de:** nenhuma medida
 - **É usada por:** nenhuma medida
 - **Regra de negócio:** [Quantidade de vendas e positivação](../regras-de-negocio.md#quantidade-de-vendas-e-positivacao)
@@ -251,7 +251,7 @@ CALCULATE(
 
 - **Tabela:** `_Medidas`
 - **Formato:** `0`
-- **Usada nas guias:** pelo nome antigo `Positivação Produtos` em Analítico, Analítico antes
+- **Usada nas guias:** pelo nome antigo `Positivação Produtos` em [Analítico](../guias-do-relatorio/analitico.md), [Analítico antes](../arquivo/guias-anteriores.md)
 - **Depende de:** nenhuma medida
 - **É usada por:** nenhuma medida
 - **Regra de negócio:** [Quantidade de vendas e positivação](../regras-de-negocio.md#quantidade-de-vendas-e-positivacao)
@@ -267,7 +267,7 @@ SUM(fMetas[Valor Meta])
 
 - **Tabela:** `_Medidas`
 - **Formato:** `"R$"\ #,0;-"R$"\ #,0;"R$"\ #,0`
-- **Usada nas guias:** pelo nome antigo `Meta` em Vendedores, Vendedores antes, TooltiposGrafico01
+- **Usada nas guias:** pelo nome antigo `Meta` em [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md), [TooltiposGrafico01](../guias-do-relatorio/dica-evolucao-faturamento.md)
 - **Depende de:** nenhuma medida
 - **É usada por:** `41 Porcentagem Meta`, `42 Diferença Meta`
 - **Regra de negócio:** [Metas](../regras-de-negocio.md#metas)
@@ -291,7 +291,7 @@ RETURN
 
 - **Tabela:** `_Medidas`
 - **Formato:** `0.00%;-0.00%;0.00%`
-- **Usada nas guias:** TooltiposTabela; pelo nome antigo `Porcentagem Meta` em Vendedores, Vendedores antes, TooltiposGrafico01, TooltiposTabela
+- **Usada nas guias:** [TooltiposTabela](../guias-do-relatorio/dica-tabela-vendedores.md); pelo nome antigo `Porcentagem Meta` em [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md), [TooltiposGrafico01](../guias-do-relatorio/dica-evolucao-faturamento.md), [TooltiposTabela](../guias-do-relatorio/dica-tabela-vendedores.md)
 - **Depende de:** `01 Faturamento`, `40 Meta`
 - **É usada por:** `66 Meta Cor`
 - **Regra de negócio:** [Metas](../regras-de-negocio.md#metas)
@@ -306,7 +306,7 @@ ABS( [40 Meta] - [01 Faturamento] )
 
 - **Tabela:** `_Medidas`
 - **Formato:** `"R$"\ #,0;-"R$"\ #,0;"R$"\ #,0`
-- **Usada nas guias:** pelo nome antigo `Diferença Meta` em Vendedores, Vendedores antes
+- **Usada nas guias:** pelo nome antigo `Diferença Meta` em [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`, `40 Meta`
 - **É usada por:** nenhuma medida
 - **Regra de negócio:** [Metas](../regras-de-negocio.md#metas)

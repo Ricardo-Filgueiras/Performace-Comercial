@@ -49,7 +49,7 @@ RETURN
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** Comercial; pelo nome antigo `cartao  faturamento svg v1` em Vendedores, Comercial antes, Vendedores antes
+- **Usada nas guias:** [Comercial](../guias-do-relatorio/comercial.md); pelo nome antigo `cartao  faturamento svg v1` em [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `23 Faturamento YoY %`
 - **É usada por:** nenhuma medida
 
@@ -98,7 +98,7 @@ RETURN
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `cartao  margem svg v1` em Comercial, Vendedores, Comercial antes, Vendedores antes
+- **Usada nas guias:** pelo nome antigo `cartao  margem svg v1` em [Comercial](../guias-do-relatorio/comercial.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `27 Margem YoY %`
 - **É usada por:** nenhuma medida
 
@@ -147,7 +147,7 @@ RETURN
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `cartao  resultado svg v1` em Comercial, Vendedores, Comercial antes, Vendedores antes
+- **Usada nas guias:** pelo nome antigo `cartao  resultado svg v1` em [Comercial](../guias-do-relatorio/comercial.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `31 Resultado YoY %`
 - **É usada por:** nenhuma medida
 
@@ -196,7 +196,7 @@ RETURN
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `cartao comissao svg v1` em Vendedores, Vendedores antes
+- **Usada nas guias:** pelo nome antigo `cartao comissao svg v1` em [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `34 Comissao YoY %`
 - **É usada por:** nenhuma medida
 
@@ -265,7 +265,7 @@ RETURN
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** Comercial; pelo nome antigo `tabela hml contente lite v1` em Comercial antes
+- **Usada nas guias:** [Comercial](../guias-do-relatorio/comercial.md); pelo nome antigo `tabela hml contente lite v1` em [Comercial antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `27 Margem YoY %`, `51 Faturamento formatação de texto`
 - **É usada por:** nenhuma medida
 
@@ -299,7 +299,7 @@ SWITCH(
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `Meta Cor` em Vendedores, Vendedores antes
+- **Usada nas guias:** pelo nome antigo `Meta Cor` em [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `41 Porcentagem Meta`
 - **É usada por:** nenhuma medida
 - **Regra de negócio:** [Metas](../regras-de-negocio.md#metas)

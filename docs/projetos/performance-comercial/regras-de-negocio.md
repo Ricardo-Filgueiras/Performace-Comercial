@@ -4,8 +4,8 @@ Glossário e regras de cálculo que valem para o painel inteiro, lidos do códig
 
 Cada regra indica onde está implementada, para que dê para conferir no modelo. Quando a área de negócio confirmar uma regra, registre logo abaixo do título dela: **Validado por** <nome, área>, **em** <data>, **com o exemplo** <resultado conferido>.
 
-!!! pendente "Validação de negócio"
-    Nenhuma regra desta página foi validada por uma área de negócio. O projeto é de portfólio, com dados fictícios. As regras abaixo descrevem **o que o código faz**, não o que uma empresa real confirmou.
+!!! info "Projeto de portfólio"
+    Nenhuma regra desta página foi validada por uma área de negócio, e não haverá validação: o projeto é de portfólio, com dados fictícios. As regras abaixo descrevem **o que o código faz**. O desenvolvedor confirmou que os pontos de atenção listados nesta página são intencionais.
 
 ## Glossário
 
@@ -34,8 +34,7 @@ Cada regra indica onde está implementada, para que dê para conferir no modelo.
 
 O modelo **não define** o que cada tipo de despesa contém. A documentação anterior dizia que despesa incluía frete, logística e embalagem, e que impostos incluíam ICMS, PIS e COFINS. Nada disso está no código ou nos dados lidos pelo modelo, e por isso não foi mantido.
 
-!!! pendente "A confirmar"
-    O que compõe `Despesa Unit`, `Impostos Unit` e `Comissão Unit` na planilha de vendas? O modelo só as multiplica pela quantidade.
+Por ser um projeto de portfólio, a composição de `Despesa Unit`, `Impostos Unit` e `Comissão Unit` **não é definida**: o modelo só multiplica esses valores pela quantidade. O desenvolvedor confirmou que isso é intencional.
 
 ## Vendas válidas
 
@@ -48,8 +47,7 @@ Todo valor financeiro do painel considera só as vendas **válidas**. A tabela `
 | **Exceção:** a quantidade de vendas conta vendas de qualquer status | `DISTINCTCOUNT( fVendas[Num Venda] )`, sem filtro de status | `11 Qtde Vendas` |
 | **Exceção:** a meta não depende do status | `SUM( fMetas[Valor Meta] )` | `40 Meta` |
 
-!!! pendente "A confirmar"
-    A quantidade de vendas (`11 Qtde Vendas`) inclui vendas inválidas, ao contrário dos valores. Isso é intencional? Se não for, a contagem e o faturamento não se referem ao mesmo conjunto de vendas.
+A quantidade de vendas (`11 Qtde Vendas`) inclui vendas inválidas, ao contrário dos valores. O desenvolvedor confirmou que isso é **intencional**. Quem comparar a quantidade com o faturamento deve saber que os dois não se referem ao mesmo conjunto de vendas.
 
 ## Faturamento, custo, despesa, impostos e comissão
 
@@ -102,8 +100,7 @@ As três dependem do contexto de filtro do visual: período, vendedor, cidade e 
 - A cor usa dois limites fixos no código (60% e 10%). Entre 10% e 60%, a cor é cinza.
 - `42 Diferença Meta` e `66 Meta Cor` não são usadas por outras medidas. Aparecem em visuais da guia Vendedores pelo nome antigo (ver [Nomes antigos de medidas](medidas-dax/index.md#nomes-antigos-de-medidas-no-relatorio)).
 
-!!! pendente "A confirmar"
-    Os limites de 60% e 10% da cor da meta são regra do negócio ou escolha de visual? E faz sentido a diferença para a meta ser sempre positiva?
+Os limites de 60% e 10% da cor da meta e o uso de valor absoluto na diferença para a meta são **intencionais** (confirmado pelo desenvolvedor).
 
 ## Comparações no tempo
 
@@ -122,5 +119,4 @@ As comparações usam a tabela `dCalendario` e valem para faturamento, margem, r
 - `35 Comissao MoM %` é a única comparação de mês anterior que **não** usa o filtro `Datas com Venda`.
 - O mês anterior de `24 Faturamento MoM %` é calculado dentro da própria medida, sem uma medida `LM` separada.
 
-!!! pendente "A confirmar"
-    A diferença no filtro de `35 Comissao MoM %` é intencional? Hoje as demais medidas de mês anterior usam o filtro `Datas com Venda` e esta não.
+A diferença no filtro de `35 Comissao MoM %` é **intencional** (confirmado pelo desenvolvedor).

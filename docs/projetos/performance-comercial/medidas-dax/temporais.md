@@ -20,7 +20,7 @@ CALCULATE(
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `Faturamento Acumulado` em Mapa Calor, Mapa Calor antes
+- **Usada nas guias:** pelo nome antigo `Faturamento Acumulado` em [Mapa Calor](../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
 - **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
@@ -42,7 +42,7 @@ CALCULATE(
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `Faturamento Acumulado LY` em Mapa Calor, Mapa Calor antes
+- **Usada nas guias:** pelo nome antigo `Faturamento Acumulado LY` em [Mapa Calor](../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
 - **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
@@ -63,7 +63,7 @@ CALCULATE(
 
 - **Tabela:** `_Medidas`
 - **Formato:** `"R$"\ #,0;-"R$"\ #,0;"R$"\ #,0`
-- **Usada nas guias:** pelo nome antigo `Faturamento LY` em Mapa Calor, Mapa Calor antes
+- **Usada nas guias:** pelo nome antigo `Faturamento LY` em [Mapa Calor](../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** `23 Faturamento YoY %`, `Context Medida z`, `Linha Anterior`, `Seta para Cima`, `Seta para baixo  ( limit Inferior )`, `Seta para baixo  ( limit sup )`
 - **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
@@ -118,7 +118,7 @@ RETURN
 
 - **Tabela:** `_Medidas`
 - **Formato:** `0.00%;-0.00%;0.00%`
-- **Usada nas guias:** pelo nome antigo `Faturamento MoM %` em Comercial, Comercial antes
+- **Usada nas guias:** pelo nome antigo `Faturamento MoM %` em [Comercial](../guias-do-relatorio/comercial.md), [Comercial antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
 - **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
@@ -371,4 +371,4 @@ RETURN
 - **Depende de:** `07 Comissao`
 - **É usada por:** nenhuma medida
 - **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
-- **Observação:** Diferente das outras medidas do mês anterior, o cálculo do mês anterior **não** usa o filtro `dCalendario[Datas com Venda] = TRUE()`.
+- **Observação:** Diferente das outras medidas do mês anterior, o cálculo do mês anterior **não** usa o filtro `dCalendario[Datas com Venda] = TRUE()`. Intencional, confirmado pelo desenvolvedor.

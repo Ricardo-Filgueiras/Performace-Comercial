@@ -21,7 +21,7 @@ RETURN
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `Eixo Y max Grafico Comercial` em Comercial, Comercial antes
+- **Usada nas guias:** pelo nome antigo `Eixo Y max Grafico Comercial` em [Comercial](../guias-do-relatorio/comercial.md), [Comercial antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
 

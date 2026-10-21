@@ -20,7 +20,7 @@ RANKX(
 
 - **Tabela:** `_Medidas`
 - **Formato:** `0`
-- **Usada nas guias:** pelo nome antigo `rank cidade` em Comercial, Comercial antes
+- **Usada nas guias:** pelo nome antigo `rank cidade` em [Comercial](../guias-do-relatorio/comercial.md), [Comercial antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
 
@@ -39,7 +39,7 @@ MAXX(
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `max Y visual 01 pg Vendedores` em Vendedores, Vendedores antes
+- **Usada nas guias:** pelo nome antigo `max Y visual 01 pg Vendedores` em [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
 
@@ -53,7 +53,7 @@ SELECTEDVALUE( dVendedores[Vendedor] )
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `nome vendedor` em TooltipRosca
+- **Usada nas guias:** pelo nome antigo `nome vendedor` em [TooltipRosca](../guias-do-relatorio/dica-gerente-vendedores.md)
 - **Depende de:** nenhuma medida
 - **É usada por:** nenhuma medida
 
@@ -83,7 +83,7 @@ RETURN
 
 - **Tabela:** `zMetricas`
 - **Formato:** padrão
-- **Usada nas guias:** TooltipRosca
+- **Usada nas guias:** [TooltipRosca](../guias-do-relatorio/dica-gerente-vendedores.md)
 - **Depende de:** `01 Faturamento`, `22 Faturamento LY`
 - **É usada por:** nenhuma medida
 
@@ -97,7 +97,7 @@ Faturamento do mesmo período do ano anterior (repete `22 Faturamento LY`). *(de
 
 - **Tabela:** `zMetricas`
 - **Formato:** padrão
-- **Usada nas guias:** TooltipRosca
+- **Usada nas guias:** [TooltipRosca](../guias-do-relatorio/dica-gerente-vendedores.md)
 - **Depende de:** `22 Faturamento LY`
 - **É usada por:** nenhuma medida
 
@@ -114,7 +114,7 @@ RETURN
 
 - **Tabela:** `zMetricas`
 - **Formato:** padrão
-- **Usada nas guias:** TooltipRosca
+- **Usada nas guias:** [TooltipRosca](../guias-do-relatorio/dica-gerente-vendedores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
 
@@ -137,7 +137,7 @@ RETURN
 
 - **Tabela:** `zMetricas`
 - **Formato:** padrão
-- **Usada nas guias:** TooltipRosca
+- **Usada nas guias:** [TooltipRosca](../guias-do-relatorio/dica-gerente-vendedores.md)
 - **Depende de:** `01 Faturamento`, `22 Faturamento LY`
 - **É usada por:** nenhuma medida
 
@@ -160,7 +160,7 @@ RETURN
 
 - **Tabela:** `zMetricas`
 - **Formato:** padrão
-- **Usada nas guias:** TooltipRosca
+- **Usada nas guias:** [TooltipRosca](../guias-do-relatorio/dica-gerente-vendedores.md)
 - **Depende de:** `01 Faturamento`, `22 Faturamento LY`
 - **É usada por:** nenhuma medida
 
@@ -183,7 +183,7 @@ RETURN
 
 - **Tabela:** `zMetricas`
 - **Formato:** `0`
-- **Usada nas guias:** TooltipRosca
+- **Usada nas guias:** [TooltipRosca](../guias-do-relatorio/dica-gerente-vendedores.md)
 - **Depende de:** `01 Faturamento`, `22 Faturamento LY`
 - **É usada por:** nenhuma medida
 
