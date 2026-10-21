@@ -1,0 +1,2338 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação técnica do modelo semântico Power BI — Performance Comercial">
+      
+      
+        <meta name="author" content="Equipe de BI">
+      
+      
+      
+        <link rel="prev" href="../fontes-de-dados/">
+      
+      
+        <link rel="next" href="../guia-do-desenvolvedor/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Decisões técnicas - Performance Comercial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/panzoom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <meta name="panzoom-theme" content="material">
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#decisoes-tecnicas" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Performance Comercial" class="md-header__button md-logo" aria-label="Performance Comercial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Performance Comercial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Decisões técnicas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Projetos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../metodologia/dataops/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Metodologia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog do portal
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Performance Comercial" class="md-nav__button md-logo" aria-label="Performance Comercial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Performance Comercial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projetos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projetos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance Comercial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Performance Comercial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sobre este projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Para quem usa
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Para quem usa
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../escopo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Escopo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../como-usar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Como usar o painel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regras-de-negocio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regras de negócio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../guias-do-relatorio/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guias do relatório
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_2_4" id="__nav_2_2_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guias do relatório
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guias-do-relatorio/capa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guias-do-relatorio/comercial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comercial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guias-do-relatorio/analitico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analítico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guias-do-relatorio/mapa-calor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapa Calor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guias-do-relatorio/vendedores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendedores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guias-do-relatorio/dica-evolucao-faturamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dica de ferramenta: evolução do faturamento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guias-do-relatorio/dica-gerente-vendedores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dica de ferramenta: gerente e vendedores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guias-do-relatorio/dica-tabela-vendedores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dica de ferramenta: tabela de vendedores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Para quem mantém
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Para quem mantém
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelo-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo de dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../medidas-dax/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medidas DAX
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Medidas DAX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../medidas-dax/principais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Principais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../medidas-dax/temporais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Temporais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../medidas-dax/formatacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formatações
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../medidas-dax/visuais-svg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visuais SVG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../medidas-dax/sem-pasta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sem pasta de exibição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fontes-de-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fontes de dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decisões técnicas
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decisões técnicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adr-001-projeto-power-bi-no-formato-pbip-versionado-com-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-001: Projeto Power BI no formato PBIP, versionado com Git
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-002-esquema-estrela-com-dois-fatos-e-sete-dimensoes-em-modo-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-002: Esquema estrela com dois fatos e sete dimensões, em modo Import
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-003-dados-em-planilhas-excel-na-pasta-data-com-caminhos-em-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-003: Dados em planilhas Excel na pasta data/, com caminhos em parâmetros
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-004-valores-so-das-vendas-validas-id-status-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-004: Valores só das vendas válidas (Id Status = 1)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-005-calendario-gerado-no-power-query-marcado-como-tabela-de-datas-com-datas-com-venda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-005: Calendário gerado no Power Query, marcado como tabela de datas, com Datas com Venda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-006-nomes-com-prefixo-medidas-numeradas-e-pastas-de-exibicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-006: Nomes com prefixo, medidas numeradas e pastas de exibição
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-007-cartoes-e-tabelas-desenhados-com-medidas-svg-e-visual-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-007: Cartões e tabelas desenhados com medidas SVG e visual HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-008-dicas-de-ferramenta-com-tabela-auxiliar-zmetricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-008: Dicas de ferramenta com tabela auxiliar zMetricas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-009-manter-as-guias-antes-como-historico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-009: Manter as guias "antes" como histórico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-010-manter-o-relacionamento-inativo-por-data-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-010: Manter o relacionamento inativo por Data Envio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-011-projeto-de-portfolio-com-dados-fixos-sem-rls-e-sem-atualizacao-automatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-011: Projeto de portfólio com dados fixos, sem RLS e sem atualização automática
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-012-documentacao-com-mkdocs-material-em-um-portal-por-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-012: Documentação com MkDocs Material, em um portal por projeto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-013-organizacao-das-pastas-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-013: Organização das pastas do repositório
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guia-do-desenvolvedor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guia do desenvolvedor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pendencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pendências
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../arquivo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquivo
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arquivo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arquivo/guias-anteriores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guias anteriores ("antes")
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metodologia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Metodologia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../metodologia/dataops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metodologia DataOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../metodologia/versionamento-git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versionamento com Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog do portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adr-001-projeto-power-bi-no-formato-pbip-versionado-com-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-001: Projeto Power BI no formato PBIP, versionado com Git
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-002-esquema-estrela-com-dois-fatos-e-sete-dimensoes-em-modo-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-002: Esquema estrela com dois fatos e sete dimensões, em modo Import
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-003-dados-em-planilhas-excel-na-pasta-data-com-caminhos-em-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-003: Dados em planilhas Excel na pasta data/, com caminhos em parâmetros
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-004-valores-so-das-vendas-validas-id-status-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-004: Valores só das vendas válidas (Id Status = 1)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-005-calendario-gerado-no-power-query-marcado-como-tabela-de-datas-com-datas-com-venda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-005: Calendário gerado no Power Query, marcado como tabela de datas, com Datas com Venda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-006-nomes-com-prefixo-medidas-numeradas-e-pastas-de-exibicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-006: Nomes com prefixo, medidas numeradas e pastas de exibição
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-007-cartoes-e-tabelas-desenhados-com-medidas-svg-e-visual-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-007: Cartões e tabelas desenhados com medidas SVG e visual HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-008-dicas-de-ferramenta-com-tabela-auxiliar-zmetricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-008: Dicas de ferramenta com tabela auxiliar zMetricas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-009-manter-as-guias-antes-como-historico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-009: Manter as guias "antes" como histórico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-010-manter-o-relacionamento-inativo-por-data-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-010: Manter o relacionamento inativo por Data Envio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-011-projeto-de-portfolio-com-dados-fixos-sem-rls-e-sem-atualizacao-automatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-011: Projeto de portfólio com dados fixos, sem RLS e sem atualização automática
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-012-documentacao-com-mkdocs-material-em-um-portal-por-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-012: Documentação com MkDocs Material, em um portal por projeto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-013-organizacao-das-pastas-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-013: Organização das pastas do repositório
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="decisoes-tecnicas">Decisões técnicas<a class="headerlink" href="#decisoes-tecnicas" title="Permanent link">&para;</a></h1>
+<p>Registro de decisões de arquitetura do painel no formato ADR (<em>Architecture Decision Record</em>). Cada decisão tem:</p>
+<ul>
+<li><strong>Data e Commit:</strong> quando a decisão entrou no repositório (<code>git log -1 --format="%h %ad" --date=short</code>). Preencha no momento em que escrever a decisão.</li>
+<li><strong>Contexto:</strong> o problema ou a restrição que levou à decisão.</li>
+<li><strong>Decisão:</strong> o que foi escolhido.</li>
+<li><strong>Consequências:</strong> o que muda, para o bem e para o mal.</li>
+</ul>
+<div class="admonition pendente">
+<p class="admonition-title">Motivos não registrados</p>
+<p>Estas decisões foram reconstruídas em 21/10/2026 a partir dos arquivos e do histórico do Git. A data e o commit são o <strong>primeiro commit em que a decisão aparece</strong> nos arquivos. O histórico não guarda o <strong>motivo</strong> das decisões mais antigas, então o "Contexto" delas só descreve o que se vê nos arquivos. O desenvolvedor deve completar os motivos que lembrar. As decisões tomadas durante a reescrita da documentação (21/10/2026) trazem o motivo dado pelo desenvolvedor.</p>
+</div>
+<hr />
+<h2 id="adr-001-projeto-power-bi-no-formato-pbip-versionado-com-git">ADR-001: Projeto Power BI no formato PBIP, versionado com Git<a class="headerlink" href="#adr-001-projeto-power-bi-no-formato-pbip-versionado-com-git" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2025-10-24</li>
+<li><strong>Commit:</strong> <code>8703e41</code></li>
+</ul>
+<p><strong>Contexto.</strong> O repositório começou em 22/10/2025 com o painel em um arquivo <code>.pbix</code> (commit <code>cd6a9ab</code>). Dois dias depois, o commit <code>8703e41</code> trocou o <code>.pbix</code> pelo formato PBIP, em que o modelo e o relatório são arquivos de texto. Arquivos <code>.pbix</code> ainda apareceram e sumiram do repositório em outros commits, até o <code>0773ea2</code> (2026-04-23). Hoje não há nenhum <code>.pbix</code>.</p>
+<p><strong>Decisão.</strong> Manter o painel como projeto PBIP (pastas <code>.SemanticModel</code> e <code>.Report</code>) e versionar tudo com Git.</p>
+<p><strong>Consequências.</strong> Mudanças no modelo e no relatório aparecem como diferenças de texto no Git e podem ser conferidas por script. Não é possível abrir o projeto sem o Power BI Desktop em uma versão que leia PBIP (o README pede a 2.146 ou superior). Os arquivos <code>.pbi/cache.abf</code> e <code>.pbi/localSettings.json</code> ficam fora do histórico, pelo <code>.gitignore</code>.</p>
+<h2 id="adr-002-esquema-estrela-com-dois-fatos-e-sete-dimensoes-em-modo-import">ADR-002: Esquema estrela com dois fatos e sete dimensões, em modo Import<a class="headerlink" href="#adr-002-esquema-estrela-com-dois-fatos-e-sete-dimensoes-em-modo-import" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2025-10-24</li>
+<li><strong>Commit:</strong> <code>8703e41</code> (as tabelas foram removidas no commit <code>63872c7</code> e recolocadas no <code>23c7839</code>, em 2026-02-02)</li>
+</ul>
+<p><strong>Contexto.</strong> O primeiro commit com o modelo semântico já traz as tabelas de vendas e de metas, as dimensões e as medidas, todas carregadas a partir de planilhas.</p>
+<p><strong>Decisão.</strong> Modelar em esquema estrela, com <code>fVendas</code> e <code>fMetas</code> como fatos e sete dimensões (<code>dCalendario</code>, <code>dClientes</code>, <code>dProdutos</code>, <code>dVendedores</code>, <code>dUnidades</code>, <code>dStatus</code> e <code>dPagamento</code>). Todos os relacionamentos são de muitos para um e filtram em uma só direção. Todas as tabelas usam o modo Import.</p>
+<p><strong>Consequências.</strong> O modelo é simples de ler e de documentar (ver <a href="../modelo-de-dados/">Modelo de dados</a>). Os dados ficam dentro do arquivo do modelo e só mudam quando alguém atualiza no Power BI Desktop. <code>fVendas</code> e <code>fMetas</code> não se ligam diretamente: encontram-se por <code>dVendedores</code> e <code>dCalendario</code>.</p>
+<h2 id="adr-003-dados-em-planilhas-excel-na-pasta-data-com-caminhos-em-parametros">ADR-003: Dados em planilhas Excel na pasta <code>data/</code>, com caminhos em parâmetros<a class="headerlink" href="#adr-003-dados-em-planilhas-excel-na-pasta-data-com-caminhos-em-parametros" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2025-10-24 (parâmetros de caminho); 2026-10-21 (grupo "Parâmetros de dados" e pasta <code>data/</code> na raiz)</li>
+<li><strong>Commit:</strong> <code>8703e41</code> (parâmetros), <code>c116cef</code> (grupo de parâmetros), <code>3578022</code> (pasta <code>data/</code> na raiz) e <code>2d2af2d</code> (valores dos parâmetros apontando para <code>data/</code>)</li>
+</ul>
+<p><strong>Contexto.</strong> Os dados do projeto são fictícios e ficam no próprio repositório. Quem clonar o projeto precisa apontar o modelo para a pasta de dados da sua cópia.</p>
+<p><strong>Decisão.</strong> Guardar os dados em planilhas Excel na pasta <code>data/</code>, na raiz do repositório, e ler cada pasta por um parâmetro do Power Query (<code>Caminho_Extracao</code>, <code>Caminho_Dimensoes</code> e <code>Caminho_Meta</code>), reunidos no grupo de consultas "Parâmetros de dados". A documentação traz o guia de como atualizar o valor dos parâmetros (ver <a href="../fontes-de-dados/#como-atualizar-o-valor-dos-parametros">Fontes de dados</a>).</p>
+<p><strong>Alternativa descartada.</strong> Ler os dados em CSV pelo endereço "raw" do GitHub, porque o link "raw" de um <code>.xlsx</code> baixa o arquivo em vez de mostrá-lo. O desenvolvedor esclareceu em 21/10/2026 que o projeto <strong>não usa CSV</strong>: os dados continuam em Excel, junto com o projeto.</p>
+<p><strong>Consequências.</strong> Os valores dos parâmetros são caminhos absolutos, então cada pessoa que clonar o projeto precisa atualizá-los antes da primeira atualização dos dados. A consulta <code>fMetas</code> depende do nome <code>Meta 2018.xlsx</code> (ver <a href="../fontes-de-dados/#transformacoes-no-power-query">Fontes de dados</a>).</p>
+<h2 id="adr-004-valores-so-das-vendas-validas-id-status-1">ADR-004: Valores só das vendas válidas (<code>Id Status = 1</code>)<a class="headerlink" href="#adr-004-valores-so-das-vendas-validas-id-status-1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2025-10-24</li>
+<li><strong>Commit:</strong> <code>8703e41</code></li>
+</ul>
+<p><strong>Contexto.</strong> A planilha de vendas tem vendas com dois status, "Válidas" (<code>Id Status = 1</code>) e "Inválidas" (<code>Id Status = 2</code>).</p>
+<p><strong>Decisão.</strong> As medidas de valor (faturamento, custo, despesa, impostos e comissão) e de positivação filtram <code>dStatus[Id Status] = 1</code> dentro de <code>CALCULATE</code>. A quantidade de vendas (<code>11 Qtde Vendas</code>) é a exceção e conta vendas de qualquer status, o que o desenvolvedor confirmou ser intencional em 21/10/2026.</p>
+<p><strong>Consequências.</strong> O faturamento não inclui vendas inválidas. A quantidade de vendas e o faturamento não se referem ao mesmo conjunto de vendas (ver <a href="../regras-de-negocio/#vendas-validas">Regras de negócio</a>).</p>
+<h2 id="adr-005-calendario-gerado-no-power-query-marcado-como-tabela-de-datas-com-datas-com-venda">ADR-005: Calendário gerado no Power Query, marcado como tabela de datas, com <code>Datas com Venda</code><a class="headerlink" href="#adr-005-calendario-gerado-no-power-query-marcado-como-tabela-de-datas-com-datas-com-venda" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2025-10-24</li>
+<li><strong>Commit:</strong> <code>8703e41</code></li>
+</ul>
+<p><strong>Contexto.</strong> As comparações no tempo (ano anterior, mês anterior e acumulado no ano) precisam de uma dimensão de datas contínua.</p>
+<p><strong>Decisão.</strong> Gerar <code>dCalendario</code> dentro do Power Query (1.461 dias a partir de 01/01/2018, ou seja, até 31/12/2021), marcá-la como tabela de datas e criar a coluna calculada <code>Datas com Venda</code>, usada como filtro nas comparações no tempo. A data final fixa é intencional: o projeto não receberá dados depois de 31/12/2021.</p>
+<p><strong>Consequências.</strong> Não há arquivo de calendário para manter. Se algum dia entrarem vendas depois de 2021, o calendário precisa ser estendido na consulta. As medidas de tempo dependem da coluna <code>Datas com Venda</code> (ver <a href="../regras-de-negocio/#comparacoes-no-tempo">Regras de negócio</a>).</p>
+<h2 id="adr-006-nomes-com-prefixo-medidas-numeradas-e-pastas-de-exibicao">ADR-006: Nomes com prefixo, medidas numeradas e pastas de exibição<a class="headerlink" href="#adr-006-nomes-com-prefixo-medidas-numeradas-e-pastas-de-exibicao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2026-02-02</li>
+<li><strong>Commit:</strong> <code>23c7839</code></li>
+</ul>
+<p><strong>Contexto.</strong> As medidas tinham nomes sem numeração (por exemplo, <code>Faturamento</code>). A documentação da época, de 30/01/2026, descreve o sistema de numeração como parte da versão 2.0.</p>
+<p><strong>Decisão.</strong> Nomear tabelas pelo prefixo do papel (<code>f</code>, <code>d</code>, <code>_</code> e <code>z</code>) e as medidas com número e descrição (<code>01 Faturamento</code>), organizadas nas pastas de exibição <code>01.Principais</code>, <code>02. Temporais</code>, <code>03. Formatações</code> e <code>.Visuais SVG</code>. As faixas 80 a 89 (rankings) e 90 a 99 (testes) ficam reservadas, por decisão do desenvolvedor em 21/10/2026, embora nenhuma medida as use. Os detalhes estão no <a href="../guia-do-desenvolvedor/#nomes">Guia do desenvolvedor</a>.</p>
+<p><strong>Consequências.</strong> As medidas ficam fáceis de achar e de ordenar. Mas a renomeação não chegou a todos os visuais do relatório: 25 nomes antigos continuam em uso (ver <a href="../medidas-dax/#nomes-antigos-de-medidas-no-relatorio">Nomes antigos de medidas</a>), e 9 medidas ficaram sem pasta de exibição.</p>
+<h2 id="adr-007-cartoes-e-tabelas-desenhados-com-medidas-svg-e-visual-html">ADR-007: Cartões e tabelas desenhados com medidas SVG e visual HTML<a class="headerlink" href="#adr-007-cartoes-e-tabelas-desenhados-com-medidas-svg-e-visual-html" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2025-10-24 (cartões SVG) e 2025-10-27 (visual de conteúdo HTML)</li>
+<li><strong>Commit:</strong> <code>f133257</code> (cartões SVG) e <code>e605e67</code> (visual HTML)</li>
+</ul>
+<p><strong>Contexto.</strong> Os cartões de resumo mostram a variação contra o ano anterior com seta e cor, e a guia Comercial tem uma tabela por cidade que alterna dois valores ao passar o mouse. Esses efeitos não existem nos visuais padrão.</p>
+<p><strong>Decisão.</strong> Desenhar esses elementos com medidas DAX que devolvem imagens SVG (<code>60</code> a <code>64</code>) e usar um visual personalizado de conteúdo HTML. O relatório também usa um visual personalizado de infográfico na guia Vendedores.</p>
+<p><strong>Consequências.</strong> O visual fica mais rico, mas depende de visuais personalizados (o relatório guarda ao menos um na pasta <code>CustomVisuals</code>) e de medidas longas, difíceis de ler (ver <a href="../medidas-dax/visuais-svg/">Visuais SVG</a>). A medida <code>65 SVG Percentual Meta Velocimetro</code> tem só o valor <code>1</code> como expressão.</p>
+<h2 id="adr-008-dicas-de-ferramenta-com-tabela-auxiliar-zmetricas">ADR-008: Dicas de ferramenta com tabela auxiliar <code>zMetricas</code><a class="headerlink" href="#adr-008-dicas-de-ferramenta-com-tabela-auxiliar-zmetricas" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2025-11-03</li>
+<li><strong>Commit:</strong> <code>4ed3100</code></li>
+</ul>
+<p><strong>Contexto.</strong> A rosca de faturamento por gerente da guia Comercial precisa mostrar, ao passar o mouse, a comparação entre o faturamento atual e o do ano anterior por vendedor.</p>
+<p><strong>Decisão.</strong> Criar a tabela auxiliar <code>zMetricas</code> (digitada no Power Query) e seis medidas que alternam o valor mostrado conforme a métrica selecionada, usadas na dica de ferramenta <code>TooltipRosca</code>. O desenvolvedor confirmou em 21/10/2026 que esse uso é intencional. O relatório tem ainda as dicas <code>TooltiposGrafico01</code> e <code>TooltiposTabela</code>.</p>
+<p><strong>Consequências.</strong> A tabela <code>zMetricas</code> não se liga a nenhuma outra e só serve a essa dica de ferramenta (ver <a href="../guias-do-relatorio/dica-gerente-vendedores/">Dicas de ferramenta</a>).</p>
+<h2 id="adr-009-manter-as-guias-antes-como-historico">ADR-009: Manter as guias "antes" como histórico<a class="headerlink" href="#adr-009-manter-as-guias-antes-como-historico" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2025-11-11 (as guias "antes" aparecem no repositório); 2026-10-21 (decisão de mantê-las)</li>
+<li><strong>Commit:</strong> <code>e0dd518</code> (guias) e <code>56b7cb6</code> (decisão registrada)</li>
+</ul>
+<p><strong>Contexto.</strong> O relatório guarda quatro guias com a versão anterior das guias de análise: "Comercial antes", "Analítico antes", "Mapa Calor antes" e "Vendedores antes". Elas ficam fora do navegador de páginas da Capa.</p>
+<p><strong>Decisão.</strong> Manter essas guias no relatório, de propósito, para que o desenvolvedor acompanhe a evolução do projeto. A documentação as trata como histórico (ver <a href="../arquivo/guias-anteriores/">Guias anteriores</a>).</p>
+<p><strong>Consequências.</strong> O relatório fica maior (72 dos 171 visuais estão nas guias "antes") e as guias anteriores usam os nomes antigos de medidas e dois marcadores inexistentes (ver <a href="../guias-do-relatorio/">Guias do relatório</a>).</p>
+<h2 id="adr-010-manter-o-relacionamento-inativo-por-data-envio">ADR-010: Manter o relacionamento inativo por <code>Data Envio</code><a class="headerlink" href="#adr-010-manter-o-relacionamento-inativo-por-data-envio" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2025-10-24 (relacionamento criado); 2026-10-21 (decisão de mantê-lo)</li>
+<li><strong>Commit:</strong> <code>8703e41</code></li>
+</ul>
+<p><strong>Contexto.</strong> <code>fVendas</code> tem duas colunas de data ligadas a <code>dCalendario</code>. Só <code>Data Pedido</code> pode ser o relacionamento ativo. Nenhuma medida usa <code>USERELATIONSHIP</code>.</p>
+<p><strong>Decisão.</strong> Manter o relacionamento por <code>Data Envio</code> como inativo, mesmo sem uso hoje. O desenvolvedor confirmou em 21/10/2026 que ele não deve ser removido.</p>
+<p><strong>Consequências.</strong> O modelo fica pronto para uma análise por data de envio, que exige uma medida com <code>USERELATIONSHIP</code> (ver o exemplo no <a href="../guia-do-desenvolvedor/#relacionamento-inativo-e-userelationship">Guia do desenvolvedor</a>).</p>
+<h2 id="adr-011-projeto-de-portfolio-com-dados-fixos-sem-rls-e-sem-atualizacao-automatica">ADR-011: Projeto de portfólio com dados fixos, sem RLS e sem atualização automática<a class="headerlink" href="#adr-011-projeto-de-portfolio-com-dados-fixos-sem-rls-e-sem-atualizacao-automatica" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2026-10-21</li>
+<li><strong>Commit:</strong> <code>56b7cb6</code></li>
+</ul>
+<p><strong>Contexto.</strong> O Performance Comercial é um projeto de portfólio, com dados fictícios e sem usuários reais.</p>
+<p><strong>Decisão.</strong> Os dados cobrem 2018 a 2021 e não serão atualizados. Não haverá segurança por linha (RLS), nem atualização agendada, nem validação por uma área de negócio. O texto original dos requisitos pedia RLS, atualização automática e metas de desempenho; esses itens foram retirados do escopo (ver <a href="../escopo/">Escopo</a>).</p>
+<p><strong>Consequências.</strong> O modelo não tem papéis (roles) e a atualização é manual. As regras de negócio descrevem o que o código faz, sem confirmação de uma área de negócio.</p>
+<h2 id="adr-012-documentacao-com-mkdocs-material-em-um-portal-por-projeto">ADR-012: Documentação com MkDocs Material, em um portal por projeto<a class="headerlink" href="#adr-012-documentacao-com-mkdocs-material-em-um-portal-por-projeto" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2026-04-23 (MkDocs); 2026-10-21 (estrutura de portal)</li>
+<li><strong>Commit:</strong> <code>0773ea2</code> (MkDocs Material) e <code>08ea67e</code> (menu por pasta e estrutura de portal)</li>
+</ul>
+<p><strong>Contexto.</strong> A documentação em seis páginas numeradas, de 30/01/2026, tinha um menu central no <code>mkdocs.yml</code> e tinha divergências em relação ao modelo.</p>
+<p><strong>Decisão.</strong> Reescrever a documentação em 21/10/2026 no padrão do kit <code>documentacao-bi</code> (em <code>.agents/modelos/</code>, commit <code>6cf9c4c</code>): <code>docs/projetos/performance-comercial/</code>, menu por pasta (<code>.nav.yml</code>) com os blocos "Para quem usa", "Para quem mantém" e "Arquivo", pendências marcadas, e <code>mkdocs build --strict</code> como validação. A reescrita foi feita passo a passo e registrada no diário da migração.</p>
+<p><strong>Consequências.</strong> Toda página nova precisa entrar no menu, senão o build falha. O plugin de datas só funciona com os arquivos commitados. A publicação continua manual, por <code>mkdocs gh-deploy</code>, porque o arquivo <code>.github/workflows/docs.yml</code> está vazio.</p>
+<h2 id="adr-013-organizacao-das-pastas-do-repositorio">ADR-013: Organização das pastas do repositório<a class="headerlink" href="#adr-013-organizacao-das-pastas-do-repositorio" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data:</strong> 2026-10-21</li>
+<li><strong>Commit:</strong> <code>c116cef</code> (nome corrigido e projeto em <code>src/projeto-performance-comercial/</code>), <code>3578022</code> (dados em <code>data/</code>) e <code>2d2af2d</code> (projeto em <code>src/projeto/performance-comercial/</code>)</li>
+</ul>
+<p><strong>Contexto.</strong> O padrão do kit de documentação pede <code>src/&lt;slug&gt;/</code> para os arquivos do Power BI e <code>docs/projetos/&lt;slug&gt;/</code> para a documentação, com o mesmo nome. Os dados estavam em <code>src/data/</code> e o projeto em <code>src/projeto/</code> com o nome "Performace".</p>
+<p><strong>Decisão.</strong> Mover o projeto Power BI para <code>src/projeto/performance-comercial/</code>, corrigir o nome do projeto para "Performance Comercial" e mover os dados para <code>data/</code>, na raiz. O slug da documentação é <code>performance-comercial</code>.</p>
+<p><strong>Consequências.</strong> O caminho tem um nível a mais que o padrão do kit (<code>src/projeto/&lt;slug&gt;/</code> em vez de <code>src/&lt;slug&gt;/</code>). O nome do repositório no GitHub e o da pasta local ainda usam a grafia antiga, "Performace-Comercial". O resto do projeto usa "Performance".</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última atualização">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de outubro de 2026 17:13:01 UTC">21 de outubro de 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Criada">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de outubro de 2026 12:53:10 UTC">21 de outubro de 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../assets/javascripts/panzoom.min.js"></script>
+      
+        <script src="../../../assets/javascripts/zoompan.js"></script>
+      
+    
+  </body>
+</html>
