@@ -64,7 +64,7 @@
     
     
   <meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1468,6 +1468,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#primeiros-passos-depois-de-clonar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primeiros passos depois de clonar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#onde-esta-cada-coisa" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1494,6 +1505,67 @@
     <span class="md-ellipsis">
       
         Nomes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#padroes-de-dax-usados-no-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padrões de DAX usados no projeto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceitos-do-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceitos do modelo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceitos do modelo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relacionamento-inativo-e-userelationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relacionamento inativo e USERELATIONSHIP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-o-modelo-ja-respeita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que o modelo já respeita
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solucao-de-problemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solução de problemas
       
     </span>
   </a>
@@ -2197,6 +2269,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#primeiros-passos-depois-de-clonar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primeiros passos depois de clonar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#onde-esta-cada-coisa" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2223,6 +2306,67 @@
     <span class="md-ellipsis">
       
         Nomes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#padroes-de-dax-usados-no-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padrões de DAX usados no projeto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceitos-do-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceitos do modelo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceitos do modelo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relacionamento-inativo-e-userelationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relacionamento inativo e USERELATIONSHIP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-o-modelo-ja-respeita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que o modelo já respeita
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solucao-de-problemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solução de problemas
       
     </span>
   </a>
@@ -2270,6 +2414,12 @@
 
 <h1 id="guia-do-desenvolvedor">Guia do desenvolvedor<a class="headerlink" href="#guia-do-desenvolvedor" title="Permanent link">&para;</a></h1>
 <p>Convenções práticas para trabalhar no painel e na documentação. Para instalar e rodar o site, veja o <code>README.md</code> na raiz do repositório.</p>
+<h2 id="primeiros-passos-depois-de-clonar">Primeiros passos depois de clonar<a class="headerlink" href="#primeiros-passos-depois-de-clonar" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Instale o <a href="https://docs.astral.sh/uv/">uv</a> e rode <code>uv sync</code> na raiz para instalar as dependências da documentação.</li>
+<li>Para ver a documentação no navegador: <code>uv run mkdocs serve</code> (endereço <code>http://127.0.0.1:8000</code>).</li>
+<li>Para abrir o painel no Power BI Desktop, atualize antes o valor dos três parâmetros de caminho dos dados. O passo a passo está em <a href="../fontes-de-dados/#como-atualizar-o-valor-dos-parametros">Como atualizar o valor dos parâmetros</a>.</li>
+</ol>
 <h2 id="onde-esta-cada-coisa">Onde está cada coisa<a class="headerlink" href="#onde-esta-cada-coisa" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2304,29 +2454,223 @@
 <td><code>src/projeto/performance-comercial/Performance Comercial.Report/definition/pages/&lt;id&gt;/visuals/&lt;id&gt;/visual.json</code></td>
 </tr>
 <tr>
+<td>Os dados</td>
+<td><code>data/</code> (na raiz do repositório)</td>
+</tr>
+<tr>
 <td>A documentação deste projeto</td>
 <td><code>docs/projetos/performance-comercial/</code></td>
 </tr>
 </tbody>
 </table>
 <p>Prefira editar pelo Power BI Desktop e salvar. Editar o TMDL à mão funciona, mas confira no Desktop antes de commitar.</p>
+<div class="admonition warning">
+<p class="admonition-title">Renomear medidas fora do Power BI Desktop</p>
+<p>O Power BI Desktop atualiza os visuais do relatório quando você renomeia uma medida. Se a renomeação for feita editando o TMDL ou por uma ferramenta externa, os visuais continuam apontando para o nome antigo. Hoje o relatório tem 25 nomes antigos desse tipo (ver <a href="../medidas-dax/#nomes-antigos-de-medidas-no-relatorio">Nomes antigos de medidas</a>). Depois de renomear, abra o relatório e confira se algum visual mostra campo não encontrado.</p>
+</div>
 <h2 id="regras-para-o-modelo">Regras para o modelo<a class="headerlink" href="#regras-para-o-modelo" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Nenhuma medida fica sem pasta de exibição ao final de uma tarefa.</strong> Antes do commit, toda medida nova ou alterada está numa pasta.</li>
+<li><strong>Nenhuma medida fica sem pasta de exibição ao final de uma tarefa.</strong> Antes do commit, toda medida nova ou alterada está numa pasta. Hoje 9 medidas estão sem pasta (ver <a href="../medidas-dax/sem-pasta/">Sem pasta de exibição</a>); a documentação só registra isso.</li>
 <li><strong>Não renomeie pastas de exibição nem guias sem necessidade.</strong> Renomear quebra o vínculo com a documentação sem avisar. Se precisar reorganizar, crie uma pasta nova, mova as medidas e registre no changelog.</li>
 <li>
-<p><strong>Documente a medida no próprio modelo:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/// Faturamento líquido do período (soma de TOTLIQ).
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>measure mFaturamento =
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        /* Base: fVendas[TOTLIQ]. Não exclui devoluções. */
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        SUM(fVendas[TOTLIQ])
+<p><strong>Documente a medida no próprio modelo.</strong> No TMDL, <code>///</code> antes de <code>measure</code> vira a descrição exibida no Power BI, e um comentário <code>//</code> na primeira linha da expressão explica a conta. Exemplo real do projeto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/// Lucro Bruto em R$ = Faturamento - Custo
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>measure &#39;03 Lucro Bruto&#39; =
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        // Lucro Bruto = Faturamento - Custo
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        [01 Faturamento] - [02 Custo]
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    formatString: &quot;R$&quot;\ #,0.00;-&quot;R$&quot;\ #,0.00;&quot;R$&quot;\ #,0.00
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    displayFolder: 01.Principais
 </code></pre></div>
-<p><code>///</code> vira a descrição exibida no Power BI; <code>/* */</code> na primeira linha aparece na barra de fórmulas.</p>
+<p>Hoje só 8 das 50 medidas têm <code>///</code> e 9 têm comentário <code>//</code>.</p>
 </li>
 </ul>
 <h2 id="nomes">Nomes<a class="headerlink" href="#nomes" title="Permanent link">&para;</a></h2>
-<!-- Prefixos e convenções de nome usados no modelo, com exemplos. -->
-
+<p><strong>Tabelas.</strong> O prefixo diz o papel da tabela.</p>
+<table>
+<thead>
+<tr>
+<th>Prefixo</th>
+<th>Papel</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f</code></td>
+<td>Fato</td>
+<td><code>fVendas</code>, <code>fMetas</code></td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>Dimensão</td>
+<td><code>dClientes</code>, <code>dProdutos</code>, <code>dCalendario</code></td>
+</tr>
+<tr>
+<td><code>_</code></td>
+<td>Só medidas</td>
+<td><code>_Medidas</code></td>
+</tr>
+<tr>
+<td><code>z</code></td>
+<td>Auxiliar</td>
+<td><code>zMetricas</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Colunas.</strong> Nomes em português, com espaços e acentos. As chaves começam com <code>Id</code> (por exemplo, <code>Id Cliente</code>) e são números inteiros, exceto <code>dCalendario[Id Data]</code>, que é uma data. A única coluna com nome em minúsculas é <code>fMetas[data]</code>.</p>
+<p><strong>Medidas.</strong> O nome tem um número e uma descrição, por exemplo <code>01 Faturamento</code>. A faixa do número diz o tipo da medida, como está hoje no modelo:</p>
+<table>
+<thead>
+<tr>
+<th>Faixa</th>
+<th>Tipo</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01 a 13</td>
+<td>Principais</td>
+<td><code>01 Faturamento</code>, <code>10 Margem</code>, <code>12 Positivação Clientes</code></td>
+</tr>
+<tr>
+<td>20 a 35</td>
+<td>Comparações no tempo</td>
+<td><code>22 Faturamento LY</code>, <code>23 Faturamento YoY %</code></td>
+</tr>
+<tr>
+<td>40 a 42</td>
+<td>Metas</td>
+<td><code>40 Meta</code>, <code>41 Porcentagem Meta</code></td>
+</tr>
+<tr>
+<td>50 a 54</td>
+<td>Auxiliares e formatação</td>
+<td><code>50 Eixo Y max Grafico Comercial</code>, <code>52 Rank Cidade</code></td>
+</tr>
+<tr>
+<td>60 a 66</td>
+<td>Visuais SVG e cores</td>
+<td><code>60 SVG Cartao Faturamento v1</code>, <code>66 Meta Cor</code></td>
+</tr>
+<tr>
+<td>sem número</td>
+<td>Tabela <code>zMetricas</code></td>
+<td><code>Linha Atual</code>, <code>Seta para Cima</code></td>
+</tr>
+</tbody>
+</table>
+<p>Sufixos de tempo: <code>LY</code> (mesmo período do ano anterior), <code>LM</code> (mês anterior), <code>YoY</code> (variação contra o ano anterior) e <code>MoM</code> (variação contra o mês anterior). O acumulado no ano (YTD) é <code>Acumulado</code>, sem sufixo.</p>
+<p><strong>Pastas de exibição.</strong> <code>01.Principais</code>, <code>02. Temporais</code>, <code>03. Formatações</code> e <code>.Visuais SVG</code>. Repare que <code>01.Principais</code> não tem espaço depois do ponto e as outras têm.</p>
+<div class="admonition pendente">
+<p class="admonition-title">A confirmar</p>
+<p>A documentação anterior reservava as faixas 80 a 89 para rankings e 90 a 99 para testes. Hoje nenhuma medida usa essas faixas, e o ranking (<code>52 Rank Cidade</code>) está na faixa 50. As faixas 80 a 99 continuam reservadas?</p>
+</div>
+<h2 id="padroes-de-dax-usados-no-projeto">Padrões de DAX usados no projeto<a class="headerlink" href="#padroes-de-dax-usados-no-projeto" title="Permanent link">&para;</a></h2>
+<p>O que o código do modelo faz hoje (conferido nas 50 medidas):</p>
+<ul>
+<li><strong>Divisão com <code>DIVIDE</code>:</strong> as 11 medidas que dividem usam <code>DIVIDE(..., ..., BLANK())</code>, e nenhuma usa o operador <code>/</code>. Com denominador zero, o resultado fica em branco.</li>
+<li><strong>Variáveis (<code>VAR</code>):</strong> 22 medidas usam variáveis, entre elas todas as de variação (<code>YoY</code> e <code>MoM</code>), a <code>04 Margem Bruta</code> e as de SVG. As medidas curtas (soma, subtração) não usam.</li>
+<li><strong>Filtro de status explícito:</strong> as medidas de valor filtram <code>dStatus[Id Status] = 1</code> dentro de <code>CALCULATE</code>.</li>
+<li><strong>Comparações no tempo:</strong> usam <code>SAMEPERIODLASTYEAR</code>, <code>DATEADD</code> e <code>DATESYTD</code>, com o filtro <code>dCalendario[Datas com Venda] = TRUE()</code> (ver <a href="../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a>).</li>
+<li><strong>Sem <code>FILTER</code>:</strong> nenhuma medida usa a função <code>FILTER</code>.</li>
+<li><strong>Colunas calculadas:</strong> só existem em <code>dCalendario</code> (<code>Datas com Venda</code>, <code>Semana dia Num</code> e <code>Semana dia Nome</code>). Valores de linha, como o total de uma venda, são calculados por medida (<code>SUMX</code>), não por coluna.</li>
+<li><strong>Formatos de exibição:</strong> moeda <code>"R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00</code> (algumas medidas sem centavos), percentual <code>0.00%;-0.00%;0.00%</code> e inteiros <code>#,0</code> ou <code>0</code>.</li>
+</ul>
+<h2 id="conceitos-do-modelo">Conceitos do modelo<a class="headerlink" href="#conceitos-do-modelo" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Termo</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Granularidade</td>
+<td>O nível de detalhe de uma tabela, ou seja, o que uma linha representa. Em <code>fVendas</code>, uma linha é um item vendido</td>
+</tr>
+<tr>
+<td>Cardinalidade</td>
+<td>O tipo de relacionamento entre duas tabelas. No modelo, todos são de muitos para um (do fato para a dimensão)</td>
+</tr>
+<tr>
+<td>Filtro de contexto</td>
+<td>Os filtros ativos no momento do cálculo (filtros do relatório, linhas e colunas do visual). Uma medida é recalculada em cada contexto</td>
+</tr>
+<tr>
+<td>Medida</td>
+<td>Cálculo em DAX feito na hora, no contexto do visual (ver <a href="../medidas-dax/">Medidas DAX</a>)</td>
+</tr>
+<tr>
+<td>Coluna calculada</td>
+<td>Coluna em DAX gravada na tabela no momento da carga (ver <code>dCalendario</code> em <a href="../modelo-de-dados/">Modelo de dados</a>)</td>
+</tr>
+<tr>
+<td>Dimensão com vários papéis (<em>role-playing</em>)</td>
+<td>Uma dimensão ligada ao fato por mais de uma coluna, com significados diferentes. Aqui, <code>dCalendario</code> liga com <code>Data Pedido</code> e <code>Data Envio</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="relacionamento-inativo-e-userelationship">Relacionamento inativo e <code>USERELATIONSHIP</code><a class="headerlink" href="#relacionamento-inativo-e-userelationship" title="Permanent link">&para;</a></h3>
+<p>O Power BI só permite um relacionamento <strong>ativo</strong> entre duas tabelas. Por isso <code>fVendas[Data Envio]</code> está ligado a <code>dCalendario</code> como inativo, e só <code>Data Pedido</code> filtra por padrão. Para calcular por data de envio, uma medida precisa ativar o relacionamento com <code>USERELATIONSHIP</code>. O desenvolvedor decidiu manter esse relacionamento, mas hoje nenhuma medida o usa.</p>
+<p>Exemplo de como seria (não existe no modelo):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Faturamento por Envio =
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">CALCULATE</span><span class="p">(</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="na">[01 Faturamento]</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nf">USERELATIONSHIP</span><span class="p">(</span><span class="w"> </span><span class="na">fVendas[Data Envio]</span><span class="p">,</span><span class="w"> </span><span class="na">dCalendario[Id Data]</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">)</span>
+</code></pre></div>
+<h2 id="o-que-o-modelo-ja-respeita">O que o modelo já respeita<a class="headerlink" href="#o-que-o-modelo-ja-respeita" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Prática</th>
+<th>Situação no projeto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Esquema estrela</td>
+<td>Sim: 2 fatos e 7 dimensões, sem dimensões ligadas a outras dimensões</td>
+</tr>
+<tr>
+<td>Chaves inteiras</td>
+<td>Sim: todas as colunas <code>Id</code> são <code>int64</code>, exceto <code>dCalendario[Id Data]</code>, que é uma data</td>
+</tr>
+<tr>
+<td>Relacionamentos em uma só direção</td>
+<td>Sim: os 10 relacionamentos filtram da dimensão para o fato</td>
+</tr>
+<tr>
+<td>Calendário contínuo e marcado como tabela de datas</td>
+<td>Sim: <code>dCalendario</code> não tem dias faltando e está marcada como data (<code>dataCategory: Time</code>, chave <code>Id Data</code>)</td>
+</tr>
+<tr>
+<td>Dimensões com chave única</td>
+<td>Esperado, mas <strong>não conferido</strong> nesta documentação (os dados não foram lidos)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="solucao-de-problemas">Solução de problemas<a class="headerlink" href="#solucao-de-problemas" title="Permanent link">&para;</a></h2>
+<p>Dicas gerais para problemas comuns de modelo. As consultas abaixo são diagnósticos que você pode rodar na visão de consulta DAX do Power BI Desktop.</p>
+<p><strong>Totais maiores que o esperado.</strong> Uma dimensão com a mesma chave repetida duplica as linhas do fato. Confira:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">EVALUATE</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">ROW</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Duplicatas&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">COUNTROWS</span><span class="p">(</span><span class="w"> </span>dClientes ) - DISTINCTCOUNT( dClientes[Id Cliente] ) )
+</code></pre></div>
+<p>O resultado deve ser <code>0</code>. Faça o mesmo para as outras dimensões.</p>
+<p><strong>Linhas "(Em branco)" nos visuais.</strong> O fato tem uma chave que não existe na dimensão, ou uma chave vazia. Confira as vendas sem cliente correspondente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">EVALUATE</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">ROW</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Sem cliente&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">COUNTROWS</span><span class="p">(</span><span class="w"> </span><span class="nf">FILTER</span><span class="p">(</span><span class="w"> </span>fVendas, ISBLANK( RELATED( dClientes[Id Cliente] ) ) ) ) )
+</code></pre></div>
+<p>Se houver linhas, corrija a planilha de origem ou acrescente uma linha "Desconhecido" na dimensão.</p>
+<p><strong>Um filtro (segmentação) não filtra o visual.</strong> Verifique, no modelo, se o relacionamento existe, se está ativo e se aponta no sentido certo. Lembre que <code>Data Envio</code> está inativo.</p>
+<p><strong>Comparação com o ano anterior volta em branco.</strong> Confira se o relacionamento de <code>fVendas[Data Pedido]</code> com <code>dCalendario</code> está ativo, se o calendário cobre o período do dado (vai de 01/01/2018 a 31/12/2021) e se a coluna <code>Datas com Venda</code> está sendo usada como o modelo espera.</p>
+<div class="admonition pendente">
+<p class="admonition-title">A confirmar</p>
+<p>As consultas DAX de diagnóstico desta seção são sugestões gerais e <strong>não foram executadas</strong> neste projeto. Rode cada uma no Power BI Desktop e ajuste, se for o caso.</p>
+</div>
 <h2 id="ao-alterar-o-painel">Ao alterar o painel<a class="headerlink" href="#ao-alterar-o-painel" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Faça a mudança no Power BI Desktop e salve o PBIP.</li>
@@ -2334,8 +2678,8 @@
 <li>Atualize a página afetada: medida → <a href="../medidas-dax/">Medidas DAX</a> (incluindo "depende de" e "é usada por"); tabela ou relacionamento → <a href="../modelo-de-dados/">Modelo de dados</a>; guia → página da guia.</li>
 <li>Decisão de arquitetura → <a href="../decisoes-tecnicas/">Decisões técnicas</a>, com data e commit.</li>
 <li>Anote no <a href="../changelog/">Changelog</a>, em <code>[Não publicado]</code>, citando as medidas pelo nome.</li>
-<li>Rode <code>uv run mkdocs build --strict</code>.</li>
-<li>Abra o pull request com o checklist.</li>
+<li>Rode <code>uv run mkdocs build --strict</code>. O build só passa depois que as páginas novas estão commitadas.</li>
+<li>Publique a documentação com <code>uv run mkdocs gh-deploy</code> (o repositório ainda não tem publicação automática) e abra o pull request com o checklist.</li>
 </ol>
 <h2 id="checklist-do-pull-request">Checklist do pull request<a class="headerlink" href="#checklist-do-pull-request" title="Permanent link">&para;</a></h2>
 <ul>
