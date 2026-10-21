@@ -18,7 +18,7 @@ queryGroup Auxiliares
 
 	annotation PBI_QueryGroupOrder = 2
 
-queryGroup 'Parêmetros de dados'
+queryGroup 'Parâmetros de dados'
 
 	annotation PBI_QueryGroupOrder = 3
 
