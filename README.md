@@ -1,12 +1,12 @@
 # Performance Comercial
 
-Projeto de análise de performance comercial desenvolvido em Power BI (formato `.pbip`), versionado com Git e documentado com MkDocs.
+Projeto de análise de performance comercial desenvolvido em Power BI (formato `.pbip`), versionado com Git e documentado com MkDocs. **[Veja a documentação publicada](https://ricardo-filgueiras.github.io/Performace-Comercial/)** e como ela foi construída.
 
 ---
 
 ## Descrição
 
-Dashboard de Business Intelligence para acompanhamento de KPIs comerciais: faturamento, resultado, margem, metas, positivação de clientes e produtos, análises temporais (YoY, MoM, YTD) e performance por vendedor, produto e região.
+Dashboard de Business Intelligence para acompanhamento de KPIs comerciais: faturamento, resultado, margem, metas, positivação de clientes e produtos, análises temporais (YoY, MoM, YTD) e performance por vendedor, produto, cidade e unidade.
 
 O modelo semântico segue arquitetura **Star Schema** com medidas DAX organizadas por categoria e documentação técnica completa publicada via MkDocs Material.
 
@@ -57,6 +57,21 @@ Performace-Comercial/
 ---
 
 ## Documentação
+
+### Ver a documentação publicada
+
+A documentação do projeto está no ar, publicada com GitHub Pages: **https://ricardo-filgueiras.github.io/Performace-Comercial/**
+
+Ela foi escrita a partir dos arquivos do modelo e do relatório, conferida com um script de levantamento e validada com `mkdocs build --strict`. Para ver como ela é construída e mantida:
+
+| Quero ver | Página |
+|---|---|
+| O que o painel resolve e para quem | [Escopo](https://ricardo-filgueiras.github.io/Performace-Comercial/projetos/performance-comercial/escopo/) |
+| Cada guia do relatório | [Guias do relatório](https://ricardo-filgueiras.github.io/Performace-Comercial/projetos/performance-comercial/guias-do-relatorio/) |
+| O código e as dependências das 50 medidas | [Medidas DAX](https://ricardo-filgueiras.github.io/Performace-Comercial/projetos/performance-comercial/medidas-dax/) |
+| Por que o projeto é como é | [Decisões técnicas](https://ricardo-filgueiras.github.io/Performace-Comercial/projetos/performance-comercial/decisoes-tecnicas/) |
+| Como trabalhar no projeto e na documentação | [Guia do desenvolvedor](https://ricardo-filgueiras.github.io/Performace-Comercial/projetos/performance-comercial/guia-do-desenvolvedor/) |
+| A visão geral da documentação | [Sobre esta documentação](https://ricardo-filgueiras.github.io/Performace-Comercial/projetos/performance-comercial/readme/) |
 
 ### Rodar localmente
 
