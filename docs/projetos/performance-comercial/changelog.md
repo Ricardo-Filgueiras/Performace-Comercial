@@ -39,7 +39,7 @@ Correções na **documentação** (o modelo não foi alterado):
 
 ### Removido
 
-- Fica para o fim da migração: as páginas antigas `docs/01` a `06`, `docs/estrutura_definition_legivel.md` e `docs/requisitos.md`, cujo conteúdo já foi migrado. O Git guarda o histórico.
+- As páginas antigas `docs/01 visao geral.md`, `02 dicionario dados.md`, `03 guia medidas dax.md`, `04 relacionamentos.md`, `05 changelog.md` e `06 boas praticas.md`, mais `docs/estrutura_definition_legivel.md` e `docs/requisitos.md`, depois de migradas para as páginas do projeto. O histórico delas continua no Git.
 
 ### Problemas conhecidos (não corrigidos)
 
