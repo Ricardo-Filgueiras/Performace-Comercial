@@ -37,7 +37,7 @@ Registro de decisões de arquitetura do painel no formato ADR (*Architecture Dec
 ## ADR-003: Dados em planilhas Excel na pasta `data/`, com caminhos em parâmetros
 
 - **Data:** 2025-10-24 (parâmetros de caminho); 2026-10-21 (grupo "Parâmetros de dados" e pasta `data/` na raiz)
-- **Commit:** `8703e41` (parâmetros), `c116cef` (grupo de parâmetros) e `3578022` (pasta `data/` na raiz)
+- **Commit:** `8703e41` (parâmetros), `c116cef` (grupo de parâmetros), `3578022` (pasta `data/` na raiz) e `2d2af2d` (valores dos parâmetros apontando para `data/`)
 
 **Contexto.** Os dados do projeto são fictícios e ficam no próprio repositório. Quem clonar o projeto precisa apontar o modelo para a pasta de dados da sua cópia.
 
@@ -149,7 +149,7 @@ Registro de decisões de arquitetura do painel no formato ADR (*Architecture Dec
 ## ADR-013: Organização das pastas do repositório
 
 - **Data:** 2026-10-21
-- **Commit:** `c116cef` (projeto Power BI em `src/projeto/performance-comercial/`) e `3578022` (dados em `data/`)
+- **Commit:** `c116cef` (nome corrigido e projeto em `src/projeto-performance-comercial/`), `3578022` (dados em `data/`) e `2d2af2d` (projeto em `src/projeto/performance-comercial/`)
 
 **Contexto.** O padrão do kit de documentação pede `src/<slug>/` para os arquivos do Power BI e `docs/projetos/<slug>/` para a documentação, com o mesmo nome. Os dados estavam em `src/data/` e o projeto em `src/projeto/` com o nome "Performace".
 

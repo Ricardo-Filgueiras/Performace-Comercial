@@ -64,7 +64,7 @@
     
     
   <meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -2476,7 +2476,7 @@
 <h2 id="adr-003-dados-em-planilhas-excel-na-pasta-data-com-caminhos-em-parametros">ADR-003: Dados em planilhas Excel na pasta <code>data/</code>, com caminhos em parâmetros<a class="headerlink" href="#adr-003-dados-em-planilhas-excel-na-pasta-data-com-caminhos-em-parametros" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Data:</strong> 2025-10-24 (parâmetros de caminho); 2026-10-21 (grupo "Parâmetros de dados" e pasta <code>data/</code> na raiz)</li>
-<li><strong>Commit:</strong> <code>8703e41</code> (parâmetros), <code>c116cef</code> (grupo de parâmetros) e <code>3578022</code> (pasta <code>data/</code> na raiz)</li>
+<li><strong>Commit:</strong> <code>8703e41</code> (parâmetros), <code>c116cef</code> (grupo de parâmetros), <code>3578022</code> (pasta <code>data/</code> na raiz) e <code>2d2af2d</code> (valores dos parâmetros apontando para <code>data/</code>)</li>
 </ul>
 <p><strong>Contexto.</strong> Os dados do projeto são fictícios e ficam no próprio repositório. Quem clonar o projeto precisa apontar o modelo para a pasta de dados da sua cópia.</p>
 <p><strong>Decisão.</strong> Guardar os dados em planilhas Excel na pasta <code>data/</code>, na raiz do repositório, e ler cada pasta por um parâmetro do Power Query (<code>Caminho_Extracao</code>, <code>Caminho_Dimensoes</code> e <code>Caminho_Meta</code>), reunidos no grupo de consultas "Parâmetros de dados". A documentação traz o guia de como atualizar o valor dos parâmetros (ver <a href="../fontes-de-dados/#como-atualizar-o-valor-dos-parametros">Fontes de dados</a>).</p>
@@ -2557,7 +2557,7 @@
 <h2 id="adr-013-organizacao-das-pastas-do-repositorio">ADR-013: Organização das pastas do repositório<a class="headerlink" href="#adr-013-organizacao-das-pastas-do-repositorio" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Data:</strong> 2026-10-21</li>
-<li><strong>Commit:</strong> <code>c116cef</code> (projeto Power BI em <code>src/projeto/performance-comercial/</code>) e <code>3578022</code> (dados em <code>data/</code>)</li>
+<li><strong>Commit:</strong> <code>c116cef</code> (nome corrigido e projeto em <code>src/projeto-performance-comercial/</code>), <code>3578022</code> (dados em <code>data/</code>) e <code>2d2af2d</code> (projeto em <code>src/projeto/performance-comercial/</code>)</li>
 </ul>
 <p><strong>Contexto.</strong> O padrão do kit de documentação pede <code>src/&lt;slug&gt;/</code> para os arquivos do Power BI e <code>docs/projetos/&lt;slug&gt;/</code> para a documentação, com o mesmo nome. Os dados estavam em <code>src/data/</code> e o projeto em <code>src/projeto/</code> com o nome "Performace".</p>
 <p><strong>Decisão.</strong> Mover o projeto Power BI para <code>src/projeto/performance-comercial/</code>, corrigir o nome do projeto para "Performance Comercial" e mover os dados para <code>data/</code>, na raiz. O slug da documentação é <code>performance-comercial</code>.</p>
@@ -2584,7 +2584,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de outubro de 2026 14:04:39 UTC">21 de outubro de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de outubro de 2026 17:10:06 UTC">21 de outubro de 2026</span>
   </span>
 
     
