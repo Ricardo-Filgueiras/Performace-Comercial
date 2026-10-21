@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "4c3f2dc55800d6e470f5",
   "position": {
     "x": 31.428571428571431,
@@ -89,7 +89,7 @@
             "webUrl": {
               "expr": {
                 "Literal": {
-                  "Value": "'https://www.linkedin.com/in/ricardo-filgueiras-b4607b232/'"
+                  "Value": "'https://www.linkedin.com/in/ricardo-c-filgueiras'"
                 }
               }
             }
