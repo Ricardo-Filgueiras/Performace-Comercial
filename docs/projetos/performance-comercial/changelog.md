@@ -6,7 +6,7 @@ O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). O
 
 ## [Não publicado]
 
-Reescrita da documentação e reorganização das pastas, em 21/10/2026. **Nenhuma medida DAX foi alterada.**
+**Migração do projeto para o portal de documentação**, com a reescrita da documentação e a reorganização das pastas, em 21/10/2026. **Nenhuma medida DAX foi alterada.** Comparado com o commit `6cf9c4c`, o projeto Power BI só tem 14 arquivos de texto com mudança de conteúdo (22 linhas acrescentadas e 15 removidas), todas listadas em "Alterado".
 
 !!! pendente "Linha de base e tags"
     Ponto de partida previsto: a tag `performance-comercial/baseline-pre-documentacao`. Ela **ainda não foi criada**. O repositório também não tem a tag `performance-comercial/v2.0.0`. As datas e os commits abaixo vêm do histórico do Git.
@@ -24,6 +24,7 @@ Reescrita da documentação e reorganização das pastas, em 21/10/2026. **Nenhu
 - Projeto Power BI movido para `src/projeto/performance-comercial/` e renomeado de "Performace Comercial" para "Performance Comercial" (arquivo `.pbip` e pastas `.Report` e `.SemanticModel`) em `c116cef` e `2d2af2d`.
 - Dados movidos de `src/data/` para `data/`, na raiz (`3578022`). Os valores dos três parâmetros passaram a apontar para a nova pasta (`2d2af2d`). As consultas das tabelas `fVendas`, `fMetas`, `dClientes`, `dProdutos`, `dVendedores`, `dUnidades`, `dStatus` e `dPagamento` e a consulta `dCidades` não mudaram.
 - `README.md`: árvore de pastas, passo de abertura do projeto e endereço de clone corrigido.
+- A pasta `site/`, com a saída do MkDocs, deixou de ser versionada e entrou no `.gitignore` (`1b1008e`). A documentação é publicada na branch `gh-pages` por `mkdocs gh-deploy`.
 - Dependências de `mkdocs.yml` e `pyproject.toml`: plugins `awesome-nav`, `git-revision-date-localized` e `panzoom`, com o MkDocs fixado abaixo da versão 2.
 - Anotação `PBI_ResultType` das tabelas voltou de `Exception` para `Table` (`56b7cb6`), desfazendo a mudança de `2f2c698`, de 23/04/2026. Página ativa do relatório trocada de "Analítico antes" para a Capa.
 
