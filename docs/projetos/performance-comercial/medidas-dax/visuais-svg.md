@@ -302,3 +302,4 @@ SWITCH(
 - **Usada nas guias:** pelo nome antigo `Meta Cor` em Vendedores, Vendedores antes
 - **Depende de:** `41 Porcentagem Meta`
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Metas](../regras-de-negocio.md#metas)

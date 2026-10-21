@@ -61,12 +61,33 @@ Os arquivos `data/Metas/Catalogo.pdf` e a pasta `data/imagens/` ficam no reposit
 | `Caminho_Dimensoes` | `C:\Github\Performace-Comercial\data\Dimensões` | Pasta de `Dimensões.xlsx`. Lido por `dClientes`, `dProdutos`, `dVendedores`, `dUnidades`, `dStatus`, `dPagamento` e `dCidades` |
 | `Caminho_Meta` | `C:\Github\Performace-Comercial\data\Metas` | Pasta das planilhas de meta. Lido por `fMetas` |
 
-Os três ficam no grupo de consultas **Parâmetros de dados**. Os valores são caminhos absolutos para a pasta `data/` da cópia local do repositório. Quem clonar o projeto em outro lugar precisa **atualizar os três parâmetros** (no Power BI Desktop: *Transformar dados* → *Editar parâmetros*) antes de atualizar os dados.
+Os três ficam no grupo de consultas **Parâmetros de dados**. Os valores são caminhos absolutos para a pasta `data/` da cópia local do repositório. Quem clonar o projeto em outro lugar precisa **atualizar os três parâmetros** antes de atualizar os dados. O passo a passo está em [Como atualizar o valor dos parâmetros](#como-atualizar-o-valor-dos-parametros).
 
-## Mudança prevista
+## Como atualizar o valor dos parâmetros
 
-!!! pendente "Dados em CSV e um único parâmetro"
-    O [escopo do projeto](escopo.md) prevê trocar o formato de entrada de Excel para CSV, porque o link "raw" do GitHub baixa um `.xlsx` em vez de mostrar o conteúdo, e reduzir os três parâmetros a um só, o caminho da pasta de dados. Nada disso foi feito ainda: o modelo continua lendo `.xlsx` por três parâmetros. Falta decidir se o parâmetro único guarda o caminho local da pasta `data/` ou o endereço base "raw" do GitHub. Quando a mudança acontecer, esta página precisa ser revisada.
+Os arquivos de dados são planilhas Excel guardadas na pasta `data/` do repositório, junto com o projeto. Os parâmetros guardam o caminho dessa pasta no seu computador. Depois de clonar o repositório, faça uma vez:
+
+1. Clone o repositório e anote o caminho da pasta `data/`, por exemplo `C:\Users\voce\repos\Performace-Comercial\data`.
+2. Abra o arquivo `src/projeto/performance-comercial/Performance Comercial.pbip` no Power BI Desktop.
+3. Na guia **Página Inicial**, clique em **Transformar dados** e escolha **Editar parâmetros**.
+4. Preencha os três parâmetros com o caminho de cada subpasta:
+
+    | Parâmetro | Valor |
+    |---|---|
+    | `Caminho_Extracao` | `<caminho do repositório>\data\Extrações` |
+    | `Caminho_Dimensoes` | `<caminho do repositório>\data\Dimensões` |
+    | `Caminho_Meta` | `<caminho do repositório>\data\Metas` |
+
+5. Clique em **OK** e, na faixa amarela, em **Aplicar alterações**. O Power BI recarrega os dados.
+6. Confira se os cartões do relatório mostram valores e se nenhuma consulta apresenta erro.
+
+!!! warning "Cuidados"
+    - Não renomeie as subpastas `Extrações`, `Dimensões` e `Metas`, nem os arquivos `Vendas.xlsx` e `Dimensões.xlsx`: as consultas procuram esses nomes.
+    - Não renomeie `Meta 2018.xlsx` (ver o aviso em *Transformações no Power Query*).
+    - Se o Power BI avisar que o caminho não existe, confira acentos e barras no valor do parâmetro.
+
+!!! pendente "A confirmar"
+    Os passos acima descrevem a interface do Power BI Desktop em português e não foram executados na escrita desta documentação. O desenvolvedor deve conferir os nomes dos botões na versão que usa.
 
 ## Consultas sem uso aparente
 

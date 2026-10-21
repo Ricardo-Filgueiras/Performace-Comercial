@@ -2249,6 +2249,7 @@
 <li><strong>Usada nas guias:</strong> Comercial, TooltiposTabela; pelo nome antigo <code>Faturamento</code> em Comercial, Analítico, Mapa Calor, Vendedores, Comercial antes, Analítico antes, Mapa Calor antes, Vendedores antes, TooltiposGrafico01, TooltiposTabela</li>
 <li><strong>Depende de:</strong> nenhuma medida</li>
 <li><strong>É usada por:</strong> <code>03 Lucro Bruto</code>, <code>04 Margem Bruta</code>, <code>09 Resultado</code>, <code>10 Margem</code>, <code>20 Faturamento Acumulado</code>, <code>21 Faturamento Acumulado LY</code>, <code>22 Faturamento LY</code>, <code>23 Faturamento YoY %</code>, <code>24 Faturamento MoM %</code>, <code>41 Porcentagem Meta</code>, <code>42 Diferença Meta</code>, <code>50 Eixo Y max Grafico Comercial</code>, <code>51 Faturamento formatação de texto</code>, <code>52 Rank Cidade</code>, <code>53 Max Y Visual 01 pg Vendedores</code>, <code>Context Medida z</code>, <code>Linha Atual</code>, <code>Seta para Cima</code>, <code>Seta para baixo  ( limit Inferior )</code>, <code>Seta para baixo  ( limit sup )</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#faturamento-custo-despesa-impostos-e-comissao">Faturamento, custo, despesa, impostos e comissão</a></li>
 <li><strong>Observação:</strong> Confirma que os valores unitários são multiplicados por <code>Qtde</code>: o cálculo é feito linha a linha (<code>SUMX</code>) e só considera vendas com <code>Id Status = 1</code> (válidas). O mesmo vale para <code>02 Custo</code>, <code>05 Despesa</code>, <code>06 Impostos</code> e <code>07 Comissao</code>.</li>
 </ul>
 <h2 id="02-custo"><code>02 Custo</code><a class="headerlink" href="#02-custo" title="Permanent link">&para;</a></h2>
@@ -2267,6 +2268,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> nenhuma medida</li>
 <li><strong>É usada por:</strong> <code>03 Lucro Bruto</code>, <code>04 Margem Bruta</code>, <code>08 Abatimento</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#faturamento-custo-despesa-impostos-e-comissao">Faturamento, custo, despesa, impostos e comissão</a></li>
 </ul>
 <h2 id="03-lucro-bruto"><code>03 Lucro Bruto</code><a class="headerlink" href="#03-lucro-bruto" title="Permanent link">&para;</a></h2>
 <p>Lucro Bruto em R$ = Faturamento - Custo</p>
@@ -2279,6 +2281,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>01 Faturamento</code>, <code>02 Custo</code></li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#resultado-e-margens">Resultado e margens</a></li>
 </ul>
 <h2 id="04-margem-bruta"><code>04 Margem Bruta</code><a class="headerlink" href="#04-margem-bruta" title="Permanent link">&para;</a></h2>
 <p>Margem Bruta (%) = (Faturamento - Custo) / Faturamento</p>
@@ -2300,6 +2303,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>01 Faturamento</code>, <code>02 Custo</code></li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#resultado-e-margens">Resultado e margens</a></li>
 </ul>
 <h2 id="05-despesa"><code>05 Despesa</code><a class="headerlink" href="#05-despesa" title="Permanent link">&para;</a></h2>
 <p>Soma de <code>Qtde × Despesa Unit</code> das vendas válidas. <em>(descrição deduzida do código)</em></p>
@@ -2317,6 +2321,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> nenhuma medida</li>
 <li><strong>É usada por:</strong> <code>08 Abatimento</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#faturamento-custo-despesa-impostos-e-comissao">Faturamento, custo, despesa, impostos e comissão</a></li>
 </ul>
 <h2 id="06-impostos"><code>06 Impostos</code><a class="headerlink" href="#06-impostos" title="Permanent link">&para;</a></h2>
 <p>Soma de <code>Qtde × Impostos Unit</code> das vendas válidas. <em>(descrição deduzida do código)</em></p>
@@ -2334,6 +2339,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> nenhuma medida</li>
 <li><strong>É usada por:</strong> <code>08 Abatimento</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#faturamento-custo-despesa-impostos-e-comissao">Faturamento, custo, despesa, impostos e comissão</a></li>
 </ul>
 <h2 id="07-comissao"><code>07 Comissao</code><a class="headerlink" href="#07-comissao" title="Permanent link">&para;</a></h2>
 <p>Soma de <code>Qtde × Comissão Unit</code> das vendas válidas. <em>(descrição deduzida do código)</em></p>
@@ -2351,6 +2357,7 @@
 <li><strong>Usada nas guias:</strong> pelo nome antigo <code>Comissao</code> em Vendedores, Vendedores antes</li>
 <li><strong>Depende de:</strong> nenhuma medida</li>
 <li><strong>É usada por:</strong> <code>08 Abatimento</code>, <code>33 Comissao LY</code>, <code>34 Comissao YoY %</code>, <code>35 Comissao MoM %</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#faturamento-custo-despesa-impostos-e-comissao">Faturamento, custo, despesa, impostos e comissão</a></li>
 </ul>
 <h2 id="08-abatimento"><code>08 Abatimento</code><a class="headerlink" href="#08-abatimento" title="Permanent link">&para;</a></h2>
 <p>Soma de custo, despesa, impostos e comissão. <em>(descrição deduzida do código)</em></p>
@@ -2362,6 +2369,7 @@
 <li><strong>Usada nas guias:</strong> pelo nome antigo <code>Abatimento</code> em Analítico, Analítico antes</li>
 <li><strong>Depende de:</strong> <code>02 Custo</code>, <code>05 Despesa</code>, <code>06 Impostos</code>, <code>07 Comissao</code></li>
 <li><strong>É usada por:</strong> <code>09 Resultado</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#resultado-e-margens">Resultado e margens</a></li>
 </ul>
 <h2 id="09-resultado"><code>09 Resultado</code><a class="headerlink" href="#09-resultado" title="Permanent link">&para;</a></h2>
 <p>Faturamento menos o abatimento (custo, despesa, impostos e comissão). <em>(descrição deduzida do código)</em></p>
@@ -2373,6 +2381,7 @@
 <li><strong>Usada nas guias:</strong> Comercial; pelo nome antigo <code>Resultado</code> em Analítico, Vendedores, Comercial antes, Analítico antes, Vendedores antes</li>
 <li><strong>Depende de:</strong> <code>01 Faturamento</code>, <code>08 Abatimento</code></li>
 <li><strong>É usada por:</strong> <code>10 Margem</code>, <code>29 Resultado LM</code>, <code>30 Resultado LY</code>, <code>31 Resultado YoY %</code>, <code>32 Resultado MoM %</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#resultado-e-margens">Resultado e margens</a></li>
 </ul>
 <h2 id="10-margem"><code>10 Margem</code><a class="headerlink" href="#10-margem" title="Permanent link">&para;</a></h2>
 <p>Margem Líquida (%) = (Resultado / Faturamento) com tratamento de divisão por zero</p>
@@ -2389,6 +2398,7 @@
 <li><strong>Usada nas guias:</strong> Comercial, TooltiposTabela; pelo nome antigo <code>Margem</code> em Comercial, Analítico, Vendedores, Comercial antes, Analítico antes, Vendedores antes</li>
 <li><strong>Depende de:</strong> <code>01 Faturamento</code>, <code>09 Resultado</code></li>
 <li><strong>É usada por:</strong> <code>25 Margem LM</code>, <code>26 Margem LY</code>, <code>27 Margem YoY %</code>, <code>28 Margem MoM %</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#resultado-e-margens">Resultado e margens</a></li>
 </ul>
 <h2 id="11-qtde-vendas"><code>11 Qtde Vendas</code><a class="headerlink" href="#11-qtde-vendas" title="Permanent link">&para;</a></h2>
 <p>Contagem de números de venda distintos (<code>Num Venda</code>). <em>(descrição deduzida do código)</em></p>
@@ -2400,6 +2410,7 @@
 <li><strong>Usada nas guias:</strong> pelo nome antigo <code>Qtde Vendas</code> em Analítico, Analítico antes</li>
 <li><strong>Depende de:</strong> nenhuma medida</li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#quantidade-de-vendas-e-positivacao">Quantidade de vendas e positivação</a></li>
 <li><strong>Observação:</strong> <strong>Não filtra o status:</strong> conta as vendas válidas e as inválidas. As medidas de valor consideram só as válidas.</li>
 </ul>
 <h2 id="12-positivacao-clientes"><code>12 Positivação Clientes</code><a class="headerlink" href="#12-positivacao-clientes" title="Permanent link">&para;</a></h2>
@@ -2416,6 +2427,7 @@
 <li><strong>Usada nas guias:</strong> pelo nome antigo <code>Positivação Clientes</code> em Analítico, Vendedores, Analítico antes, Vendedores antes</li>
 <li><strong>Depende de:</strong> nenhuma medida</li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#quantidade-de-vendas-e-positivacao">Quantidade de vendas e positivação</a></li>
 <li><strong>Observação:</strong> Considera só vendas válidas (<code>Id Status = 1</code>).</li>
 </ul>
 <h2 id="13-positivacao-produtos"><code>13 Positivação Produtos</code><a class="headerlink" href="#13-positivacao-produtos" title="Permanent link">&para;</a></h2>
@@ -2432,6 +2444,7 @@
 <li><strong>Usada nas guias:</strong> pelo nome antigo <code>Positivação Produtos</code> em Analítico, Analítico antes</li>
 <li><strong>Depende de:</strong> nenhuma medida</li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#quantidade-de-vendas-e-positivacao">Quantidade de vendas e positivação</a></li>
 <li><strong>Observação:</strong> Considera só vendas válidas (<code>Id Status = 1</code>).</li>
 </ul>
 <h2 id="40-meta"><code>40 Meta</code><a class="headerlink" href="#40-meta" title="Permanent link">&para;</a></h2>
@@ -2444,6 +2457,7 @@
 <li><strong>Usada nas guias:</strong> pelo nome antigo <code>Meta</code> em Vendedores, Vendedores antes, TooltiposGrafico01</li>
 <li><strong>Depende de:</strong> nenhuma medida</li>
 <li><strong>É usada por:</strong> <code>41 Porcentagem Meta</code>, <code>42 Diferença Meta</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#metas">Metas</a></li>
 </ul>
 <h2 id="41-porcentagem-meta"><code>41 Porcentagem Meta</code><a class="headerlink" href="#41-porcentagem-meta" title="Permanent link">&para;</a></h2>
 <p>Percentual de atingimento: Faturamento / Meta</p>
@@ -2464,6 +2478,7 @@
 <li><strong>Usada nas guias:</strong> TooltiposTabela; pelo nome antigo <code>Porcentagem Meta</code> em Vendedores, Vendedores antes, TooltiposGrafico01, TooltiposTabela</li>
 <li><strong>Depende de:</strong> <code>01 Faturamento</code>, <code>40 Meta</code></li>
 <li><strong>É usada por:</strong> <code>66 Meta Cor</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#metas">Metas</a></li>
 </ul>
 <h2 id="42-diferenca-meta"><code>42 Diferença Meta</code><a class="headerlink" href="#42-diferenca-meta" title="Permanent link">&para;</a></h2>
 <p>Diferença, em valor absoluto, entre a meta e o faturamento. <em>(descrição deduzida do código)</em></p>
@@ -2475,6 +2490,7 @@
 <li><strong>Usada nas guias:</strong> pelo nome antigo <code>Diferença Meta</code> em Vendedores, Vendedores antes</li>
 <li><strong>Depende de:</strong> <code>01 Faturamento</code>, <code>40 Meta</code></li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#metas">Metas</a></li>
 <li><strong>Observação:</strong> Usa <code>ABS</code>: o resultado é sempre positivo e não diz se o faturamento ficou acima ou abaixo da meta. A documentação anterior descrevia a medida como "Faturamento − Meta".</li>
 </ul>
 

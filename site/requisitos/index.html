@@ -1920,17 +1920,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-requisitos-nao-funcionais" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Requisitos não funcionais
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#6-fora-do-escopo-atual" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2093,17 +2082,6 @@
     <span class="md-ellipsis">
       
         4. Requisitos de dados
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-requisitos-nao-funcionais" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Requisitos não funcionais
       
     </span>
   </a>
@@ -2303,57 +2281,15 @@
 <ul>
 <li><strong>Natureza dos dados:</strong> fictícios, criados para o portfólio.</li>
 <li><strong>Origem:</strong> arquivos guardados no próprio repositório, em <code>data/</code>, na raiz: vendas (uma linha por item vendido), cadastros (dimensões) e metas por ano (2018 a 2021).</li>
-<li><strong>Formato:</strong> CSV. O Excel foi descartado como formato de entrada porque o link "raw" do GitHub baixa o arquivo <code>.xlsx</code> em vez de exibir o conteúdo, e o CSV pode ser lido direto.</li>
-<li><strong>Parâmetros:</strong> os caminhos dos dados ficam em parâmetros do Power Query, reunidos em um grupo próprio de consultas, separado de fatos, dimensões e auxiliares. Quem clonar o repositório deve precisar <strong>atualizar um único caminho</strong>, o da pasta onde estão os dados.</li>
+<li><strong>Formato:</strong> Excel (<code>.xlsx</code>). Os arquivos de dados ficam no próprio repositório, junto com o projeto, na pasta <code>data/</code>. O projeto <strong>não usa CSV</strong>.</li>
+<li><strong>Parâmetros:</strong> os caminhos dos dados ficam em três parâmetros do Power Query (<code>Caminho_Extracao</code>, <code>Caminho_Dimensoes</code> e <code>Caminho_Meta</code>), reunidos em um grupo próprio de consultas, separado de fatos, dimensões e auxiliares. Quem clonar o repositório precisa <strong>atualizar o valor desses parâmetros</strong> para a pasta <code>data/</code> da sua cópia. A documentação deve trazer um guia passo a passo para isso (ver <a href="../projetos/performance-comercial/fontes-de-dados/">Fontes de dados</a>).</li>
 <li><strong>Carga:</strong> modo Import, com tratamento no Power Query.</li>
 <li><strong>Modelo:</strong> esquema estrela com duas tabelas fato (<code>fVendas</code> e <code>fMetas</code>) e sete dimensões. Detalhes em <a href="../04%20relacionamentos/">Relacionamentos</a>.</li>
 <li><strong>Granularidade:</strong> <code>fVendas</code> tem uma linha por item vendido. <code>fMetas</code> tem uma linha por vendedor e mês.</li>
-<li><strong>Regra de negócio central:</strong> os indicadores de venda consideram apenas vendas efetivadas (<code>Id Status = 1</code>).</li>
+<li><strong>Regra de negócio central:</strong> os indicadores de valor consideram apenas as vendas <strong>válidas</strong> (<code>Id Status = 1</code>).</li>
 <li><strong>Cultura:</strong> pt-BR.</li>
 </ul>
-<div class="admonition pendente">
-<p class="admonition-title">Caminho único dos dados</p>
-<p>Falta definir o que o parâmetro guarda: o caminho da pasta <code>data/</code> na cópia local do repositório, ou o endereço base dos arquivos "raw" no GitHub. Falta também converter os arquivos de Excel para CSV e adaptar as consultas, porque hoje o modelo ainda lê <code>.xlsx</code> por três parâmetros (<code>Caminho_Extracao</code>, <code>Caminho_Dimensoes</code> e <code>Caminho_Meta</code>).</p>
-</div>
-<div class="admonition pendente">
-<p class="admonition-title">Período dos dados</p>
-<p>Falta confirmar o período coberto pelos dados de vendas. Os arquivos de meta vão só até 2021.</p>
-</div>
-<h2 id="5-requisitos-nao-funcionais">5. Requisitos não funcionais<a class="headerlink" href="#5-requisitos-nao-funcionais" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Tema</th>
-<th>Situação hoje</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Atualização</td>
-<td>Manual. Os dados vêm de planilhas locais e não há atualização agendada. Como os dados são fictícios e fixos, não há necessidade de atualização periódica</td>
-</tr>
-<tr>
-<td>Segurança por linha (RLS)</td>
-<td>Não é requisito. O projeto é de portfólio, sem usuários reais, e o modelo não tem papéis (roles)</td>
-</tr>
-<tr>
-<td>Versionamento</td>
-<td>Projeto em formato <code>.pbip</code>, versionado com Git</td>
-</tr>
-<tr>
-<td>Documentação</td>
-<td>MkDocs Material, publicada pelo GitHub Actions</td>
-</tr>
-<tr>
-<td>Desempenho</td>
-<td>Sem meta definida</td>
-</tr>
-<tr>
-<td>Publicação</td>
-<td>Há um link público do painel no Power BI Service</td>
-</tr>
-</tbody>
-</table>
+<p>Os dados cobrem o período de 2018 a 2021, o mesmo do calendário e das planilhas de meta. Não haverá atualizações nem valores depois de 31/12/2021.</p>
 <div class="admonition pendente">
 <p class="admonition-title">Meta de desempenho</p>
 <p>Falta definir uma meta de tempo de resposta. O texto anterior falava em menos de 5 segundos, mas isso nunca foi medido.</p>
@@ -2367,8 +2303,6 @@
 </ul>
 <h2 id="7-pendencias-para-validacao">7. Pendências para validação<a class="headerlink" href="#7-pendencias-para-validacao" title="Permanent link">&para;</a></h2>
 <ol>
-<li>O parâmetro único guarda o caminho local da pasta de dados ou o endereço base "raw" do GitHub? (ver seção 4)</li>
-<li>Qual é o período coberto pelos dados de vendas?</li>
 <li>Qual meta de tempo de resposta adotar?</li>
 </ol>
 

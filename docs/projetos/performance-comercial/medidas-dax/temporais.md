@@ -23,6 +23,7 @@ CALCULATE(
 - **Usada nas guias:** pelo nome antigo `Faturamento Acumulado` em Mapa Calor, Mapa Calor antes
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 - **Observação:** Usa `dCalendario[Datas com Venda]`, que marca as datas até a última venda (ver [Modelo de dados](../modelo-de-dados.md)).
 
 ## `21 Faturamento Acumulado LY`
@@ -44,6 +45,7 @@ CALCULATE(
 - **Usada nas guias:** pelo nome antigo `Faturamento Acumulado LY` em Mapa Calor, Mapa Calor antes
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `22 Faturamento LY`
 
@@ -64,6 +66,7 @@ CALCULATE(
 - **Usada nas guias:** pelo nome antigo `Faturamento LY` em Mapa Calor, Mapa Calor antes
 - **Depende de:** `01 Faturamento`
 - **É usada por:** `23 Faturamento YoY %`, `Context Medida z`, `Linha Anterior`, `Seta para Cima`, `Seta para baixo  ( limit Inferior )`, `Seta para baixo  ( limit sup )`
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `23 Faturamento YoY %`
 
@@ -87,6 +90,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `01 Faturamento`, `22 Faturamento LY`
 - **É usada por:** `60 SVG Cartao Faturamento v1`
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `24 Faturamento MoM %`
 
@@ -117,6 +121,7 @@ RETURN
 - **Usada nas guias:** pelo nome antigo `Faturamento MoM %` em Comercial, Comercial antes
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 - **Observação:** O mês anterior é calculado dentro da própria medida, sem uma medida `LM` separada.
 
 ## `25 Margem LM`
@@ -138,6 +143,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `10 Margem`
 - **É usada por:** `28 Margem MoM %`
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `26 Margem LY`
 
@@ -158,6 +164,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `10 Margem`
 - **É usada por:** `27 Margem YoY %`
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `27 Margem YoY %`
 
@@ -180,6 +187,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `10 Margem`, `26 Margem LY`
 - **É usada por:** `61 SVG Cartao Margem v1`, `64 SVG Tabela HTML Content Lite v1`
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 - **Observação:** É a variação **relativa** entre duas margens (a diferença dividida pela margem do ano anterior), e não a diferença em pontos percentuais.
 
 ## `28 Margem MoM %`
@@ -203,6 +211,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `10 Margem`, `25 Margem LM`
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `29 Resultado LM`
 
@@ -223,6 +232,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `09 Resultado`
 - **É usada por:** `32 Resultado MoM %`
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `30 Resultado LY`
 
@@ -243,6 +253,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `09 Resultado`
 - **É usada por:** `31 Resultado YoY %`
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `31 Resultado YoY %`
 
@@ -265,6 +276,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `09 Resultado`, `30 Resultado LY`
 - **É usada por:** `62 SVG Cartao Resultado v1`
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `32 Resultado MoM %`
 
@@ -287,6 +299,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `09 Resultado`, `29 Resultado LM`
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `33 Comissao LY`
 
@@ -307,6 +320,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `07 Comissao`
 - **É usada por:** `34 Comissao YoY %`
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `34 Comissao YoY %`
 
@@ -329,6 +343,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `07 Comissao`, `33 Comissao LY`
 - **É usada por:** `63 SVG Cartao Comissao v1`
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `35 Comissao MoM %`
 
@@ -355,4 +370,5 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `07 Comissao`
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
 - **Observação:** Diferente das outras medidas do mês anterior, o cálculo do mês anterior **não** usa o filtro `dCalendario[Datas com Venda] = TRUE()`.

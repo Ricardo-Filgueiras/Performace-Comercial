@@ -745,10 +745,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#vendas-validas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        
+        Vendas válidas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faturamento-custo-despesa-impostos-e-comissao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Faturamento, custo, despesa, impostos e comissão
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultado-e-margens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado e margens
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantidade-de-vendas-e-positivacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantidade de vendas e positivação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparacoes-no-tempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparações no tempo
       
     </span>
   </a>
@@ -1895,10 +1950,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#vendas-validas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        
+        Vendas válidas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faturamento-custo-despesa-impostos-e-comissao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Faturamento, custo, despesa, impostos e comissão
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultado-e-margens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado e margens
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantidade-de-vendas-e-positivacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantidade de vendas e positivação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparacoes-no-tempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparações no tempo
       
     </span>
   </a>
@@ -1925,6 +2035,10 @@
 <h1 id="regras-de-negocio">Regras de negócio<a class="headerlink" href="#regras-de-negocio" title="Permanent link">&para;</a></h1>
 <p>Glossário e regras de cálculo que valem para o painel inteiro, lidos do código DAX e M. Regras que só se aplicam a uma guia ficam na página dela, em <a href="../guias-do-relatorio/">Guias do relatório</a>.</p>
 <p>Cada regra indica onde está implementada, para que dê para conferir no modelo. Quando a área de negócio confirmar uma regra, registre logo abaixo do título dela: <strong>Validado por</strong> <nome, área>, <strong>em</strong> <data>, <strong>com o exemplo</strong> <resultado conferido>.</p>
+<div class="admonition pendente">
+<p class="admonition-title">Validação de negócio</p>
+<p>Nenhuma regra desta página foi validada por uma área de negócio. O projeto é de portfólio, com dados fictícios. As regras abaixo descrevem <strong>o que o código faz</strong>, não o que uma empresa real confirmou.</p>
+</div>
 <h2 id="glossario">Glossário<a class="headerlink" href="#glossario" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1936,14 +2050,114 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<td>Venda válida</td>
+<td>Venda cujo <code>Id Status</code> é <code>1</code> ("Válidas"). Vendas com <code>Id Status</code> <code>2</code> ("Inválidas") ficam fora dos valores</td>
+<td><code>dStatus</code></td>
+</tr>
+<tr>
+<td>Faturamento</td>
+<td>Soma de <code>Qtde × Valor Unit</code> das vendas válidas</td>
+<td><a href="../medidas-dax/principais/#01-faturamento"><code>01 Faturamento</code></a></td>
+</tr>
+<tr>
+<td>Custo</td>
+<td>Soma de <code>Qtde × Custo Unit</code> das vendas válidas</td>
+<td><a href="../medidas-dax/principais/#02-custo"><code>02 Custo</code></a></td>
+</tr>
+<tr>
+<td>Despesa</td>
+<td>Soma de <code>Qtde × Despesa Unit</code> das vendas válidas</td>
+<td><a href="../medidas-dax/principais/#05-despesa"><code>05 Despesa</code></a></td>
+</tr>
+<tr>
+<td>Impostos</td>
+<td>Soma de <code>Qtde × Impostos Unit</code> das vendas válidas</td>
+<td><a href="../medidas-dax/principais/#06-impostos"><code>06 Impostos</code></a></td>
+</tr>
+<tr>
+<td>Comissão</td>
+<td>Soma de <code>Qtde × Comissão Unit</code> das vendas válidas</td>
+<td><a href="../medidas-dax/principais/#07-comissao"><code>07 Comissao</code></a></td>
+</tr>
+<tr>
+<td>Abatimento</td>
+<td>Custo + despesa + impostos + comissão</td>
+<td><a href="../medidas-dax/principais/#08-abatimento"><code>08 Abatimento</code></a></td>
+</tr>
+<tr>
+<td>Lucro bruto</td>
+<td>Faturamento − custo</td>
+<td><a href="../medidas-dax/principais/#03-lucro-bruto"><code>03 Lucro Bruto</code></a></td>
+</tr>
+<tr>
+<td>Margem bruta</td>
+<td>(Faturamento − custo) ÷ faturamento</td>
+<td><a href="../medidas-dax/principais/#04-margem-bruta"><code>04 Margem Bruta</code></a></td>
+</tr>
+<tr>
+<td>Resultado</td>
+<td>Faturamento − abatimento</td>
+<td><a href="../medidas-dax/principais/#09-resultado"><code>09 Resultado</code></a></td>
+</tr>
+<tr>
+<td>Margem (líquida)</td>
+<td>Resultado ÷ faturamento</td>
+<td><a href="../medidas-dax/principais/#10-margem"><code>10 Margem</code></a></td>
+</tr>
+<tr>
+<td>Quantidade de vendas</td>
+<td>Número de vendas distintas (<code>Num Venda</code>), de qualquer status</td>
+<td><a href="../medidas-dax/principais/#11-qtde-vendas"><code>11 Qtde Vendas</code></a></td>
+</tr>
+<tr>
+<td>Positivação</td>
+<td>Quantidade de clientes (ou de produtos) distintos com venda válida no contexto</td>
+<td><a href="../medidas-dax/principais/#12-positivacao-clientes"><code>12 Positivação Clientes</code></a>, <a href="../medidas-dax/principais/#13-positivacao-produtos"><code>13 Positivação Produtos</code></a></td>
+</tr>
+<tr>
+<td>Meta</td>
+<td>Soma de <code>Valor Meta</code>, por vendedor e mês</td>
+<td><a href="../medidas-dax/principais/#40-meta"><code>40 Meta</code></a></td>
+</tr>
+<tr>
+<td>LY (<em>last year</em>)</td>
+<td>Mesmo período do ano anterior</td>
+<td><a href="#comparacoes-no-tempo">Comparações no tempo</a></td>
+</tr>
+<tr>
+<td>LM (<em>last month</em>)</td>
+<td>Mês anterior</td>
+<td><a href="#comparacoes-no-tempo">Comparações no tempo</a></td>
+</tr>
+<tr>
+<td>YoY (<em>year over year</em>)</td>
+<td>Variação percentual contra o mesmo período do ano anterior</td>
+<td><a href="#comparacoes-no-tempo">Comparações no tempo</a></td>
+</tr>
+<tr>
+<td>MoM (<em>month over month</em>)</td>
+<td>Variação percentual contra o mês anterior</td>
+<td><a href="#comparacoes-no-tempo">Comparações no tempo</a></td>
+</tr>
+<tr>
+<td>YTD (<em>year to date</em>)</td>
+<td>Acumulado desde o início do ano</td>
+<td><a href="../medidas-dax/temporais/#20-faturamento-acumulado"><code>20 Faturamento Acumulado</code></a></td>
+</tr>
+<tr>
+<td>Datas com venda</td>
+<td>Datas do calendário até a data da última venda. Usada para cortar o futuro nas comparações</td>
+<td><code>dCalendario[Datas com Venda]</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="_1"><Nome da regra><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><Descrição da regra em linguagem de negócio.></p>
+<p>O modelo <strong>não define</strong> o que cada tipo de despesa contém. A documentação anterior dizia que despesa incluía frete, logística e embalagem, e que impostos incluíam ICMS, PIS e COFINS. Nada disso está no código ou nos dados lidos pelo modelo, e por isso não foi mantido.</p>
+<div class="admonition pendente">
+<p class="admonition-title">A confirmar</p>
+<p>O que compõe <code>Despesa Unit</code>, <code>Impostos Unit</code> e <code>Comissão Unit</code> na planilha de vendas? O modelo só as multiplica pela quantidade.</p>
+</div>
+<h2 id="vendas-validas">Vendas válidas<a class="headerlink" href="#vendas-validas" title="Permanent link">&para;</a></h2>
+<p>Todo valor financeiro do painel considera só as vendas <strong>válidas</strong>. A tabela <code>dStatus</code> tem dois status: <code>1</code> = Válidas e <code>2</code> = Inválidas. As medidas filtram <code>Id Status = 1</code>.</p>
 <table>
 <thead>
 <tr>
@@ -1954,12 +2168,229 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td><code>Tabela[Coluna]</code>, <code>Medida</code></td>
+<td>Faturamento, custo, despesa, impostos e comissão só contam vendas válidas</td>
+<td><code>CALCULATE( ..., dStatus[Id Status] = 1 )</code></td>
+<td><code>01 Faturamento</code>, <code>02 Custo</code>, <code>05 Despesa</code>, <code>06 Impostos</code>, <code>07 Comissao</code></td>
+</tr>
+<tr>
+<td>Positivação só conta vendas válidas</td>
+<td><code>CALCULATE( DISTINCTCOUNT(...), dStatus[Id Status] = 1 )</code></td>
+<td><code>12 Positivação Clientes</code>, <code>13 Positivação Produtos</code></td>
+</tr>
+<tr>
+<td><strong>Exceção:</strong> a quantidade de vendas conta vendas de qualquer status</td>
+<td><code>DISTINCTCOUNT( fVendas[Num Venda] )</code>, sem filtro de status</td>
+<td><code>11 Qtde Vendas</code></td>
+</tr>
+<tr>
+<td><strong>Exceção:</strong> a meta não depende do status</td>
+<td><code>SUM( fMetas[Valor Meta] )</code></td>
+<td><code>40 Meta</code></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition pendente">
+<p class="admonition-title">A confirmar</p>
+<p>A quantidade de vendas (<code>11 Qtde Vendas</code>) inclui vendas inválidas, ao contrário dos valores. Isso é intencional? Se não for, a contagem e o faturamento não se referem ao mesmo conjunto de vendas.</p>
+</div>
+<h2 id="faturamento-custo-despesa-impostos-e-comissao">Faturamento, custo, despesa, impostos e comissão<a class="headerlink" href="#faturamento-custo-despesa-impostos-e-comissao" title="Permanent link">&para;</a></h2>
+<p>Os valores unitários da planilha são multiplicados pela quantidade, linha a linha, antes de somar. Isso foi confirmado pelo desenvolvedor e conferido no código.</p>
+<table>
+<thead>
+<tr>
+<th>Regra</th>
+<th>Cálculo</th>
+<th>Onde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Faturamento</td>
+<td><code>SUMX( fVendas, fVendas[Qtde] * fVendas[Valor Unit] )</code></td>
+<td><code>01 Faturamento</code></td>
+</tr>
+<tr>
+<td>Custo</td>
+<td><code>SUMX( fVendas, fVendas[Qtde] * fVendas[Custo Unit] )</code></td>
+<td><code>02 Custo</code></td>
+</tr>
+<tr>
+<td>Despesa</td>
+<td><code>SUMX( fVendas, fVendas[Qtde] * fVendas[Despesa Unit] )</code></td>
+<td><code>05 Despesa</code></td>
+</tr>
+<tr>
+<td>Impostos</td>
+<td><code>SUMX( fVendas, fVendas[Qtde] * fVendas[Impostos Unit] )</code></td>
+<td><code>06 Impostos</code></td>
+</tr>
+<tr>
+<td>Comissão</td>
+<td><code>SUMX( fVendas, fVendas[Qtde] * fVendas[Comissão Unit] )</code></td>
+<td><code>07 Comissao</code></td>
+</tr>
+</tbody>
+</table>
+<p>Todas aplicam o filtro de <a href="#vendas-validas">vendas válidas</a>.</p>
+<h2 id="resultado-e-margens">Resultado e margens<a class="headerlink" href="#resultado-e-margens" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Regra</th>
+<th>Cálculo</th>
+<th>Onde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abatimento</td>
+<td><code>[02 Custo] + [05 Despesa] + [06 Impostos] + [07 Comissao]</code></td>
+<td><code>08 Abatimento</code></td>
+</tr>
+<tr>
+<td>Resultado</td>
+<td><code>[01 Faturamento] - [08 Abatimento]</code></td>
+<td><code>09 Resultado</code></td>
+</tr>
+<tr>
+<td>Margem (líquida)</td>
+<td><code>DIVIDE( [09 Resultado], [01 Faturamento], BLANK() )</code></td>
+<td><code>10 Margem</code></td>
+</tr>
+<tr>
+<td>Lucro bruto</td>
+<td><code>[01 Faturamento] - [02 Custo]</code></td>
+<td><code>03 Lucro Bruto</code></td>
+</tr>
+<tr>
+<td>Margem bruta</td>
+<td><code>DIVIDE( faturamento − custo, faturamento, BLANK() )</code></td>
+<td><code>04 Margem Bruta</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>As divisões usam <code>DIVIDE</code> com <code>BLANK()</code> como resultado alternativo: quando o denominador é zero, a medida fica em branco em vez de dar erro.</li>
+<li>As margens são razões (por exemplo, <code>0,25</code>) exibidas com formato de porcentagem. A documentação anterior descrevia a conta com "× 100"; o código não multiplica por 100.</li>
+<li><code>03 Lucro Bruto</code> e <code>04 Margem Bruta</code> não são usadas em nenhum visual do relatório.</li>
+</ul>
+<h2 id="quantidade-de-vendas-e-positivacao">Quantidade de vendas e positivação<a class="headerlink" href="#quantidade-de-vendas-e-positivacao" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Regra</th>
+<th>Cálculo</th>
+<th>Onde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quantidade de vendas</td>
+<td>Contagem distinta de <code>Num Venda</code>, de qualquer status</td>
+<td><code>11 Qtde Vendas</code></td>
+</tr>
+<tr>
+<td>Positivação de clientes</td>
+<td>Contagem distinta de <code>Id Cliente</code> nas vendas válidas</td>
+<td><code>12 Positivação Clientes</code></td>
+</tr>
+<tr>
+<td>Positivação de produtos</td>
+<td>Contagem distinta de <code>Id Produto</code> nas vendas válidas</td>
+<td><code>13 Positivação Produtos</code></td>
+</tr>
+</tbody>
+</table>
+<p>As três dependem do contexto de filtro do visual: período, vendedor, cidade e assim por diante.</p>
+<h2 id="metas">Metas<a class="headerlink" href="#metas" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Regra</th>
+<th>Cálculo</th>
+<th>Onde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meta</td>
+<td><code>SUM( fMetas[Valor Meta] )</code>. A meta é por vendedor e mês</td>
+<td><code>40 Meta</code></td>
+</tr>
+<tr>
+<td>Porcentagem da meta</td>
+<td><code>DIVIDE( [01 Faturamento], [40 Meta], BLANK() )</code></td>
+<td><code>41 Porcentagem Meta</code></td>
+</tr>
+<tr>
+<td>Diferença para a meta</td>
+<td><code>ABS( [40 Meta] - [01 Faturamento] )</code>. O resultado é sempre positivo</td>
+<td><code>42 Diferença Meta</code></td>
+</tr>
+<tr>
+<td>Cor da meta</td>
+<td>Verde se <code>[41 Porcentagem Meta] &gt;= 0,6</code>; vermelho se for menor que <code>0,10</code>; cinza nos demais casos</td>
+<td><code>66 Meta Cor</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>A diferença para a meta <strong>não diz</strong> se o faturamento ficou acima ou abaixo da meta, porque usa valor absoluto.</li>
+<li>A cor usa dois limites fixos no código (60% e 10%). Entre 10% e 60%, a cor é cinza.</li>
+<li><code>42 Diferença Meta</code> e <code>66 Meta Cor</code> não são usadas por outras medidas. Aparecem em visuais da guia Vendedores pelo nome antigo (ver <a href="../medidas-dax/#nomes-antigos-de-medidas-no-relatorio">Nomes antigos de medidas</a>).</li>
+</ul>
+<div class="admonition pendente">
+<p class="admonition-title">A confirmar</p>
+<p>Os limites de 60% e 10% da cor da meta são regra do negócio ou escolha de visual? E faz sentido a diferença para a meta ser sempre positiva?</p>
+</div>
+<h2 id="comparacoes-no-tempo">Comparações no tempo<a class="headerlink" href="#comparacoes-no-tempo" title="Permanent link">&para;</a></h2>
+<p>As comparações usam a tabela <code>dCalendario</code> e valem para faturamento, margem, resultado e comissão.</p>
+<table>
+<thead>
+<tr>
+<th>Regra</th>
+<th>Cálculo</th>
+<th>Onde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mesmo período do ano anterior (LY)</td>
+<td><code>SAMEPERIODLASTYEAR( dCalendario[Id Data] )</code>, limitado a <code>dCalendario[Datas com Venda] = TRUE()</code></td>
+<td><code>22 Faturamento LY</code>, <code>26 Margem LY</code>, <code>30 Resultado LY</code>, <code>33 Comissao LY</code></td>
+</tr>
+<tr>
+<td>Mês anterior (LM)</td>
+<td><code>DATEADD( dCalendario[Id Data], -1, MONTH )</code>, limitado a <code>Datas com Venda</code></td>
+<td><code>25 Margem LM</code>, <code>29 Resultado LM</code></td>
+</tr>
+<tr>
+<td>Variação contra o ano anterior (YoY)</td>
+<td><code>DIVIDE( atual − LY, LY, BLANK() )</code></td>
+<td><code>23 Faturamento YoY %</code>, <code>27 Margem YoY %</code>, <code>31 Resultado YoY %</code>, <code>34 Comissao YoY %</code></td>
+</tr>
+<tr>
+<td>Variação contra o mês anterior (MoM)</td>
+<td><code>DIVIDE( atual − LM, LM, BLANK() )</code></td>
+<td><code>24 Faturamento MoM %</code>, <code>28 Margem MoM %</code>, <code>32 Resultado MoM %</code>, <code>35 Comissao MoM %</code></td>
+</tr>
+<tr>
+<td>Acumulado no ano (YTD)</td>
+<td><code>DATESYTD( dCalendario[Id Data] )</code>, limitado a <code>Datas com Venda</code></td>
+<td><code>20 Faturamento Acumulado</code>, <code>21 Faturamento Acumulado LY</code> (mesmo período do ano anterior)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>A variação da <strong>margem</strong> é a variação relativa entre duas razões, e não a diferença em pontos percentuais.</li>
+<li>O filtro <code>Datas com Venda</code> impede que meses sem venda (depois da última data de venda) entrem na comparação.</li>
+<li><code>35 Comissao MoM %</code> é a única comparação de mês anterior que <strong>não</strong> usa o filtro <code>Datas com Venda</code>.</li>
+<li>O mês anterior de <code>24 Faturamento MoM %</code> é calculado dentro da própria medida, sem uma medida <code>LM</code> separada.</li>
+</ul>
+<div class="admonition pendente">
+<p class="admonition-title">A confirmar</p>
+<p>A diferença no filtro de <code>35 Comissao MoM %</code> é intencional? Hoje as demais medidas de mês anterior usam o filtro <code>Datas com Venda</code> e esta não.</p>
+</div>
 
 
 

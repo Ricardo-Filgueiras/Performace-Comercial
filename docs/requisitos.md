@@ -75,30 +75,15 @@ O relatório também guarda três páginas de dica de ferramenta (tooltip) e qua
 
 - **Natureza dos dados:** fictícios, criados para o portfólio.
 - **Origem:** arquivos guardados no próprio repositório, em `data/`, na raiz: vendas (uma linha por item vendido), cadastros (dimensões) e metas por ano (2018 a 2021).
-- **Formato:** CSV. O Excel foi descartado como formato de entrada porque o link "raw" do GitHub baixa o arquivo `.xlsx` em vez de exibir o conteúdo, e o CSV pode ser lido direto.
-- **Parâmetros:** os caminhos dos dados ficam em parâmetros do Power Query, reunidos em um grupo próprio de consultas, separado de fatos, dimensões e auxiliares. Quem clonar o repositório deve precisar **atualizar um único caminho**, o da pasta onde estão os dados.
+- **Formato:** Excel (`.xlsx`). Os arquivos de dados ficam no próprio repositório, junto com o projeto, na pasta `data/`. O projeto **não usa CSV**.
+- **Parâmetros:** os caminhos dos dados ficam em três parâmetros do Power Query (`Caminho_Extracao`, `Caminho_Dimensoes` e `Caminho_Meta`), reunidos em um grupo próprio de consultas, separado de fatos, dimensões e auxiliares. Quem clonar o repositório precisa **atualizar o valor desses parâmetros** para a pasta `data/` da sua cópia. A documentação deve trazer um guia passo a passo para isso (ver [Fontes de dados](projetos/performance-comercial/fontes-de-dados.md)).
 - **Carga:** modo Import, com tratamento no Power Query.
 - **Modelo:** esquema estrela com duas tabelas fato (`fVendas` e `fMetas`) e sete dimensões. Detalhes em [Relacionamentos](04 relacionamentos.md).
 - **Granularidade:** `fVendas` tem uma linha por item vendido. `fMetas` tem uma linha por vendedor e mês.
-- **Regra de negócio central:** os indicadores de venda consideram apenas vendas efetivadas (`Id Status = 1`).
+- **Regra de negócio central:** os indicadores de valor consideram apenas as vendas **válidas** (`Id Status = 1`).
 - **Cultura:** pt-BR.
 
-!!! pendente "Caminho único dos dados"
-    Falta definir o que o parâmetro guarda: o caminho da pasta `data/` na cópia local do repositório, ou o endereço base dos arquivos "raw" no GitHub. Falta também converter os arquivos de Excel para CSV e adaptar as consultas, porque hoje o modelo ainda lê `.xlsx` por três parâmetros (`Caminho_Extracao`, `Caminho_Dimensoes` e `Caminho_Meta`).
-
-!!! pendente "Período dos dados"
-    Falta confirmar o período coberto pelos dados de vendas. Os arquivos de meta vão só até 2021.
-
-## 5. Requisitos não funcionais
-
-| Tema | Situação hoje |
-|---|---|
-| Atualização | Manual. Os dados vêm de planilhas locais e não há atualização agendada. Como os dados são fictícios e fixos, não há necessidade de atualização periódica |
-| Segurança por linha (RLS) | Não é requisito. O projeto é de portfólio, sem usuários reais, e o modelo não tem papéis (roles) |
-| Versionamento | Projeto em formato `.pbip`, versionado com Git |
-| Documentação | MkDocs Material, publicada pelo GitHub Actions |
-| Desempenho | Sem meta definida |
-| Publicação | Há um link público do painel no Power BI Service |
+Os dados cobrem o período de 2018 a 2021, o mesmo do calendário e das planilhas de meta. Não haverá atualizações nem valores depois de 31/12/2021.
 
 !!! pendente "Meta de desempenho"
     Falta definir uma meta de tempo de resposta. O texto anterior falava em menos de 5 segundos, mas isso nunca foi medido.
@@ -112,6 +97,4 @@ O relatório também guarda três páginas de dica de ferramenta (tooltip) e qua
 
 ## 7. Pendências para validação
 
-1. O parâmetro único guarda o caminho local da pasta de dados ou o endereço base "raw" do GitHub? (ver seção 4)
-2. Qual é o período coberto pelos dados de vendas?
-3. Qual meta de tempo de resposta adotar?
+1. Qual meta de tempo de resposta adotar?

@@ -23,6 +23,7 @@ CALCULATE(
 - **Usada nas guias:** Comercial, TooltiposTabela; pelo nome antigo `Faturamento` em Comercial, Analítico, Mapa Calor, Vendedores, Comercial antes, Analítico antes, Mapa Calor antes, Vendedores antes, TooltiposGrafico01, TooltiposTabela
 - **Depende de:** nenhuma medida
 - **É usada por:** `03 Lucro Bruto`, `04 Margem Bruta`, `09 Resultado`, `10 Margem`, `20 Faturamento Acumulado`, `21 Faturamento Acumulado LY`, `22 Faturamento LY`, `23 Faturamento YoY %`, `24 Faturamento MoM %`, `41 Porcentagem Meta`, `42 Diferença Meta`, `50 Eixo Y max Grafico Comercial`, `51 Faturamento formatação de texto`, `52 Rank Cidade`, `53 Max Y Visual 01 pg Vendedores`, `Context Medida z`, `Linha Atual`, `Seta para Cima`, `Seta para baixo  ( limit Inferior )`, `Seta para baixo  ( limit sup )`
+- **Regra de negócio:** [Faturamento, custo, despesa, impostos e comissão](../regras-de-negocio.md#faturamento-custo-despesa-impostos-e-comissao)
 - **Observação:** Confirma que os valores unitários são multiplicados por `Qtde`: o cálculo é feito linha a linha (`SUMX`) e só considera vendas com `Id Status = 1` (válidas). O mesmo vale para `02 Custo`, `05 Despesa`, `06 Impostos` e `07 Comissao`.
 
 ## `02 Custo`
@@ -44,6 +45,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** nenhuma medida
 - **É usada por:** `03 Lucro Bruto`, `04 Margem Bruta`, `08 Abatimento`
+- **Regra de negócio:** [Faturamento, custo, despesa, impostos e comissão](../regras-de-negocio.md#faturamento-custo-despesa-impostos-e-comissao)
 
 ## `03 Lucro Bruto`
 
@@ -59,6 +61,7 @@ Lucro Bruto em R$ = Faturamento - Custo
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `01 Faturamento`, `02 Custo`
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Resultado e margens](../regras-de-negocio.md#resultado-e-margens)
 
 ## `04 Margem Bruta`
 
@@ -83,6 +86,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `01 Faturamento`, `02 Custo`
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Resultado e margens](../regras-de-negocio.md#resultado-e-margens)
 
 ## `05 Despesa`
 
@@ -103,6 +107,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** nenhuma medida
 - **É usada por:** `08 Abatimento`
+- **Regra de negócio:** [Faturamento, custo, despesa, impostos e comissão](../regras-de-negocio.md#faturamento-custo-despesa-impostos-e-comissao)
 
 ## `06 Impostos`
 
@@ -123,6 +128,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** nenhuma medida
 - **É usada por:** `08 Abatimento`
+- **Regra de negócio:** [Faturamento, custo, despesa, impostos e comissão](../regras-de-negocio.md#faturamento-custo-despesa-impostos-e-comissao)
 
 ## `07 Comissao`
 
@@ -143,6 +149,7 @@ CALCULATE(
 - **Usada nas guias:** pelo nome antigo `Comissao` em Vendedores, Vendedores antes
 - **Depende de:** nenhuma medida
 - **É usada por:** `08 Abatimento`, `33 Comissao LY`, `34 Comissao YoY %`, `35 Comissao MoM %`
+- **Regra de negócio:** [Faturamento, custo, despesa, impostos e comissão](../regras-de-negocio.md#faturamento-custo-despesa-impostos-e-comissao)
 
 ## `08 Abatimento`
 
@@ -157,6 +164,7 @@ Soma de custo, despesa, impostos e comissão. *(descrição deduzida do código)
 - **Usada nas guias:** pelo nome antigo `Abatimento` em Analítico, Analítico antes
 - **Depende de:** `02 Custo`, `05 Despesa`, `06 Impostos`, `07 Comissao`
 - **É usada por:** `09 Resultado`
+- **Regra de negócio:** [Resultado e margens](../regras-de-negocio.md#resultado-e-margens)
 
 ## `09 Resultado`
 
@@ -171,6 +179,7 @@ Faturamento menos o abatimento (custo, despesa, impostos e comissão). *(descri�
 - **Usada nas guias:** Comercial; pelo nome antigo `Resultado` em Analítico, Vendedores, Comercial antes, Analítico antes, Vendedores antes
 - **Depende de:** `01 Faturamento`, `08 Abatimento`
 - **É usada por:** `10 Margem`, `29 Resultado LM`, `30 Resultado LY`, `31 Resultado YoY %`, `32 Resultado MoM %`
+- **Regra de negócio:** [Resultado e margens](../regras-de-negocio.md#resultado-e-margens)
 
 ## `10 Margem`
 
@@ -190,6 +199,7 @@ DIVIDE(
 - **Usada nas guias:** Comercial, TooltiposTabela; pelo nome antigo `Margem` em Comercial, Analítico, Vendedores, Comercial antes, Analítico antes, Vendedores antes
 - **Depende de:** `01 Faturamento`, `09 Resultado`
 - **É usada por:** `25 Margem LM`, `26 Margem LY`, `27 Margem YoY %`, `28 Margem MoM %`
+- **Regra de negócio:** [Resultado e margens](../regras-de-negocio.md#resultado-e-margens)
 
 ## `11 Qtde Vendas`
 
@@ -204,6 +214,7 @@ DISTINCTCOUNT(fVendas[Num Venda])
 - **Usada nas guias:** pelo nome antigo `Qtde Vendas` em Analítico, Analítico antes
 - **Depende de:** nenhuma medida
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Quantidade de vendas e positivação](../regras-de-negocio.md#quantidade-de-vendas-e-positivacao)
 - **Observação:** **Não filtra o status:** conta as vendas válidas e as inválidas. As medidas de valor consideram só as válidas.
 
 ## `12 Positivação Clientes`
@@ -223,6 +234,7 @@ CALCULATE(
 - **Usada nas guias:** pelo nome antigo `Positivação Clientes` em Analítico, Vendedores, Analítico antes, Vendedores antes
 - **Depende de:** nenhuma medida
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Quantidade de vendas e positivação](../regras-de-negocio.md#quantidade-de-vendas-e-positivacao)
 - **Observação:** Considera só vendas válidas (`Id Status = 1`).
 
 ## `13 Positivação Produtos`
@@ -242,6 +254,7 @@ CALCULATE(
 - **Usada nas guias:** pelo nome antigo `Positivação Produtos` em Analítico, Analítico antes
 - **Depende de:** nenhuma medida
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Quantidade de vendas e positivação](../regras-de-negocio.md#quantidade-de-vendas-e-positivacao)
 - **Observação:** Considera só vendas válidas (`Id Status = 1`).
 
 ## `40 Meta`
@@ -257,6 +270,7 @@ SUM(fMetas[Valor Meta])
 - **Usada nas guias:** pelo nome antigo `Meta` em Vendedores, Vendedores antes, TooltiposGrafico01
 - **Depende de:** nenhuma medida
 - **É usada por:** `41 Porcentagem Meta`, `42 Diferença Meta`
+- **Regra de negócio:** [Metas](../regras-de-negocio.md#metas)
 
 ## `41 Porcentagem Meta`
 
@@ -280,6 +294,7 @@ RETURN
 - **Usada nas guias:** TooltiposTabela; pelo nome antigo `Porcentagem Meta` em Vendedores, Vendedores antes, TooltiposGrafico01, TooltiposTabela
 - **Depende de:** `01 Faturamento`, `40 Meta`
 - **É usada por:** `66 Meta Cor`
+- **Regra de negócio:** [Metas](../regras-de-negocio.md#metas)
 
 ## `42 Diferença Meta`
 
@@ -294,4 +309,5 @@ ABS( [40 Meta] - [01 Faturamento] )
 - **Usada nas guias:** pelo nome antigo `Diferença Meta` em Vendedores, Vendedores antes
 - **Depende de:** `01 Faturamento`, `40 Meta`
 - **É usada por:** nenhuma medida
+- **Regra de negócio:** [Metas](../regras-de-negocio.md#metas)
 - **Observação:** Usa `ABS`: o resultado é sempre positivo e não diz se o faturamento ficou acima ou abaixo da meta. A documentação anterior descrevia a medida como "Faturamento − Meta".

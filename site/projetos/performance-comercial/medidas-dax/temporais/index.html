@@ -2249,6 +2249,7 @@
 <li><strong>Usada nas guias:</strong> pelo nome antigo <code>Faturamento Acumulado</code> em Mapa Calor, Mapa Calor antes</li>
 <li><strong>Depende de:</strong> <code>01 Faturamento</code></li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 <li><strong>Observação:</strong> Usa <code>dCalendario[Datas com Venda]</code>, que marca as datas até a última venda (ver <a href="../../modelo-de-dados/">Modelo de dados</a>).</li>
 </ul>
 <h2 id="21-faturamento-acumulado-ly"><code>21 Faturamento Acumulado LY</code><a class="headerlink" href="#21-faturamento-acumulado-ly" title="Permanent link">&para;</a></h2>
@@ -2267,6 +2268,7 @@
 <li><strong>Usada nas guias:</strong> pelo nome antigo <code>Faturamento Acumulado LY</code> em Mapa Calor, Mapa Calor antes</li>
 <li><strong>Depende de:</strong> <code>01 Faturamento</code></li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="22-faturamento-ly"><code>22 Faturamento LY</code><a class="headerlink" href="#22-faturamento-ly" title="Permanent link">&para;</a></h2>
 <p>Faturamento do mesmo período do ano anterior. <em>(descrição deduzida do código)</em></p>
@@ -2284,6 +2286,7 @@
 <li><strong>Usada nas guias:</strong> pelo nome antigo <code>Faturamento LY</code> em Mapa Calor, Mapa Calor antes</li>
 <li><strong>Depende de:</strong> <code>01 Faturamento</code></li>
 <li><strong>É usada por:</strong> <code>23 Faturamento YoY %</code>, <code>Context Medida z</code>, <code>Linha Anterior</code>, <code>Seta para Cima</code>, <code>Seta para baixo  ( limit Inferior )</code>, <code>Seta para baixo  ( limit sup )</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="23-faturamento-yoy"><code>23 Faturamento YoY %</code><a class="headerlink" href="#23-faturamento-yoy" title="Permanent link">&para;</a></h2>
 <p>Variação percentual Year-over-Year do Faturamento</p>
@@ -2304,6 +2307,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>01 Faturamento</code>, <code>22 Faturamento LY</code></li>
 <li><strong>É usada por:</strong> <code>60 SVG Cartao Faturamento v1</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="24-faturamento-mom"><code>24 Faturamento MoM %</code><a class="headerlink" href="#24-faturamento-mom" title="Permanent link">&para;</a></h2>
 <p>Variação percentual Month-over-Month do Faturamento</p>
@@ -2331,6 +2335,7 @@
 <li><strong>Usada nas guias:</strong> pelo nome antigo <code>Faturamento MoM %</code> em Comercial, Comercial antes</li>
 <li><strong>Depende de:</strong> <code>01 Faturamento</code></li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 <li><strong>Observação:</strong> O mês anterior é calculado dentro da própria medida, sem uma medida <code>LM</code> separada.</li>
 </ul>
 <h2 id="25-margem-lm"><code>25 Margem LM</code><a class="headerlink" href="#25-margem-lm" title="Permanent link">&para;</a></h2>
@@ -2349,6 +2354,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>10 Margem</code></li>
 <li><strong>É usada por:</strong> <code>28 Margem MoM %</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="26-margem-ly"><code>26 Margem LY</code><a class="headerlink" href="#26-margem-ly" title="Permanent link">&para;</a></h2>
 <p>Margem líquida do mesmo período do ano anterior. <em>(descrição deduzida do código)</em></p>
@@ -2366,6 +2372,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>10 Margem</code></li>
 <li><strong>É usada por:</strong> <code>27 Margem YoY %</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="27-margem-yoy"><code>27 Margem YoY %</code><a class="headerlink" href="#27-margem-yoy" title="Permanent link">&para;</a></h2>
 <p>Variação percentual da margem líquida em relação ao mesmo período do ano anterior. <em>(descrição deduzida do código)</em></p>
@@ -2385,6 +2392,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>10 Margem</code>, <code>26 Margem LY</code></li>
 <li><strong>É usada por:</strong> <code>61 SVG Cartao Margem v1</code>, <code>64 SVG Tabela HTML Content Lite v1</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 <li><strong>Observação:</strong> É a variação <strong>relativa</strong> entre duas margens (a diferença dividida pela margem do ano anterior), e não a diferença em pontos percentuais.</li>
 </ul>
 <h2 id="28-margem-mom"><code>28 Margem MoM %</code><a class="headerlink" href="#28-margem-mom" title="Permanent link">&para;</a></h2>
@@ -2405,6 +2413,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>10 Margem</code>, <code>25 Margem LM</code></li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="29-resultado-lm"><code>29 Resultado LM</code><a class="headerlink" href="#29-resultado-lm" title="Permanent link">&para;</a></h2>
 <p>Resultado do mês anterior. <em>(descrição deduzida do código)</em></p>
@@ -2422,6 +2431,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>09 Resultado</code></li>
 <li><strong>É usada por:</strong> <code>32 Resultado MoM %</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="30-resultado-ly"><code>30 Resultado LY</code><a class="headerlink" href="#30-resultado-ly" title="Permanent link">&para;</a></h2>
 <p>Resultado do mesmo período do ano anterior. <em>(descrição deduzida do código)</em></p>
@@ -2439,6 +2449,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>09 Resultado</code></li>
 <li><strong>É usada por:</strong> <code>31 Resultado YoY %</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="31-resultado-yoy"><code>31 Resultado YoY %</code><a class="headerlink" href="#31-resultado-yoy" title="Permanent link">&para;</a></h2>
 <p>Variação percentual do resultado em relação ao mesmo período do ano anterior. <em>(descrição deduzida do código)</em></p>
@@ -2458,6 +2469,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>09 Resultado</code>, <code>30 Resultado LY</code></li>
 <li><strong>É usada por:</strong> <code>62 SVG Cartao Resultado v1</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="32-resultado-mom"><code>32 Resultado MoM %</code><a class="headerlink" href="#32-resultado-mom" title="Permanent link">&para;</a></h2>
 <p>Variação percentual do resultado em relação ao mês anterior. <em>(descrição deduzida do código)</em></p>
@@ -2477,6 +2489,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>09 Resultado</code>, <code>29 Resultado LM</code></li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="33-comissao-ly"><code>33 Comissao LY</code><a class="headerlink" href="#33-comissao-ly" title="Permanent link">&para;</a></h2>
 <p>Comissão do mesmo período do ano anterior. <em>(descrição deduzida do código)</em></p>
@@ -2494,6 +2507,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>07 Comissao</code></li>
 <li><strong>É usada por:</strong> <code>34 Comissao YoY %</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="34-comissao-yoy"><code>34 Comissao YoY %</code><a class="headerlink" href="#34-comissao-yoy" title="Permanent link">&para;</a></h2>
 <p>Variação percentual da comissão em relação ao mesmo período do ano anterior. <em>(descrição deduzida do código)</em></p>
@@ -2513,6 +2527,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>07 Comissao</code>, <code>33 Comissao LY</code></li>
 <li><strong>É usada por:</strong> <code>63 SVG Cartao Comissao v1</code></li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 </ul>
 <h2 id="35-comissao-mom"><code>35 Comissao MoM %</code><a class="headerlink" href="#35-comissao-mom" title="Permanent link">&para;</a></h2>
 <p>Variação percentual da comissão em relação ao mês anterior. <em>(descrição deduzida do código)</em></p>
@@ -2536,6 +2551,7 @@
 <li><strong>Usada nas guias:</strong> nenhum visual</li>
 <li><strong>Depende de:</strong> <code>07 Comissao</code></li>
 <li><strong>É usada por:</strong> nenhuma medida</li>
+<li><strong>Regra de negócio:</strong> <a href="../../regras-de-negocio/#comparacoes-no-tempo">Comparações no tempo</a></li>
 <li><strong>Observação:</strong> Diferente das outras medidas do mês anterior, o cálculo do mês anterior <strong>não</strong> usa o filtro <code>dCalendario[Datas com Venda] = TRUE()</code>.</li>
 </ul>
 
