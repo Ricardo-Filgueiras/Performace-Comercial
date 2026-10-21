@@ -72,8 +72,7 @@ Sufixos de tempo: `LY` (mesmo período do ano anterior), `LM` (mês anterior), `
 
 **Pastas de exibição.** `01.Principais`, `02. Temporais`, `03. Formatações` e `.Visuais SVG`. Repare que `01.Principais` não tem espaço depois do ponto e as outras têm.
 
-!!! pendente "A confirmar"
-    A documentação anterior reservava as faixas 80 a 89 para rankings e 90 a 99 para testes. Hoje nenhuma medida usa essas faixas, e o ranking (`52 Rank Cidade`) está na faixa 50. As faixas 80 a 99 continuam reservadas?
+As faixas **80 a 89** (rankings) e **90 a 99** (testes e desenvolvimento) continuam **reservadas**, por decisão do desenvolvedor, embora nenhuma medida as use hoje. O ranking atual (`52 Rank Cidade`) está na faixa 50.
 
 ## Padrões de DAX usados no projeto
 
@@ -148,8 +147,8 @@ Se houver linhas, corrija a planilha de origem ou acrescente uma linha "Desconhe
 
 **Comparação com o ano anterior volta em branco.** Confira se o relacionamento de `fVendas[Data Pedido]` com `dCalendario` está ativo, se o calendário cobre o período do dado (vai de 01/01/2018 a 31/12/2021) e se a coluna `Datas com Venda` está sendo usada como o modelo espera.
 
-!!! pendente "A confirmar"
-    As consultas DAX de diagnóstico desta seção são sugestões gerais e **não foram executadas** neste projeto. Rode cada uma no Power BI Desktop e ajuste, se for o caso.
+!!! info "Consultas não executadas"
+    As consultas DAX de diagnóstico desta seção são sugestões gerais e **não foram executadas** neste projeto. Rode cada uma no Power BI Desktop quando precisar e ajuste, se for o caso.
 
 ## Ao alterar o painel
 

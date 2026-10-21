@@ -2563,10 +2563,7 @@
 </table>
 <p>Sufixos de tempo: <code>LY</code> (mesmo período do ano anterior), <code>LM</code> (mês anterior), <code>YoY</code> (variação contra o ano anterior) e <code>MoM</code> (variação contra o mês anterior). O acumulado no ano (YTD) é <code>Acumulado</code>, sem sufixo.</p>
 <p><strong>Pastas de exibição.</strong> <code>01.Principais</code>, <code>02. Temporais</code>, <code>03. Formatações</code> e <code>.Visuais SVG</code>. Repare que <code>01.Principais</code> não tem espaço depois do ponto e as outras têm.</p>
-<div class="admonition pendente">
-<p class="admonition-title">A confirmar</p>
-<p>A documentação anterior reservava as faixas 80 a 89 para rankings e 90 a 99 para testes. Hoje nenhuma medida usa essas faixas, e o ranking (<code>52 Rank Cidade</code>) está na faixa 50. As faixas 80 a 99 continuam reservadas?</p>
-</div>
+<p>As faixas <strong>80 a 89</strong> (rankings) e <strong>90 a 99</strong> (testes e desenvolvimento) continuam <strong>reservadas</strong>, por decisão do desenvolvedor, embora nenhuma medida as use hoje. O ranking atual (<code>52 Rank Cidade</code>) está na faixa 50.</p>
 <h2 id="padroes-de-dax-usados-no-projeto">Padrões de DAX usados no projeto<a class="headerlink" href="#padroes-de-dax-usados-no-projeto" title="Permanent link">&para;</a></h2>
 <p>O que o código do modelo faz hoje (conferido nas 50 medidas):</p>
 <ul>
@@ -2667,9 +2664,9 @@
 <p>Se houver linhas, corrija a planilha de origem ou acrescente uma linha "Desconhecido" na dimensão.</p>
 <p><strong>Um filtro (segmentação) não filtra o visual.</strong> Verifique, no modelo, se o relacionamento existe, se está ativo e se aponta no sentido certo. Lembre que <code>Data Envio</code> está inativo.</p>
 <p><strong>Comparação com o ano anterior volta em branco.</strong> Confira se o relacionamento de <code>fVendas[Data Pedido]</code> com <code>dCalendario</code> está ativo, se o calendário cobre o período do dado (vai de 01/01/2018 a 31/12/2021) e se a coluna <code>Datas com Venda</code> está sendo usada como o modelo espera.</p>
-<div class="admonition pendente">
-<p class="admonition-title">A confirmar</p>
-<p>As consultas DAX de diagnóstico desta seção são sugestões gerais e <strong>não foram executadas</strong> neste projeto. Rode cada uma no Power BI Desktop e ajuste, se for o caso.</p>
+<div class="admonition info">
+<p class="admonition-title">Consultas não executadas</p>
+<p>As consultas DAX de diagnóstico desta seção são sugestões gerais e <strong>não foram executadas</strong> neste projeto. Rode cada uma no Power BI Desktop quando precisar e ajuste, se for o caso.</p>
 </div>
 <h2 id="ao-alterar-o-painel">Ao alterar o painel<a class="headerlink" href="#ao-alterar-o-painel" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2713,7 +2710,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de outubro de 2026 14:04:39 UTC">21 de outubro de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de outubro de 2026 17:00:09 UTC">21 de outubro de 2026</span>
   </span>
 
     

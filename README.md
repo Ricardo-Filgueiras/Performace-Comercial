@@ -20,7 +20,7 @@ O modelo semântico segue arquitetura **Star Schema** com medidas DAX organizada
 | Documentação | MkDocs Material |
 | Gerenciador de pacotes Python | uv |
 | Versionamento | Git / GitHub |
-| CI/CD docs | GitHub Actions |
+| Publicação da documentação | `mkdocs gh-deploy`, manual (a automação com GitHub Actions ainda não existe) |
 
 ---
 
@@ -28,27 +28,26 @@ O modelo semântico segue arquitetura **Star Schema** com medidas DAX organizada
 
 ```
 Performace-Comercial/
+├── data/                          # Dados do painel (planilhas Excel)
+│   ├── Dimensões/
+│   ├── Extrações/
+│   ├── Metas/
+│   └── imagens/
 ├── docs/                          # Fonte da documentação MkDocs
-│   ├── index.md
-│   ├── 01 visao geral.md
-│   ├── 02 dicionario dados.md
-│   ├── 03 guia medidas dax.md
-│   ├── 04 relacionamentos.md
-│   ├── 05 changelog.md
-│   ├── 06 boas praticas.md
-│   ├── estrutura_definition_legivel.md
-│   └── requisitos.md
+│   ├── index.md                   # Entrada do portal
+│   ├── changelog.md               # Changelog do portal
+│   ├── metodologia/               # DataOps e versionamento com Git
+│   ├── stylesheets/
+│   └── projetos/
+│       └── performance-comercial/ # Documentação do projeto
 ├── src/
-│   ├── data/                      # Fontes de dados (Excel/CSV)
-│   │   ├── Dimensões/
-│   │   ├── Extrações/
-│   │   ├── Metas/
-│   │   └── imagens/
-│   └── projeto/                   # Arquivos Power BI (PBIP)
-│       ├── Performace Comercial.pbip
-│       ├── Performace Comercial.Report/
-│       └── Performace Comercial.SemanticModel/
-├── .github/workflows/docs.yml     # CI/CD publicação da documentação
+│   └── projeto/
+│       └── performance-comercial/ # Arquivos Power BI (PBIP)
+│           ├── Performance Comercial.pbip
+│           ├── Performance Comercial.Report/
+│           └── Performance Comercial.SemanticModel/
+├── notas/                         # Diário da reescrita da documentação (fora do Git)
+├── .agents/                       # Kit e skill de documentação de BI
 ├── mkdocs.yml                     # Configuração do MkDocs
 ├── pyproject.toml                 # Dependências Python (uv)
 ├── uv.lock
@@ -83,10 +82,10 @@ O comando faz o build e faz push do conteúdo estático para a branch `gh-pages`
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/RicardoFilgueiras/Performace-Comercial.git
+   git clone https://github.com/Ricardo-Filgueiras/Performace-Comercial.git
    ```
-2. Abra o arquivo `src/projeto/Performace Comercial.pbip` no **Power BI Desktop** (versão 2.146+).
-3. Se necessário, remapeie o caminho das fontes de dados em `src/data/`.
+2. Abra o arquivo `src/projeto/performance-comercial/Performance Comercial.pbip` no **Power BI Desktop** (versão 2.146+).
+3. Atualize o valor dos três parâmetros de caminho (`Caminho_Extracao`, `Caminho_Dimensoes` e `Caminho_Meta`) para a pasta `data/` da sua cópia. O passo a passo está em [Como atualizar o valor dos parâmetros](docs/projetos/performance-comercial/fontes-de-dados.md#como-atualizar-o-valor-dos-parametros).
 
 ---
 
