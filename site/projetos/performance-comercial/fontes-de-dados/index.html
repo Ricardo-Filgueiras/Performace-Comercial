@@ -1211,6 +1211,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mudanca-prevista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mudança prevista
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#consultas-sem-uso-aparente" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1961,6 +1972,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mudanca-prevista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mudança prevista
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#consultas-sem-uso-aparente" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1990,6 +2012,7 @@
 
 <h1 id="fontes-de-dados">Fontes de dados<a class="headerlink" href="#fontes-de-dados" title="Permanent link">&para;</a></h1>
 <p>De onde vêm os dados do modelo, lido das partições (<code>tables/*.tmdl</code>) e das expressões compartilhadas (<code>expressions.tmdl</code>).</p>
+<p>Os dados deste projeto são <strong>fictícios</strong>, criados para o portfólio. Não existe sistema de origem nem pipeline por trás das planilhas.</p>
 <h2 id="resumo-por-conector">Resumo por conector<a class="headerlink" href="#resumo-por-conector" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2003,18 +2026,47 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Excel (<code>Excel.Workbook</code>), arquivo <code>Vendas.xlsx</code></td>
+<td><code>Caminho_Extracao</code></td>
+<td><code>fVendas</code></td>
+<td>Manual, no Power BI Desktop. Dados fixos, de 2018 a 2021</td>
+<td>Desenvolvedor do projeto</td>
+</tr>
+<tr>
+<td>Excel (<code>Excel.Workbook</code>), arquivo <code>Dimensões.xlsx</code></td>
+<td><code>Caminho_Dimensoes</code></td>
+<td><code>dClientes</code>, <code>dProdutos</code>, <code>dVendedores</code>, <code>dUnidades</code>, <code>dStatus</code>, <code>dPagamento</code> e a consulta <code>dCidades</code></td>
+<td>Manual. Dados fixos</td>
+<td>Desenvolvedor do projeto</td>
+</tr>
+<tr>
+<td>Pasta com planilhas Excel (<code>Folder.Files</code>), uma por ano</td>
+<td><code>Caminho_Meta</code></td>
+<td><code>fMetas</code></td>
+<td>Manual. Dados fixos, de 2018 a 2021</td>
+<td>Desenvolvedor do projeto</td>
+</tr>
+<tr>
+<td>Gerada no Power Query (sem arquivo)</td>
+<td>—</td>
+<td><code>dCalendario</code></td>
+<td>Fixa: 1.461 dias a partir de 01/01/2018</td>
+<td>Desenvolvedor do projeto</td>
+</tr>
+<tr>
+<td>Tabela digitada no Power Query (sem arquivo)</td>
+<td>—</td>
+<td><code>zMetricas</code></td>
+<td>Fixa</td>
+<td>Desenvolvedor do projeto</td>
 </tr>
 </tbody>
 </table>
-<!-- Atualização: horário ou frequência (agendamento do fluxo de dados, do modelo no serviço, ou quem atualiza a planilha). -->
-
+<p>Todas as tabelas usam o modo <strong>Import</strong>: os dados são copiados para o modelo quando alguém usa <strong>Atualizar</strong> no Power BI Desktop. O repositório não tem agendamento de atualização. Como os dados não recebem valores depois de 31/12/2021, não há necessidade de atualização periódica.</p>
+<p>O responsável é o autor do projeto, Ricardo Filgueiras, segundo o <code>README.md</code> do repositório.</p>
 <h2 id="fronteira-com-o-pipeline">Fronteira com o pipeline<a class="headerlink" href="#fronteira-com-o-pipeline" title="Permanent link">&para;</a></h2>
 <p>A documentação deste projeto começa na fonte que o modelo lê. O que acontece antes (por exemplo, dentro de um fluxo de dados) é de outro projeto e fica documentado lá.</p>
+<p>Neste projeto <strong>não existe etapa anterior</strong>: as planilhas ficam no próprio repositório, na pasta <code>data/</code>, e são lidas diretamente pelo modelo.</p>
 <table>
 <thead>
 <tr>
@@ -2027,14 +2079,30 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>data/Extrações/Vendas.xlsx</code>, aba <code>fVendas</code></td>
+<td>Desenvolvedor do projeto</td>
+<td>Não há</td>
+<td>Sem atualização</td>
+<td>15 das 20 colunas da planilha (ver <a href="../modelo-de-dados/#fvendas"><code>fVendas</code></a>)</td>
+</tr>
+<tr>
+<td><code>data/Dimensões/Dimensões.xlsx</code>, tabelas <code>Clientes</code>, <code>Cidades</code>, <code>Produtos</code>, <code>Vendedores</code>, <code>Unidades</code>, <code>Status</code> e <code>Pagamento</code></td>
+<td>Desenvolvedor do projeto</td>
+<td>Não há</td>
+<td>Sem atualização</td>
+<td>Todas as colunas de cada tabela</td>
+</tr>
+<tr>
+<td><code>data/Metas/Meta AAAA.xlsx</code> (2018 a 2021)</td>
+<td>Desenvolvedor do projeto</td>
+<td>Não há</td>
+<td>Sem atualização</td>
+<td>Id do vendedor e os 12 meses</td>
 </tr>
 </tbody>
 </table>
+<p>O cabeçalho da planilha de vendas traz o título "Microsiga Protheus", o nome de um ERP. Isso sugere que o layout da planilha imita a extração desse sistema, mas, como os dados são fictícios, não há ERP real por trás.</p>
+<p>Os arquivos <code>data/Metas/Catalogo.pdf</code> e a pasta <code>data/imagens/</code> ficam no repositório, mas nenhuma consulta do modelo os lê.</p>
 <h2 id="transformacoes-no-power-query">Transformações no Power Query<a class="headerlink" href="#transformacoes-no-power-query" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2045,11 +2113,47 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><code>fVendas</code></td>
+<td>Lê a aba <code>fVendas</code> de <code>Vendas.xlsx</code>. A aba começa com linhas de título: a consulta promove a primeira linha a cabeçalho, remove as linhas em que a terceira coluna está vazia e promove a linha seguinte a cabeçalho definitivo. Define os tipos, renomeia <code>Data</code> para <code>Data Pedido</code> e <strong>mantém só 15 das 20 colunas</strong>. Ficam de fora <code>Nome Vendedor</code>, <code>Nome Cliente</code>, <code>Nome Unidade</code>, <code>Faturamento Total</code> e <code>Custo Total</code></td>
+</tr>
+<tr>
+<td><code>fMetas</code></td>
+<td>Lê todos os <code>.xlsx</code> da pasta de metas e ignora arquivos temporários do Excel (nome iniciado por <code>~</code>). Junta as planilhas, promove o cabeçalho, remove linhas de título, <strong>transforma as colunas dos 12 meses em linhas</strong> (<code>Mes</code> e <code>Valor Meta</code>), monta a data com o mês e o ano tirado do nome do arquivo e define os tipos</td>
+</tr>
+<tr>
+<td><code>dCalendario</code></td>
+<td>Gera 1.461 datas a partir de 01/01/2018 e calcula ano, nome do mês, mês, dia, semestre, trimestre, mês abreviado, mês-ano e a chave de ordenação. Renomeia <code>Data</code> para <code>Id Data</code></td>
+</tr>
+<tr>
+<td><code>dClientes</code></td>
+<td>Lê a tabela <code>Clientes</code>, junta com a consulta <code>dCidades</code> pelo <code>Id Cidade</code> (junção à esquerda) para trazer cidade, UF e estado, e mantém 5 colunas</td>
+</tr>
+<tr>
+<td><code>dProdutos</code>, <code>dVendedores</code>, <code>dUnidades</code>, <code>dStatus</code>, <code>dPagamento</code></td>
+<td>Leem a tabela correspondente de <code>Dimensões.xlsx</code> e só definem os tipos das colunas</td>
+</tr>
+<tr>
+<td><code>dCidades</code> (consulta, não vira tabela)</td>
+<td>Lê a tabela <code>Cidades</code> de <code>Dimensões.xlsx</code>, define os tipos e remove espaços das pontas de <code>Estado</code></td>
+</tr>
+<tr>
+<td><code>zMetricas</code></td>
+<td>Tabela digitada no próprio Power Query, com as colunas <code>Metrica</code> e <code>Ordem</code></td>
+</tr>
+<tr>
+<td><code>_Medidas</code></td>
+<td>Tabela vazia (sem colunas), usada só para guardar medidas</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition warning">
+<p class="admonition-title">Dependência do nome do primeiro arquivo de metas</p>
+<p>A consulta <code>fMetas</code> usa o texto <code>Meta 2018.xlsx</code> como <strong>nome de coluna</strong> em duas etapas (tipo e extração do ano). Essa coluna recebe esse nome porque o arquivo <code>Meta 2018.xlsx</code> é o primeiro da pasta. Se ele for renomeado ou removido, a consulta falha. A coluna também só funciona para arquivos com nome no formato <code>Meta AAAA.xlsx</code>.</p>
+</div>
+<div class="admonition pendente">
+<p class="admonition-title">A confirmar</p>
+<p>A consulta <code>fMetas</code> lê 15 colunas de cada planilha de meta (<code>Column1</code> a <code>Column15</code>). Confirmar se todas as planilhas têm esse mesmo formato (Id do vendedor, nome do vendedor e os 12 meses).</p>
+</div>
 <h2 id="parametros">Parâmetros<a class="headerlink" href="#parametros" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2061,13 +2165,31 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<td><code>Caminho_Extracao</code></td>
+<td><code>C:\Github\Performace-Comercial\data\Extrações</code></td>
+<td>Pasta de <code>Vendas.xlsx</code>. Lido por <code>fVendas</code></td>
+</tr>
+<tr>
+<td><code>Caminho_Dimensoes</code></td>
+<td><code>C:\Github\Performace-Comercial\data\Dimensões</code></td>
+<td>Pasta de <code>Dimensões.xlsx</code>. Lido por <code>dClientes</code>, <code>dProdutos</code>, <code>dVendedores</code>, <code>dUnidades</code>, <code>dStatus</code>, <code>dPagamento</code> e <code>dCidades</code></td>
+</tr>
+<tr>
+<td><code>Caminho_Meta</code></td>
+<td><code>C:\Github\Performace-Comercial\data\Metas</code></td>
+<td>Pasta das planilhas de meta. Lido por <code>fMetas</code></td>
 </tr>
 </tbody>
 </table>
+<p>Os três ficam no grupo de consultas <strong>Parâmetros de dados</strong>. Os valores são caminhos absolutos para a pasta <code>data/</code> da cópia local do repositório. Quem clonar o projeto em outro lugar precisa <strong>atualizar os três parâmetros</strong> (no Power BI Desktop: <em>Transformar dados</em> → <em>Editar parâmetros</em>) antes de atualizar os dados.</p>
+<h2 id="mudanca-prevista">Mudança prevista<a class="headerlink" href="#mudanca-prevista" title="Permanent link">&para;</a></h2>
+<div class="admonition pendente">
+<p class="admonition-title">Dados em CSV e um único parâmetro</p>
+<p>O <a href="../escopo/">escopo do projeto</a> prevê trocar o formato de entrada de Excel para CSV, porque o link "raw" do GitHub baixa um <code>.xlsx</code> em vez de mostrar o conteúdo, e reduzir os três parâmetros a um só, o caminho da pasta de dados. Nada disso foi feito ainda: o modelo continua lendo <code>.xlsx</code> por três parâmetros. Falta decidir se o parâmetro único guarda o caminho local da pasta <code>data/</code> ou o endereço base "raw" do GitHub. Quando a mudança acontecer, esta página precisa ser revisada.</p>
+</div>
 <h2 id="consultas-sem-uso-aparente">Consultas sem uso aparente<a class="headerlink" href="#consultas-sem-uso-aparente" title="Permanent link">&para;</a></h2>
+<p>Todas as consultas e parâmetros do modelo são lidos por alguma tabela. A consulta <code>dCidades</code> é usada por <code>dClientes</code> e os três parâmetros são usados pelas tabelas listadas acima.</p>
+<p>Do lado dos arquivos, <code>Catalogo.pdf</code> e <code>data/imagens/</code> não são lidos por nenhuma consulta. Colunas da planilha de vendas que a consulta descarta: <code>Nome Vendedor</code>, <code>Nome Cliente</code>, <code>Nome Unidade</code>, <code>Faturamento Total</code> e <code>Custo Total</code>.</p>
 
 
 
