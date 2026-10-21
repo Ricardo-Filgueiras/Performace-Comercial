@@ -15,6 +15,7 @@ expression dCidades =
 
 expression Caminho_Extracao = "C:\Github\Performace-Comercial\src\data\Extrações" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 2747c0ba-a302-4812-bdbe-bd561a0d13e0
+	queryGroup: 'Parêmetros de dados'
 
 	annotation PBI_NavigationStepName = Navegação
 
@@ -22,6 +23,7 @@ expression Caminho_Extracao = "C:\Github\Performace-Comercial\src\data\Extraçõ
 
 expression Caminho_Dimensoes = "C:\Github\Performace-Comercial\src\data\Dimensões" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: d6a58aa4-ecb7-4ce6-90e3-30f15eb7ec48
+	queryGroup: 'Parêmetros de dados'
 
 	annotation PBI_NavigationStepName = Navegação
 
@@ -29,6 +31,7 @@ expression Caminho_Dimensoes = "C:\Github\Performace-Comercial\src\data\Dimensõ
 
 expression Caminho_Meta = "C:\Github\Performace-Comercial\src\data\Metas" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 45a9cb35-ec05-4519-bf97-bc1012799606
+	queryGroup: 'Parêmetros de dados'
 
 	annotation PBI_NavigationStepName = Navegação
 
