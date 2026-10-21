@@ -2228,6 +2228,7 @@
 <p>Todas as perguntas em aberto da documentação deste projeto, num lugar só. Cada pendência também aparece como aviso na página de origem.</p>
 <p>Ao responder uma pendência: atualize a página de origem, tire o aviso e mova a linha para <em>Resolvidas</em>, com a data e a resposta resumida.</p>
 <h2 id="em-aberto">Em aberto<a class="headerlink" href="#em-aberto" title="Permanent link">&para;</a></h2>
+<p>"Afeta números?" quer dizer que a resposta pode mudar um resultado do painel (regra, filtro, cálculo). Essas vêm primeiro. O dono de todas é o desenvolvedor do projeto, porque não há área de negócio por trás do painel.</p>
 <table>
 <thead>
 <tr>
@@ -2241,19 +2242,105 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;"></td>
-<td></td>
-<td></td>
-<td>sim / não</td>
-<td></td>
-<td>alta / média / baixa</td>
+<td style="text-align: right;">1</td>
+<td>Os visuais do relatório usam 25 nomes antigos de medidas que não existem no modelo (por exemplo, <code>Faturamento</code>). Abrir o relatório no Power BI Desktop, conferir os campos não encontrados e reapontar os visuais para as medidas atuais</td>
+<td><a href="../medidas-dax/#nomes-antigos-de-medidas-no-relatorio">Medidas DAX</a></td>
+<td>sim</td>
+<td>Desenvolvedor</td>
+<td>alta</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Confirmar que todas as planilhas de meta têm o mesmo formato: 15 colunas, com o Id do vendedor, o nome do vendedor e os 12 meses</td>
+<td><a href="../fontes-de-dados/#transformacoes-no-power-query">Fontes de dados</a></td>
+<td>sim</td>
+<td>Desenvolvedor</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Conferir os botões do relatório: 3 apontam para marcadores inexistentes (<code>b665145e7737d486954d</code> e <code>51958de021a70cbce700</code>) e 1 botão de navegação da guia Comercial não tem destino</td>
+<td><a href="../guias-do-relatorio/#problemas-encontrados-nos-botoes">Guias do relatório</a></td>
+<td>não</td>
+<td>Desenvolvedor</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Criar a tag de linha de base <code>performance-comercial/baseline-pre-documentacao</code> e a tag <code>performance-comercial/v2.0.0</code>. Nenhuma das duas existe</td>
+<td><a href="../changelog/">Changelog</a></td>
+<td>não</td>
+<td>Desenvolvedor</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>Revisar a descrição das 42 medidas escritas a partir do código (as 8 medidas com <code>///</code> usam o texto do modelo), em especial <code>50 Eixo Y max Grafico Comercial</code>, <code>53 Max Y Visual 01 pg Vendedores</code> e <code>65 SVG Percentual Meta Velocimetro</code></td>
+<td><a href="../medidas-dax/">Medidas DAX</a></td>
+<td>não</td>
+<td>Desenvolvedor</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Revisar os textos "Para que serve" e "Como ler" das 8 páginas de guia, deduzidos dos visuais</td>
+<td><a href="../guias-do-relatorio/">Guias do relatório</a></td>
+<td>não</td>
+<td>Desenvolvedor</td>
+<td>baixa</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>Revisar as jornadas de uso, deduzidas dos visuais e não testadas com usuários</td>
+<td><a href="../como-usar/">Como usar</a></td>
+<td>não</td>
+<td>Desenvolvedor</td>
+<td>baixa</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>Conferir os nomes dos botões do Power BI Desktop no guia de atualizar os parâmetros, que não foi executado na escrita</td>
+<td><a href="../fontes-de-dados/#como-atualizar-o-valor-dos-parametros">Fontes de dados</a></td>
+<td>não</td>
+<td>Desenvolvedor</td>
+<td>baixa</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>Definir uma meta de tempo de resposta do relatório. O texto anterior falava em menos de 5 segundos, mas isso nunca foi medido</td>
+<td><a href="../escopo/">Escopo</a></td>
+<td>não</td>
+<td>Desenvolvedor</td>
+<td>baixa</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>Completar os motivos das decisões mais antigas, que o histórico do Git não registra</td>
+<td><a href="../decisoes-tecnicas/">Decisões técnicas</a></td>
+<td>não</td>
+<td>Desenvolvedor</td>
+<td>baixa</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>Rodar, no Power BI Desktop, as consultas DAX de diagnóstico sugeridas e conferir se as dimensões têm chave única. Os dados não foram lidos</td>
+<td><a href="../guia-do-desenvolvedor/#solucao-de-problemas">Guia do desenvolvedor</a></td>
+<td>sim</td>
+<td>Desenvolvedor</td>
+<td>baixa</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>Conferir o titular (Ricardo Filgueiras) e o ano (2025) escolhidos para a licença MIT</td>
+<td><code>LICENSE</code>, na raiz do repositório</td>
+<td>não</td>
+<td>Desenvolvedor</td>
+<td>baixa</td>
 </tr>
 </tbody>
 </table>
-<!-- "Afeta números?" = sim quando a resposta pode mudar um resultado do painel (regra, filtro, cálculo). Essas vêm primeiro. -->
-
 <h2 id="pendencias-observadas-no-modelo">Pendências observadas no modelo<a class="headerlink" href="#pendencias-observadas-no-modelo" title="Permanent link">&para;</a></h2>
-<p>Problemas notados no modelo ou no relatório que a documentação não corrige (princípio: a documentação se adapta ao modelo).</p>
+<p>Problemas notados no modelo ou no relatório que a documentação não corrige (princípio: a documentação se adapta ao modelo). Nada abaixo foi alterado.</p>
 <table>
 <thead>
 <tr>
@@ -2264,13 +2351,59 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;"></td>
-<td></td>
-<td></td>
+<td style="text-align: right;">1</td>
+<td>9 medidas estão sem pasta de exibição: <code>52 Rank Cidade</code>, <code>53 Max Y Visual 01 pg Vendedores</code>, <code>54 Nome Vendedor</code> e as 6 medidas de <code>zMetricas</code></td>
+<td><a href="../medidas-dax/sem-pasta/">Sem pasta de exibição</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>8 medidas não têm nenhum uso, nem em visuais nem em outras medidas: <code>03 Lucro Bruto</code>, <code>04 Margem Bruta</code>, <code>25 Margem LM</code>, <code>28 Margem MoM %</code>, <code>29 Resultado LM</code>, <code>32 Resultado MoM %</code>, <code>35 Comissao MoM %</code> e <code>65 SVG Percentual Meta Velocimetro</code>. Manter ou remover é decisão do desenvolvedor</td>
+<td><a href="../arquivo/#medidas-sem-uso-em-visuais">Arquivo</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>A medida <code>65 SVG Percentual Meta Velocimetro</code> tem como expressão apenas o valor <code>1</code></td>
+<td><a href="../medidas-dax/visuais-svg/#65-svg-percentual-meta-velocimetro">Visuais SVG</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>A consulta <code>fMetas</code> depende do nome do arquivo <code>Meta 2018.xlsx</code> e só entende arquivos nomeados <code>Meta AAAA.xlsx</code></td>
+<td><a href="../fontes-de-dados/#transformacoes-no-power-query">Fontes de dados</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>O calendário tem data final fixa (31/12/2021). Vendas posteriores ficariam sem data. Hoje não existem, e isso é intencional</td>
+<td><a href="../modelo-de-dados/#dcalendario">Modelo de dados</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>A pasta <code>01.Principais</code> não tem espaço depois do ponto, e <code>02. Temporais</code> e <code>03. Formatações</code> têm</td>
+<td><a href="../guia-do-desenvolvedor/#nomes">Guia do desenvolvedor</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>O arquivo <code>.github/workflows/docs.yml</code> está vazio. A documentação é publicada manualmente, com <code>mkdocs gh-deploy</code></td>
+<td><a href="../decisoes-tecnicas/#adr-012-documentacao-com-mkdocs-material-em-um-portal-por-projeto">Decisões técnicas</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>O nome do repositório no GitHub e o da pasta local ainda usam a grafia antiga "Performace-Comercial"</td>
+<td><a href="../decisoes-tecnicas/#adr-013-organizacao-das-pastas-do-repositorio">Decisões técnicas</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td><code>Catalogo.pdf</code> e a pasta <code>data/imagens/</code> estão no repositório, mas nenhuma consulta os usa</td>
+<td><a href="../fontes-de-dados/#consultas-sem-uso-aparente">Fontes de dados</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>As 4 guias "antes" e a documentação anterior usam os nomes antigos de medidas. É um histórico mantido de propósito</td>
+<td><a href="../arquivo/guias-anteriores/">Guias anteriores</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="resolvidas">Resolvidas<a class="headerlink" href="#resolvidas" title="Permanent link">&para;</a></h2>
+<p>Respostas do desenvolvedor durante a reescrita da documentação.</p>
 <table>
 <thead>
 <tr>
@@ -2282,10 +2415,124 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;"></td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: right;">1</td>
+<td>O projeto é de uso real, estudo ou portfólio?</td>
+<td>Portfólio, com dados fictícios</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Quem usa o painel?</td>
+<td>O gerente de equipe é o usuário de referência. Não há como simular vários usuários</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>De onde vêm os dados? Excel ou CSV?</td>
+<td>Planilhas Excel na pasta <code>data/</code>, junto com o projeto. O projeto não usa CSV</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>As guias "antes" podem sair do relatório?</td>
+<td>Não, ficam para mostrar a evolução do projeto</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>É preciso RLS?</td>
+<td>Não</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Ticket médio e as análises avançadas continuam no plano?</td>
+<td>Sim, como planejado, sem data</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>Os valores unitários são multiplicados por <code>Qtde</code>?</td>
+<td>Sim. Conferido no código das medidas</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>O relacionamento inativo por <code>Data Envio</code> pode sair?</td>
+<td>Não, deve ficar</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>O período das vendas coincide com o calendário?</td>
+<td>Sim, de 2018 a 2021. Não haverá dados depois de 31/12/2021</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>Quais são os valores de <code>Status</code>?</td>
+<td>Válidas (<code>1</code>) e Inválidas (<code>2</code>), lidos da planilha</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>O uso de <code>zMetricas</code> na dica <code>TooltipRosca</code> é intencional?</td>
+<td>Sim</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>A numeração 80 a 99 continua reservada?</td>
+<td>Sim</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td>A composição de despesa, impostos e comissão precisa ser definida?</td>
+<td>Não, porque é um projeto de portfólio</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td><code>11 Qtde Vendas</code> deve contar vendas de qualquer status?</td>
+<td>Sim, é intencional</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td>A cor da meta (60% e 10%) e o uso de <code>ABS</code> na diferença para a meta são intencionais?</td>
+<td>Sim</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td><code>35 Comissao MoM %</code> sem o filtro <code>Datas com Venda</code> é intencional?</td>
+<td>Sim</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">17</td>
+<td>É preciso validação de negócio?</td>
+<td>Não: o projeto é de portfólio</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">18</td>
+<td>O arquivo <code>LICENSE</code> deve ser criado?</td>
+<td>Sim, criado com a licença MIT</td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">19</td>
+<td>As páginas antigas podem ser apagadas depois de migradas?</td>
+<td>Sim, inclusive <code>docs/requisitos.md</code></td>
+<td>2026-10-21</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td>Slug e estrutura de pastas</td>
+<td>Slug <code>performance-comercial</code>; projeto em <code>src/projeto/performance-comercial/</code>; dados em <code>data/</code></td>
+<td>2026-10-21</td>
 </tr>
 </tbody>
 </table>
