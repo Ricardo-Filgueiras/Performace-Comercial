@@ -4,4 +4,4 @@ Cada projeto de BI tem a sua pasta, com o mesmo nome (slug) da pasta dos arquivo
 
 | Projeto | Do que trata | Comece por |
 |---|---|---|
-| *(nenhum ainda)* | | |
+| Performance Comercial | Desempenho comercial: faturamento, margem, resultado, comissão e metas | *(em migração)* |

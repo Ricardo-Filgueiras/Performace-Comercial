@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="../../projetos/">
+      
+      
+        <link rel="next" href="../versionamento-git/">
       
       
         
@@ -49,13 +53,18 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/panzoom.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  </head>
+  <meta name="panzoom-theme" content="material">
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -230,11 +239,37 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../01%20visao%20geral/" class="md-tabs__link">
+        <a href="../../projetos/" class="md-tabs__link">
           
   
   
-  Modelo Semântico
+    
+  
+  Projetos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Metodologia
 
         </a>
       </li>
@@ -248,51 +283,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../02%20dicionario%20dados/" class="md-tabs__link">
+      <a href="../../changelog/" class="md-tabs__link">
         
   
   
     
   
-  Dicionário de Dados
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../06%20boas%20praticas/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Boas Práticas
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../05%20changelog/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Changelog
+  Changelog do portal
 
       </a>
     </li>
@@ -307,11 +304,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../estrutura_definition_legivel/" class="md-tabs__link">
+        <a href="../../01%20visao%20geral/" class="md-tabs__link">
           
   
   
-  Referências
+    
+  
+  Documentação anterior
 
         </a>
       </li>
@@ -387,6 +386,12 @@
   
     
     
+      
+        
+          
+        
+      
+    
     
     
       
@@ -404,14 +409,88 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <div class="md-nav__link md-nav__container">
+            <a href="../../projetos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projetos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projetos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Modelo Semântico
+    Metodologia
   
 
     
@@ -422,12 +501,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Modelo Semântico
+    Metodologia
   
 
           </label>
@@ -437,17 +516,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../01%20visao%20geral/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metodologia DataOps
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Visão Geral
+    Metodologia DataOps
   
 
     
@@ -456,6 +562,109 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-dataops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é DataOps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#os-tres-pilares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Os três pilares
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Os três pilares">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#people-colaboracao-e-cultura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        People — Colaboração e cultura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-automacao-e-entrega-continua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process — Automação e entrega contínua
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technology-ferramentas-que-suportam-o-processo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technology — Ferramentas que suportam o processo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-as-code-na-pratica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation-as-code na prática
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -468,42 +677,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04%20relacionamentos/" class="md-nav__link">
+      <a href="../versionamento-git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Relacionamentos
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03%20guia%20medidas%20dax/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Medidas DAX
+    Versionamento com Git
   
 
     
@@ -531,68 +712,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02%20dicionario%20dados/" class="md-nav__link">
+      <a href="../../changelog/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dicionário de Dados
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../06%20boas%20praticas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Boas Práticas
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../05%20changelog/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Changelog
+    Changelog do portal
   
 
     
@@ -612,6 +739,24 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -627,17 +772,17 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Referências
+    Documentação anterior
   
 
     
@@ -648,16 +793,184 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Referências
+    Documentação anterior
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01%20visao%20geral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Dashboard Performance Comercial - Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02%20dicionario%20dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 Dicionário de Dados - Performance Comercial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03%20guia%20medidas%20dax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📐 Guia de Medidas DAX - Performance Comercial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04%20relacionamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔗 Relacionamentos - Performance Comercial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05%20changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 Changelog - Performance Comercial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06%20boas%20praticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 Boas Práticas - Performance Comercial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -673,7 +986,7 @@
   <span class="md-ellipsis">
     
   
-    Estrutura do Modelo
+    Estrutura da pasta definition
   
 
     
@@ -848,8 +1161,8 @@
 
 
 
-<h1 id="metodologia-dataops">Metodologia DataOps</h1>
-<h2 id="o-que-e-dataops">O que é DataOps</h2>
+<h1 id="metodologia-dataops">Metodologia DataOps<a class="headerlink" href="#metodologia-dataops" title="Permanent link">&para;</a></h1>
+<h2 id="o-que-e-dataops">O que é DataOps<a class="headerlink" href="#o-que-e-dataops" title="Permanent link">&para;</a></h2>
 <p>DataOps é uma abordagem colaborativa que aplica às equipes de dados os princípios do DevOps e do Agile Manufacturing: automação, entrega contínua, testes, monitoramento e cultura de melhoria permanente.</p>
 <p>O termo <em>DataOps</em> apareceu em 2014, num artigo de Lenny Liebmann na InformationWeek. Os princípios foram reunidos no <em>DataOps Manifesto</em>, publicado e mantido pela <strong>DataKitchen</strong>, empresa de Christopher Bergh, coautor do Manifesto. Ele foi inspirado no <em>Manifesto Ágil</em> e tem a mesma estrutura: cinco valores e 18 princípios.</p>
 <p>Os cinco valores comparam duas coisas e dão preferência à primeira, sem descartar a segunda:</p>
@@ -885,13 +1198,13 @@
 </table>
 <p>Não se trata de uma ferramenta ou plataforma. É uma mudança de mentalidade sobre como dados são produzidos, documentados e entregues.</p>
 <hr />
-<h2 id="os-tres-pilares">Os três pilares</h2>
-<h3 id="people-colaboracao-e-cultura">People — Colaboração e cultura</h3>
+<h2 id="os-tres-pilares">Os três pilares<a class="headerlink" href="#os-tres-pilares" title="Permanent link">&para;</a></h2>
+<h3 id="people-colaboracao-e-cultura">People — Colaboração e cultura<a class="headerlink" href="#people-colaboracao-e-cultura" title="Permanent link">&para;</a></h3>
 <p>Equipes de dados tendem a trabalhar em silos: o engenheiro cuida do pipeline, o analista cuida do modelo, o usuário de negócio consome o relatório — sem comunicação sistemática entre os três. DataOps combate esse isolamento com <strong>responsabilidade compartilhada</strong>: quem produz os dados também é responsável por documentá-los e garantir sua qualidade.</p>
-<h3 id="process-automacao-e-entrega-continua">Process — Automação e entrega contínua</h3>
+<h3 id="process-automacao-e-entrega-continua">Process — Automação e entrega contínua<a class="headerlink" href="#process-automacao-e-entrega-continua" title="Permanent link">&para;</a></h3>
 <p>Os processos de dados precisam ser <strong>reproduzíveis e auditáveis</strong>. Isso inclui versionamento de pipelines, testes de qualidade dos dados, integração contínua e, em particular, o princípio que guia este portal:</p>
 <p><strong>Documentation-as-code</strong> — a documentação vive dentro do repositório, versionada junto com o código. Uma alteração em uma medida DAX e a atualização da sua documentação fazem parte do mesmo commit.</p>
-<h3 id="technology-ferramentas-que-suportam-o-processo">Technology — Ferramentas que suportam o processo</h3>
+<h3 id="technology-ferramentas-que-suportam-o-processo">Technology — Ferramentas que suportam o processo<a class="headerlink" href="#technology-ferramentas-que-suportam-o-processo" title="Permanent link">&para;</a></h3>
 <p>A escolha das ferramentas deve servir ao processo, não o contrário. No portal de documentação de BI:</p>
 <table>
 <thead>
@@ -925,7 +1238,7 @@
 </table>
 <p>As fontes de dados de cada painel (bancos, fluxos de dados, planilhas) são descritas na página <strong>Fontes de dados</strong> do projeto, e o motivo de usar DataOps em cada painel fica no <strong>Sobre</strong> do projeto.</p>
 <hr />
-<h2 id="documentation-as-code-na-pratica">Documentation-as-code na prática</h2>
+<h2 id="documentation-as-code-na-pratica">Documentation-as-code na prática<a class="headerlink" href="#documentation-as-code-na-pratica" title="Permanent link">&para;</a></h2>
 <p>O princípio por trás do investimento em documentação é o da <strong>Literate Programming</strong> (Knuth, 1984): o código e a explicação do código devem coexistir. Uma medida DAX sem documentação é um ativo frágil: funciona hoje, mas ninguém sabe <em>por que</em> funciona, quais são seus limites ou como alterá-la com segurança.</p>
 <p>O segundo valor do Manifesto (análises que funcionam acima de documentação extensa) vale aqui: a documentação se justifica quando ajuda o painel a funcionar e a ser mantido, não como fim em si.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Alteração no modelo
@@ -947,7 +1260,7 @@
 <li><strong>De negócio:</strong> o selo de validação na página registra que a área responsável confirmou a regra.</li>
 </ul>
 <hr />
-<h2 id="referencias">Referências</h2>
+<h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
 <p>As referências abaixo formam a base conceitual desta abordagem. São leituras recomendadas para quem quiser aprofundar:</p>
 <p><strong>DataOps Manifesto</strong></p>
 <blockquote>
@@ -976,6 +1289,38 @@ O guia de referência para gestão de dados, cobrindo governança, qualidade, me
 
 
 
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última atualização">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de outubro de 2026 13:53:29 UTC">21 de outubro de 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Criada">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de outubro de 2026 12:53:10 UTC">21 de outubro de 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
 
@@ -1024,10 +1369,14 @@ O guia de referência para gestão de dados, cobrindo governança, qualidade, me
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/panzoom.min.js"></script>
+      
+        <script src="../../assets/javascripts/zoompan.js"></script>
       
     
   </body>

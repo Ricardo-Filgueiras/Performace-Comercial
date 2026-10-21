@@ -1,42 +1,32 @@
-# Performance Comercial
+# Documentação de BI
 
-Documentação técnica do modelo semântico Power BI do projeto **Performance Comercial**.
+Documentação dos painéis Power BI deste repositório: o que cada painel resolve, como usá-lo, de onde vêm os dados e como cada indicador é calculado.
 
-O modelo analisa resultados de vendas, margens, metas e comissões — permitindo acompanhamento detalhado por vendedor, produto, cliente, unidade e período.
+## Por onde começar
 
----
+<div class="grid cards" markdown>
 
-## Sobre o Projeto
+-   **Quero usar um painel**
 
-O relatório é construído sobre uma arquitetura **Star Schema** com 2 tabelas fato, 7 dimensões e 50 medidas DAX organizadas por categoria. Os dados são originados de planilhas Excel e processados via Power Query diretamente no Power BI Desktop.
+    ---
 
-O projeto é versionado com **Git** no formato `.pbip`, o que permite rastreabilidade completa de mudanças no modelo semântico.
+    Entenda o que o painel mostra, como ler cada guia e o que significa cada indicador. Em cada projeto, veja o bloco **Para quem usa**.
 
----
+-   **Quero manter um painel**
 
-## Navegação Rápida
+    ---
 
-| Dúvida | Onde encontrar |
-|--------|---------------|
-| Como o modelo está estruturado? | [Visão Geral](01 visao geral.md) |
-| O que significa cada coluna e tabela? | [Dicionário de Dados](02 dicionario dados.md) |
-| Como funciona determinada medida DAX? | [Guia de Medidas DAX](03 guia medidas dax.md) |
-| Como as tabelas se relacionam? | [Relacionamentos](04 relacionamentos.md) |
-| O que mudou no modelo recentemente? | [Changelog](05 changelog.md) |
-| Como desenvolver e manter o projeto? | [Boas Práticas](06 boas praticas.md) |
+    Modelo de dados, medidas DAX, fontes, decisões técnicas e como trabalhar no projeto. Em cada projeto, veja o bloco **Para quem mantém**.
 
----
+</div>
 
-## Resumo do Modelo
+## Projetos
 
-| Item | Quantidade |
-|------|-----------|
-| Tabelas Fato | 2 (`fVendas`, `fMetas`) |
-| Tabelas Dimensão | 7 |
-| Medidas DAX | 50 |
-| Relacionamentos | 10 (9 ativos, 1 inativo) |
+| Projeto | Do que trata |
+|---|---|
+| Performance Comercial | Acompanhamento de faturamento, margem, resultado, comissão e metas por período, produto, cliente, unidade e vendedor. Projeto de portfólio, com dados fictícios. |
 
----
+!!! pendente "Documentação em migração"
+    A documentação do projeto Performance Comercial está sendo reescrita no padrão do portal. Enquanto isso, as páginas anteriores continuam disponíveis no bloco **Documentação anterior** do menu.
 
-!!! tip "Primeiro acesso?"
-    Comece pela [Visão Geral](01 visao geral.md) para entender a arquitetura do modelo, depois consulte o [Dicionário de Dados](02 dicionario dados.md) para entender o significado de cada campo.
+Para procurar uma medida, uma tabela ou uma guia, use a busca no topo.

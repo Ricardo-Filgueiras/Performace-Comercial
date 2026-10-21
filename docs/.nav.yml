@@ -3,3 +3,13 @@ nav:
   - Projetos: projetos
   - Metodologia: metodologia
   - Changelog do portal: changelog.md
+  # Provisório: páginas antigas, até serem migradas (plano, passo E1). Apagar este bloco no fim.
+  - Documentação anterior:
+      - 01 visao geral.md
+      - 02 dicionario dados.md
+      - 03 guia medidas dax.md
+      - 04 relacionamentos.md
+      - 05 changelog.md
+      - 06 boas praticas.md
+      - estrutura_definition_legivel.md
+      - requisitos.md

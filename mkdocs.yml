@@ -24,37 +24,54 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - navigation.indexes
     - navigation.top
     - search.highlight
     - search.suggest
     - content.code.copy
 
-markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.tabbed:
-      alternate_style: true
-  - tables
-  - attr_list
-  - md_in_html
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
   - search:
       lang: pt
+  # Menu por pasta: cada pasta pode ter um .nav.yml. Não use `nav:` neste arquivo.
+  - awesome-nav
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      locale: pt
+      fallback_to_build_date: true
+  - panzoom:
+      mermaid: true
+      full_screen: true
+      always_show_hint: true
 
-nav:
-  - Início: index.md
-  - Modelo Semântico:
-    - Visão Geral: 01 visao geral.md
-    - Relacionamentos: 04 relacionamentos.md
-    - Medidas DAX: 03 guia medidas dax.md
-  - Dicionário de Dados: 02 dicionario dados.md
-  - Boas Práticas: 06 boas praticas.md
-  - Changelog: 05 changelog.md
-  - Referências:
-    - Estrutura do Modelo: estrutura_definition_legivel.md
-    - Requisitos: requisitos.md
+# Com `mkdocs build --strict`, estes avisos quebram o build:
+# página fora do menu e link para página que não existe.
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+  links:
+    not_found: warn
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
