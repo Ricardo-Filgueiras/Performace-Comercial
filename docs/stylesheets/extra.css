@@ -1,0 +1,22 @@
+/* Aviso de pendência: use `!!! pendente "A confirmar"` nas páginas. */
+:root {
+  --cor-destaque: #FFAA00;
+  --md-admonition-icon--pendente: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20m1 15h-2v-2h2zm0-4h-2V7h2z"/></svg>');
+}
+
+.md-typeset .admonition.pendente,
+.md-typeset details.pendente {
+  border-color: var(--cor-destaque);
+}
+
+.md-typeset .pendente > .admonition-title,
+.md-typeset .pendente > summary {
+  background-color: rgba(255, 170, 0, 0.12);
+}
+
+.md-typeset .pendente > .admonition-title::before,
+.md-typeset .pendente > summary::before {
+  background-color: var(--cor-destaque);
+  -webkit-mask-image: var(--md-admonition-icon--pendente);
+          mask-image: var(--md-admonition-icon--pendente);
+}
