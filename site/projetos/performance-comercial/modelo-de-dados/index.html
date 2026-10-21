@@ -64,7 +64,7 @@
     
     
   <meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -2218,10 +2218,7 @@ Hold "Alt" / "Option" to enable pan &amp; zoom
 <li><code>Data Envio</code> tem relacionamento <strong>inativo</strong>, e nenhuma medida do modelo usa <code>USERELATIONSHIP</code>. Na prática, nada no modelo atual filtra por data de envio.</li>
 <li><code>fVendas</code> e <code>fMetas</code> não têm relacionamento entre si. Elas se encontram pelas dimensões em comum: <code>dVendedores</code> e <code>dCalendario</code>.</li>
 </ul>
-<div class="admonition pendente">
-<p class="admonition-title">A confirmar</p>
-<p>O relacionamento inativo por <code>Data Envio</code> é para uso futuro ou pode ser removido? A documentação anterior diz que ele existe "para análises alternativas".</p>
-</div>
+<p>O relacionamento inativo por <code>Data Envio</code> <strong>deve ser mantido</strong>, por decisão do desenvolvedor do projeto, mesmo sem uso nas medidas atuais. Ele deixa pronta a análise por data de envio.</p>
 <h2 id="tabelas">Tabelas<a class="headerlink" href="#tabelas" title="Permanent link">&para;</a></h2>
 <h3 id="fvendas"><code>fVendas</code><a class="headerlink" href="#fvendas" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2332,10 +2329,7 @@ Hold "Alt" / "Option" to enable pan &amp; zoom
 </tbody>
 </table>
 <p>A planilha de origem tem mais colunas do que o modelo usa (por exemplo, o nome do vendedor). A consulta mantém só as 15 colunas acima.</p>
-<div class="admonition pendente">
-<p class="admonition-title">A confirmar</p>
-<p>Os valores de <code>Valor Unit</code>, <code>Custo Unit</code>, <code>Despesa Unit</code>, <code>Impostos Unit</code> e <code>Comissão Unit</code> são por unidade vendida e são multiplicados por <code>Qtde</code> nas medidas? A documentação anterior diz que sim. Será conferido na página de medidas.</p>
-</div>
+<p>Os valores <code>Valor Unit</code>, <code>Custo Unit</code>, <code>Despesa Unit</code>, <code>Impostos Unit</code> e <code>Comissão Unit</code> são por unidade e <strong>são multiplicados por <code>Qtde</code> nas medidas</strong> (confirmado pelo desenvolvedor). A conferência no código de cada medida está na página de <a href="../medidas-dax/">medidas DAX</a>.</p>
 <h3 id="fmetas"><code>fMetas</code><a class="headerlink" href="#fmetas" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Tipo (inferido):</strong> fato</li>
@@ -2471,10 +2465,7 @@ Hold "Alt" / "Option" to enable pan &amp; zoom
 <li><strong>Hierarquia <code>Data</code>:</strong> <code>Ano</code> → <code>Mes Abreviado</code> → <code>Dia</code>.</li>
 <li>A coluna <code>Datas com Venda</code> <strong>não</strong> indica "houve venda neste dia". Ela marca todas as datas até a data da última venda, o que serve para cortar o futuro nas comparações.</li>
 </ul>
-<div class="admonition pendente">
-<p class="admonition-title">A confirmar</p>
-<p>O calendário termina em 31/12/2021 e as planilhas de meta também. Os dados de vendas cobrem o mesmo período? Se tiverem datas depois de 2021, essas vendas ficam sem data no calendário.</p>
-</div>
+<p>O período das vendas coincide com o do calendário, de 2018 a 2021, e com as planilhas de meta (confirmado pelo desenvolvedor). A data final do calendário é fixa (1.461 dias a partir de 01/01/2018) <strong>de propósito</strong>: o projeto de portfólio não receberá atualizações nem valores depois de 31/12/2021.</p>
 <details class="abstract">
 <summary>Expressões das colunas calculadas</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Datas com Venda</span>
@@ -2668,7 +2659,7 @@ Hold "Alt" / "Option" to enable pan &amp; zoom
 <td><code>Id Status</code></td>
 <td>inteiro</td>
 <td>não</td>
-<td>Chave. O valor <code>1</code> é o status das vendas efetivadas, usado nas medidas</td>
+<td>Chave. Indica se a venda é válida ou inválida. As medidas de venda filtram <code>Id Status = 1</code></td>
 </tr>
 <tr>
 <td><code>Status</code></td>
@@ -2678,10 +2669,26 @@ Hold "Alt" / "Option" to enable pan &amp; zoom
 </tr>
 </tbody>
 </table>
-<div class="admonition pendente">
-<p class="admonition-title">A confirmar</p>
-<p>Quais são todos os valores de <code>Status</code> e o que cada um significa? A documentação anterior só cita <code>1 = Efetivado</code> e <code>2 = Cancelado</code>. Esta página não leu os valores da planilha.</p>
-</div>
+<p>A tabela tem dois valores, lidos da planilha <code>Dimensões.xlsx</code>:</p>
+<table>
+<thead>
+<tr>
+<th><code>Id Status</code></th>
+<th><code>Status</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Válidas</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Inválidas</td>
+</tr>
+</tbody>
+</table>
+<p>Por isso as medidas de venda, ao filtrar <code>Id Status = 1</code>, consideram só as vendas <strong>válidas</strong>. A documentação anterior chamava os status de "Efetivado" e "Cancelado". Os nomes corretos são Válidas e Inválidas.</p>
 <h3 id="dpagamento"><code>dPagamento</code><a class="headerlink" href="#dpagamento" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Tipo (inferido):</strong> dimensão</li>
@@ -2721,6 +2728,7 @@ Hold "Alt" / "Option" to enable pan &amp; zoom
 <li><strong>Tipo (inferido):</strong> auxiliar</li>
 <li><strong>Origem:</strong> tabela digitada dentro do Power Query (os valores estão no código da consulta), sem arquivo externo.</li>
 <li><strong>Medidas:</strong> 6 (<code>Context Medida z</code>, <code>Linha Anterior</code>, <code>Linha Atual</code>, <code>Seta para Cima</code>, <code>Seta para baixo ( limit sup )</code> e <code>Seta para baixo ( limit Inferior )</code>).</li>
+<li><strong>Uso:</strong> os arquivos do relatório mostram que <strong>ela é usada</strong>: um gráfico de colunas e linhas da página de dica de ferramenta <code>TooltipRosca</code> usa a coluna <code>Metrica</code> e as seis medidas. Essa página é chamada pela guia Comercial.</li>
 </ul>
 <table>
 <thead>
@@ -2746,10 +2754,8 @@ Hold "Alt" / "Option" to enable pan &amp; zoom
 </tr>
 </tbody>
 </table>
-<div class="admonition pendente">
-<p class="admonition-title">A confirmar</p>
-<p>Para que serve <code>zMetricas</code> no relatório? Pelo nome das medidas, parece apoiar uma tabela de indicadores com setas, mas isso é uma dedução. Será confirmado na página das guias do relatório.</p>
-</div>
+<p>As seis medidas dependem de <code>01 Faturamento</code> e <code>22 Faturamento LY</code>, ou seja, comparam o faturamento atual com o do ano anterior.</p>
+<p>O uso de <code>zMetricas</code> na dica de ferramenta <code>TooltipRosca</code> é <strong>intencional</strong> (confirmado pelo desenvolvedor).</p>
 
 
 
@@ -2772,7 +2778,7 @@ Hold "Alt" / "Option" to enable pan &amp; zoom
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de outubro de 2026 14:04:39 UTC">21 de outubro de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de outubro de 2026 16:10:00 UTC">21 de outubro de 2026</span>
   </span>
 
     

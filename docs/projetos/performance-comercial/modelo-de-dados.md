@@ -54,8 +54,7 @@ erDiagram
 - `Data Envio` tem relacionamento **inativo**, e nenhuma medida do modelo usa `USERELATIONSHIP`. Na prática, nada no modelo atual filtra por data de envio.
 - `fVendas` e `fMetas` não têm relacionamento entre si. Elas se encontram pelas dimensões em comum: `dVendedores` e `dCalendario`.
 
-!!! pendente "A confirmar"
-    O relacionamento inativo por `Data Envio` é para uso futuro ou pode ser removido? A documentação anterior diz que ele existe "para análises alternativas".
+O relacionamento inativo por `Data Envio` **deve ser mantido**, por decisão do desenvolvedor do projeto, mesmo sem uso nas medidas atuais. Ele deixa pronta a análise por data de envio.
 
 ## Tabelas
 
@@ -85,8 +84,7 @@ erDiagram
 
 A planilha de origem tem mais colunas do que o modelo usa (por exemplo, o nome do vendedor). A consulta mantém só as 15 colunas acima.
 
-!!! pendente "A confirmar"
-    Os valores de `Valor Unit`, `Custo Unit`, `Despesa Unit`, `Impostos Unit` e `Comissão Unit` são por unidade vendida e são multiplicados por `Qtde` nas medidas? A documentação anterior diz que sim. Será conferido na página de medidas.
+Os valores `Valor Unit`, `Custo Unit`, `Despesa Unit`, `Impostos Unit` e `Comissão Unit` são por unidade e **são multiplicados por `Qtde` nas medidas** (confirmado pelo desenvolvedor). A conferência no código de cada medida está na página de [medidas DAX](medidas-dax/index.md).
 
 ### `fMetas`
 
@@ -124,8 +122,7 @@ A planilha de origem tem mais colunas do que o modelo usa (por exemplo, o nome d
 - **Hierarquia `Data`:** `Ano` → `Mes Abreviado` → `Dia`.
 - A coluna `Datas com Venda` **não** indica "houve venda neste dia". Ela marca todas as datas até a data da última venda, o que serve para cortar o futuro nas comparações.
 
-!!! pendente "A confirmar"
-    O calendário termina em 31/12/2021 e as planilhas de meta também. Os dados de vendas cobrem o mesmo período? Se tiverem datas depois de 2021, essas vendas ficam sem data no calendário.
+O período das vendas coincide com o do calendário, de 2018 a 2021, e com as planilhas de meta (confirmado pelo desenvolvedor). A data final do calendário é fixa (1.461 dias a partir de 01/01/2018) **de propósito**: o projeto de portfólio não receberá atualizações nem valores depois de 31/12/2021.
 
 ??? abstract "Expressões das colunas calculadas"
 
@@ -194,11 +191,17 @@ A planilha de origem tem mais colunas do que o modelo usa (por exemplo, o nome d
 
 | Coluna | Tipo | Calculada | Observação |
 |---|---|---|---|
-| `Id Status` | inteiro | não | Chave. O valor `1` é o status das vendas efetivadas, usado nas medidas |
+| `Id Status` | inteiro | não | Chave. Indica se a venda é válida ou inválida. As medidas de venda filtram `Id Status = 1` |
 | `Status` | texto | não | Descrição do status |
 
-!!! pendente "A confirmar"
-    Quais são todos os valores de `Status` e o que cada um significa? A documentação anterior só cita `1 = Efetivado` e `2 = Cancelado`. Esta página não leu os valores da planilha.
+A tabela tem dois valores, lidos da planilha `Dimensões.xlsx`:
+
+| `Id Status` | `Status` |
+|---|---|
+| 1 | Válidas |
+| 2 | Inválidas |
+
+Por isso as medidas de venda, ao filtrar `Id Status = 1`, consideram só as vendas **válidas**. A documentação anterior chamava os status de "Efetivado" e "Cancelado". Os nomes corretos são Válidas e Inválidas.
 
 ### `dPagamento`
 
@@ -220,11 +223,13 @@ A planilha de origem tem mais colunas do que o modelo usa (por exemplo, o nome d
 - **Tipo (inferido):** auxiliar
 - **Origem:** tabela digitada dentro do Power Query (os valores estão no código da consulta), sem arquivo externo.
 - **Medidas:** 6 (`Context Medida z`, `Linha Anterior`, `Linha Atual`, `Seta para Cima`, `Seta para baixo ( limit sup )` e `Seta para baixo ( limit Inferior )`).
+- **Uso:** os arquivos do relatório mostram que **ela é usada**: um gráfico de colunas e linhas da página de dica de ferramenta `TooltipRosca` usa a coluna `Metrica` e as seis medidas. Essa página é chamada pela guia Comercial.
 
 | Coluna | Tipo | Calculada | Observação |
 |---|---|---|---|
 | `Metrica` | texto | não | Nome da métrica. Ordenada por `Ordem` |
 | `Ordem` | texto | não | Posição da métrica na ordenação |
 
-!!! pendente "A confirmar"
-    Para que serve `zMetricas` no relatório? Pelo nome das medidas, parece apoiar uma tabela de indicadores com setas, mas isso é uma dedução. Será confirmado na página das guias do relatório.
+As seis medidas dependem de `01 Faturamento` e `22 Faturamento LY`, ou seja, comparam o faturamento atual com o do ano anterior.
+
+O uso de `zMetricas` na dica de ferramenta `TooltipRosca` é **intencional** (confirmado pelo desenvolvedor).
