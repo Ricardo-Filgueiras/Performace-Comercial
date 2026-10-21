@@ -1,3 +1,4 @@
 # Acrescente uma linha por projeto: "- Nome do projeto: <slug>"
 nav:
   - index.md
+  - Performance Comercial: performance-comercial
