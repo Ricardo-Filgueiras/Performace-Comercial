@@ -74,7 +74,7 @@ O relatório também guarda três páginas de dica de ferramenta (tooltip) e qua
 ## 4. Requisitos de dados
 
 - **Natureza dos dados:** fictícios, criados para o portfólio.
-- **Origem:** arquivos guardados no próprio repositório, em `src/data/`: vendas (uma linha por item vendido), cadastros (dimensões) e metas por ano (2018 a 2021).
+- **Origem:** arquivos guardados no próprio repositório, em `data/`, na raiz: vendas (uma linha por item vendido), cadastros (dimensões) e metas por ano (2018 a 2021).
 - **Formato:** CSV. O Excel foi descartado como formato de entrada porque o link "raw" do GitHub baixa o arquivo `.xlsx` em vez de exibir o conteúdo, e o CSV pode ser lido direto.
 - **Parâmetros:** os caminhos dos dados ficam em parâmetros do Power Query, reunidos em um grupo próprio de consultas, separado de fatos, dimensões e auxiliares. Quem clonar o repositório deve precisar **atualizar um único caminho**, o da pasta onde estão os dados.
 - **Carga:** modo Import, com tratamento no Power Query.
@@ -84,7 +84,7 @@ O relatório também guarda três páginas de dica de ferramenta (tooltip) e qua
 - **Cultura:** pt-BR.
 
 !!! pendente "Caminho único dos dados"
-    Falta definir o que o parâmetro guarda: o caminho da pasta `src/data` na cópia local do repositório, ou o endereço base dos arquivos "raw" no GitHub. Falta também converter os arquivos de Excel para CSV e adaptar as consultas, porque hoje o modelo ainda lê `.xlsx` por três parâmetros (`Caminho_Extracao`, `Caminho_Dimensoes` e `Caminho_Meta`).
+    Falta definir o que o parâmetro guarda: o caminho da pasta `data/` na cópia local do repositório, ou o endereço base dos arquivos "raw" no GitHub. Falta também converter os arquivos de Excel para CSV e adaptar as consultas, porque hoje o modelo ainda lê `.xlsx` por três parâmetros (`Caminho_Extracao`, `Caminho_Dimensoes` e `Caminho_Meta`).
 
 !!! pendente "Período dos dados"
     Falta confirmar o período coberto pelos dados de vendas. Os arquivos de meta vão só até 2021.
