@@ -64,7 +64,7 @@
     
     
   <meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -2125,6 +2125,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Medidas sem uso em visuais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sem-nenhum-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sem nenhum uso
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outros-itens-sem-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outros itens sem uso
+      
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -2157,47 +2185,185 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td>oculta / rascunho / duplicada</td>
-<td></td>
+<td>Comercial antes</td>
+<td>versão anterior, mantida de propósito</td>
+<td><a href="guias-anteriores/">Guias anteriores</a></td>
+</tr>
+<tr>
+<td>Analítico antes</td>
+<td>versão anterior, mantida de propósito</td>
+<td><a href="guias-anteriores/">Guias anteriores</a></td>
+</tr>
+<tr>
+<td>Mapa Calor antes</td>
+<td>versão anterior, mantida de propósito</td>
+<td><a href="guias-anteriores/">Guias anteriores</a></td>
+</tr>
+<tr>
+<td>Vendedores antes</td>
+<td>versão anterior, mantida de propósito</td>
+<td><a href="guias-anteriores/">Guias anteriores</a></td>
 </tr>
 </tbody>
 </table>
+<p>As outras guias ocultas (Comercial, Analítico, Mapa Calor, Vendedores e as três dicas de ferramenta) <strong>estão em uso</strong> e ficam em <a href="../guias-do-relatorio/">Guias do relatório</a>. "Oculta" nesse caso só quer dizer que a guia não aparece na barra de guias.</p>
 <h2 id="medidas-de-teste">Medidas de teste<a class="headerlink" href="#medidas-de-teste" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Medida</th>
-<th>Tabela</th>
-<th>Observação</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>Não há medidas de teste no modelo. A faixa de numeração 90 a 99 está reservada para testes e desenvolvimento, mas nenhuma medida a usa (ver <a href="../guia-do-desenvolvedor/#nomes">Guia do desenvolvedor</a>).</p>
 <h2 id="medidas-sem-uso-em-visuais">Medidas sem uso em visuais<a class="headerlink" href="#medidas-sem-uso-em-visuais" title="Permanent link">&para;</a></h2>
+<p>Medidas que nenhum visual do relatório usa diretamente: <strong>19</strong> das 50. Uma medida sem visual pode ser a base de outra que aparece no relatório, por isso a tabela diz se ela chega a algum visual por meio de outras medidas.</p>
+<p>A conta considera os nomes antigos usados nos visuais (por exemplo, <code>Qtde Vendas</code> no lugar de <code>11 Qtde Vendas</code>), ligados à medida atual pelo nome (ver <a href="../medidas-dax/#nomes-antigos-de-medidas-no-relatorio">Nomes antigos de medidas</a>). O script de levantamento não reconhece esses nomes e por isso lista 21 medidas sem uso; esta página descarta as que o relatório usa pelo nome antigo.</p>
 <table>
 <thead>
 <tr>
 <th>Medida</th>
 <th>Tabela</th>
 <th>Usada por outra medida?</th>
+<th>Chega a algum visual?</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="../medidas-dax/principais/#02-custo"><code>02 Custo</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>03 Lucro Bruto</code>, <code>04 Margem Bruta</code>, <code>08 Abatimento</code></td>
+<td>sim, por outras medidas</td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/principais/#03-lucro-bruto"><code>03 Lucro Bruto</code></a></td>
+<td><code>_Medidas</code></td>
+<td>não</td>
+<td><strong>não</strong></td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/principais/#04-margem-bruta"><code>04 Margem Bruta</code></a></td>
+<td><code>_Medidas</code></td>
+<td>não</td>
+<td><strong>não</strong></td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/principais/#05-despesa"><code>05 Despesa</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>08 Abatimento</code></td>
+<td>sim, por outras medidas</td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/principais/#06-impostos"><code>06 Impostos</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>08 Abatimento</code></td>
+<td>sim, por outras medidas</td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#23-faturamento-yoy"><code>23 Faturamento YoY %</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>60 SVG Cartao Faturamento v1</code></td>
+<td>sim, por outras medidas</td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#25-margem-lm"><code>25 Margem LM</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>28 Margem MoM %</code></td>
+<td><strong>não</strong></td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#26-margem-ly"><code>26 Margem LY</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>27 Margem YoY %</code></td>
+<td>sim, por outras medidas</td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#27-margem-yoy"><code>27 Margem YoY %</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>61 SVG Cartao Margem v1</code>, <code>64 SVG Tabela HTML Content Lite v1</code></td>
+<td>sim, por outras medidas</td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#28-margem-mom"><code>28 Margem MoM %</code></a></td>
+<td><code>_Medidas</code></td>
+<td>não</td>
+<td><strong>não</strong></td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#29-resultado-lm"><code>29 Resultado LM</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>32 Resultado MoM %</code></td>
+<td><strong>não</strong></td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#30-resultado-ly"><code>30 Resultado LY</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>31 Resultado YoY %</code></td>
+<td>sim, por outras medidas</td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#31-resultado-yoy"><code>31 Resultado YoY %</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>62 SVG Cartao Resultado v1</code></td>
+<td>sim, por outras medidas</td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#32-resultado-mom"><code>32 Resultado MoM %</code></a></td>
+<td><code>_Medidas</code></td>
+<td>não</td>
+<td><strong>não</strong></td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#33-comissao-ly"><code>33 Comissao LY</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>34 Comissao YoY %</code></td>
+<td>sim, por outras medidas</td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#34-comissao-yoy"><code>34 Comissao YoY %</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>63 SVG Cartao Comissao v1</code></td>
+<td>sim, por outras medidas</td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/temporais/#35-comissao-mom"><code>35 Comissao MoM %</code></a></td>
+<td><code>_Medidas</code></td>
+<td>não</td>
+<td><strong>não</strong></td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/formatacoes/#51-faturamento-formatacao-de-texto"><code>51 Faturamento formatação de texto</code></a></td>
+<td><code>_Medidas</code></td>
+<td><code>64 SVG Tabela HTML Content Lite v1</code></td>
+<td>sim, por outras medidas</td>
+</tr>
+<tr>
+<td><a href="../medidas-dax/visuais-svg/#65-svg-percentual-meta-velocimetro"><code>65 SVG Percentual Meta Velocimetro</code></a></td>
+<td><code>_Medidas</code></td>
+<td>não</td>
+<td><strong>não</strong></td>
 </tr>
 </tbody>
 </table>
-<!-- Uma medida sem uso em visual pode ser base de outra medida: confira "é usada por" antes de chamá-la de sem uso. -->
+<h3 id="sem-nenhum-uso">Sem nenhum uso<a class="headerlink" href="#sem-nenhum-uso" title="Permanent link">&para;</a></h3>
+<p>Estas 8 medidas não aparecem em nenhum visual, nem direta nem indiretamente: <code>03 Lucro Bruto</code>, <code>04 Margem Bruta</code>, <code>25 Margem LM</code>, <code>28 Margem MoM %</code>, <code>29 Resultado LM</code>, <code>32 Resultado MoM %</code>, <code>35 Comissao MoM %</code>, <code>65 SVG Percentual Meta Velocimetro</code>.</p>
+<p>Elas continuam no modelo e na documentação, e é decisão do desenvolvedor mantê-las ou removê-las. Nenhuma foi removida.</p>
+<h2 id="outros-itens-sem-uso">Outros itens sem uso<a class="headerlink" href="#outros-itens-sem-uso" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Situação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relacionamento inativo <code>fVendas[Data Envio]</code> para <code>dCalendario[Id Data]</code></td>
+<td>Nenhuma medida usa <code>USERELATIONSHIP</code>. O desenvolvedor decidiu mantê-lo (<a href="../decisoes-tecnicas/#adr-010-manter-o-relacionamento-inativo-por-data-envio">ADR-010</a>)</td>
+</tr>
+<tr>
+<td><code>data/Metas/Catalogo.pdf</code> e a pasta <code>data/imagens/</code></td>
+<td>Estão no repositório, mas nenhuma consulta do modelo os lê (<a href="../fontes-de-dados/#consultas-sem-uso-aparente">Fontes de dados</a>)</td>
+</tr>
+<tr>
+<td>Colunas <code>Nome Vendedor</code>, <code>Nome Cliente</code>, <code>Nome Unidade</code>, <code>Faturamento Total</code> e <code>Custo Total</code> da planilha de vendas</td>
+<td>A consulta de <code>fVendas</code> as descarta</td>
+</tr>
+</tbody>
+</table>
 
 
 
