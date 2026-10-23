@@ -27,7 +27,7 @@ Dica de ferramenta: não tem navegação. Aparece quando o mouse passa sobre um 
 
     **Tipos de visual:** `actionButton` (1), `tableEx` (1).
 
-    **Medidas usadas:** [`01 Faturamento`](../medidas-dax/principais.md#01-faturamento) (no relatório, pelo nome antigo `Faturamento`), [`10 Margem`](../medidas-dax/principais.md#10-margem), [`41 Porcentagem Meta`](../medidas-dax/principais.md#41-porcentagem-meta) (no relatório, pelo nome antigo `Porcentagem Meta`).
+    **Medidas usadas:** [`01 Faturamento`](../medidas-dax/01-principais.md#01-faturamento) (no relatório, pelo nome antigo `Faturamento`), [`10 Margem`](../medidas-dax/01-principais.md#10-margem), [`41 Porcentagem Meta`](../medidas-dax/01-principais.md#41-porcentagem-meta) (no relatório, pelo nome antigo `Porcentagem Meta`).
 
     **Colunas usadas:**
 

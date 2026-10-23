@@ -1,12 +1,20 @@
-# Visuais SVG
+<!-- pasta: .Visuais SVG -->
+# .Visuais SVG
 
-Medidas da pasta de exibição `.Visuais SVG`: **7**. Medidas que devolvem imagens SVG ou textos de cor, usadas por visuais do relatório. Veja o [catálogo](index.md) para as outras pastas.
+<!-- gerado:inicio resumo -->
+Medidas da pasta de exibição `.Visuais SVG`: **7**. Veja o [catálogo](index.md) para as outras pastas.
+<!-- gerado:fim resumo -->
 
-As descrições marcadas como *deduzidas do código* foram escritas a partir da expressão DAX. As demais vêm do texto `///` do modelo. "Depende de" e "É usada por" vêm do script de levantamento. Em "Usada nas guias", cada guia aparece uma vez, inclusive as ocultas, as de dica de ferramenta e as versões "antes".
-
-## `60 SVG Cartao Faturamento v1`
+## 60 SVG Cartao Faturamento v1
 
 Desenha, em SVG, a variação do faturamento contra o ano anterior (`23 Faturamento YoY %`), com seta e cor. *(descrição deduzida do código)*
+
+<!-- gerado:inicio medida:60 SVG Cartao Faturamento v1 -->
+- **Tabela:** `_Medidas`
+- **Formato:** padrão
+- **Usada nas guias:** [Comercial ](../guias-do-relatorio/comercial.md)
+- **Depende de:** [`23 Faturamento YoY %`](02-temporais.md#23-faturamento-yoy)
+- **É usada por:** nenhuma medida
 
 ```dax
 VAR _percent = [23 Faturamento YoY %]
@@ -46,16 +54,18 @@ VAR _text =
 RETURN 
     _text
 ```
+<!-- gerado:fim medida:60 SVG Cartao Faturamento v1 -->
 
-- **Tabela:** `_Medidas`
-- **Formato:** padrão
-- **Usada nas guias:** [Comercial](../guias-do-relatorio/comercial.md); pelo nome antigo `cartao  faturamento svg v1` em [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
-- **Depende de:** `23 Faturamento YoY %`
-- **É usada por:** nenhuma medida
-
-## `61 SVG Cartao Margem v1`
+## 61 SVG Cartao Margem v1
 
 Desenha, em SVG, a variação da margem contra o ano anterior (`27 Margem YoY %`), com seta e cor. *(descrição deduzida do código)*
+
+<!-- gerado:inicio medida:61 SVG Cartao Margem v1 -->
+- **Tabela:** `_Medidas`
+- **Formato:** padrão
+- **Usada nas guias:** nenhum visual
+- **Depende de:** [`27 Margem YoY %`](02-temporais.md#27-margem-yoy)
+- **É usada por:** nenhuma medida
 
 ```dax
 VAR _percent = [27 Margem YoY %]
@@ -95,16 +105,18 @@ VAR _text =
 RETURN 
     _text
 ```
+<!-- gerado:fim medida:61 SVG Cartao Margem v1 -->
 
-- **Tabela:** `_Medidas`
-- **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `cartao  margem svg v1` em [Comercial](../guias-do-relatorio/comercial.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
-- **Depende de:** `27 Margem YoY %`
-- **É usada por:** nenhuma medida
-
-## `62 SVG Cartao Resultado v1`
+## 62 SVG Cartao Resultado v1
 
 Desenha, em SVG, a variação do resultado contra o ano anterior (`31 Resultado YoY %`), com seta e cor. *(descrição deduzida do código)*
+
+<!-- gerado:inicio medida:62 SVG Cartao Resultado v1 -->
+- **Tabela:** `_Medidas`
+- **Formato:** padrão
+- **Usada nas guias:** nenhum visual
+- **Depende de:** [`31 Resultado YoY %`](02-temporais.md#31-resultado-yoy)
+- **É usada por:** nenhuma medida
 
 ```dax
 VAR _percent = [31 Resultado YoY %]
@@ -144,16 +156,18 @@ VAR _text =
 RETURN 
     _text
 ```
+<!-- gerado:fim medida:62 SVG Cartao Resultado v1 -->
 
-- **Tabela:** `_Medidas`
-- **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `cartao  resultado svg v1` em [Comercial](../guias-do-relatorio/comercial.md), [Vendedores](../guias-do-relatorio/vendedores.md), [Comercial antes](../arquivo/guias-anteriores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
-- **Depende de:** `31 Resultado YoY %`
-- **É usada por:** nenhuma medida
-
-## `63 SVG Cartao Comissao v1`
+## 63 SVG Cartao Comissao v1
 
 Desenha, em SVG, a variação da comissão contra o ano anterior (`34 Comissao YoY %`), com seta e cor. *(descrição deduzida do código)*
+
+<!-- gerado:inicio medida:63 SVG Cartao Comissao v1 -->
+- **Tabela:** `_Medidas`
+- **Formato:** padrão
+- **Usada nas guias:** nenhum visual
+- **Depende de:** [`34 Comissao YoY %`](02-temporais.md#34-comissao-yoy)
+- **É usada por:** nenhuma medida
 
 ```dax
 VAR _percent = [34 Comissao YoY %]
@@ -193,16 +207,18 @@ VAR _text =
 RETURN 
     _text
 ```
+<!-- gerado:fim medida:63 SVG Cartao Comissao v1 -->
 
-- **Tabela:** `_Medidas`
-- **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `cartao comissao svg v1` em [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
-- **Depende de:** `34 Comissao YoY %`
-- **É usada por:** nenhuma medida
-
-## `64 SVG Tabela HTML Content Lite v1`
+## 64 SVG Tabela HTML Content Lite v1
 
 Desenha, em SVG, uma linha de tabela por cidade, com o faturamento abreviado e a variação da margem contra o ano anterior. Alterna entre os dois ao passar o mouse. *(descrição deduzida do código)*
+
+<!-- gerado:inicio medida:64 SVG Tabela HTML Content Lite v1 -->
+- **Tabela:** `_Medidas`
+- **Formato:** padrão
+- **Usada nas guias:** [Comercial ](../guias-do-relatorio/comercial.md)
+- **Depende de:** [`27 Margem YoY %`](02-temporais.md#27-margem-yoy), [`51 Faturamento formatação de texto`](03-formatacoes.md#51-faturamento-formatacao-de-texto)
+- **É usada por:** nenhuma medida
 
 ```dax
 VAR _cidade = SELECTEDVALUE( dClientes[Cidade] )
@@ -232,7 +248,7 @@ RETURN
                 #txt_margem, #txt_cidade, #txt_faturamento  {
                     transition: .7s
                 }
-
+                
 
                 svg:hover #txt_faturamento  {
                     transform: translateX( -126px)
@@ -262,31 +278,38 @@ RETURN
     </svg>
     "
 ```
+<!-- gerado:fim medida:64 SVG Tabela HTML Content Lite v1 -->
 
-- **Tabela:** `_Medidas`
-- **Formato:** padrão
-- **Usada nas guias:** [Comercial](../guias-do-relatorio/comercial.md); pelo nome antigo `tabela hml contente lite v1` em [Comercial antes](../arquivo/guias-anteriores.md)
-- **Depende de:** `27 Margem YoY %`, `51 Faturamento formatação de texto`
-- **É usada por:** nenhuma medida
-
-## `65 SVG Percentual Meta Velocimetro`
+## 65 SVG Percentual Meta Velocimetro
 
 Medida de nome "velocímetro", cuja expressão é apenas o valor `1`. *(descrição deduzida do código)*
 
-```dax
-1
-```
+- **Observação:** O formato de exibição é `0` e a expressão é o valor fixo `1`.
 
+<!-- gerado:inicio medida:65 SVG Percentual Meta Velocimetro -->
 - **Tabela:** `_Medidas`
 - **Formato:** `0`
 - **Usada nas guias:** nenhum visual
 - **Depende de:** nenhuma medida
 - **É usada por:** nenhuma medida
-- **Observação:** O formato de exibição é `0` e a expressão é o valor fixo `1`.
 
-## `66 Meta Cor`
+```dax
+1
+```
+<!-- gerado:fim medida:65 SVG Percentual Meta Velocimetro -->
+
+## 66 Meta Cor
 
 Cor da meta conforme o percentual atingido: verde a partir de 60%, vermelho abaixo de 10% e cinza entre os dois. *(descrição deduzida do código)*
+
+- **Regra de negócio:** [Metas](../regras-de-negocio.md#metas)
+
+<!-- gerado:inicio medida:66 Meta Cor -->
+- **Tabela:** `_Medidas`
+- **Formato:** padrão
+- **Usada nas guias:** nenhum visual
+- **Depende de:** [`41 Porcentagem Meta`](01-principais.md#41-porcentagem-meta)
+- **É usada por:** nenhuma medida
 
 ```dax
 SWITCH(
@@ -296,10 +319,4 @@ SWITCH(
     "grey"
 )
 ```
-
-- **Tabela:** `_Medidas`
-- **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `Meta Cor` em [Vendedores](../guias-do-relatorio/vendedores.md), [Vendedores antes](../arquivo/guias-anteriores.md)
-- **Depende de:** `41 Porcentagem Meta`
-- **É usada por:** nenhuma medida
-- **Regra de negócio:** [Metas](../regras-de-negocio.md#metas)
+<!-- gerado:fim medida:66 Meta Cor -->

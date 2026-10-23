@@ -1,0 +1,11 @@
+table LocalDateTable_1111
+	isHidden
+	lineageTag: 5
+
+	column Date
+		dataType: dateTime
+		sourceColumn: Date
+
+	partition LocalDateTable_1111 = calculated
+		mode: import
+		source = CALENDARAUTO()

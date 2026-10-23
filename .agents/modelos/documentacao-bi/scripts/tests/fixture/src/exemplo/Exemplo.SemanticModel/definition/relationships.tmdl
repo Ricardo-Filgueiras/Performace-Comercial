@@ -1,0 +1,21 @@
+relationship r1
+	fromColumn: fVendas.IdCliente
+	toColumn: dCliente.IdCliente
+
+relationship r2
+	fromColumn: fVendas.'Data Pedido'
+	toColumn: dCalendario.Data
+
+relationship r3
+	isActive: false
+	fromColumn: fVendas.'Data Envio'
+	toColumn: dCalendario.Data
+
+relationship r4
+	crossFilteringBehavior: bothDirections
+	fromColumn: fVendas.IdProduto
+	toColumn: dProduto.IdProduto
+
+relationship r5
+	fromColumn: dCalendario.Data
+	toColumn: LocalDateTable_1111.Date

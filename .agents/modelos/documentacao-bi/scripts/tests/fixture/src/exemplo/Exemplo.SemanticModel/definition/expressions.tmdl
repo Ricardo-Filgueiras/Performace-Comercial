@@ -1,0 +1,9 @@
+expression Servidor = "srv01" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: aaaa
+
+expression 'Base Vendas' =
+		let
+			Fonte = Sql.Database(Servidor, "vendas")
+		in
+			Fonte
+	lineageTag: bbbb

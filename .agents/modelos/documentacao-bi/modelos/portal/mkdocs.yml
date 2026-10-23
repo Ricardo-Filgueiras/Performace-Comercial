@@ -50,6 +50,7 @@ validation:
     not_found: warn
   links:
     not_found: warn
+    anchors: warn
 
 markdown_extensions:
   - admonition

@@ -1,0 +1,18 @@
+table dCliente
+	lineageTag: 2
+
+	column IdCliente
+		dataType: int64
+		sourceColumn: IdCliente
+
+	column Email
+		dataType: string
+		sourceColumn: Email
+
+	partition dCliente = m
+		mode: import
+		source =
+				let
+					Fonte = Excel.Workbook(File.Contents("clientes.xlsx"))
+				in
+					Fonte

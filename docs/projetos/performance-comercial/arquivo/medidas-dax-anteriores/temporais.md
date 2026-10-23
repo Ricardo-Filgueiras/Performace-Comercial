@@ -1,5 +1,8 @@
 # Temporais
 
+!!! info "Página arquivada"
+    Versão escrita à mão, anterior à adoção do gerador de páginas (skill `documentacao-bi` 0.3.0). A versão em uso é [Medidas DAX](../../medidas-dax/index.md).
+
 Medidas da pasta de exibição `02. Temporais`: **16**. Comparações no tempo: mês anterior (`LM`), mesmo período do ano anterior (`LY`) e variações percentuais (`MoM` e `YoY`). Veja o [catálogo](index.md) para as outras pastas.
 
 As descrições marcadas como *deduzidas do código* foram escritas a partir da expressão DAX. As demais vêm do texto `///` do modelo. "Depende de" e "É usada por" vêm do script de levantamento. Em "Usada nas guias", cada guia aparece uma vez, inclusive as ocultas, as de dica de ferramenta e as versões "antes".
@@ -20,11 +23,11 @@ CALCULATE(
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `Faturamento Acumulado` em [Mapa Calor](../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../arquivo/guias-anteriores.md)
+- **Usada nas guias:** pelo nome antigo `Faturamento Acumulado` em [Mapa Calor](../../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
-- **Observação:** Usa `dCalendario[Datas com Venda]`, que marca as datas até a última venda (ver [Modelo de dados](../modelo-de-dados.md)).
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
+- **Observação:** Usa `dCalendario[Datas com Venda]`, que marca as datas até a última venda (ver [Modelo de dados](../modelo-de-dados-anterior.md)).
 
 ## `21 Faturamento Acumulado LY`
 
@@ -42,10 +45,10 @@ CALCULATE(
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `Faturamento Acumulado LY` em [Mapa Calor](../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../arquivo/guias-anteriores.md)
+- **Usada nas guias:** pelo nome antigo `Faturamento Acumulado LY` em [Mapa Calor](../../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `22 Faturamento LY`
 
@@ -63,10 +66,10 @@ CALCULATE(
 
 - **Tabela:** `_Medidas`
 - **Formato:** `"R$"\ #,0;-"R$"\ #,0;"R$"\ #,0`
-- **Usada nas guias:** pelo nome antigo `Faturamento LY` em [Mapa Calor](../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../arquivo/guias-anteriores.md)
+- **Usada nas guias:** pelo nome antigo `Faturamento LY` em [Mapa Calor](../../guias-do-relatorio/mapa-calor.md), [Mapa Calor antes](../../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** `23 Faturamento YoY %`, `Context Medida z`, `Linha Anterior`, `Seta para Cima`, `Seta para baixo  ( limit Inferior )`, `Seta para baixo  ( limit sup )`
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `23 Faturamento YoY %`
 
@@ -90,7 +93,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `01 Faturamento`, `22 Faturamento LY`
 - **É usada por:** `60 SVG Cartao Faturamento v1`
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `24 Faturamento MoM %`
 
@@ -118,10 +121,10 @@ RETURN
 
 - **Tabela:** `_Medidas`
 - **Formato:** `0.00%;-0.00%;0.00%`
-- **Usada nas guias:** pelo nome antigo `Faturamento MoM %` em [Comercial](../guias-do-relatorio/comercial.md), [Comercial antes](../arquivo/guias-anteriores.md)
+- **Usada nas guias:** pelo nome antigo `Faturamento MoM %` em [Comercial](../../guias-do-relatorio/comercial.md), [Comercial antes](../../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 - **Observação:** O mês anterior é calculado dentro da própria medida, sem uma medida `LM` separada.
 
 ## `25 Margem LM`
@@ -143,7 +146,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `10 Margem`
 - **É usada por:** `28 Margem MoM %`
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `26 Margem LY`
 
@@ -164,7 +167,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `10 Margem`
 - **É usada por:** `27 Margem YoY %`
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `27 Margem YoY %`
 
@@ -187,7 +190,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `10 Margem`, `26 Margem LY`
 - **É usada por:** `61 SVG Cartao Margem v1`, `64 SVG Tabela HTML Content Lite v1`
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 - **Observação:** É a variação **relativa** entre duas margens (a diferença dividida pela margem do ano anterior), e não a diferença em pontos percentuais.
 
 ## `28 Margem MoM %`
@@ -211,7 +214,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `10 Margem`, `25 Margem LM`
 - **É usada por:** nenhuma medida
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `29 Resultado LM`
 
@@ -232,7 +235,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `09 Resultado`
 - **É usada por:** `32 Resultado MoM %`
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `30 Resultado LY`
 
@@ -253,7 +256,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `09 Resultado`
 - **É usada por:** `31 Resultado YoY %`
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `31 Resultado YoY %`
 
@@ -276,7 +279,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `09 Resultado`, `30 Resultado LY`
 - **É usada por:** `62 SVG Cartao Resultado v1`
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `32 Resultado MoM %`
 
@@ -299,7 +302,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `09 Resultado`, `29 Resultado LM`
 - **É usada por:** nenhuma medida
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `33 Comissao LY`
 
@@ -320,7 +323,7 @@ CALCULATE(
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `07 Comissao`
 - **É usada por:** `34 Comissao YoY %`
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `34 Comissao YoY %`
 
@@ -343,7 +346,7 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `07 Comissao`, `33 Comissao LY`
 - **É usada por:** `63 SVG Cartao Comissao v1`
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 
 ## `35 Comissao MoM %`
 
@@ -370,5 +373,5 @@ RETURN
 - **Usada nas guias:** nenhum visual
 - **Depende de:** `07 Comissao`
 - **É usada por:** nenhuma medida
-- **Regra de negócio:** [Comparações no tempo](../regras-de-negocio.md#comparacoes-no-tempo)
+- **Regra de negócio:** [Comparações no tempo](../../regras-de-negocio.md#comparacoes-no-tempo)
 - **Observação:** Diferente das outras medidas do mês anterior, o cálculo do mês anterior **não** usa o filtro `dCalendario[Datas com Venda] = TRUE()`. Intencional, confirmado pelo desenvolvedor.

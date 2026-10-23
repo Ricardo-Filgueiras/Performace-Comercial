@@ -21,6 +21,7 @@ O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). O
 
 ### Alterado
 
+- [Modelo de dados](modelo-de-dados.md) e [Medidas DAX](medidas-dax/index.md) passaram a ser geradas por `gerar_paginas.py` (skill `documentacao-bi` 0.3.0). As páginas escritas à mão foram para o [Arquivo](arquivo/modelo-de-dados-anterior.md); as descrições, as regras de negócio e as observações das 50 medidas foram levadas para acima de cada bloco `gerado`, e a seção de nomes antigos de medidas ficou no índice. As páginas por pasta de exibição mudaram de endereço: `principais`, `temporais` e `formatacoes` viraram `01-principais`, `02-temporais` e `03-formatacoes`. Nenhuma medida foi alterada.
 - Projeto Power BI movido para `src/projeto/performance-comercial/` e renomeado de "Performace Comercial" para "Performance Comercial" (arquivo `.pbip` e pastas `.Report` e `.SemanticModel`) em `c116cef` e `2d2af2d`.
 - Dados movidos de `src/data/` para `data/`, na raiz (`3578022`). Os valores dos três parâmetros passaram a apontar para a nova pasta (`2d2af2d`). As consultas das tabelas `fVendas`, `fMetas`, `dClientes`, `dProdutos`, `dVendedores`, `dUnidades`, `dStatus` e `dPagamento` e a consulta `dCidades` não mudaram.
 - `README.md`: árvore de pastas, passo de abertura do projeto e endereço de clone corrigido.

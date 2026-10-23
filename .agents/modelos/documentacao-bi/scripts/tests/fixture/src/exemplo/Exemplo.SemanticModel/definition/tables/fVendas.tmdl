@@ -1,0 +1,34 @@
+table fVendas
+	lineageTag: 1
+
+	column IdCliente
+		dataType: int64
+		sourceColumn: IdCliente
+
+	column IdProduto
+		dataType: int64
+		sourceColumn: IdProduto
+
+	column 'Data Pedido'
+		dataType: dateTime
+		sourceColumn: Data Pedido
+
+	column 'Data Envio'
+		dataType: dateTime
+		isHidden
+		sourceColumn: Data Envio
+
+	column Valor
+		dataType: double
+		sourceColumn: Valor
+
+	column 'Valor Líquido' = [Valor] * 0.9
+		dataType: double
+
+	partition fVendas = m
+		mode: import
+		source =
+				let
+					Fonte = Sql.Database(Servidor, "vendas")
+				in
+					Fonte

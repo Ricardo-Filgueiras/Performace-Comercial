@@ -20,7 +20,7 @@ git tag -a <slug>/baseline-pre-documentacao -m "<Projeto> antes da documentaçã
 git log -1 --format="%h %ad" --date=short
 ```
 
-A foto desse estado (tabelas, medidas, guias e indicadores) fica em `.agente/linha-de-base-<slug>.md`, fora do site.
+A foto desse estado (tabelas, medidas, guias e indicadores) fica em `.agents/linha-de-base-<slug>.md`, fora do site.
 
 Enquanto valer a regra de não alterar o modelo na documentação inicial, a pasta `src/<slug>/` precisa ficar igual à da tag.
 
@@ -37,7 +37,7 @@ git diff -M --stat <slug>/baseline-pre-documentacao -- src/<slug>
 git status --porcelain -- src/<slug>
 
 # refazer as contagens do projeto
-PYTHONUTF8=1 python .claude/skills/documentacao-bi/scripts/levantamento.py --root src/<slug>
+PYTHONUTF8=1 python <pasta-da-skill>/scripts/levantamento.py --root src/<slug>
 ```
 
 ## Fluxo de trabalho
@@ -58,10 +58,10 @@ Mensagens no formato `tipo: descrição curta`, em português:
 
 | Tipo | Quando usar | Exemplo |
 |---|---|---|
-| `feat` | nova medida, tabela, guia ou visual | `feat: medida de cobertura por período` |
-| `fix` | correção de cálculo ou de visual | `fix: filtro de empresa na análise de PA` |
-| `docs` | só documentação | `docs: regras de status de estoque` |
-| `refactor` | reorganização sem mudar resultado (pastas de exibição, `///`, mudança de lugar) | `refactor: move o projeto para src/gestao-compras` |
+| `feat` | nova medida, tabela, guia ou visual | `feat: medida de variação anual` |
+| `fix` | correção de cálculo ou de visual | `fix: filtro de data no visual de resumo` |
+| `docs` | só documentação | `docs: regras de cálculo da margem` |
+| `refactor` | reorganização sem mudar resultado (pastas de exibição, `///`, mudança de lugar) | `refactor: move o projeto para src/<slug>` |
 | `chore` | configuração, dependências, `.gitignore` | `chore: plugin de menu por pasta` |
 
 Separe em commits diferentes a mudança no modelo e a mudança só de documentação quando elas não dependem uma da outra.

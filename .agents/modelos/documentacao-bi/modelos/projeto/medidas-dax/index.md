@@ -1,3 +1,4 @@
+<!-- modelo-nao-preenchido: gerar_paginas.py substitui esta página inteira. Não preencha à mão. -->
 # Medidas DAX
 
 Catálogo das medidas do modelo, com uma página para cada **pasta de exibição** que já existe no `.tmdl`. As medidas sem pasta ficam em [Sem pasta de exibição](sem-pasta.md). Medidas de teste e sem uso em visuais estão listadas no [Arquivo](../arquivo/index.md).

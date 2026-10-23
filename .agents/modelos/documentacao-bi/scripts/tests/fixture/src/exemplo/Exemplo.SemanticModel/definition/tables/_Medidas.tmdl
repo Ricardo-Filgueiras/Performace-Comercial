@@ -1,0 +1,30 @@
+table _Medidas
+	lineageTag: 6
+
+	/// Soma do valor líquido das vendas.
+	measure Faturamento = SUM(fVendas[Valor Líquido])
+		formatString: #,0.00
+		displayFolder: 01.Principais
+		lineageTag: m1
+
+	measure 'Faturamento LY' =
+			CALCULATE([Faturamento], SAMEPERIODLASTYEAR(dCalendario[Data]))
+		formatString: #,0.00
+		displayFolder: 02. Temporais
+		lineageTag: m2
+
+	measure 'Variação Anual' = DIVIDE([Faturamento] - [Faturamento LY], [Faturamento LY])
+		formatString: 0.0%
+		displayFolder: 02. Temporais
+		lineageTag: m3
+
+	measure 'Medida Solta' = 1
+		lineageTag: m4
+
+	partition _Medidas = m
+		mode: import
+		source =
+				let
+					Fonte = #table({"x"}, {})
+				in
+					Fonte

@@ -12,24 +12,24 @@ Cada regra indica onde está implementada, para que dê para conferir no modelo.
 | Termo | Significado (como está no modelo) | Onde |
 |---|---|---|
 | Venda válida | Venda cujo `Id Status` é `1` ("Válidas"). Vendas com `Id Status` `2` ("Inválidas") ficam fora dos valores | `dStatus` |
-| Faturamento | Soma de `Qtde × Valor Unit` das vendas válidas | [`01 Faturamento`](medidas-dax/principais.md#01-faturamento) |
-| Custo | Soma de `Qtde × Custo Unit` das vendas válidas | [`02 Custo`](medidas-dax/principais.md#02-custo) |
-| Despesa | Soma de `Qtde × Despesa Unit` das vendas válidas | [`05 Despesa`](medidas-dax/principais.md#05-despesa) |
-| Impostos | Soma de `Qtde × Impostos Unit` das vendas válidas | [`06 Impostos`](medidas-dax/principais.md#06-impostos) |
-| Comissão | Soma de `Qtde × Comissão Unit` das vendas válidas | [`07 Comissao`](medidas-dax/principais.md#07-comissao) |
-| Abatimento | Custo + despesa + impostos + comissão | [`08 Abatimento`](medidas-dax/principais.md#08-abatimento) |
-| Lucro bruto | Faturamento − custo | [`03 Lucro Bruto`](medidas-dax/principais.md#03-lucro-bruto) |
-| Margem bruta | (Faturamento − custo) ÷ faturamento | [`04 Margem Bruta`](medidas-dax/principais.md#04-margem-bruta) |
-| Resultado | Faturamento − abatimento | [`09 Resultado`](medidas-dax/principais.md#09-resultado) |
-| Margem (líquida) | Resultado ÷ faturamento | [`10 Margem`](medidas-dax/principais.md#10-margem) |
-| Quantidade de vendas | Número de vendas distintas (`Num Venda`), de qualquer status | [`11 Qtde Vendas`](medidas-dax/principais.md#11-qtde-vendas) |
-| Positivação | Quantidade de clientes (ou de produtos) distintos com venda válida no contexto | [`12 Positivação Clientes`](medidas-dax/principais.md#12-positivacao-clientes), [`13 Positivação Produtos`](medidas-dax/principais.md#13-positivacao-produtos) |
-| Meta | Soma de `Valor Meta`, por vendedor e mês | [`40 Meta`](medidas-dax/principais.md#40-meta) |
+| Faturamento | Soma de `Qtde × Valor Unit` das vendas válidas | [`01 Faturamento`](medidas-dax/01-principais.md#01-faturamento) |
+| Custo | Soma de `Qtde × Custo Unit` das vendas válidas | [`02 Custo`](medidas-dax/01-principais.md#02-custo) |
+| Despesa | Soma de `Qtde × Despesa Unit` das vendas válidas | [`05 Despesa`](medidas-dax/01-principais.md#05-despesa) |
+| Impostos | Soma de `Qtde × Impostos Unit` das vendas válidas | [`06 Impostos`](medidas-dax/01-principais.md#06-impostos) |
+| Comissão | Soma de `Qtde × Comissão Unit` das vendas válidas | [`07 Comissao`](medidas-dax/01-principais.md#07-comissao) |
+| Abatimento | Custo + despesa + impostos + comissão | [`08 Abatimento`](medidas-dax/01-principais.md#08-abatimento) |
+| Lucro bruto | Faturamento − custo | [`03 Lucro Bruto`](medidas-dax/01-principais.md#03-lucro-bruto) |
+| Margem bruta | (Faturamento − custo) ÷ faturamento | [`04 Margem Bruta`](medidas-dax/01-principais.md#04-margem-bruta) |
+| Resultado | Faturamento − abatimento | [`09 Resultado`](medidas-dax/01-principais.md#09-resultado) |
+| Margem (líquida) | Resultado ÷ faturamento | [`10 Margem`](medidas-dax/01-principais.md#10-margem) |
+| Quantidade de vendas | Número de vendas distintas (`Num Venda`), de qualquer status | [`11 Qtde Vendas`](medidas-dax/01-principais.md#11-qtde-vendas) |
+| Positivação | Quantidade de clientes (ou de produtos) distintos com venda válida no contexto | [`12 Positivação Clientes`](medidas-dax/01-principais.md#12-positivacao-clientes), [`13 Positivação Produtos`](medidas-dax/01-principais.md#13-positivacao-produtos) |
+| Meta | Soma de `Valor Meta`, por vendedor e mês | [`40 Meta`](medidas-dax/01-principais.md#40-meta) |
 | LY (*last year*) | Mesmo período do ano anterior | [Comparações no tempo](#comparacoes-no-tempo) |
 | LM (*last month*) | Mês anterior | [Comparações no tempo](#comparacoes-no-tempo) |
 | YoY (*year over year*) | Variação percentual contra o mesmo período do ano anterior | [Comparações no tempo](#comparacoes-no-tempo) |
 | MoM (*month over month*) | Variação percentual contra o mês anterior | [Comparações no tempo](#comparacoes-no-tempo) |
-| YTD (*year to date*) | Acumulado desde o início do ano | [`20 Faturamento Acumulado`](medidas-dax/temporais.md#20-faturamento-acumulado) |
+| YTD (*year to date*) | Acumulado desde o início do ano | [`20 Faturamento Acumulado`](medidas-dax/02-temporais.md#20-faturamento-acumulado) |
 | Datas com venda | Datas do calendário até a data da última venda. Usada para cortar o futuro nas comparações | `dCalendario[Datas com Venda]` |
 
 O modelo **não define** o que cada tipo de despesa contém. A documentação anterior dizia que despesa incluía frete, logística e embalagem, e que impostos incluíam ICMS, PIS e COFINS. Nada disso está no código ou nos dados lidos pelo modelo, e por isso não foi mantido.

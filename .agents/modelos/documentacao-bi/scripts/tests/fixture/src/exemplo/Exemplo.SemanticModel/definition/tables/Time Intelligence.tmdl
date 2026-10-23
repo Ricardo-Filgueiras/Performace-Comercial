@@ -1,0 +1,25 @@
+table 'Time Intelligence'
+	lineageTag: 7
+
+	calculationGroup
+		precedence: 1
+
+		calculationItem Atual = SELECTEDMEASURE()
+			ordinal: 0
+
+		calculationItem YTD = CALCULATE(SELECTEDMEASURE(), DATESYTD(dCalendario[Data]))
+			formatStringDefinition = "#,0"
+			ordinal: 1
+
+		calculationItem 'Ano Anterior' =
+				CALCULATE(
+					SELECTEDMEASURE(),
+					SAMEPERIODLASTYEAR(dCalendario[Data])
+				)
+			ordinal: 2
+
+	column Período
+		dataType: string
+		sourceColumn: Name
+
+	partition 'Time Intelligence' = calculationGroup

@@ -4,7 +4,7 @@ Quem vai manter a documentação precisa aprender o processo, tanto num projeto 
 
 ## Como ensinar
 
-- **Explique o porquê, não só o como.** Cada regra do `padrao.md` tem um motivo; use-o.
+- **Explique o porquê, não só o como.** Cada regra do padrão (`padrao-*.md`) tem um motivo; use-o.
 - **Uma coisa por vez.** Ao fim de uma etapa, ensine só o que ela exigiu.
 - **Mostre o comando e o resultado esperado.** Por exemplo: "rode `uv run mkdocs build --strict`; se terminar sem aviso, está pronto".
 - **Confirme o entendimento** com uma pergunta curta quando o assunto for novo para o usuário.
@@ -18,6 +18,8 @@ Quem vai manter a documentação precisa aprender o processo, tanto num projeto 
 | Rodar o site | `uv sync`, `uv run mkdocs serve` (ver no navegador), `uv run mkdocs build --strict` (conferir antes de entregar). | Primeira sessão. |
 | Tipos de página | Para quem usa × para quem mantém × arquivo; o que vai em cada página. | Ao criar as páginas. |
 | Pendências | Como escrever um `!!! pendente`, por que ele vai também para `pendencias.md`, como fechar uma pendência. | Ao criar a primeira pendência. |
+| Páginas geradas | Blocos `gerado`, escrever só acima deles, rodar o gerador depois de mexer no modelo e `--check` antes do PR. | Ao gerar as páginas pela primeira vez. |
+| Docstrings do ETL | A página de ETL é gerada das docstrings: melhor docstring, melhor página. Credencial nunca vai no código (variável de ambiente). | Ao gerar a página de ETL. |
 | Revisar o que o agente escreveu | Conferir linha a linha contra o modelo; desconfiar de números e de regras sem fonte; o script confere contagens e dependências. | Antes do primeiro pull request. |
 | Changelog | Registrar atividade, citar as medidas pelo nome, usar `[Não publicado]` até a versão sair. | Ao fim da primeira etapa com mudanças. |
 | Git e pull request | Branch, commit no formato `tipo: descrição`, abrir o PR, usar o checklist. Mudança de lugar sempre num commit separado. | Antes do primeiro pull request. |

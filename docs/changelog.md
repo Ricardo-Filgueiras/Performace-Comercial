@@ -17,3 +17,4 @@ O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). C
 
 - A página inicial do portal passou a ser a entrada geral, e a documentação antiga do projeto, em seis páginas numeradas, foi removida depois de migrada.
 - A pasta `site/` deixou de ser versionada. A publicação é feita por `mkdocs gh-deploy`, na branch `gh-pages`.
+- Portal atualizado para a skill `documentacao-bi` 0.3.0: `validation.links.anchors: warn` no `mkdocs.yml` (o `--strict` passa a pegar link de âncora quebrado) e página de [versionamento com Git](metodologia/versionamento-git.md) com os exemplos e caminhos genéricos do kit.

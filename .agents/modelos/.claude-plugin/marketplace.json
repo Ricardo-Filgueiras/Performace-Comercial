@@ -1,0 +1,12 @@
+{
+  "name": "bi-documentacao",
+  "owner": { "name": "Time de BI" },
+  "description": "Plugins do time de BI para documentar projetos Power BI.",
+  "plugins": [
+    {
+      "name": "documentacao-bi",
+      "source": "./",
+      "description": "Skill de documentação de projetos Power BI (PBIP) num portal único MkDocs."
+    }
+  ]
+}

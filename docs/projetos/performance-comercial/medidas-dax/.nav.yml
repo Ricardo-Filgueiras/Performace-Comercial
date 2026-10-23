@@ -1,7 +1,7 @@
 nav:
   - index.md
-  - principais.md
-  - temporais.md
-  - formatacoes.md
+  - 01-principais.md
+  - 02-temporais.md
+  - 03-formatacoes.md
   - visuais-svg.md
   - sem-pasta.md

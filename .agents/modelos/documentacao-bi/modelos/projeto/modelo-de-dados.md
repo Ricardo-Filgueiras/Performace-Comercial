@@ -1,3 +1,4 @@
+<!-- modelo-nao-preenchido: gerar_paginas.py substitui esta página inteira. Não preencha à mão. -->
 # Modelo de dados
 
 Dicionário de dados do modelo semântico `<Projeto>.SemanticModel`: tabelas, colunas, tipos e relacionamentos, lidos dos arquivos `.tmdl`.

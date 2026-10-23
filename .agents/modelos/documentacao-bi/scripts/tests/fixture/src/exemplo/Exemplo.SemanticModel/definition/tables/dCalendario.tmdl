@@ -1,0 +1,30 @@
+table dCalendario
+	lineageTag: 4
+
+	column Data
+		dataType: dateTime
+		sourceColumn: Data
+
+	column Ano
+		dataType: int64
+		sourceColumn: Ano
+
+	column Mês
+		dataType: int64
+		sourceColumn: Mês
+
+	hierarchy 'Ano e Mês'
+		lineageTag: h1
+
+		level Ano
+			lineageTag: l1
+			column: Ano
+
+		level Mês
+			lineageTag: l2
+			column: Mês
+
+	partition dCalendario = calculated
+		mode: import
+		source =
+				CALENDAR(DATE(2024,1,1), DATE(2026,12,31))

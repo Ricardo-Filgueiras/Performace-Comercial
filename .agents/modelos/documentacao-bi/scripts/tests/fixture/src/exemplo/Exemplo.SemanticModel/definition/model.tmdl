@@ -1,0 +1,10 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+
+ref table fVendas
+ref table dCliente
+ref table dCalendario
+ref table _Medidas
+ref table 'Time Intelligence'
+ref table LocalDateTable_1111

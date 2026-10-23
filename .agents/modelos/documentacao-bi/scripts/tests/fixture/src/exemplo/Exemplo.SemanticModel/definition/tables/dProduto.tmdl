@@ -1,0 +1,10 @@
+table dProduto
+	lineageTag: 3
+
+	column IdProduto
+		dataType: int64
+		sourceColumn: IdProduto
+
+	partition dProduto = m
+		mode: import
+		source = #table({"IdProduto"}, {{1}})

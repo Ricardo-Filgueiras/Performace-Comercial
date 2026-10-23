@@ -1,0 +1,7 @@
+role Gerente
+	modelPermission: read
+
+	tablePermission fVendas = ```
+			[Valor] > 0
+				&& fVendas[IdCliente] <> 0
+			```

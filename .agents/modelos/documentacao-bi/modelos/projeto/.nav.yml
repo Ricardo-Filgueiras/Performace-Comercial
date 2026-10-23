@@ -11,6 +11,7 @@ nav:
       - modelo-de-dados.md
       - Medidas DAX: medidas-dax
       - fontes-de-dados.md
+      - etl-python.md
       - decisoes-tecnicas.md
       - guia-do-desenvolvedor.md
       - pendencias.md

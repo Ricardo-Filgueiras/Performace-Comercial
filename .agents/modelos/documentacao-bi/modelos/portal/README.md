@@ -12,8 +12,8 @@ Este arquivo cobre só como instalar e rodar o portal. O conteúdo sobre os pain
 | `docs/projetos/<slug>/` | Documentação de um projeto |
 | `docs/metodologia/` | Metodologia, igual para todos os projetos |
 | `src/<slug>/` | Arquivos do Power BI de um projeto (`.pbip`, `.SemanticModel/`, `.Report/`) |
-| `.claude/skills/documentacao-bi/` | Skill que conduz a documentação com o agente |
-| `.agente/` | Arquivos de trabalho (diagnósticos, planos, relatórios de teste da skill) |
+| `.claude/skills/documentacao-bi/` | Cópia local da skill (opcional; com o plugin instalado não existe) |
+| `.agents/` | Arquivos de trabalho (diagnósticos, planos, relatórios de teste da skill) |
 | `mkdocs.yml` | Configuração do site |
 | `pyproject.toml` / `uv.lock` | Dependências Python do site |
 

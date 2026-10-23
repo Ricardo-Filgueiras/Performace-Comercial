@@ -6,9 +6,10 @@ calcula, para cada medida, de quais medidas ela depende, quais medidas a usam e
 em quais guias do relatório ela aparece. Não escreve nada nas pastas do Power BI.
 
 Uso (na raiz do portal):
-    python .claude/skills/documentacao-bi/scripts/levantamento.py --root src/<slug>
-    python ... --root src/<slug> --json .agente/levantamento-<slug>.json
+    python <pasta-da-skill>/scripts/levantamento.py --root src/<slug>
+    python ... --root src/<slug> --json .agents/levantamento-<slug>.json
     python ... --root src/<slug> --docs docs/projetos/<slug>
+    python ... --root src/<slug> --preflight   (só verifica o ambiente e sai)
 
 Sem --projeto, o script usa a única pasta *.SemanticModel que encontrar em --root.
 No Windows, rode com PYTHONUTF8=1.
@@ -25,6 +26,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import textwrap
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -34,6 +36,11 @@ RE_MEASURE = re.compile(r"^\tmeasure ('(?:[^']|'')*'|[^\s=]+)\s*=\s*(.*)$")
 RE_COLUMN = re.compile(r"^\tcolumn ('(?:[^']|'')*'|[^\s=]+)(\s*=\s*(.*))?$")
 RE_PARTITION = re.compile(r"^\tpartition (.+?) = (\w+)\s*$")
 RE_PROP = re.compile(r"^\t\t(\w+)(?::\s*(.*))?$")
+RE_HIERARCHY = re.compile(r"^\thierarchy ('(?:[^']|'')*'|\S+)\s*$")
+RE_LEVEL = re.compile(r"^\t\tlevel ('(?:[^']|'')*'|\S+)\s*$")
+RE_CALC_ITEM = re.compile(r"^\t\tcalculationItem ('(?:[^']|'')*'|[^\s=]+)(\s*=\s*(.*))?$")
+RE_ROLE = re.compile(r"^role ('(?:[^']|'')*'|\S+)\s*$")
+RE_TABLE_PERM = re.compile(r"^\ttablePermission ('(?:[^']|'')*'|[^\s=]+)\s*=\s*(.*)$")
 
 FONTES_M = [
     "SharePoint.Files", "SharePoint.Contents", "Excel.Workbook", "Csv.Document",
@@ -86,7 +93,7 @@ def limpar(corpo: list[str]) -> str:
 def ler_tabela(path: Path) -> dict:
     lines = path.read_text(encoding="utf-8-sig").splitlines()
     tab = {"arquivo": path.name, "nome": None, "oculta": False, "medidas": [],
-           "colunas": [], "particoes": []}
+           "colunas": [], "particoes": [], "hierarquias": [], "grupo_calculo": None}
     doc_pendente: list[str] = []
     i = 0
     filho = False
@@ -131,8 +138,10 @@ def ler_tabela(path: Path) -> dict:
             filho = True
             calculada = bool(m.group(2))
             j = i + 1
+            expr_col = None
             if calculada:
-                _, j = coletar_bloco(lines, i, (m.group(3) or "").strip())
+                corpo_col, j = coletar_bloco(lines, i, (m.group(3) or "").strip())
+                expr_col = limpar(corpo_col)
             props = {}
             while j < len(lines) and (not lines[j].strip() or indent(lines[j]) >= 2):
                 pm = RE_PROP.match(lines[j])
@@ -142,10 +151,56 @@ def ler_tabela(path: Path) -> dict:
             tab["colunas"].append({
                 "nome": unquote(m.group(1)),
                 "calculada": calculada,
+                "expressao": expr_col,
                 "tipo": props.get("dataType", "(inferido)"),
                 "oculta": "isHidden" in props,
                 "pasta": props.get("displayFolder") or None,
             })
+            doc_pendente = []
+            i = j
+            continue
+        m = RE_HIERARCHY.match(ln)
+        if m:
+            filho = True
+            hier = {"nome": unquote(m.group(1)), "niveis": []}
+            j = i + 1
+            nivel = None
+            while j < len(lines) and (not lines[j].strip() or indent(lines[j]) >= 2):
+                lm = RE_LEVEL.match(lines[j])
+                if lm:
+                    nivel = {"nome": unquote(lm.group(1)), "coluna": None}
+                    hier["niveis"].append(nivel)
+                elif nivel is not None and lines[j].strip().startswith("column:"):
+                    nivel["coluna"] = unquote(lines[j].split(":", 1)[1].strip())
+                j += 1
+            tab["hierarquias"].append(hier)
+            doc_pendente = []
+            i = j
+            continue
+        if ln.strip() == "calculationGroup" and indent(ln) == 1:
+            filho = True
+            grupo = {"precedencia": None, "itens": []}
+            j = i + 1
+            while j < len(lines) and (not lines[j].strip() or indent(lines[j]) >= 2):
+                s = lines[j].strip()
+                im = RE_CALC_ITEM.match(lines[j])
+                if im:
+                    primeira_it = (im.group(3) or "").strip()
+                    corpo_it, j = coletar_bloco(lines, j, primeira_it)
+                    # propriedades do item (ordinal, formatStringDefinition...) ficam um nível
+                    # acima do corpo da expressão: cortar na primeira linha com 3 tabulações
+                    corte = len(corpo_it)
+                    for k, ln_it in enumerate(corpo_it):
+                        if (k > 0 or not primeira_it) and ln_it.strip() and indent(ln_it) == 3:
+                            corte = k
+                            break
+                    expr_it = textwrap.dedent("\n".join(corpo_it[:corte]).replace("\t", "    ")).strip()
+                    grupo["itens"].append({"nome": unquote(im.group(1)), "expressao": expr_it})
+                    continue
+                if s.startswith("precedence:"):
+                    grupo["precedencia"] = s.split(":", 1)[1].strip()
+                j += 1
+            tab["grupo_calculo"] = grupo
             doc_pendente = []
             i = j
             continue
@@ -205,6 +260,37 @@ def ler_relacionamentos(path: Path) -> list[dict]:
             elif s.startswith("crossFilteringBehavior:"):
                 atual["filtro"] = s.split(":", 1)[1].strip()
     return rels
+
+
+def ler_papeis(pasta: Path) -> list[dict]:
+    """Papéis de segurança (RLS) em definition/roles/*.tmdl."""
+    papeis: list[dict] = []
+    arquivos = sorted(pasta.glob("*.tmdl")) if pasta.exists() else []
+    for path in arquivos:
+        lines = path.read_text(encoding="utf-8-sig").splitlines()
+        atual = None
+        i = 0
+        while i < len(lines):
+            ln = lines[i]
+            m = RE_ROLE.match(ln)
+            if m:
+                atual = {"nome": unquote(m.group(1)), "permissao": None, "filtros": [],
+                         "membros": 0}
+                papeis.append(atual)
+            elif atual is not None:
+                s = ln.strip()
+                tp = RE_TABLE_PERM.match(ln)
+                if tp:
+                    corpo, i = coletar_bloco(lines, i, tp.group(2).strip())
+                    atual["filtros"].append({"tabela": unquote(tp.group(1)),
+                                             "filtro": limpar(corpo)})
+                    continue
+                if s.startswith("modelPermission:"):
+                    atual["permissao"] = s.split(":", 1)[1].strip()
+                elif indent(ln) == 1 and s.startswith("member"):
+                    atual["membros"] += 1
+            i += 1
+    return papeis
 
 
 def ler_expressoes(path: Path) -> list[dict]:
@@ -302,25 +388,49 @@ def dependencias(medidas: list[dict]) -> dict[str, dict[str, list[str]]]:
     return {n: {"depende_de": dep[n], "usada_por": sorted(usada[n])} for n in nomes}
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default=".", help="pasta com o .pbip, por exemplo src/<slug>")
-    ap.add_argument("--projeto", help="nome das pastas .SemanticModel/.Report (detectado se omitido)")
-    ap.add_argument("--docs", help="pasta da documentação do projeto, para contar páginas")
-    ap.add_argument("--json")
-    a = ap.parse_args()
-    root = Path(a.root)
-    projeto = detectar_projeto(root, a.projeto)
+LIMITE_CAMINHO = 240  # o limite do Windows é 260; margem para arquivos novos
+
+
+def preflight(root: Path) -> list[str]:
+    """Verificações de ambiente (somente leitura). Devolve a lista de avisos."""
+    avisos: list[str] = []
+    raiz = root.resolve()
+    if any("onedrive" in parte.lower() for parte in raiz.parts):
+        avisos.append("O repositório está dentro do OneDrive. Mova para um caminho curto fora dele "
+                      "(ex.: C:/repos/<portal>). Ver armadilhas.md.")
+    maior, maior_arq = 0, None
+    for f in raiz.rglob("*"):
+        if ".git" in f.parts:
+            continue
+        n = len(str(f))
+        if n > maior:
+            maior, maior_arq = n, f
+    if maior > LIMITE_CAMINHO:
+        avisos.append(f"Caminho com {maior} caracteres (limite de segurança {LIMITE_CAMINHO}): {maior_arq}")
+    pbix = [p for p in raiz.glob("*.pbix")]
+    pbip = list(raiz.glob("*.pbip"))
+    if pbix and not pbip:
+        avisos.append("Há .pbix e nenhum .pbip. O projeto precisa estar em formato PBIP; pare e avise o usuário.")
+    if not list(raiz.glob("*.SemanticModel")):
+        avisos.append("Nenhuma pasta *.SemanticModel em --root. Confira se o caminho aponta para src/<slug>.")
+    if len(raiz.parts) < 2 or raiz.parent.name != "src":
+        avisos.append("--root não está em src/<slug>. O padrão pede os arquivos do Power BI em src/<slug>/ "
+                      "(a mudança de lugar é um passo separado, feito pelo usuário).")
+    return avisos
+
+
+def carregar_projeto(root: Path, nome: str | None = None) -> dict:
+    """Lê o projeto PBIP (somente leitura) e devolve tudo o que o levantamento e o gerador usam."""
+    projeto = detectar_projeto(root, nome)
     sm = root / f"{projeto}.SemanticModel" / "definition"
     tabelas = [ler_tabela(p) for p in sorted((sm / "tables").glob("*.tmdl"))]
     rels = ler_relacionamentos(sm / "relationships.tmdl")
     exprs = ler_expressoes(sm / "expressions.tmdl")
+    papeis = ler_papeis(sm / "roles")
     rel = ler_relatorio(root / f"{projeto}.Report")
 
     medidas = [m | {"tabela": t["nome"]} for t in tabelas for m in t["medidas"]]
     nomes_medidas = {m["nome"] for m in medidas}
-    pastas = Counter(m["pasta"] or "(sem pasta de exibição)" for m in medidas)
-    negocio = [t for t in tabelas if not t["auto_data"]]
     deps = dependencias(medidas)
     uso_guias: dict[str, list[str]] = defaultdict(list)
     for pg in rel["paginas"]:
@@ -331,6 +441,31 @@ def main() -> None:
         m["depende_de"] = deps[m["nome"]]["depende_de"]
         m["usada_por"] = deps[m["nome"]]["usada_por"]
         m["guias"] = uso_guias.get(m["nome"], [])
+    return {"projeto": projeto, "tabelas": tabelas, "rels": rels, "exprs": exprs,
+            "papeis": papeis, "rel": rel, "medidas": medidas}
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--root", default=".", help="pasta com o .pbip, por exemplo src/<slug>")
+    ap.add_argument("--projeto", help="nome das pastas .SemanticModel/.Report (detectado se omitido)")
+    ap.add_argument("--docs", help="pasta da documentação do projeto, para contar páginas")
+    ap.add_argument("--json")
+    ap.add_argument("--preflight", action="store_true",
+                    help="só verifica o ambiente (OneDrive, caminho longo, .pbix, pasta fora de src/) e sai")
+    a = ap.parse_args()
+    root = Path(a.root)
+    if a.preflight:
+        avisos = preflight(root)
+        for av in avisos:
+            print(f"AVISO: {av}")
+        print("preflight: ok" if not avisos else f"preflight: {len(avisos)} aviso(s)")
+        raise SystemExit(1 if avisos else 0)
+    d = carregar_projeto(root, a.projeto)
+    projeto, tabelas, rels, exprs = d["projeto"], d["tabelas"], d["rels"], d["exprs"]
+    papeis, rel, medidas = d["papeis"], d["rel"], d["medidas"]
+    pastas = Counter(m["pasta"] or "(sem pasta de exibição)" for m in medidas)
+    negocio = [t for t in tabelas if not t["auto_data"]]
     sem_uso = [m["nome"] for m in medidas if not m["guias"] and not m["usada_por"]]
     docs = sorted(p.as_posix() for p in Path(a.docs).rglob("*.md")) if a.docs and Path(a.docs).exists() else []
 
@@ -350,6 +485,9 @@ def main() -> None:
         "medidas com ///": sum(bool(m["descricao"]) for m in medidas),
         "medidas com /* */ na 1ª linha": sum(m["comentario_inicial"] for m in medidas),
         "medidas sem uso (nem em visual nem em outra medida)": len(sem_uso),
+        "hierarquias": sum(len(t["hierarquias"]) for t in tabelas),
+        "grupos de cálculo": sum(bool(t["grupo_calculo"]) for t in tabelas),
+        "papéis de segurança (RLS)": len(papeis),
         "expressões M compartilhadas": len(exprs),
         "parâmetros": sum(e["parametro"] for e in exprs),
         "guias do relatório": len(rel["paginas"]),
@@ -370,7 +508,8 @@ def main() -> None:
         Path(a.json).write_text(json.dumps({
             "indicadores": ind, "pastas": pastas, "tabelas": tabelas,
             "medidas": medidas, "medidas_sem_uso": sem_uso,
-            "relacionamentos": rels, "expressoes": exprs, "relatorio": rel,
+            "relacionamentos": rels, "expressoes": exprs, "papeis": papeis,
+            "relatorio": rel,
             "docs": docs,
         }, ensure_ascii=False, indent=1, default=list), encoding="utf-8")
 

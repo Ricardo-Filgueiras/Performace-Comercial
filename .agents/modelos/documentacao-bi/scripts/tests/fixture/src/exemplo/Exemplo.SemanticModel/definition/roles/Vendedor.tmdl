@@ -1,0 +1,6 @@
+role Vendedor
+	modelPermission: read
+
+	tablePermission dCliente = [Email] = USERPRINCIPALNAME()
+
+	member 'ana@exemplo.com'

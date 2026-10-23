@@ -23,10 +23,10 @@ Prefira editar pelo Power BI Desktop e salvar. Editar o TMDL à mão funciona, m
 - **Documente a medida no próprio modelo:**
 
     ```tmdl
-    /// Faturamento líquido do período (soma de TOTLIQ).
-    measure mFaturamento =
-            /* Base: fVendas[TOTLIQ]. Não exclui devoluções. */
-            SUM(fVendas[TOTLIQ])
+    /// Valor líquido das vendas do período (soma de ValorLiquido).
+    measure ValorLiquido =
+            /* Base: fFato[ValorLiquido]. Não exclui devoluções. */
+            SUM(fFato[ValorLiquido])
     ```
 
     `///` vira a descrição exibida no Power BI; `/* */` na primeira linha aparece na barra de fórmulas.

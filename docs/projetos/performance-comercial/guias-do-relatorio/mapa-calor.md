@@ -38,7 +38,7 @@ Também existem: 1 botão(ões) sem ação definida, usado(s) apenas como rótul
 
     **Tipos de visual:** `actionButton` (8), `slicer` (5), `image` (2), `lineChart` (2), `barChart` (1), `clusteredColumnChart` (1), `group` (1), `pivotTable` (1).
 
-    **Medidas usadas:** [`01 Faturamento`](../medidas-dax/principais.md#01-faturamento) (no relatório, pelo nome antigo `Faturamento`), [`20 Faturamento Acumulado`](../medidas-dax/temporais.md#20-faturamento-acumulado) (no relatório, pelo nome antigo `Faturamento Acumulado`), [`21 Faturamento Acumulado LY`](../medidas-dax/temporais.md#21-faturamento-acumulado-ly) (no relatório, pelo nome antigo `Faturamento Acumulado LY`), [`22 Faturamento LY`](../medidas-dax/temporais.md#22-faturamento-ly) (no relatório, pelo nome antigo `Faturamento LY`).
+    **Medidas usadas:** [`01 Faturamento`](../medidas-dax/01-principais.md#01-faturamento) (no relatório, pelo nome antigo `Faturamento`), [`20 Faturamento Acumulado`](../medidas-dax/02-temporais.md#20-faturamento-acumulado) (no relatório, pelo nome antigo `Faturamento Acumulado`), [`21 Faturamento Acumulado LY`](../medidas-dax/02-temporais.md#21-faturamento-acumulado-ly) (no relatório, pelo nome antigo `Faturamento Acumulado LY`), [`22 Faturamento LY`](../medidas-dax/02-temporais.md#22-faturamento-ly) (no relatório, pelo nome antigo `Faturamento LY`).
 
     **Colunas usadas:**
 

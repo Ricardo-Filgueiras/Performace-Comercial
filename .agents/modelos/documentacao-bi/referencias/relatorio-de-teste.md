@@ -1,13 +1,13 @@
 # Relatório de teste da skill
 
-Esta versão da skill está em teste. Ao fim de **cada sessão**, escreva um relatório em `.agente/relatorios-skill/AAAA-MM-DD-sessao-N.md`. O usuário leva esse arquivo ao laboratório para corrigir a skill. Seja específico: cite o arquivo e a seção da skill quando apontar um problema.
+Esta versão da skill está em teste. Ao fim de **cada sessão**, escreva um relatório em `.agents/relatorios-skill/AAAA-MM-DD-sessao-N.md`. O usuário leva esse arquivo ao laboratório para corrigir a skill. Seja específico: cite o arquivo e a seção da skill quando apontar um problema.
 
 ## Modelo
 
 ```markdown
 # Relatório de teste: sessão N (AAAA-MM-DD)
 
-- **Versão da skill:** 0.1.0
+- **Versão da skill:** 0.3.0
 - **Projeto:** <nome> (`<slug>`)
 - **Modo:** projeto novo | projeto existente
 - **Nível ao começar / ao terminar:** 1 / 1
@@ -23,6 +23,9 @@ Situações que a skill não previu e que você teve de resolver por conta próp
 
 ## O que estava errado
 Regras, comandos, caminhos ou modelos que não funcionaram (por exemplo, build falhando por causa do modelo de `mkdocs.yml`). Inclua a mensagem de erro.
+
+## Gerador de páginas
+O que `gerar_paginas.py` gerou errado ou deixou de gerar (tabela, relacionamento, RLS, grupo de cálculo, medida), com o trecho do `.tmdl` que o causou. O que você teve de corrigir à mão nos blocos `gerado` (não deveria haver nada).
 
 ## Perguntas feitas ao usuário
 Cada pergunta e a resposta. Marque as que a skill deveria ter respondido sozinha.

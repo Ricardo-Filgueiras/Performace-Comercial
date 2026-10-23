@@ -1,5 +1,8 @@
 # Formatações
 
+!!! info "Página arquivada"
+    Versão escrita à mão, anterior à adoção do gerador de páginas (skill `documentacao-bi` 0.3.0). A versão em uso é [Medidas DAX](../../medidas-dax/index.md).
+
 Medidas da pasta de exibição `03. Formatações`: **2**. Medidas auxiliares de formatação e de escala de gráficos. Veja o [catálogo](index.md) para as outras pastas.
 
 As descrições marcadas como *deduzidas do código* foram escritas a partir da expressão DAX. As demais vêm do texto `///` do modelo. "Depende de" e "É usada por" vêm do script de levantamento. Em "Usada nas guias", cada guia aparece uma vez, inclusive as ocultas, as de dica de ferramenta e as versões "antes".
@@ -21,7 +24,7 @@ RETURN
 
 - **Tabela:** `_Medidas`
 - **Formato:** padrão
-- **Usada nas guias:** pelo nome antigo `Eixo Y max Grafico Comercial` em [Comercial](../guias-do-relatorio/comercial.md), [Comercial antes](../arquivo/guias-anteriores.md)
+- **Usada nas guias:** pelo nome antigo `Eixo Y max Grafico Comercial` em [Comercial](../../guias-do-relatorio/comercial.md), [Comercial antes](../../arquivo/guias-anteriores.md)
 - **Depende de:** `01 Faturamento`
 - **É usada por:** nenhuma medida
 

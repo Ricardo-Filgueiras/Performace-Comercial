@@ -25,24 +25,24 @@ A conta considera os nomes antigos usados nos visuais (por exemplo, `Qtde Vendas
 
 | Medida | Tabela | Usada por outra medida? | Chega a algum visual? |
 |---|---|---|---|
-| [`02 Custo`](../medidas-dax/principais.md#02-custo) | `_Medidas` | `03 Lucro Bruto`, `04 Margem Bruta`, `08 Abatimento` | sim, por outras medidas |
-| [`03 Lucro Bruto`](../medidas-dax/principais.md#03-lucro-bruto) | `_Medidas` | não | **não** |
-| [`04 Margem Bruta`](../medidas-dax/principais.md#04-margem-bruta) | `_Medidas` | não | **não** |
-| [`05 Despesa`](../medidas-dax/principais.md#05-despesa) | `_Medidas` | `08 Abatimento` | sim, por outras medidas |
-| [`06 Impostos`](../medidas-dax/principais.md#06-impostos) | `_Medidas` | `08 Abatimento` | sim, por outras medidas |
-| [`23 Faturamento YoY %`](../medidas-dax/temporais.md#23-faturamento-yoy) | `_Medidas` | `60 SVG Cartao Faturamento v1` | sim, por outras medidas |
-| [`25 Margem LM`](../medidas-dax/temporais.md#25-margem-lm) | `_Medidas` | `28 Margem MoM %` | **não** |
-| [`26 Margem LY`](../medidas-dax/temporais.md#26-margem-ly) | `_Medidas` | `27 Margem YoY %` | sim, por outras medidas |
-| [`27 Margem YoY %`](../medidas-dax/temporais.md#27-margem-yoy) | `_Medidas` | `61 SVG Cartao Margem v1`, `64 SVG Tabela HTML Content Lite v1` | sim, por outras medidas |
-| [`28 Margem MoM %`](../medidas-dax/temporais.md#28-margem-mom) | `_Medidas` | não | **não** |
-| [`29 Resultado LM`](../medidas-dax/temporais.md#29-resultado-lm) | `_Medidas` | `32 Resultado MoM %` | **não** |
-| [`30 Resultado LY`](../medidas-dax/temporais.md#30-resultado-ly) | `_Medidas` | `31 Resultado YoY %` | sim, por outras medidas |
-| [`31 Resultado YoY %`](../medidas-dax/temporais.md#31-resultado-yoy) | `_Medidas` | `62 SVG Cartao Resultado v1` | sim, por outras medidas |
-| [`32 Resultado MoM %`](../medidas-dax/temporais.md#32-resultado-mom) | `_Medidas` | não | **não** |
-| [`33 Comissao LY`](../medidas-dax/temporais.md#33-comissao-ly) | `_Medidas` | `34 Comissao YoY %` | sim, por outras medidas |
-| [`34 Comissao YoY %`](../medidas-dax/temporais.md#34-comissao-yoy) | `_Medidas` | `63 SVG Cartao Comissao v1` | sim, por outras medidas |
-| [`35 Comissao MoM %`](../medidas-dax/temporais.md#35-comissao-mom) | `_Medidas` | não | **não** |
-| [`51 Faturamento formatação de texto`](../medidas-dax/formatacoes.md#51-faturamento-formatacao-de-texto) | `_Medidas` | `64 SVG Tabela HTML Content Lite v1` | sim, por outras medidas |
+| [`02 Custo`](../medidas-dax/01-principais.md#02-custo) | `_Medidas` | `03 Lucro Bruto`, `04 Margem Bruta`, `08 Abatimento` | sim, por outras medidas |
+| [`03 Lucro Bruto`](../medidas-dax/01-principais.md#03-lucro-bruto) | `_Medidas` | não | **não** |
+| [`04 Margem Bruta`](../medidas-dax/01-principais.md#04-margem-bruta) | `_Medidas` | não | **não** |
+| [`05 Despesa`](../medidas-dax/01-principais.md#05-despesa) | `_Medidas` | `08 Abatimento` | sim, por outras medidas |
+| [`06 Impostos`](../medidas-dax/01-principais.md#06-impostos) | `_Medidas` | `08 Abatimento` | sim, por outras medidas |
+| [`23 Faturamento YoY %`](../medidas-dax/02-temporais.md#23-faturamento-yoy) | `_Medidas` | `60 SVG Cartao Faturamento v1` | sim, por outras medidas |
+| [`25 Margem LM`](../medidas-dax/02-temporais.md#25-margem-lm) | `_Medidas` | `28 Margem MoM %` | **não** |
+| [`26 Margem LY`](../medidas-dax/02-temporais.md#26-margem-ly) | `_Medidas` | `27 Margem YoY %` | sim, por outras medidas |
+| [`27 Margem YoY %`](../medidas-dax/02-temporais.md#27-margem-yoy) | `_Medidas` | `61 SVG Cartao Margem v1`, `64 SVG Tabela HTML Content Lite v1` | sim, por outras medidas |
+| [`28 Margem MoM %`](../medidas-dax/02-temporais.md#28-margem-mom) | `_Medidas` | não | **não** |
+| [`29 Resultado LM`](../medidas-dax/02-temporais.md#29-resultado-lm) | `_Medidas` | `32 Resultado MoM %` | **não** |
+| [`30 Resultado LY`](../medidas-dax/02-temporais.md#30-resultado-ly) | `_Medidas` | `31 Resultado YoY %` | sim, por outras medidas |
+| [`31 Resultado YoY %`](../medidas-dax/02-temporais.md#31-resultado-yoy) | `_Medidas` | `62 SVG Cartao Resultado v1` | sim, por outras medidas |
+| [`32 Resultado MoM %`](../medidas-dax/02-temporais.md#32-resultado-mom) | `_Medidas` | não | **não** |
+| [`33 Comissao LY`](../medidas-dax/02-temporais.md#33-comissao-ly) | `_Medidas` | `34 Comissao YoY %` | sim, por outras medidas |
+| [`34 Comissao YoY %`](../medidas-dax/02-temporais.md#34-comissao-yoy) | `_Medidas` | `63 SVG Cartao Comissao v1` | sim, por outras medidas |
+| [`35 Comissao MoM %`](../medidas-dax/02-temporais.md#35-comissao-mom) | `_Medidas` | não | **não** |
+| [`51 Faturamento formatação de texto`](../medidas-dax/03-formatacoes.md#51-faturamento-formatacao-de-texto) | `_Medidas` | `64 SVG Tabela HTML Content Lite v1` | sim, por outras medidas |
 | [`65 SVG Percentual Meta Velocimetro`](../medidas-dax/visuais-svg.md#65-svg-percentual-meta-velocimetro) | `_Medidas` | não | **não** |
 
 ### Sem nenhum uso
